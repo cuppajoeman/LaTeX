@@ -1,0 +1,93 @@
+\ProvidesPackage{packages}
+
+% === Packages ===
+
+% General
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend,gauss,mathtools,pifont, float}
+
+% Support for enumeration like a) b) ...
+\usepackage[shortlabels]{enumitem}
+
+% Support for footers
+\usepackage[symbol]{footmisc}
+
+% Inkscape figures support
+\usepackage{import, xifthen, pdfpages, transparent}
+
+
+% Automatic Parenthesis scaling
+\delimitershortfall-1sp
+\usepackage{mleftright}
+\mleftright % make \left & \right behave like \mleft & \mright
+
+% Nice boxes
+\usepackage{mdframed}
+
+\mdfdefinestyle{theoremstyle}{%
+	linecolor=red,linewidth=2pt,%
+	frametitlerule=true,%
+	frametitlebackgroundcolor=gray!20,
+	innertopmargin=\topskip,
+}
+\mdtheorem[style=theoremstyle]{definition}{Definition}
+
+% === Custom commands ===
+
+% Proofs
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\newenvironment{disproof} {\begin{proof}[Disproof]} {\end{proof}}
+
+% Modular Arithmetic
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+
+% Font
+\def\code#1{\texttt{#1}}
+
+% === Linear Algebra ===
+
+% Matricies
+\newcommand\mat[1]{\begin{bmatrix}#1\end{bmatrix}}
+
+% Footer use [2] for the dagger :)
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+% For figures drawn in inkscape
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+% Horizontal Rule
+\newcommand{\hr}{%
+\begin{center}
+	\noindent\rule{8cm}{0.4pt}
+\end{center}
+}
+
+\pdfsuppresswarningpagegroup=1
+% For markdown style lists
+\usepackage{outlines}
+
+% Personal font
+\usepackage[condensed,math]{iwona}
+\usepackage[T1]{fontenc}
+\renewcommand{\seriesdefault}{\bfdefault}
+
+% Custom bullets
+\renewcommand{\labelitemi}{\ding{226}}
+\renewcommand{\labelitemii}{\ding{235}}
+\renewcommand{\labelitemiii}{\ding{43}}
+\renewcommand{\labelitemiv}{\ding{217}}
+ 
+% Annotations
+\usepackage{todonotes}
+
+% Arrow for pointing at parts of equation
+\newcommand\vertarrowbox[3][3ex]{%
+  \begin{array}[t]{@{}c@{}} #2 \\
+  \left\uparrow\vcenter{\hrule height #1}\right.\kern-\nulldelimiterspace\\
+  \makebox[0pt]{\scriptsize#3}
+  \end{array}%
+}

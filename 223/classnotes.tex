@@ -1,0 +1,107 @@
+% !TEX TS-program = pdflatex
+\documentclass[notoc,notitlepage]{tufte-book}
+% \nonstopmode % uncomment to enable nonstopmode
+
+\usepackage{classnotetitle}
+
+\newcommand\mat[1]{\begin{bmatrix}#1\end{bmatrix}}
+
+\title{MAT223 - Linear Algebra}
+\author{Callum Cassidy-Nolan}
+\subtitle{Classnotes for Summer 2019}
+\credentials{Computer Science}
+\institution{University of Toronto}
+
+\input{latex-classnotes-preamble.tex}
+
+\begin{document}
+\input{latex-classnotes-header.tex}
+
+\chapter{Week 9}%
+\label{chp:week_9}
+% chapter week_9
+
+Linear transformations and such
+
+\section{Linear Transformations}%
+\label{sec:linear_transformations}
+% section linear_transformations
+
+\begin{defn}[Linear Transformation]\index{Linear Transformation}\label{defn:linear_transformation}
+    Let $V$ and $W$ be subspaces. A function $\mathcal{T} : V \to W $ is called
+    a linear transformation if for all $\vec{u}, \vec{v} \in V$ and $a \in \mathbb{R}$ it satisfies
+    \begin{enumerate}
+        \item $\mathcal{T}(\vec{u} + \vec{v}) = \mathcal{T}(\vec{u}) + \mathcal{T}(\vec{v})$ 
+        \item $\mathcal{T}(a \vec{u}) = a \mathcal{T}(\vec{u})$ 
+    \end{enumerate}
+\end{defn}
+
+\begin{eg}
+    We'll show that $\mathcal{T} : \mathbb{R}^2 \to \mathbb{R}^2 $ where
+    $\mathcal{T} \mat{ x \\ y } = \mat{ x + 2 \\ y }$ is not a linear
+    transformation.
+
+    Let $\vec{j} = \mat{ 0 \\ 0 }, \vec{k} = \mat{ 0 \\ 0 }$ we have that
+    \begin{equation*}
+        \mathcal{T}(\mat{ 0 \\ 0 } + \mat{ 0 \\ 0 }) = \mat{ 2 \\ 0 }       
+    \end{equation*}
+    But then we can see that 
+    \begin{equation*}
+        \mathcal{T}(\mat{ 0 \\ 0 }) + \mathcal{T}(\mat{ 0 \\ 0 }) = \mat{ 2 \\ 0
+        } + \mat{ 2 \\ 0 } = \mat{ 4 \\ 0 }         
+    \end{equation*}
+    Then we conclude that $\mathcal{T}(\vec{j} + \vec{k}) \neq
+    \mathcal{T}(\vec{j}) + \mathcal{T}(\vec{k})$ 
+\end{eg}
+
+\begin{eg}
+    We'll show that $\mathcal{P}$ is a linear transformation 
+    \sidenote{We'll show that it is closed under addition and multiplication}
+    \begin{equation*}
+        \mathcal{P}(\mat{ x \\ y }) = \mathit{comp}_{\vec{u}} {\mat{ x \\ y }} 
+    \end{equation*}
+    Let $\vec{j}, \vec{k} \in \mathbb{R}^2$ we know that 
+    \begin{equation*}
+        \mathit{comp}_{\vec{u}} {\vec{j}}  = \left( \frac{\vec{u} \cdot
+        \vec{j}}{\left\Vert \vec{u} \right\Vert^2} \right) \vec{u} \text{ and }
+        \mathit{comp}_{\vec{u}} {\vec{k}}  = \left( \frac{\vec{u} \cdot
+        \vec{k}}{\left\Vert \vec{u} \right\Vert^2} \right) \vec{u}
+    \end{equation*}
+    And thus their product yields
+    \begin{align*}
+        \mathit{comp}_{\vec{u}} {\vec{j}}  + \mathit{comp}_{\vec{u}} {\vec{k}}
+        &= \left( \frac{\vec{u} \cdot \left( \vec{j} + \vec{k}
+        \right)}{\left\Vert \vec{u} \right\Vert^2} \right) \vec{u}\\
+    \end{align*}
+    Which is equal to 
+    \begin{equation*}
+        \mathit{comp}_{\vec{u}} {\left( \vec{j} + \vec{k} \right)}     
+    \end{equation*}
+    We must then show that it holds under multiplication let $\alpha \in
+    \mathbb{R}$ and we know that 
+    \begin{equation*}
+        \alpha \mathit{comp}_{\vec{u}} {\vec{j}} = \alpha \left( \frac{\vec{u}
+        \cdot \vec{j}}{ \left\Vert \vec{u} \right\Vert^2} \right) \vec{u} =
+        \left( \frac{\vec{u} \cdot \alpha \vec{j}}{\left\Vert \vec{u}
+        \right\Vert^2} \right) \vec{u} = \mathit{comp}_{\vec{u}} {\alpha \vec{j}} 
+    \end{equation*}
+\end{eg}
+
+% section linear_transformations (end)
+
+% chapter week_9 (end)
+
+\appendix
+
+\backmatter
+
+\fancyhead[LE]{\thepage \enspace \textsl{\leftmark}}
+
+\nocite{*}
+
+\bibliography{references}
+
+\printindex
+
+\end{document}
+% vim:tw=80:fdm=syntax

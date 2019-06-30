@@ -1,0 +1,123 @@
+\usepackage{geometry}
+\geometry{
+  letterpaper,
+  left=0.7in,
+  right=3in,
+  bottom=1in
+}
+\usepackage[parfill]{parskip}
+\usepackage{graphicx}
+
+% Essential Packages
+\usepackage{makeidx}
+\makeindex
+\usepackage{enumitem}
+\usepackage{ragged2e}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{marvosym}
+\usepackage[fixed]{fontawesome5}
+\usepackage{pgf,tikz}
+\usepackage{tikz-cd}
+\usepackage{mathtools}
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+\usepackage{array}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{silence}
+  \WarningFilter*{latex}{Marginpar on page \thepage\space moved}
+\usepackage[hyperref]{ntheorem}
+\usepackage{hyperref}
+\usepackage[noabbrev,capitalize,nameinlink]{cleveref}
+\usepackage[most]{tcolorbox}
+
+% hyperref Package Settings
+\usepackage{colorscheme-student}
+\hypersetup{
+	colorlinks,
+  breaklinks=true,
+	allcolors=magenta
+}
+\def\UrlBreaks{\do\/\do-}
+
+% fancyhdr
+\makeatletter
+\pagestyle{fancy}
+\rhead{\textsl{\@title} \enspace \thepage}
+\makeatother
+
+% tikz
+\usepgfplotslibrary{polar}
+\usepgflibrary{shapes.geometric}
+\usetikzlibrary{angles,patterns,calc,decorations.markings,arrows.meta,tikzmark,bending}
+\tikzset{midarrow/.style 2 args={
+        decoration={markings,
+            mark= at position #2 with {\arrow{#1}} ,
+        },
+        postaction={decorate}
+    },
+    midarrow/.default={latex}{0.5}
+}
+\def\centerarc[#1](#2)(#3:#4:#5)% Syntax: [draw options] (center) (initial angle:final angle:radius)
+    { \draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5); }
+
+% enumitems
+\newlist{inlinelist}{enumerate*}{1}
+\setlist*[inlinelist,1]{%
+  label=(\roman*),
+}
+
+% Theorem Style Customization
+\setlength\theorempreskipamount{2ex}
+\setlength\theorempostskipamount{3ex}
+
+% ntheorem Declarations
+\theorembodyfont{\normalfont}
+\theoremstyle{break}
+\theoremprework{{\rule{\linewidth}{1pt}}}
+\theorempostwork{{\rule{\linewidth}{1pt}}}
+\newtheorem*{proof}{\faPencil* Proof}
+
+\theoremprework{\rule{\linewidth}{1pt}}
+\theorempostwork{\rule{\linewidth}{1pt}}
+\newtheorem*{solution}{\faPencil* Solution}
+\newtheorem*{remark}{Remark}
+\newtheorem*{note}{Note}
+
+% ntheorem listtheorem style
+\makeatother
+\newlength\widesttheorem
+\AtBeginDocument{
+  \settowidth{\widesttheorem}{Proposition A.1.1.1\quad}
+}
+
+% Custom table columning
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% Graph styles
+\pgfplotsset{compat=1.15}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{four quads/.append style={axis x line=middle, axis y line=
+middle, xlabel={$x$}, ylabel={$y$}, axis equal }}
+\pgfplotsset{four quad complex/.append style={axis x line=middle, axis y line=
+middle, xlabel={$\re$}, ylabel={$\im$}, axis equal }}
+
+% Shortcuts
+\input{notations.tex}
+
+\newcommand{\hlb}[2]{\colorbox{#1!10!background}{\textbf{#2}}}
+\newcommand{\hlbnotea}[1]{\hlb{green}{#1}}
+\newcommand{\hlbnoteb}[1]{\hlb{cyan}{#1}}
+\newcommand{\hlbnotec}[1]{\hlb{brown}{#1}}
+\newcommand{\hlbnoted}[1]{\hlb{magenta}{#1}}
+\newcommand{\hlbnotee}[1]{\hlb{red}{#1}}
