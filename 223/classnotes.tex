@@ -37,6 +37,35 @@ Linear transformations and such
 \end{defn}
 
 \begin{eg}
+    We'll show that $\mathcal{R}$ is a linear transformation where $\mathcal{R}$
+    is a counter clockwise rotation of $\frac{\pi }{2}$ radians
+    \begin{equation*}
+       \mathcal{R}\left(\mat{ x \\ y }\right) = \mat{ 0 & -1 \\ 1 & 0 } \mat{ x \\ y }
+    \end{equation*}
+    Let $\vec{u}, \vec{v} \in \mathbb{R}^2$ we know that for some $x_1, y_1,
+    x_2, y_2 \in \mathbb{R}$ that
+    \begin{equation*}
+        \vec{u} = \mat{ x_1 \\ y_1 } \text{ and } \vec{v} = \mat{ x_2 \\ y_2 }
+    \end{equation*}
+    \begin{align*}
+        \mathcal{R}\left(\mat{ x_1 \\ y_1 }\right) + \mathcal{R}\left(\mat{ x_2
+        \\ y_2 }\right) &= \mat{ -y_1 \\ x_1 } + \mat{ -y_2 \\ x_2 }\\
+                        &= \mat{ - \left( y_1 + y_2 \right) \\ x_1 + x_2 }\\
+    \end{align*}
+    Which is exactly equal to $\mathcal{R}\left(\vec{u} + \vec{v}\right)$ as
+    required, then let $\alpha \in \mathbb{R}$ and we know that
+    \begin{equation*}
+        \mathcal{R}\left(\alpha \vec{u}\right) = \mat{ -\alpha y_1 \\ \alpha x_1 }
+    \end{equation*}
+    But also that 
+    \begin{equation*}
+        \alpha \mathcal{R}\left(\vec{u}\right) = \mat{ -\alpha y_1 \\ \alpha x_1 }
+    \end{equation*}
+    So then we've shown that $\mathcal{R}\left(\alpha \vec{u}\right) = \alpha
+    \mathcal{R }\left(\vec{u}\right)$ but also that $\mathcal{R}\left(\vec{u} + \vec{v}\right) = \mathcal{R}\left(\vec{u}\right) + \mathcal{R}\left(\vec{v}\right)$ as req'd
+\end{eg}
+
+\begin{eg}
     We'll show that $\mathcal{T} : \mathbb{R}^2 \to \mathbb{R}^2 $ where
     $\mathcal{T} \mat{ x \\ y } = \mat{ x + 2 \\ y }$ is not a linear
     transformation.
@@ -88,6 +117,22 @@ Linear transformations and such
 \end{eg}
 
 % section linear_transformations (end)
+
+\section{Image}%
+\label{sec:image}
+% section image
+
+\begin{defn}[Image]\index{Image}\label{defn:image}
+    Let $L : V \to W $ be a transformation and let $X \subseteq V$ be a set. The
+    \hlnotea{ image of the set $X$ under L }, denoted as $L\left(X\right)$, is
+    the set
+    \begin{equation*}
+        L\left(X\right) = \left\{ \vec{x} \in W: \vec{x} =
+        L\left(\vec{y}\right) \text{ for some  } \vec{y} \in X \right\}
+    \end{equation*}
+\end{defn}
+
+% section image (end)
 
 % chapter week_9 (end)
 
