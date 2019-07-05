@@ -439,17 +439,6 @@ pre_expand "test(snip)"
 snippet "(small|[gbBpvV])?ghp(rix)?(\d+)x(\d+)" "Generate (small|[bBpvV])?matrix of *rows* by *columns*" ir
 endsnippet
 
-#context "math()"
-#snippet smart "Smart Matrix"
-#	${1: text} 
-#	`!p snip.rv=matrix_creator(t[1])`
-#endsnippet
-
-context "math()"
-snippet qmat "Quick Matrix" iA
-\mat{$1}$0
-endsnippet
-
 context "math()"
 snippet 3mat "3 by 1 Matrix" iA
 \mat{ $1 \\\\ $2 \\\\ $3 }$0
@@ -1140,7 +1129,12 @@ endsnippet
 
 context "math()"
 snippet ff "function at x" iA
-${1:f}(${2:x})$0
+${1:f}\left(${2:x}\right)$0
+endsnippet
+
+context "math()"
+snippet Ff "Captial Function" iA
+\mathcal{${1:f}}\left(${2:x}\right)$0
 endsnippet
 
 context "math()"

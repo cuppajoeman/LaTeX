@@ -116,6 +116,17 @@ Linear transformations and such
     \end{equation*}
 \end{eg}
 
+\begin{eg}
+    We'll show that $W : \mathbb{R}^2 \to \mathbb{R}^2 $ is not a linear transformation, where
+    \begin{equation*}
+        \mathcal{W}\left(\mat{ x \\ y }\right) = \mat{ x^2 \\ y }
+    \end{equation*}
+    Let $\vec{x} = \mat{ x \\ y }$, and $\alpha  \in \mathbb{R}$  we know that
+    \begin{equation*}
+        \mathcal{W}\left(\alpha \mat{ x \\ y }\right) = \alpha^2 \mat{ x^2 \\ y^2 } \neq \alpha \mat{ x^2 \\ y^2 } = \alpha \mathcal{W}\left(\mat{ x \\ y }\right) 
+    \end{equation*}
+\end{eg}
+
 % section linear_transformations (end)
 
 \section{Image}%
@@ -132,7 +143,91 @@ Linear transformations and such
     \end{equation*}
 \end{defn}
 
+Let $S = \left\{ \mat{ x \\ y }: 0 \le x, y \le 1 \right\}$ be a filled in unit
+square in the first quadrant. And let $C = \left\{ \vec{0}, \vec{e_1},
+\vec{e_2}, \vec{e_1} + \vec{e_2} \right\} \subseteq \mathbb{R}^2$ be the corners of the unit square 
+
+\begin{ex}
+    We'll find what $\mathcal{R}\left(C\right)$ is, by the definition of image we have that
+    \begin{align*}
+        \mathcal{R}\left(C\right) &= \left\{ \mathcal{R}\left(\vec{0}\right), \mathcal{R}\left(\vec{e_1}\right), \mathcal{R}\left(\vec{e_2}\right), \mathcal{R}\left(\vec{e_1} + \vec{e_2}\right) \right\}\\
+                                  &= \left\{ \vec{0}, \vec{e_2}, -\vec{e_1}, \vec{e_2} - \vec{e_1} \right\}\\
+    \end{align*}
+\end{ex}
+
+\begin{ex}
+    We'll now find what $\mathcal{W}\left(C\right)$ \sidenote{Notice that it doesn't have to be a linear transformation} is, again we will use the definition so we have
+    \begin{align*}
+        \mathcal{W}\left(C\right) = \left\{ \vec{0}, \vec{e_1}, \vec{e_2}, \vec{e_1} + \vec{e_2} \right\}
+    \end{align*}
+\end{ex}
+
+\begin{ex}
+    $\mathcal{T}\left(C\right) = \left\{ \mat{ 2 \\ 0 }, \mat{ 3 \\ 0 }, \mat{ 1 \\ 2 }, \mat{ 1 \\ 3 } \right\}$ \sidenote{The square has been shifted right 2 units}
+\end{ex}
+
+\begin{ex}
+    We'll now operate on $S$, to find $\mathcal{R}\left(S\right)$ we imagine all the vectors in $\mathbb{R}^2$ that have been rotated $\frac{\pi }{2}$ radians counter clockwise from the intial square, or we could also multiply by the rotation matrix, either way we get the set
+    \begin{equation*}
+        \mathcal{R}\left(S\right) = \left\{ \mat{ -y \\ x }: 0 \le x, y \le 1 \right\}
+    \end{equation*}
+\end{ex}
+
+\begin{ex}
+    For $\mathcal{T}\left(S\right)$ we can re-imagine how we determined $\mathcal{T}\left(C\right)$ but for all the points in the square, this gives us the full square shifted horizontally by two units, so we have
+    \begin{equation*}
+        \mathcal{T}\left(S\right) = \left\{ \mat{ x + 2 \\ y }: 0 \le x, y \le 1 \right\}
+    \end{equation*}
+\end{ex}
+
+\begin{ex}
+    As for $\mathcal{P}\left(S\right)$ this is a bit more complicated, so we'll break it into to parts, the first is algebreically and the other will be vizually.
+
+    Algebraically we know $\mathit{proj}_{\vec{u}} {\mat{ x \\ y }} $ will look like
+    \begin{equation*}
+        \left( \frac{\vec{u} \cdot \mat{ x \\ y }}{\left\Vert \vec{u} \right\Vert^2} \right) \vec{u}
+    \end{equation*}
+    But $\vec{u} = \mat{ 2 \\ 3 }$ so then
+    \begin{equation*}
+        \mathit{proj}_{\vec{u}} {\mat{ x \\ y }}  = \left( \frac{2x + 3y}{13} \right) \mat{ 2 \\ 3 }
+    \end{equation*}
+    So then we can conclude that
+    \begin{equation*}
+        \mathcal{P}\left(S\right) = \left\{ \frac{2x + 3}{13} \mat{ 2 \\ 3 } : 0 \le x, y \le 1 \right\}    
+    \end{equation*}
+\end{ex}
+
+\begin{ex}
+    Let $\ell = \left\{ t \vec{a} + \left( 1 - t \right) \vec{b} \text{ for some } t \in \left[ 0, 1 \right] \right\}$ and $\mathcal{A}$ be a linear transformation, we know that $\mathcal{A}\left(\ell\right)$ represents all vectors that are in the range of the linear transformation, let $\vec{u} \in \ell$,  then we know that $\vec{u} = t \vec{a} + \left( 1 - t \right)\vec{b} \text{ for some } t \in \mathbb{R}$ then we know 
+    \begin{align*}
+        \mathcal{A}\left(\vec{u}\right) &= \mathcal{A}\left(t \vec{a} + \left( 1 - t \right) \vec{b}\right)\\
+                                        &= t\mathcal{A}\left(\vec{a}\right) + \left( 1 - t \right) \mathcal{A}\left(\vec{b}\right)\\
+    \end{align*}
+    And since we know that $\mathcal{A}\left(\vec{a}\right), \mathcal{A}\left(\vec{b}\right)$ are just two transformed vectors, then this defines a new line segment with endpoints $\mathcal{A}\left(\vec{a}\right) \text{  and  } \mathcal{A}\left(\vec{b}\right)$. 
+\end{ex}
+
+\begin{ex}
+    We'll now find the linear transformation that italicizes N, FIG below
+
+    To determine the linear transformation we start with the fact that if $A$ is some matrix then $A \vec{e_i} $ results in the ith column of $A$.
+
+    We then choose two points and see how they moved after the transormation, per the hint above we'll choose two vectors that reside on the x, y axis. \sidenote{Our origin is the corner of the N}, so our first vector will be $\mat{ 0 \\ 3 }$ and our second is $\mat{ 2 \\ 0 }$. Thus we know the following
+    \begin{enumerate}
+        \item $\mathcal{I}\left(\mat{ 0 \\ 3 }\right) = \mat{ 4 \\ 1 }$, but we know that applying a linear transformation is the same as just multiplying by some matrix so we know that
+            \begin{equation*}
+                \mat{ a & b \\ c & d } \mat{ 0 \\ 3 } = \mat{ 4 \\ 1 } \Leftrightarrow \mat{ 3b \\ 3d } = \mat{ 4 \\ 1 }
+            \end{equation*}
+            And so we conclude that $b = \frac{4}{3} \text{ and } d = \frac{1}{3}$ so we've determined the first column of the matrix
+        \item $\mathcal{I}\left(\mat{ 2 \\ 0 }\right) = \mat{ 2 \\ 0 }$ thus we know that $2a = 2 \Leftrightarrow a = 1 \text{ and that } b = 0$ and we have our second column of the matrix.
+    \end{enumerate}
+\end{ex}
+
 % section image (end)
+
+\begin{defn}[Range]\index{Range}\label{defn:range}
+    The \hlnotea{range} of a linear transformatoin $T : V \to W $ is the set of
+    vectors that $T$ can output. That is 
+\end{defn}
 
 % chapter week_9 (end)
 
