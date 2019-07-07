@@ -345,11 +345,80 @@ onto $\vec{u}$.
         T\left(\vec{u}\right) = 0 \text{ and } T\left(\vec{x}\right) = 0
     \end{equation*}
     Taking the sum of the above equations we get $0 = T\left(\vec{u}\right) +
-    T\left(\vec{x}\right) = $ 
+    T\left(\vec{x}\right) = \mathcal{T}\left(\vec{x} + \vec{y}\right)$ from the definition of linear transformation. But by the definition of null set, we can conclude that $\vec{x} + \vec{y} \in \mathit{null} {\left( T \right)} $ because $T\left(\vec{x} + \vec{y}\right) = 0$. 
+    
+    Let $\alpha \in \mathbb{R}$ and from above we know that $T\left(\vec{x}\right) = 0 \Leftrightarrow \alpha T\left(\vec{x}\right) = \alpha 0 = 0$ and since $T$ is a linear transformationwe can say that $T\left(\alpha \vec{x}\right) = 0$ so then we know that $\alpha \vec{x} \in \mathit{null} {\left( T \right)} $ 
 \end{proof}
 
+\begin{proof}
+    Let $\vec{j}, \vec{k} \in \mathit{range} {\left( T \right)} $ so we know that 
+    \begin{equation*}
+        \vec{j} = T\left(\vec{x}\right) \text{ and } \vec{k} = T\left(\vec{x_1}\right) \text{ for some } \vec{x}, \vec{x_1} \in R^{n}
+    \end{equation*}
+    Then we know that $\vec{j} + \vec{k} = T\left(\vec{x} + \vec{x_1}\right)$ and thus we conclude that $\vec{j} + \vec{k} \in \mathit{range} {\left( T \right)} $ 
 
+    Let $\alpha \in \mathbb{R}$ and we know that $\alpha \vec{j} = \alpha T\left(\vec{x}\right) = T\left(\alpha \vec{x}\right)$ and so $\alpha \vec{j} \in \mathit{range} {\left( T \right)} $ as required.
+\end{proof}
 
+\section{Tutorial 5}%
+\label{sec:tutorial_5}
+% section tutorial_5
+
+\begin{enumerate}
+    \item $\mathcal{B}$ is a basis for a subspace $V$ if $\mathcal{B}$ is linearly independent and $\mathit{span} {\left( \mathcal{B} \right)}  = V$. 
+    \item 
+        \begin{enumerate}
+            \item We'll verify if the fectors in $\mathcal{B}$ are in a basis. So for it to be a basis it must be linearly independent, and we'll assume that we are looking for a basis for the subspace $\mathbb{R}^{3}$. We'll start by looking at the linear combinations of each vector in the matrix that gives the zero vector to determine independendence, so we have \sidenote{These are augmented matricies for the zero vector.}
+                \begin{gather*}
+                    \mat{ 1 & 0 & 2 \\ -1 & 1 & -2 \\ 0 & 0 & 1 } \Leftrightarrow \mat{ 1 & 0 & 2 \\ 0 & 1 & 0 \\ 0 & 0 & 1 }
+                \end{gather*}
+                And thus we have one solution to $\vec{0}$ and so these vectors are linearly independent, and they span $\mathbb{R}^{3}$. 
+
+                We'll now focus our attention to $\mathcal{C}$ using the same process as above we get
+                \begin{equation*}
+                    \mat{ 1 & 0 & 2 \\ - & 1 & -2 \\ 1 & 1 & 3 } \Leftrightarrow \mat{ 1 & 0 & 2 \\ 0 & 1 & 0 \\ 0 & 1 & 1 } \Leftrightarrow \mat{ 1 & 0 & 2 \\ 0 & 1 & 0 \\ 0 & 0 & 1 }
+                \end{equation*}
+                And by the same reasoning as before $\mathcal{C}$  is a basis for $\mathbb{R}^{3}$. 
+            \item We'll start by finding what $\left[ \vec{v} \right]_{\mathcal{E}}$ is, but we don't have to do much as $\vec{v} = 4\vec{e_1} - 4\vec{e_2} + 2\vec{e_3}$ so we know that $\left[ \vec{v} \right]_{\mathcal{E}} = \mat{ 4 \\ -4 \\ 2 }$.
+
+                Moving to $\left[ \vec{v} \right]_{\mathcal{B}}$ we know we are looking for some $\alpha , \beta , \gamma \in \mathbb{R}$ that satisfy
+                \begin{equation*}
+                    \alpha \mat{ 1 \\ -1 \\ 0 } + \beta \mat{ 0 \\ 1 \\ 0 } + \gamma \mat{ 2 \\ -2 \\ 1 } = \mat{ 4 \\ -4 \\ 2 }
+                \end{equation*}
+                This relates to a system of equations, which is then stored in a matrix, so we have
+                \begin{equation*}
+                    \mat{ 1 & 0 & 2 & 4 \\ -1 & 1 & -2 & -4 \\ 0 & 0 & 1 & 2 } \Leftrightarrow \mat{ 1 & 0 & 2 & 4 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 2 }
+                \end{equation*}
+                And thus we conclude that $\gamma = 2 ,\beta = 0, \alpha = 4 = 2 \gamma  = 0$ and so $\left[ \vec{v} \right]_{\mathcal{B}} = \mat{ 0 \\ 0 \\ 2 }$. 
+
+                Now we'll figure out $\left[ \vec{v} \right]_{\mathcal{C}}$ so again we apply the same idea to get the following matrix
+                \begin{equation*}
+                    \mat{ 1 & 0 & 2 & 4 \\ -1 & 1 & -2 & -4 \\ 1 & 1 & 3 & 2 } \Leftrightarrow \mat{ 1 & 0 & 2 & 4 \\ 0 & 1 & 0 & 0 \\ 0 & 1 & 1 & -2 } \Leftrightarrow \mat{ 1 & 0 & 2 & 4 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & -2 }
+                \end{equation*}
+                And now we conclude that $\gamma = -2, \beta = 0, \alpha = 8$ and thus we have
+                \begin{equation*}
+                    \left[ \vec{v} \right]_{\mathcal{C}} = \mat{ 8 \\ 0 \\ -2 }
+                \end{equation*}
+            \item To determine $\left[ 7 \vec{v} \right]_{\mathcal{E}}$ we know we are looking for the solution to 
+                \begin{equation*}
+                    \alpha_1 \vec{e_1} + \beta_1 \vec{e_2} + \gamma_1 \vec{e_3} = 7 \vec{v}
+                \end{equation*}
+                But previously we know that the coeficients should be when we were just looking for $\vec{v}$ multiplying that equation by 7 on both sides tells us that 
+                \begin{equation*}
+                    \left[ 7 \vec{v} \right]_{\mathcal{E}} = \mat{ 28 \\ -28 \\ 14 }
+                \end{equation*}
+
+                Then using the same process as above we can determine that 
+                \begin{equation*}
+                    \left[ 7\vec{v} \right]_{\mathcal{B}} = \mat{ 0 \\ 0 \\ 14 } \text{ and } \left[ \vec{v} \right]_{\mathcal{C}} = \mat{ 57  \\ 0 \\ -14 }
+                \end{equation*}
+            \item I would prefer to write my measurements of scalar multiples of $\vec{v}$ in terms of the $\mathcal{B}$ basis as I only have to do one calculation.
+        \end{enumerate}
+    \item Get help with this one
+    \item I chose $\mathcal{E}_{3}$ as then I could represent the vector $\vec{v} = \mat{ 1 \\ .12 }$ as $\left[ \mat{ -11 \\ 12 } \right]_{\mathcal{E}_{3}}$ 
+\end{enumerate}
+
+% section tutorial_5 (end)
 
 % chapter week_9 (end)
 
