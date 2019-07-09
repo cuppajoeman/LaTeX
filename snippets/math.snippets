@@ -302,7 +302,17 @@ endsnippet
 
 context "math()"
 snippet == "equals" iA
-&=$1\\\\
+&= $1 \\\\
+endsnippet
+
+context "math()"
+snippet ba "add two numbers" iA
+$1 + $2
+endsnippet
+
+context "math()"
+snippet bm "multiply two numbers" iA
+$1 \cdot $2
 endsnippet
 
 context "math()"
@@ -330,34 +340,40 @@ snippet bimp "bi-conditional" Ai
 \Leftrightarrow
 endsnippet
 
+
 context "math()"
-snippet vep "var epsilon" iA
+snippet pi "pi" iA
+\pi
+endsnippet
+
+context "math()"
+snippet aa "alpha" iA
+\alpha
+endsnippet
+
+context "math()"
+snippet bb "beta" iA
+\beta
+endsnippet
+
+context "math()"
+snippet gg "gamma" iA
+\gamma
+endsnippet
+
+context "math()"
+snippet dd "delta" iA
+\delta
+endsnippet
+
+context "math()"
+snippet ee "var epsilon" iA
 \varepsilon
 endsnippet
 
 context "math()"
-snippet pi "pi" iA
-\pi $0
-endsnippet
-
-context "math()"
-snippet alpha "alpha" iA
-\alpha $0
-endsnippet
-
-context "math()"
-snippet beta "beta" iA
-\beta $0
-endsnippet
-
-context "math()"
-snippet gamma "gamma" iA
-\gamma $0
-endsnippet
-
-context "math()"
-snippet delta "delta" iA
-\delta $0
+snippet ll "lambda" iA
+\lambda
 endsnippet
 
 context "math()"
@@ -1008,8 +1024,13 @@ snippet invs "inverse" iA
 endsnippet
 
 context "math()"
-snippet CC "kromme" iA
-\C
+snippet CC "Complex Numbers" iA
+\mathbb{C}
+endsnippet
+
+context "math()"
+snippet cn "Complex Number" iA
+${1:\alpha} + ${2:\beta} i$0
 endsnippet
 
 context "math()"
