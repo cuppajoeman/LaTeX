@@ -2,7 +2,7 @@
 \documentclass[notoc,notitlepage]{tufte-book}
 % \nonstopmode % uncomment to enable nonstopmode
 
-\usepackage{classnotetitle}
+\usepackage{classnotetitle, gauss}
 
 \newcommand\mat[1]{\begin{bmatrix}#1\end{bmatrix}}
 
@@ -35,6 +35,12 @@ Linear transformations and such
         \item $\mathcal{T}(a \vec{u}) = a \mathcal{T}(\vec{u})$ 
     \end{enumerate}
 \end{defn}
+
+%TODO: Prove those two properties hold
+
+\begin{thm}[Unique Matrix for LT's]\index{Unique Matrix for LT's}\label{thm:unique_matrix_for_lt_s}
+    For any linear transformation $L : V \to W $ there is a matrix $A$  such that $L\left(\vec{x}\right) = A\vec{x}$ for all $\vec{x} \in V$ 
+\end{thm}
 
 \begin{eg}
     We'll show that $\mathcal{R}$ is a linear transformation where $\mathcal{R}$
@@ -420,7 +426,267 @@ onto $\vec{u}$.
 
 % section tutorial_5 (end)
 
+\subsection{Video Notes}%
+\label{sub:video_notes}
+% subsection video_notes
+
+
+
+% subsection video_notes (end)
+
+\subsection{Extra Textbook Questions}%
+\label{sub:extra_textbook_questions}
+% subsection extra_textbook_questions
+
+\begin{ex}
+    A1
+    \begin{itemize}
+        \item 
+    \begin{align*}
+    \begin{gmatrix}[b]
+        1 & 0 & -1 & 3 \\
+        0 & 1 & 3 & 1 \\
+        1 & 2 & 1 & 6 \\
+        2 & 5 & 1 & 1 
+        \rowops
+        \add[-1]{0}{2}
+        \add[-2]{0}{3}
+    \end{gmatrix}
+        &\rightsquigarrow
+    \begin{gmatrix}[b]
+        1 & 0 & -1 & 3 \\
+        0 & 1 & 3 & 1 \\
+        0 & 2 & 2 & 3 \\
+        0 & 5 & 3 & -5
+        \rowops
+        \add[-2]{1}{2}
+        \add[-5]{1}{3}
+    \end{gmatrix}
+        \rightsquigarrow\\
+    \begin{gmatrix}[b]
+        1 & 0 & -1 & 3 \\
+        0 & 1 & 3 & 1 \\
+        0 & 0 & -4 & 1 \\
+        0 & 0 & -12 & -10
+        \rowops
+        \add[-3]{2}{3}
+    \end{gmatrix}
+        \rightsquigarrow
+    \begin{gmatrix}[b]
+        1 & 0 & -1 & 3 \\
+        0 & 1 & 3 & 1 \\
+        0 & 0 & -4 & 1 \\
+        0 & 0 & 0 & - 13
+    \end{gmatrix}
+    \end{align*}
+We can stop here because we see that in the bottom row we have $0 = -13$ which is certainly false so the system is inconsistent. So we can conclude that $\mat{ 3 \\ 1 \\ 6 \\ 1 }$ is not in the range of L.
+        \item We'll figure out if $\mat{ 3 \\ -5 \\ 1 \\ 5 }$ is in the range of L, so we're looking for some vector in $\mathbb{R}^{4}$ that becomes that vector under L. Represented as an augmented matrix we get
+        \begin{align*}
+            \begin{gmatrix}[b]
+                1 & 0 & -1 & 3 \\
+                0 & 1 & 3 & -5 \\
+                1 & 2 & 1 & 1 \\
+                2 & 5 & 1 & 5 
+            \end{gmatrix}
+            &\rightsquigarrow
+            gmat2x2
+            \rightsquigarrow
+            ges
+        \end{align*}
+    \end{itemize}
+\end{ex}
+
+% subsection extra_textbook_questions (end)
+
+\subsection{Extra Handout}%
+\label{sub:extra_handout}
+% subsection extra_handout
+
+
+
+% subsection extra_handout (end)
+
 % chapter week_9 (end)
+
+\chapter{Week 10}%
+\label{chp:week_10}
+% chapter week_10
+
+\section{Lecture 1}%
+\label{sec:lecture_1}
+% section lecture_1
+
+Null space \& Range
+
+\begin{defn}[Induced Transformation]\index{Induced Transformation}\label{defn:induced_transformation}
+    Let $M$ be an $n \times m $ matrix. We say $M$ \hlnotea{induces} a linear transfomration $T_{M} : \mathbb{R}^{m} \to \mathbb{R}^{M}$ defined by 
+    \begin{equation*}
+        \left[ T_{M}\vec{v} \right]_{\mathcal{E'}} = M\left[ \vec{v} \right]_{\mathcal{E}}  
+    \end{equation*}
+\end{defn}
+
+\begin{eg}
+    For example from the above definition if we have the vector $\vec{v} = \left[ \mat{ 1 \\ 2 } \right]_{\mathcal{B}}$ and we wanted to determine what $T_{M}\left(\vec{v}\right)$ is we must first translate $\left[ \mat{ 1 \\ 2 } \right]_{\mathcal{B}}$ to the standard basis. One method to do so is to find the matrix $X$ that translates from one basis to another. Then plug that new box of numbers into $M \left[ \vec{v} \right]_{\mathcal{E}}$ and we get our solution to $T_{M}\left(\vec{v}\right)$ 
+\end{eg}
+
+\begin{eg}
+    The difference between $M\vec{v}$ and $M \left[ \vec{v} \right]_{\mathcal{E}}$ is the level of rigor? on the right we have something precise but on the left we don't. Also we can remember that $\left[ \vec{v} \right]_{\mathcal{E}}$ represents a box of numbers, the coordinates in the basis, where as $\vec{v}$ is assumed to be in the $\mathcal{E}$ basis but this could alos mean a vector just floating in space without any type of basis involved.
+\end{eg}
+
+\begin{eg}
+    To determine what $\left[ T_{M}\vec{e_1} \right]_{\mathcal{E'}}$ use the fact that it's equal to $M\left[ \vec{e_1} \right]_{\mathcal{E}}$ and we know that this corresponds to the first column in $M$ as $\left[ \vec{e_1} \right]_{\mathcal{E}} = \mat{ 1 \\ 0 }$ 
+\end{eg}
+
+\begin{eg}
+    We start by knowing that each column must be in the range of $T_{M}$ by inputting $\vec{e_i}$ into the equation. But we showed last time that the range is a subspace which means that if we find two elements in it, we know the sum and product of the vectors is also in the range, so we know that the span of each column is a susbset of the range. % TODO: why is this a susbset but not equal?
+    We then want to see if the span of the columns is actually eqaual to the range, so we must show the other direction now. So let $\vec{x_{1}}, \vec{x_2} \in \mathit{range} {\left( T_{M} \right)} $ so we know that $\vec{x} = T_{M}\left(\vec{v}\right)$ for some $\vec{v} \in \mathbb{R}^{m} \Leftrightarrow \left[ \vec{x} \right]_{\mathcal{E'}} = \left[ T_{M}\left(\vec{v}\right) \right]_{\mathcal{E'}} \Leftrightarrow \left[ \vec{x} \right]_{\mathcal{E'}} = M \left[ \vec{v} \right]_{\mathcal{E}}$ and we recall that $M$ is only a list of vectors and that $\left[ \vec{v} \right]_{\mathcal{E}}$ is but a box of numbers and so using matrix vector multiplication we know that we just get a linear combination of the vectors as columns in $M$ and so we showed that $\vec{x}$ looks like a vector in the span of the columns of $M$ as we wanted.
+\end{eg}
+
+\begin{defn}[Fundamental Subspaces]\index{Fundamental Subspaces}\label{defn:fundamental_subspaces}
+    Associated with any matrix $M$ are three fundamental subspaces: the \hlnotea{row space} of $M$,  denoted $row(M)$, is the span of the rows of $M$ the \hlnotea{column space} of M, denoted $col(M)$ , is the span of the columns of $M$; and the \hlnotea{null space} of $M$, denoted $\mathit{null} {\left( M \right)} $,  is the set of solutions to $M\vec{x} = 0$ 
+\end{defn}
+
+Let $A = \mat{ 1 & 0 & 0 \\ 0 & 1 & 0 }$ 
+
+\begin{eg}
+    We know that the row space is $\mathit{span} {\left\{ \mat{ 1 \\ 0 \\ 0 }, \mat{ 0 \\ 1 \\ 0 } \right\}} $ or
+    
+    $\left\{ \mat{ \alpha \\ \beta \\ 0 } \in \mathbb{R}^3, \text{ for some } \alpha, \beta \in \mathbb{R} \right\}$  
+\end{eg}
+
+\begin{eg}
+    The column space of $A$ is $\mathit{span} {\left\{ \mat{ 1 \\ 0 }, \mat{ 0 \\ 1 }, \mat{ 0 \\ 0 } \right\}} $ or equivalently $\mathbb{R}^2$, we can tell instantly that the column space is not the same as the row space as one is in $\mathbb{R}^{3}$ where the othe is $\mathbb{R}^2$. 
+\end{eg}
+
+\begin{eg}
+    We are looking for all the vectors that are perpendicular to $\mat{ 1 \\ 0 \\ 0 } \text{ and  } \mat{ 0 \\ 1 \\ 0 }$ so we require the the vectors $\vec{x} \in \mathbb{R}^3$ such that 
+    \begin{gather*}
+        \mat{ 1 \\ 0 \\ 0 } \cdot \mat{ x \\ y \\ z } = 0 \text{ and } \mat{ 0 \\ 1 \\ 0 } \cdot \mat{ x \\ y \\ z } = 0\\
+        x + y = 0\\
+        x = -y
+    \end{gather*}
+    And so we know all solutions are 
+    \begin{equation*}
+        \alpha \mat{ -1 \\ 1 \\ 0 } + \beta \mat{ 0 \\ 0 \\ 1 }, \text{ for all } \alpha, \beta \in \mathbb{R}
+    \end{equation*}
+\end{eg}
+
+\begin{eg}
+    For the null space of $A$ we know we are looking for all vectors $\mat{ x \\ y \\ z } \in \mathbb{R}^3$ so that
+    \begin{gather*}
+        A \mat{ x \\ y \\ z } = 0 \\
+        \mat{ 1 & 0 & 0 \\ 0 & 1 & 0 } \mat{ x \\ y  \\ z } = 0\\
+        \mat{ 1 \\ 0 }x  + \mat{ 0 \\ 1 }y   + \mat{ 0 \\ 0 }z   = \mat{ 0 \\ 0 }
+    \end{gather*}
+    So we determine that $x = y = 0$ but $z \in \mathbb{R}$ so we can think of this as the z axis coming out from the x y plane.
+\end{eg}
+
+\begin{eg}
+    The range of $T_{A} : \mathbb{R}^3 \to \mathbb{R}^2 $ 
+    \begin{gather*}
+        \left\{ \vec{u} \in \mathbb{R}^2: T_{A}\left(\vec{x}\right) = \vec{u}, \text{ for some } \vec{x} \in \mathbb{R}^3 \right\} \\
+        \left\{ \vec{u} \in \mathbb{R}^2: \mat{ 1 & 0 & 0 \\ 0 & 1 & 0 } = \vec{u}, \text{ for some } \vec{x} \in \mathbb{R}^3 \right\}
+    \end{gather*}
+    Which we know is saying that we are looking for the vectors $\vec{u}$  such that they are linear combinations of the columns of the matrix $A$ so equivalently we have that $\vec{u} \in \mathit{span} {\left\{ \vec{e_1}, \vec{e_2} \right\}} $ 
+
+    We'll now look for the $\mathit{null} {\left( T_{A} \right)} $ we know that the nullspace is defined by 
+    \begin{equation*}
+        \left\{ \vec{x} \in \mathbb{R}^3 : T_{A}\left(\vec{x}\right) = 0 \right\}
+    \end{equation*}
+    So we're really looking for the vectors which satisfy $A \vec{x} = 0$, which is equivalent to $\mathit{null} {\left( A \right)} $ 
+\end{eg}
+
+Let $B = \mat{ 1 & 2 & 3 \\ 1 & 1 & 1 }$ $C = rref\left(B\right) = \mat{ 1 & 0 & -1 \\ 0 & 1 & 2 }$ 
+
+\begin{eg}
+    The row space of $B$ is equal to  $\mathit{span} {\left\{ \mat{ 1 \\ 2 \\ 3 }, \mat{ 1 \\ 1 \\ 1 } \right\}} $ and the row reducing involves the operations of addition and multiplication of the rows together, let $\vec{x}, \vec{u}$ represnt the first and second vectors in the span, we know that in the row reduced form (considering rows to be vectors) we have that the first row
+    \begin{equation*}
+        \mat{ 1 \\ 0 \\ -1 } = \vec{u} - \left( \vec{x} - \vec{u} \right)
+    \end{equation*}
+    and the second row
+    \begin{equation*}
+        \mat{ 0 \\ 1 \\ 2 } = \vec{x} - \vec{u}
+    \end{equation*}
+    Thus we know that the rows in the row reduced form are just linear combinations of the original rows, so we can say that
+    \begin{equation*}
+        row\left(B\right) = row\left(C\right)
+    \end{equation*}
+\end{eg}
+
+\begin{eg}
+    As for $\mathit{null} {\left( B \right)} = \left\{ \vec{x}: B \vec{x} = 0 \right\} $ the process of finding soltions to the zero vector will be identical to just row reducing, where it's an augmented matrix with 0's on the right side, so due to the same reasoning as before we know that they will have the same solutions as row operations don't change the number of solutions so we can say that 
+    \begin{equation*}
+        \mathit{null} {\left( B \right)}  = \mathit{null} {\left( C \right)} 
+    \end{equation*}
+\end{eg}
+
+\begin{eg}
+    Now if we are asked to compute the null space of $B$ then we can make things quite a bit easier on ourselves by using the row reduced matrix so well have
+    \begin{gather*}
+        \left\{ \vec{x} \in \mathbb{R}^3: B\vec{x} = 0 \right\}
+    \end{gather*}
+    So we're looking at the solutions to 
+    \[
+    \mat{ 1 & 0 & -1 \\ 0 & 1 & 2 } \mat{ x \\ y \\ z } = 0 
+    \]
+    Let $z = t$ for some $t \in \mathbb{R}$ then we determine $y = -2t$ and $x = t$ in general form we get
+    \[
+    t \mat{ 1 \\ -2 \\ 1 }, \text{ for all  } t \in \mathbb{R}
+    \]
+\end{eg}
+
+Let $P = \mat{ 0 & 0 \\ 1 & 2 }$ and $Q = rref\left(P\right) = \mat{ 1 & 2 \\ 0 & 0 }$
+
+\begin{eg}
+    $col\left(P\right) = \mathit{span} {\left\{ \mat{ 0 \\ 1 }, \mat{ 0 \\ 2 } \right\}} = \mathit{span} {\left\{ \mat{ 0 \\ 1 } \right\}}$ and 
+    $col\left(Q\right) = \mathit{span} {\left\{ \mat{ 1 \\ 0 } \right\}} $ We notice these are different so then row reduction can change the columns space unlike the row space.
+\end{eg}
+
+\begin{defn}[Rank]\index{Rank}\label{defn:rank}
+    For a linear transformation $T : V \to W $,  the \hlnotea{rank} of $T$,  denoted $rank\left(T\right)$, is the dimension of the range of $T$ 
+
+    For an $n \times m$ matrix $M$,  the \hlnotea{rank} of M, denoted $rank\left(M\right)$,  is the number of pivots in $rref\left(M\right)$ 
+\end{defn}
+
+Let $\mathcal{P}$ be the projection onto $\mathit{span} {\left\{ \vec{u} \right\}} $ where $\vec{u} = \mat{ 2 \\ 3 }$,  and let $\mathcal{R}$ be a rotation counter-clockwise by $\frac{\pi}{2}$ radians.
+
+\begin{eg}
+    $\mathit{range} {\left( \mathcal{P} \right)} $ is equal to $\mathit{span} {\vec{u}} $ because we know that every vector you choose will become some a scalar of $\mat{ 2 \\ 3 }$ thus the dimension is 1, so it's rank is 1.
+
+    As for the rank of $\mathcal{R}$ we know that iwe we consider every vector in $\mathbb{R}^2$ and rotate them all $\frac{\pi}{2}$ radians then we still have all of $\mathbb{R}^2$ so we know that the rank is still 2.
+\end{eg}
+
+\begin{eg}
+    We'll now find the rank of the matricies that go along with $\mathcal{P} \text{ and }\mathcal{R}$ first we know that the matricies are
+    \begin{align*}
+        \mathcal{P} = \frac{1}{13} \mat{ 4 & 6 \\ 6 & 9 } && \mathcal{R} = \mat{ 0 & -1 \\ 1 & 0 }
+    \end{align*}
+    Starting with $\mathcal{P}$ 
+    \begin{gather*}
+\begin{gmatrix}[b]
+    4 & 6 \\
+    6 & 9 
+\end{gmatrix}
+        \rightsquigarrow
+\begin{gmatrix}[b]
+    24 & 36 \\
+    24 & 36 
+\end{gmatrix}
+        \rightsquigarrow
+\begin{gmatrix}[b]
+    24 & 36 \\
+    0 & 0 
+\end{gmatrix}
+    \end{gather*}
+    And so we know that there is one pivot so the rank of this matrix is 1
+
+    As for $\mathcal{R}$ by swapping row one and row two we see that there must be two pivots and so the rank is 2.
+\end{eg}
+
+
+% section lecture_1 (end)
+
+% chapter week_10 (end)
 
 \appendix
 

@@ -1,0 +1,36 @@
+\ProvidesPackage{scratch}
+
+% === Packages ===
+
+% General
+%\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend,gauss,mathtools,pifont,float}
+
+% Automatic Parenthesis scaling
+\delimitershortfall-1sp
+\usepackage{mleftright}
+\mleftright % make \left & \right behave like \mleft & \mright
+
+% Proofs
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\newenvironment{disproof} {\begin{proof}[Disproof]} {\end{proof}}
+
+% Modular Arithmetic
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+
+% Font
+\def\code#1{\texttt{#1}}
+
+% === Linear Algebra ===
+
+% Matricies
+\newcommand\mat[1]{\begin{bmatrix}#1\end{bmatrix}}
+
+% Horizontal Rule
+\newcommand{\hr}{%
+\begin{center}
+	\noindent\rule{8cm}{0.4pt}
+\end{center}
+}
+

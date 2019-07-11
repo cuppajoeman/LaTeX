@@ -43,11 +43,11 @@ def create_matrix(snip):
 
         snip.buffer[snip.line] = ''
 
-        final_str = old_spacing + "\\begin{"+matrix_str+"} $1\n"
+        final_str = old_spacing + "\\begin{"+matrix_str+"}${1:[$2]}\n"
 
         for i in range(rows):
                 final_str += old_spacing + '\t'
-                final_str += " & ".join(['$' + str(i * cols + j + offset + 1) for j in range(cols)])
+                final_str += " & ".join(['$' + str(i * cols + j + offset + 2) for j in range(cols)])
 
                 final_str += " \\\\\\\n"
 
@@ -372,7 +372,7 @@ snippet ee "var epsilon" iA
 endsnippet
 
 context "math()"
-snippet ll "lambda" iA
+snippet lda "lambda" iA
 \lambda
 endsnippet
 
@@ -461,6 +461,11 @@ snippet 3mat "3 by 1 Matrix" iA
 endsnippet
 
 context "math()"
+snippet 4mat "4 by 1 Matrix" iA
+\mat{ $1 \\\\ $2 \\\\ $3 \\\\ $4 }$0
+endsnippet
+
+context "math()"
 snippet 3rmat "1 by 3 Row Matrix" iA
 \mat{ $1 & $2 & $3 }$0
 endsnippet
@@ -476,17 +481,24 @@ snippet 2rmat "1 by 2 Row Matrix" iA
 endsnippet
 
 context "math()"
+snippet ges "Gauss Elimination Step" iA
+gmat$1x$2
+\rightsquigarrow
+${3:ges}
+endsnippet
+
+context "math()"
 snippet rops "Start Row Operation" iA
 \rowops
 endsnippet
 
 context "math()"
-snippet radd "Add rows" iA
+snippet r+ "Add rows" iA
 \add[$1]{$2}{$3}
 endsnippet
 
 context "math()"
-snippet rmult "Multiply row" iA
+snippet r* "Multiply row" iA
 \mult{$2}{\cdot $3}$0
 endsnippet
 
@@ -576,7 +588,7 @@ snippet TT "to the ... power" iA
 endsnippet
 
 context "math()"
-snippet __ "subscript" iA
+snippet SS "subscript" iA
 _{$1}$0
 endsnippet
 
