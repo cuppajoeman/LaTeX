@@ -39,7 +39,9 @@ def create_matrix(snip):
         cols = int_val(cols)
 
         offset = cols + 1
-        old_spacing = snip.buffer[snip.line][:snip.buffer[snip.line].rfind('\t') + 1]
+
+        line = snip.buffer[snip.line]
+        old_spacing = line[:len(line) - len(line.lstrip()) ]
 
         snip.buffer[snip.line] = ''
 
@@ -92,17 +94,14 @@ endglobal
 global !p
 def test(snip):
 
-        until = int(snip.cursor[1])
-        rest = snip.buffer[snip.line][until:]
-        given_i = snip.buffer[snip.line][0:until].rfind('i') 
-        given = snip.buffer[snip.line][given_i:until]
+        line = snip.buffer[snip.line]
+        old_spacing = line[:len(line) - len(line.lstrip()) ]
 
-        snip.buffer[snip.line] = snip.buffer[snip.line][0:until - 7] 
+        snip.buffer[snip.line] = ''
 
-        final_str = '$0the snippet $1 $2 $3' + rest
+        final_str = old_spacing + "<<- spacing?, line ->>" 
 
         snip.expand_anon(final_str)
-
 endglobal
 
 
@@ -316,6 +315,11 @@ $1 \cdot $2
 endsnippet
 
 context "math()"
+snippet ee "equality" iA
+=
+endsnippet
+
+context "math()"
 snippet != "equals" iA
 \neq
 endsnippet
@@ -367,7 +371,7 @@ snippet dd "delta" iA
 endsnippet
 
 context "math()"
-snippet ee "var epsilon" iA
+snippet ep "var epsilon" iA
 \varepsilon
 endsnippet
 
@@ -442,7 +446,7 @@ endsnippet
 
 context "math()"
 pre_expand "create_matrix(snip)"
-snippet "(small|[gbBpvV])?mat(rix)?(\d+)x(\d+)" "Generate (small|[bBpvV])?matrix of *rows* by *columns*" br
+snippet "(small|[gbBpvV])?mat(rix)?(\d+)x(\d+)" "Generate (small|[bBpvV])?matrix of *rows* by *columns*" ir
 endsnippet
 
 context "math()"
@@ -583,12 +587,12 @@ snippet cb "^3" iA
 endsnippet
 
 context "math()"
-snippet TT "to the ... power" iA
+snippet tt "to the ... power" iA
 ^{$1}$0
 endsnippet
 
 context "math()"
-snippet SS "subscript" iA
+snippet ss "subscript" iA
 _{$1}$0
 endsnippet
 
