@@ -263,6 +263,11 @@ snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
 `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
 endsnippet
 
+context "math()"
+snippet 'n(\d)' "auto negative" wrA
+-`!p snip.rv = match.group(1)`
+endsnippet
+
 snippet sympy "sympyblock " w
 sympy $1 sympy$0
 endsnippet
@@ -487,8 +492,8 @@ endsnippet
 context "math()"
 snippet ges "Gauss Elimination Step" iA
 gmat$1x$2
-\rightsquigarrow
-${3:ges}
+${3:\rightsquigarrow 
+ges}$4
 endsnippet
 
 context "math()"
