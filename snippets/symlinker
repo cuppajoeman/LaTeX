@@ -1,5 +1,24 @@
 #!/usr/bin/env bash
 
+if [ ! -d "$HOME/.vim/LocalSnippets/" ]
+then
+  echo "Process will symlink files from $texnotesdir/snippets"
+  read -p "$HOME/.vim/LocalSnippets/ does not exist. mkdir? (yN) " yn
+  case $yn in
+      [Yy]* ) mkdir -p $HOME/.vim/LocalSnippets/; echo "[+] $HOME/.vim/LocalSnippets/ created" ;;
+      * ) echo "Script terminated" ; exit 0;;
+  esac
+else
+  echo "This operation will overwrite existing files (if any) from in the destination directory.
+  origin      : latex/snippets
+  destination : $HOME/.vim/LocalSnippets/"
+  read -p "Overwrite? (yN) " overwrite
+  case $overwrite in
+    [Yy]* ) ;;
+    * ) echo "Script terminated" ; exit 0 ;;
+  esac
+fi
+
 curdir=$(pwd -L)
 for f in $curdir/*.snippets ; do
   ln -sf "$f" $HOME/.vim/LocalSnippets/
