@@ -1,7 +1,7 @@
 % Packages
 \usepackage{amsmath}
 \usepackage{xcolor}
-\usepackage{ntheorem}
+\usepackage{amsthm}
 \usepackage{thmtools}
 \usepackage{amsfonts}
 \usepackage{geometry}
@@ -13,6 +13,9 @@
     linktoc=all,     %set to all if you want both sections and subsections linked
     linkcolor=blue,  %choose some color if you want links to stand out
 }
+
+
+\theoremstyle{definition}
 
 % Matricies
 \newcommand\mat[1]{\begin{bmatrix}#1\end{bmatrix}}
@@ -67,7 +70,6 @@
     % warning env
 \newtheorem*{warning}{Warning}
 
-\newtheorem*{proof}{Proof}
 
 % highlighting shortcuts
 \newcommand{\hlimpo}[1]{\textcolor{red}{\textbf{#1}}}
