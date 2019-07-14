@@ -1,21 +1,13 @@
-% !TEX TS-program = pdflatex
-\documentclass[notoc,notitlepage]{tufte-book}
-% \nonstopmode % uncomment to enable nonstopmode
-
-\usepackage{classnotetitle, gauss}
-
-\newcommand\mat[1]{\begin{bmatrix}#1\end{bmatrix}}
+\documentclass[11pt]{book}
 
 \title{MAT223 - Linear Algebra}
 \author{Callum Cassidy-Nolan}
-\subtitle{Classnotes for Summer 2019}
-\credentials{Computer Science}
-\institution{University of Toronto}
 
-\input{latex-classnotes-preamble.tex}
+\input{mynotes-preamble.tex}
 
 \begin{document}
-\input{latex-classnotes-header.tex}
+
+\input{mynotes-header.tex}
 
 \chapter{Week 9}%
 \label{chp:week_9}
@@ -91,7 +83,10 @@ Linear transformations and such
 
 \begin{eg}
     We'll show that $\mathcal{P}$ is a linear transformation 
-    \sidenote{We'll show that it is closed under addition and multiplication}
+    n
+    \begin{note}
+        We'll show that it is closed under addition and multiplication
+    \end{note}
     \begin{equation*}
         \mathcal{P}(\mat{ x \\ y }) = \mathit{comp}_{\vec{u}} {\mat{ x \\ y }} 
     \end{equation*}
@@ -162,14 +157,14 @@ square in the first quadrant. And let $C = \left\{ \vec{0}, \vec{e_1},
 \end{ex}
 
 \begin{ex}
-    We'll now find what $\mathcal{W}\left(C\right)$ \sidenote{Notice that it doesn't have to be a linear transformation} is, again we will use the definition so we have
+    We'll now find what $\mathcal{W}\left(C\right)$ (Notice that it doesn't have to be a linear transformation) is, again we will use the definition so we have
     \begin{align*}
         \mathcal{W}\left(C\right) = \left\{ \vec{0}, \vec{e_1}, \vec{e_2}, \vec{e_1} + \vec{e_2} \right\}
     \end{align*}
 \end{ex}
 
 \begin{ex}
-    $\mathcal{T}\left(C\right) = \left\{ \mat{ 2 \\ 0 }, \mat{ 3 \\ 0 }, \mat{ 1 \\ 2 }, \mat{ 1 \\ 3 } \right\}$ \sidenote{The square has been shifted right 2 units}
+    $\mathcal{T}\left(C\right) = \left\{ \mat{ 2 \\ 0 }, \mat{ 3 \\ 0 }, \mat{ 1 \\ 2 }, \mat{ 1 \\ 3 } \right\}$ (The square has been shifted right 2 units)
 \end{ex}
 
 \begin{ex}
@@ -217,7 +212,7 @@ square in the first quadrant. And let $C = \left\{ \vec{0}, \vec{e_1},
 
     To determine the linear transformation we start with the fact that if $A$ is some matrix then $A \vec{e_i} $ results in the ith column of $A$.
 
-    We then choose two points and see how they moved after the transormation, per the hint above we'll choose two vectors that reside on the x, y axis. \sidenote{Our origin is the corner of the N}, so our first vector will be $\mat{ 0 \\ 3 }$ and our second is $\mat{ 2 \\ 0 }$. Thus we know the following
+    We then choose two points and see how they moved after the transormation, per the hint above we'll choose two vectors that reside on the x, y axis. ( Our origin is the corner of the N ), so our first vector will be $\mat{ 0 \\ 3 }$ and our second is $\mat{ 2 \\ 0 }$. Thus we know the following
     \begin{enumerate}
         \item $\mathcal{I}\left(\mat{ 0 \\ 3 }\right) = \mat{ 4 \\ 1 }$, but we know that applying a linear transformation is the same as just multiplying by some matrix so we know that
             \begin{equation*}
@@ -319,8 +314,8 @@ onto $\vec{u}$.
 
 \begin{ex}
     Consider $P : \mathbb{R}^2 \to  \mathbb{R}^2$ where $\mathcal{P}$ is the
-    projection onto the $\mathit{span} {\vec{u}} $ \sidenote{Remember $\vec{u} =
-    \mat{ 2 \\ 3 }$ }, we'll determine the range and null space of $\mathcal{P}$.
+    projection onto the $\mathit{span} {\vec{u}} $ ( Remember $\vec{u} =
+    \mat{ 2 \\ 3 }$ ), we'll determine the range and null space of $\mathcal{P}$.
     
     We know that the projection of any vector onto $\vec{u}$ will be equal to
     some scalar times $\vec{u}$ so we know that the range will be 
@@ -374,7 +369,7 @@ onto $\vec{u}$.
     \item $\mathcal{B}$ is a basis for a subspace $V$ if $\mathcal{B}$ is linearly independent and $\mathit{span} {\left( \mathcal{B} \right)}  = V$. 
     \item 
         \begin{enumerate}
-            \item We'll verify if the fectors in $\mathcal{B}$ are in a basis. So for it to be a basis it must be linearly independent, and we'll assume that we are looking for a basis for the subspace $\mathbb{R}^{3}$. We'll start by looking at the linear combinations of each vector in the matrix that gives the zero vector to determine independendence, so we have \sidenote{These are augmented matricies for the zero vector.}
+            \item We'll verify if the fectors in $\mathcal{B}$ are in a basis. So for it to be a basis it must be linearly independent, and we'll assume that we are looking for a basis for the subspace $\mathbb{R}^{3}$. We'll start by looking at the linear combinations of each vector in the matrix that gives the zero vector to determine independendence, so we have ( These are augmented matricies for the zero vector. )
                 \begin{gather*}
                     \mat{ 1 & 0 & 2 \\ -1 & 1 & -2 \\ 0 & 0 & 1 } \Leftrightarrow \mat{ 1 & 0 & 2 \\ 0 & 1 & 0 \\ 0 & 0 & 1 }
                 \end{gather*}
@@ -688,17 +683,4 @@ Let $\mathcal{P}$ be the projection onto $\mathit{span} {\left\{ \vec{u} \right\
 
 % chapter week_10 (end)
 
-\appendix
-
-\backmatter
-
-\fancyhead[LE]{\thepage \enspace \textsl{\leftmark}}
-
-\nocite{*}
-
-\bibliography{references}
-
-\printindex
-
 \end{document}
-% vim:tw=80:fdm=syntax

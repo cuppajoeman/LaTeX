@@ -1,1 +1,0 @@
-# Everything Latex Repo

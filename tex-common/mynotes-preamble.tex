@@ -1,0 +1,86 @@
+% Packages
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{ntheorem}
+\usepackage{thmtools}
+\usepackage{amsfonts}
+\usepackage{geometry}
+\usepackage{gauss}
+\usepackage{pifont}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+
+% Matricies
+\newcommand\mat[1]{\begin{bmatrix}#1\end{bmatrix}}
+
+% Modular Arithmetic
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+
+% Automatic Parenthesis scaling
+\delimitershortfall-1sp
+\usepackage{mleftright}
+\mleftright % make \left & \right behave like \mleft & \mright
+
+% Theorems
+\newtheorem{remark}{Remark}[section]
+
+\newtheorem{ex}{Exercise}[section]
+
+\newtheorem{eg}{Example}[section]
+% definition env
+\newtheorem{defn}{Definition}
+% definition env no num
+\newtheorem*{defnnonum}{Definition}
+
+% theorem envs
+\newtheorem{thm}{Theorem}
+
+% theorem envs without counter
+\newtheorem{propo}[thm]{Proposition}
+
+\newtheorem{crly}[thm]{Corollary}
+
+\newtheorem{lemma}[thm]{Lemma}
+
+\newtheorem{axiom}[thm]{Axiom}
+
+\newtheorem*{thmnonum}{Theorem}
+
+\newtheorem*{propononum}{Proposition}
+
+\newtheorem*{crlynonum}{Corollary}
+
+\newtheorem*{lemmanonum}{Lemma}
+
+\newtheorem*{axiomnonum}{Axiom}
+
+
+\newtheorem{note}{Note}[section]
+
+\newtheorem{mnote}[note]{Note}
+
+\newtheorem*{notation}{Notation}
+    % warning env
+\newtheorem*{warning}{Warning}
+
+\newtheorem*{proof}{Proof}
+
+% highlighting shortcuts
+\newcommand{\hlimpo}[1]{\textcolor{red}{\textbf{#1}}}
+\newcommand{\hlwarn}[1]{\textcolor{yellow}{\textbf{#1}}}
+\newcommand{\hldefn}[1]{\textcolor{blue}{\index{#1}\textbf{#1}}}
+\newcommand{\hlnotea}[1]{\textcolor{green}{\textbf{#1}}}
+\newcommand{\hlnoteb}[1]{\textcolor{cyan}{\textbf{#1}}}
+\newcommand{\hlb}[2]{\colorbox{#1!30!background}{#2}}
+\newcommand{\hlbnotea}[1]{\hlb{green}{#1}}
+\newcommand{\hlbnoteb}[1]{\hlb{cyan}{#1}}
+\newcommand{\hlbnotec}[1]{\hlb{yellow}{#1}}
+\newcommand{\hlbnoted}[1]{\hlb{magenta}{#1}}
+\newcommand{\hlbnotee}[1]{\hlb{red}{#1}}
+\newcommand{\WTP}{\textcolor{bwhite}{WTP} }
+\newcommand{\WTS}{\textcolor{bwhite}{WTS} }
+
