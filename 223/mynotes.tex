@@ -681,6 +681,217 @@ Let $\mathcal{P}$ be the projection onto $\mathit{span} {\left\{ \vec{u} \right\
 
 % section lecture_1 (end)
 
+\section{Lecture 2}%
+\label{sec:lecture_2}
+% section lecture_2
+
+Let $M$ be a matrix and recall that 
+\begin{align*}
+    row\left(M\right) = \mathit{span} {\text{ rows of M }}  && col\left(M\right) = \mathit{span} {\text{ cols of M }} 
+\end{align*}
+
+And that the following properties hold
+
+\begin{align*}
+    row\left(M\right) = row\left(rref\left(M\right)\right) && col\left(M\right) \neq col\left(rref\left(M\right)\right)
+\end{align*}
+
+Also we know that 
+\begin{equation*}
+    rank\left(M\right) = \text{ pivots of  } rref\left(M\right)
+\end{equation*}
+
+\begin{eg}
+    If $M$ looked like this after row reduction we know it's rank is two (two pivots)
+    \[
+    \begin{gmatrix}[b]
+    	a & b & c \\
+    	d & e & f \\
+    	j & i & k 
+    \end{gmatrix}
+    \rightsquigarrow
+    \begin{gmatrix}[b]
+    	1 & 0 & \alpha \\
+    	0 & 1 & \beta \\
+    	0 & 0 & 0 
+    \end{gmatrix}
+    \]
+\end{eg}
+
+\begin{crly}
+    $\begin{WithArrows}
+        rank\left(M\right) &= \text{ \# linearly independent columns of } rref\left(M\right)\\
+        &= dim\left(col\left(rref\left(M\right)\right)\right) \Arrow{Solutions aren't lost}\\
+        &= dim\left(col\left(M\right)\right) \\
+        &= \text{ \# linearly independent columns of }M \\
+        &= dim\left(row\left(rref\left(M\right)\right)\right) \Arrow{pivots are both \\horizontal and vertical} \\
+        &= dim\left(row\left(M\right)\right) \\
+    \end{WithArrows}$
+\end{crly}
+
+\begin{defn}[Transpose of a Matrix]\index{Transpose of a Matrix}\label{defn:transpose_of_a_matrix}
+    The transpose of a matrix $M$ is the matrix $M^{T}$ whose rows are the columns of $M$ 
+\end{defn}
+
+\begin{eg}
+    If 
+    \[
+    M = 
+    \begin{bmatrix}
+    	a & b \\
+    	c & d 
+    \end{bmatrix}
+    \Leftrightarrow
+    M^{T} = 
+    \begin{bmatrix}
+    	a & c \\
+    	b & d 
+    \end{bmatrix}
+    \]
+    Or 
+    \[
+    M = 
+    \begin{bmatrix}
+    	1 & 2 & 3 \\
+    	4 & 5 & 6 
+    \end{bmatrix}
+    \Leftrightarrow
+    M^{T} = 
+    \begin{bmatrix}
+    	1 & 4 \\
+    	2 & 5 \\
+    	3 & 6 
+    \end{bmatrix}
+    \]
+\end{eg}
+
+\begin{crly}
+    \[
+    rank\left(M\right) = rank\left(M^{T}\right)
+    \]
+    because $dim\left(col\left(M\right)\right) = dim\left(row\left(M\right)\right)$ and we know that $col\left(M\right) = row\left(M^{T}\right)$ 
+\end{crly}
+
+Find the rank of the following matricies
+\begin{ex}
+    $\mat{ 1 & 1 \\ 2 & 2 }$ we can see that there is one linearly independent vector so the dimension is 1 and rank is 1
+\end{ex}
+
+\begin{ex}
+    $\mat{ 1 & 2 \\ 3 & 4 }$ we can see that there are 2 linearly independent vectors so dimension is 2 and rank is 2
+\end{ex}
+
+\begin{ex}
+    $\mat{ 1 & 1 & 0 \\ 0 & 0 & 1 }$ We know that the dimension of the column space is 2 and thus rank is 2
+\end{ex}
+
+\begin{ex}
+    $\mat{ 3 \\ 3 \\ 2 }$ the rank is 1, there is only one column
+\end{ex}
+
+Let $M$ be a $3 \times 4$ matrix whose rank is 3 does this mean that all of the columns of $M$ are linearly independent ?
+
+No! if the matrix is $3 \times 4$ then we know that there are four columns, and if the rank is 3 we know 3 of the are linearly independent but we don't know about the last one, so we can't be sure.
+
+What if $M$ was $4 \times 3$ then we could be sure that every column is linearly independent as we know that it must have 3 pivots and so it must be true.
+
+\begin{thm}[Rank-nullity]\index{Rank-nullity}\label{thm:rank_nullity}
+    The \hlnotea{nullity} of a matrix is the dimension of the null space.\\
+    The rank-nullity theorem for a matrix $A$ states
+    \[
+    rank\left(A\right) + nullity\left(A\right) = \# \text{ of columns of  } A
+    \]
+\end{thm}
+
+\begin{eg}
+    If we have
+    \begin{equation*}
+        \begin{gmatrix}[b]
+        	. & . & . & . & . \\
+        	. & . & . & . & . \\
+        	. & . & . & . & . 
+        \end{gmatrix}
+        \rightsquigarrow 
+        \begin{gmatrix}[b]
+        	1 & 0 & . & . & . \\
+        	0 & 1 & . & . & . \\
+        	0 & 0 & . & . & . 
+        \end{gmatrix}
+    \end{equation*}
+    And let's assume that the last 3 columns are free variable columns so then we know that the solution to the zero vector will have three paramers $t_1, t_2, t_3 \in \mathbb{R}$ and so we know that the dimension of the nullspace will be 3 .
+   % TODO : Question  Ask why this is true again. 
+\end{eg}
+
+\begin{eg}
+    Let $\vec{u}, \vec{v} \in \mathbb{R}^{9}$ be linearly independent and $\vec{w} = 2\vec{u} - \vec{v}$ 
+    \begin{equation*}
+        A = 
+        \begin{bmatrix}[c|c|c]
+        	\vec{v} & \vec{u} & \vec{w} 
+        \end{bmatrix}
+    \end{equation*}
+    We instantly know that the dimension of the column space of $A$ is 2 and so rank is 2 thus nullity is 1 by R-N-T
+
+    As for $A^{T}$ we know that $A$ has two pivot columns and so $A^{T}$ also has 2, and so by R-N-T it has nullity of 7.
+\end{eg}
+
+\begin{thm}[Rank-nullity for linear transformations]\index{Rank-nullity for linear transformations}\label{thm:rank_nullity_for_linear_transformations}
+    Let $T : V \to W $ be a linear transformation thus there is a matrix $A$ such that $T = T_{A}$ so 
+    \begin{equation*}
+        T\left(\vec{x}\right) = A\vec{x} \text{ for all } \vec{x}\in V
+    \end{equation*}
+    We know from \cref{thm:rank_nullity} that 
+    \begin{align*}
+        \text{ \# columns of  }A &= rank\left(A\right) + nullity\left(A\right) \\
+                                 &= dim\left(col\left(A\right)\right) + dim\left(\mathit{null} {\left( A \right)} \right)\\
+                                 &= dim\left( \mathit{range} {\left( T \right)}  \right) + dim\left( \mathit{null} {\left( T \right)}  \right) \\
+    \end{align*}
+    So we can finally say that 
+    \begin{equation*}
+        dim\left( \mathit{range} {\left( T \right)}  \right) + dim\left( \mathit{null} {\left( T \right)}  \right) = \text{ \# columns of }A
+    \end{equation*}
+\end{thm}
+
+\subsection{Inverse Matrix}%
+\label{sub:inverse_matrix}
+% subsection inverse_matrix
+
+\begin{defn}[Inverse Transformation]\index{Inverse Transformation}\label{defn:inverse_transformation}
+    If it exsits, the inverse transformation of $T : R^{n} \to R^{m} $ is 
+    \begin{equation*}
+        T^{-1} : R^{m} \to R^{n} 
+    \end{equation*}
+    That satisfies the following properties 
+    \begin{gather*}
+        T\left(T^{-1}\left(\vec{x}\right)\right) = \vec{x} \text{ for all  } \vec{x} \in \mathbb{R}^{n}\\
+        T^{-1}\left(T\left(\vec{y}\right)\right) = \vec{y} \text{ for all } \vec{y} \in \mathbb{R}^{m}
+    \end{gather*}
+    If $T = T_{A}$ and $T^{-1} = T_{B}$ then
+    \begin{align*}
+        \vec{x} &=  T\left(T^{-1}\left(\vec{x}\right)\right) \\
+        &= T\left(B\vec{x}\right) \\
+        &= AB\vec{x}
+    \end{align*}
+    But for this to be true for all $\vec{x} \in \mathbb{R}^{m}$ then we require
+    \begin{equation*}
+        AB = I
+    \end{equation*}
+    And if $A$  is $n \times m$ and $B$  is $m \times n$ then we know that $I$  is $n \times n$ \\
+    Similarly $T^{-1}\left(T\left(\vec{y}\right)\right) = \vec{y} \Leftrightarrow BA = I$ \\
+    Thus we say $B$ is the inverse Matirx of $A$ denoted $B = A^{}$ 
+\end{defn}
+\begin{defn}[Inverse Matrix]\index{Inverse Matrix}\label{defn:inverse_matrix}
+    We say $B$  is the inverse matrix of $A$ denoted $B = A^{-1}$ if
+    \begin{equation*}
+        AB = BA = I
+    \end{equation*}
+\end{defn}
+
+
+% subsection inverse_matrix (end)
+
+% section lecture_2 (end)
+
 % chapter week_10 (end)
 
 \end{document}

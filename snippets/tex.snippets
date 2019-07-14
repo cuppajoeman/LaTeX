@@ -76,6 +76,12 @@ snippet vere "verification env" bA
 \end{ver}
 endsnippet
 
+snippet crly "corollary env" bA
+\begin{crly}
+	$0
+\end{crly}
+endsnippet
+
 snippet notee "note env" bA
 \begin{note}
 	$0
@@ -104,6 +110,16 @@ snippet ali "Aligned" b
 \begin{align${1:*}}
 	$0
 \end{align$1}
+endsnippet
+
+snippet warw "With Arrows" b
+$\begin{WithArrows}
+	$0
+\end{WithArrows}$
+endsnippet
+
+snippet arw "Arrows" wA
+\Arrow{$1}$0
 endsnippet
 
 snippet abs "abstract environment" b

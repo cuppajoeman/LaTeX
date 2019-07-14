@@ -8,6 +8,8 @@
 \usepackage{gauss}
 \usepackage{pifont}
 \usepackage{hyperref}
+\usepackage{witharrows}
+\usepackage{cleveref}
 \hypersetup{
     colorlinks=true, %set true if you want colored links
     linktoc=all,     %set to all if you want both sections and subsections linked
@@ -19,6 +21,14 @@
 
 % Matricies
 \newcommand\mat[1]{\begin{bmatrix}#1\end{bmatrix}}
+
+% Augmented matrix
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
 
 % Modular Arithmetic
 \newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
