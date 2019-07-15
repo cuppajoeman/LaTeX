@@ -311,12 +311,12 @@ endsnippet
 
 context "math()"
 snippet pp "add two numbers" iA
-+
+ + 
 endsnippet
 
 context "math()"
 snippet mm "multiply two numbers" iA
-\cdot 
+ \cdot 
 endsnippet
 
 context "math()"
@@ -325,7 +325,7 @@ snippet ee "equality" iA
 endsnippet
 
 context "math()"
-snippet != "equals" iA
+snippet neq "not equal" iA
 \neq
 endsnippet
 
@@ -420,10 +420,6 @@ snippet st "such that" iA
 \text{ s.t. }
 endsnippet
 
-snippet l.c. "Linear Combination" iA
-linear combination
-endsnippet
-
 context "math()"
 snippet txt "text" iA
 \text{ $1 }$0
@@ -451,7 +447,7 @@ endsnippet
 
 context "math()"
 pre_expand "create_matrix(snip)"
-snippet "(small|[gbBpvV])?mat(rix)?(\d+)x(\d+)" "Generate (small|[bBpvV])?matrix of *rows* by *columns*" ir
+snippet "[^i]mat(rix)?(\d+)x(\d+)" "Generate (small|[bBpvV])?matrix of *rows* by *columns*" ir
 endsnippet
 
 context "math()"
@@ -502,12 +498,12 @@ snippet rops "Start Row Operation" iA
 endsnippet
 
 context "math()"
-snippet r+ "Add rows" iA
+snippet rad "Add rows" iA
 \add[$1]{$2}{$3}
 endsnippet
 
 context "math()"
-snippet r* "Multiply row" iA
+snippet rmul "Multiply row" iA
 \mult{$2}{\cdot $3}$0
 endsnippet
 

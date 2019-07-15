@@ -1,5 +1,8 @@
 \documentclass[11pt]{book}
 
+\RequirePackage{silence}
+\WarningFilter{remreset}{The remreset package}
+
 \title{MAT223 - Linear Algebra}
 \author{Callum Cassidy-Nolan}
 
@@ -437,7 +440,7 @@ onto $\vec{u}$.
     A1
     \begin{itemize}
         \item 
-    \begin{align*}
+    \begin{gather*}
     \begin{gmatrix}[b]
         1 & 0 & -1 & 3 \\
         0 & 1 & 3 & 1 \\
@@ -447,7 +450,7 @@ onto $\vec{u}$.
         \add[-1]{0}{2}
         \add[-2]{0}{3}
     \end{gmatrix}
-        &\rightsquigarrow
+        \rightsquigarrow
     \begin{gmatrix}[b]
         1 & 0 & -1 & 3 \\
         0 & 1 & 3 & 1 \\
@@ -473,7 +476,7 @@ onto $\vec{u}$.
         0 & 0 & -4 & 1 \\
         0 & 0 & 0 & - 13
     \end{gmatrix}
-    \end{align*}
+    \end{gather*}
 We can stop here because we see that in the bottom row we have $0 = -13$ which is certainly false so the system is inconsistent. So we can conclude that $\mat{ 3 \\ 1 \\ 6 \\ 1 }$ is not in the range of L.
         \item We'll figure out if $\mat{ 3 \\ -5 \\ 1 \\ 5 }$ is in the range of L, so we're looking for some vector in $\mathbb{R}^{4}$ that becomes that vector under L. Represented as an augmented matrix we get
         \begin{align*}
@@ -887,10 +890,87 @@ What if $M$ was $4 \times 3$ then we could be sure that every column is linearly
     \end{equation*}
 \end{defn}
 
-
 % subsection inverse_matrix (end)
 
 % section lecture_2 (end)
+
+\section{Tutorial 6}%
+\label{sec:tutorial_6}
+% section tutorial_6
+
+\begin{enumerate}
+    \item We say the function $T : \mathbb{R}^{n} \to \mathbb{R}^{m} $ is linear if we can say
+    \begin{equation*}
+        T\left(\vec{x} + \alpha\vec{y}\right) = T\left(\vec{x}\right) + \alpha T\left(\vec{y}\right) \text{ for all  } \vec{x}, \vec{y} \in \mathbb{R}n
+    \end{equation*}
+    \item
+    \begin{enumerate}
+        \item 
+        \begin{proof}
+            We'll show that $\mathcal{A}$ is linear so let $\vec{u}, \vec{v} \in \mathbb{R}^2$ and $\alpha \in \mathbb{R}$ we know that
+            \begin{equation*}
+                T\left(\vec{u} + \alpha \vec{v}\right) = T\left( \mat{ x_1 + \alpha x_2 \\ y1 + \alpha y_2 }\right) = \mat{ y_1 + \alpha y_2 \\ 0 \\ x_1 + \alpha x_2 } = T\left(\vec{u}\right) + \alpha T\left(\vec{v}\right)
+            \end{equation*}
+        \end{proof}
+        \item We will show that $\mathcal{B}$ is not a linear transformation we know 
+        \begin{equation*}
+            \mathcal{B}\left(\mat{ -2 \\ 0 } + \mat{ 1 \\ 0 }\right) \neq \mathcal{B}\left(\mat{ -2 \\ 0 }\right) + \mathcal{B}\left(\mat{ 1 \\ 0 }\right)
+        \end{equation*}
+        \item We will show that $\mathcal{C}$ is a linear transformation it follows that 
+        \begin{equation*}
+            \mathcal{C}\left(\vec{u} + \alpha \vec{v}\right) = \vec{0} = \vec{0} + \alpha \vec{0} = \mathcal{C}\left(\vec{u}\right) + \alpha \mathcal{C}\left(\vec{v}\right)
+        \end{equation*}
+        \item We will show that $\mathcal{D}$ is not a linear transformation 
+        \begin{equation*}
+            \mathcal{D}\left(\vec{u} + \alpha \vec{v}\right) = \mat{ 1 \\ 1 } \neq \mat{ 1 \\ 1 } + \alpha \mat{ 1 \\ 1 } = \mathcal{D}\left(\vec{u}\right) + \alpha \mathcal{D}\left(\vec{u}\right)
+        \end{equation*}
+    \end{enumerate}
+        \item We will now compute the null space, range and rank of each of the linear transformations
+        \begin{enumerate}
+            \item We'll start by comupting the range which we can we can say is
+            \[
+            \left\{ \vec{v} \in \mathbb{R}^3: \vec{v} = s \mat{ 1 \\ 0 \\ 0 } + t \mat{ 0 \\ 0 \\ 1 } \text{ for some } t, s \in \mathbb{R} \right\}
+            \]
+            we know that that null space is only $\vec{0}$, and that the rank must be 2 as a basis for the range is
+            \[
+            \left\{ \mat{ 1 \\ 0 \\ 0 }, \mat{ 0 \\ 0 \\ 1 } \right\}
+            \]
+            \item We'll start with the range
+                % TODO : Question Is any of this right?
+            \[
+            \left\{ x \in \mathbb{R}: x \ge 0 \right\}
+            \]
+            And the null space is
+            \[
+            \left\{ x \in \mathbb{R}: x < 0 \right\}
+            \]
+            So then the rank of $\mathcal{B}$ is 0
+            % TODO : Question Why?? 
+            \item For $\mathcal{C}$ we know the range is
+                \[
+                \left\{ \vec{0} \right\}
+                \]
+                And then null space is 
+                \[
+                \left\{ \vec{x} \in \mathbb{R}^2 \right\}
+                \]
+                And then rank is 0
+                % TODO : Question Why is it 0 shouldn't it be 1?
+            \item The range of $\mathcal{D}$ is $\left\{ \mat{ 1 \\ 1 } \right\}$ and the null space is $\emptyset$ since $\mathcal{D}$ is not a subspace then there is no basis for it, so the rank doesn't exist.
+        \end{enumerate}
+        \item 
+        \begin{enumerate}
+            \item $\mathcal{X}$ : the tranformation invoked by the identity matrix.
+            \item $\mathcal{Y}$ : cannot exist as we know $\mathit{range} {\left( Y \right)} \subseteq \mathbb{R}^2$ and so the dimension of $\mathcal{Y} \le 2$ 
+            \item $\mathcal{Z}: \mathit{comp}_{\mat{ 1 \\ 1 \\ 1 }} {\vec{x}} $ which defines a line in 3d space thus has dimension 1 so rank is 1 
+            \item $\mathcal{W}$: the identity transformation
+            \item Impossible?
+            % TODO : Question Ask bout this
+        \end{enumerate}
+\end{enumerate}
+
+
+% section tutorial_6 (end)
 
 % chapter week_10 (end)
 
