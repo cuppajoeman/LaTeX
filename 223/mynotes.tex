@@ -479,18 +479,84 @@ onto $\vec{u}$.
     \end{gather*}
 We can stop here because we see that in the bottom row we have $0 = -13$ which is certainly false so the system is inconsistent. So we can conclude that $\mat{ 3 \\ 1 \\ 6 \\ 1 }$ is not in the range of L.
         \item We'll figure out if $\mat{ 3 \\ -5 \\ 1 \\ 5 }$ is in the range of L, so we're looking for some vector in $\mathbb{R}^{4}$ that becomes that vector under L. Represented as an augmented matrix we get
-        \begin{align*}
+        \begin{gather*}
             \begin{gmatrix}[b]
                 1 & 0 & -1 & 3 \\
                 0 & 1 & 3 & -5 \\
                 1 & 2 & 1 & 1 \\
                 2 & 5 & 1 & 5 
+                \rowops
+                \add[-2]{2}{3}
             \end{gmatrix}
-            &\rightsquigarrow
-            gmat2x2
             \rightsquigarrow
-            ges
-        \end{align*}
+            \begin{gmatrix}[b]
+            	1 & 0 & -1 & 3 \\
+            	0 & 1 & 3 & -5 \\
+            	-2 & -4 & -2 & -2 \\
+            	0 & 1 & -1 & 3
+                \rowops
+                \add[2]{0}{2}
+            \end{gmatrix}
+            \rightsquigarrow \\
+            \begin{gmatrix}[b]
+            	1 & 0 & -1 & 3 \\
+            	0 & 1 & 3 & -5 \\
+            	0 & -4 & -4 & 4 \\
+            	0 & 1 & -1 & 3 
+                \rowops
+                \add[4]{3}{2}
+            \end{gmatrix}
+            \rightsquigarrow 
+            \begin{gmatrix}[b]
+            	1 & 0 & -1 & 3 \\
+            	0 & 1 & 3 & -5 \\
+            	0 & 0 & -8 & 16 \\
+            	0 & 1 & -1 & 3 
+                \rowops
+                \add[-1]{1}{3}
+                \swap{2}{3}
+            \end{gmatrix}
+            \rightsquigarrow \\
+            \begin{gmatrix}[b]
+            	1 & 0 & -1 & 3 \\
+            	0 & 1 & 3 & -5 \\
+            	0 & 0 & -4 & 8 \\
+            	0 & 0 & -8 & 16 
+                \rowops
+                \add[-2]{2}{3}
+            \end{gmatrix}
+            \rightsquigarrow 
+            \begin{gmatrix}[b]
+            	1 & 0 & -1 & 3 \\
+            	0 & 1 & 3 & -5 \\
+            	0 & 0 & -4 & 8 \\
+            	0 & 0 & 0 & 0 
+                \rowops
+                \mult{2}{\cdot -\frac{1}{4}}
+            \end{gmatrix}
+            \rightsquigarrow 
+            \begin{gmatrix}[b]
+            	1 & 0 & -1 & 3 \\
+            	0 & 1 & 3 & -5 \\
+            	0 & 0 & 1 & -2 \\
+            	0 & 0 & 0 & 0 
+            \end{gmatrix}
+        \end{gather*}
+        And thus we know there is a solution so $\mat{ 3 \\ -5 \\ 1 \\ 5 }$ is in the range of $L$. 
+        \item A2
+            \begin{enumerate}
+                \item We'll start with the range which we know looks like 
+                \begin{gather*}
+                    \left\{ \vec{x} \in \mathbb{R}^2: \vec{x} = \mat{ 2x_1 \\ -x_2 + 2x_3 } \right\}\\
+                \end{gather*}
+                We know that $2x_1$ and $-x_2 + 2x_3$ will span over all of $\mathbb{R}$ and so we know that the range looks like $\mathit{span} {\left\{ \mat{ 0 \\ 1 }, \mat{ 1 \\ 0 } \right\}} $ and a basis for the range is the set $\left\{ \mat{ 1 \\ 0 }, \mat{ 0 \\ 1 } \right\}$ \\
+                As for the null space we know that x component will be zero only if $x1 = 0$ and that the y component will be zero if and only if $-x2 + 2x_3 = 0 \Leftrightarrow x_2 = 2x_3$ and we let $t \in \mathbb{R}$ and let $x_3 = t$ and our solutions to the zero vector look like
+                \begin{gather*}
+                    \left\{ \vec{x} \in \mathbb{R}^3: \vec{x} = \mat{ 0 \\ 2t \\ t } \right\}\\
+                    \left\{ \vec{x} \in \mathbb{R}^3: \vec{x} = t\mat{ 0 \\ 2 \\ 1 } \right\}
+                \end{gather*}
+                Thus we conclude that a basis for the null space is  $\left\{ \mat{ 0 \\ 2 \\ 1 } \right\}$ 
+            \end{enumerate}
     \end{itemize}
 \end{ex}
 
