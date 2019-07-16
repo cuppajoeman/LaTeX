@@ -176,20 +176,29 @@ snippet tikzp "tikzpicture environment" b
 \end{tikzpicture}
 endsnippet
 
-snippet draw "tikzpicture draw command" b
+snippet tdraw "tikzpicture draw command" b
 \draw${1:[${2:options}]} $0;
 endsnippet
 
-snippet node "tikzpicture node command" b
+snippet tnode "tikzpicture node command" b
 \node${1:[${2:options}]} at (${3:a}, ${4:b}) {${5:label}};
 endsnippet
 
-snippet axis "tikzpicture axis snippet" b
-\draw[->] (-${1:2}, 0) -- ($1, 0);
-\draw[->] (0, -$1) -- (0, $1);
+snippet taxis "tikzpicture axis snippet" b
+\draw[<->] (-${1:2}, 0) -- ($1, 0);
+\draw[<->] (0, -$1) -- (0, $1);
 endsnippet
 
-snippet axis3d "tikzpicture 3d axis snippet" b
+snippet tgrid "tikzpicture grid snippet" b
+\draw[step=.5,gray,very thin] (-${1:1.9}, -$1) grid ($1, $1);
+endsnippet
+
+snippet tpoint "tikzpicture axis snippet" b
+\draw[fill] ($1, $2) circle [radius=.5pt];
+$0
+endsnippet
+
+snippet taxis3d "tikzpicture 3d axis snippet" b
 \draw[->] (-${1:2}, 0, 0) -- ($1, 0, 0);
 \draw[->] (0, -$1, 0) -- (0, $1, 0);
 \draw[->] (0, 0, -$1) -- (0, 0, $1);

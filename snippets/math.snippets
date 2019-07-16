@@ -315,6 +315,11 @@ snippet pp "add two numbers" iA
 endsnippet
 
 context "math()"
+snippet nn "add the negative" iA
+ - 
+endsnippet
+
+context "math()"
 snippet mm "multiply two numbers" iA
  \cdot 
 endsnippet
@@ -468,6 +473,12 @@ endsnippet
 context "math()"
 snippet 4mat "4 by 1 Matrix" iA
 \mat{ $1 \\\\ $2 \\\\ $3 \\\\ $4 }$0
+endsnippet
+
+# Jesus this is getting out of hand...
+context "math()"
+snippet 5mat "4 by 1 Matrix" iA
+\mat{ $1 \\\\ $2 \\\\ $3 \\\\ $4 \\\\ $5 }$0
 endsnippet
 
 context "math()"
@@ -905,6 +916,7 @@ snippet null "Null Space" iA
 \mathit{null} {$1} $0
 endsnippet
 
+# TODO: dry this up
 context "math()"
 snippet e1 "Basis" iA
 \vec{e_1}
@@ -913,6 +925,11 @@ endsnippet
 context "math()"
 snippet e2 "Basis" iA
 \vec{e_2}
+endsnippet
+
+context "math()"
+snippet e3 "Basis" iA
+\vec{e_3}
 endsnippet
 
 snippet mcal "mathcal" iA
@@ -1166,7 +1183,7 @@ snippet notin "not in " iA
 endsnippet
 
 context "math()"
-snippet inn "in " iA
+snippet in "in " iA
 \in
 endsnippet
 

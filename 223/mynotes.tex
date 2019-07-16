@@ -556,7 +556,138 @@ We can stop here because we see that in the bottom row we have $0 = -13$ which i
                     \left\{ \vec{x} \in \mathbb{R}^3: \vec{x} = t\mat{ 0 \\ 2 \\ 1 } \right\}
                 \end{gather*}
                 Thus we conclude that a basis for the null space is  $\left\{ \mat{ 0 \\ 2 \\ 1 } \right\}$ 
+                \item We know that the range looks like
+                \begin{gather*}
+                    \left\{ \vec{x} = \mat{ x_4 \\ x_3 \\ 0 \\ x_2 \\ x_1 + x_2 - x_3  } \right\}\\
+                    \left\{ \vec{x} \in \mathbb{R}^{5}: \vec{x} = x_{3} \mat{ 0 \\ 1 \\ 0 \\ 0 \\ -1 } + x_2 \mat{ 0 \\ 0 \\ 0 \\ 1 \\ 1 } + x_4\mat{ 1 \\ 0 \\ 0 \\ 0 \\ 0 } + x_1 \mat{ 0 \\ 0 \\ 0 \\ 0 \\ 1 } \text{ for some  }\right\}
+                \end{gather*}
+                And thus a basis for the range is 
+                \[
+                \left\{ \mat{ 0 \\ 1 \\ 0 \\ 0 \\ -1 }, \mat{ 0 \\ 0 \\ 0 \\ 1 \\ 1 }, \mat{ 1 \\ 0 \\ 0 \\ 0 \\ 0 }, \mat{ 0 \\ 0 \\ 0 \\ 0 \\ 1 } \right\}
+                \]
+                To show they are linearly independent we look at linear the linear combinations that give the zero vector, which would but each scalar has to be 0 so only the trivial answer exists so this set is linearly independent.
             \end{enumerate}
+        \item A3
+            \begin{enumerate}
+                \item Let's define this transformation as 
+                    \[
+                        L\left(\mat{ x \\ y }\right) = \left( x - y \right) \mat{ 1 \\ 2 \\ 3 }
+                    \]
+                    So then the matrix we are looking for is 
+                   \[
+                    \mat{ 1 & -1 \\ 2 & -2 \\ 3 & -3 }
+                    \]
+                \item We know that this transformation should be
+                    \[
+                        L\left(\mat{ x \\ y }\right) = \left( 2x + y \right) \vec{e_3}
+                    \]
+                    And we use $\vec{e_3}$ so we get the range. And thus we know our matrix should be
+                    \[
+                    \mat{ 2 & 1 \\ 2 & 1 \\ 2 & 1 }
+                    \]
+            \end{enumerate}
+        \item A6
+            \begin{enumerate}
+                \item We'll start by finding a basis for the rowspace, the row space is 
+                    \[
+                        \mathit{span} {\left\{ \mat{ 1 \\ 2 \\ 8 }, \mat{ 1 \\ 1 \\ 5 }, \mat{ 1 \\ 0 \\ -2 } \right\}} 
+                    \]
+                    A basis for this span is the set of lineary independent that span the row space so let's row reduce the rowspace
+                    \begin{gather*}
+                        \begin{gmatrix}[b]
+                        	1 & 1 & 1 \\
+                        	0 & 1 & 2 \\
+                        	-2 & 5 & 8 
+                            \rowops
+                            \add[2]{0}{2}
+                        \end{gmatrix}
+                        \rightsquigarrow 
+                        \begin{gmatrix}[b]
+                        	1 & 1 & 1 \\
+                        	0 & 1 & 2 \\
+                        	0 & 7 & 10
+                            \rowops
+                            \add[-7]{1}{2}
+                        \end{gmatrix}
+                        \rightsquigarrow \\
+                        \begin{gmatrix}[b]
+                        	1 & 1 & 1 \\
+                        	0 & -7 & -14 \\
+                        	0 & 0 & -4
+                            \rowops
+                            \mult{1}{\cdot -\frac{1}{7}}
+                            \mult{2}{\cdot -\frac{1}{4}}
+                        \end{gmatrix}
+                        \rightsquigarrow 
+                        \begin{gmatrix}[b]
+                        	1 & 1 & 1 \\
+                        	0 & 1 & 2 \\
+                        	0 & 0 & 1 
+                        \end{gmatrix}
+                    \end{gather*}
+                    And thus we know the only solution to the zero vector is a trivial one and so this set is linearly independent a basis could be $\left\{ \vec{e_1}, \vec{e_2}, \vec{e_3} \right\}$ .
+                    We'll now look at the column space which is the span of each of the columns let's look at the linear combinations of the columns which give the zero vector
+                    \begin{gather*}
+                        \begin{gmatrix}[b]
+                        	1 & 2 & 8 \\
+                        	1 & 1 & 5 \\
+                        	1 & 0 & -2
+                            \rowops
+                            \add[-1]{0}{1}
+                            \add[-1]{0}{2}
+                        \end{gmatrix}
+                        \rightsquigarrow 
+                        \begin{gmatrix}[b]
+                        	1 & 2 & 8 \\
+                        	0 & -1 & -3 \\
+                        	0 & -2 & -10
+                            \rowops
+                            \add[-2]{1}{2}
+                        \end{gmatrix}\\
+                        \rightsquigarrow 
+                        \begin{gmatrix}[b]
+                        	1 & 2 & 8 \\
+                        	0 & 2 & 6 \\
+                        	0 & 0 & -4
+                            \rowops
+                            \mult{1}{\cdot \frac{1}{2} }
+                            \mult{2}{\cdot -\frac{1}{4}}
+                        \end{gmatrix}
+                        \rightsquigarrow 
+                        \begin{gmatrix}[b]
+                        	1 & 2 & 8 \\
+                        	0 & 1 & 3 \\
+                        	0 & 0 & 1 
+                        \end{gmatrix}
+                    \end{gather*}
+                    And thus we know that these vectors are linearly independent so a basis which is a subset of the colspace is 
+                    \[
+                    \left\{ \mat{ 1 \\ 1 \\ 1 }, \mat{ 2 \\ 1 \\ 0 }, \mat{ 8 \\ 5 \\ -2 } \right\}
+                    \]
+                    Now we'll find the null space which we know are all vectors that get mapped to $\vec{0}$ after being multiplied by this matrix so we're looking for vectors in $\mathbb{R}^3$ that satisfy
+                    \[
+                    \mat{ 1 & 2 & 8 \\ 1 & 1 & 5 \\ 1 & 0 & -2 }\vec{x} = \vec{0}
+                    \]
+                    But remember this simply represents the linear combinations of the columns of the matrix so we're just looking at the combinations of the columns of the matrix that give the zero vector, which we know is only the trivial one, thus $\vec{x} = \mat{ 0 \\ 0 \\ 0 }$ and the null space is $\left\{ \vec{0} \right\}$, so a basis for this is the empty set.
+                    % TODO : Question Why is it the empty set
+                As for the rank-nullity theorem, we know that the rank is 3 and the nullity is 0 so the number of columns should be 3 as it is.
+            \item Same process as above
+            \item Same process as above
+            \end{enumerate}
+        \item A8
+            \begin{enumerate}
+                \item We know that row reduction doesn't change the row space as we are just adding multiples of rows and adding them so we can say that the row space is 
+                    \[
+                    \left\{ \mat{ 1 \\ 0 \\ 2 \\ 0 \\ 3 }, \mat{ 0 \\ 1 \\ -1 \\ 0 \\ 1 }, \mat{ 0 \\ 0 \\ 0 \\ 1 \\ 1 }, \mat{ 0 \\ 0 \\ 0 \\ 0 \\ 0 } \right\}
+                    \]
+                    If it were to span a subspace it would have to to span $\mathbb{R}^{5}$ but we know it doesn't becase we have less than or equal to  3 linearly independent vectors in that set.
+                    A basis for the rowspace of $A$ is the set of row vectors which have a pivot since if only these vectors were in a set together then they would only yield a trivial solution to the zero vector which we know would be  the set
+                    \[
+                    \left\{ \mat{ 1 \\ 0 \\ 2 \\ 0 \\ 3 }, \mat{ 0 \\ 1 \\ -1 \\ 0 \\ 1 }, \mat{ 0 \\ 0 \\ 0 \\ 1 \\ 1 } \right\}
+                    \]
+                \item If the column space is a basis then it must be a basis for $\mathbb{R}^{4}$ as these vectors are four dimensional.
+            \end{enumerate}
+            % TODO : Question Finish this but also ask about this before class starts.
     \end{itemize}
 \end{ex}
 
@@ -566,7 +697,31 @@ We can stop here because we see that in the bottom row we have $0 = -13$ which i
 \label{sub:extra_handout}
 % subsection extra_handout
 
+Images and Sets under transformations.
 
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item We know that $\mathcal{M}\left(P\right)$ is equal to 
+            \[
+            \left\{ \vec{x} \in \mathbb{R}^2: \vec{x} = M\vec{v} \text{ for some  } \vec{v} \in P \right\}
+            \]
+		But that the only elements of $P$ are $\vec{e_1}, \vec{e_2}$ so the image is the set
+        \begin{gather*}
+            \left\{ \mat{ 1 \\ 1 }, \mat{ -1 \\ 0 } \right\}
+        \end{gather*}
+        Drawing this we have
+        \begin{center}
+        \begin{tikzpicture}[scale=.5]
+            \draw[step=1,gray,very thin] (-3.9, -3.9) grid (3.9,3.9);
+            \draw[<->] (-4, 0) -- (4, 0);
+            \draw[<->] (0, -4) -- (0, 4);    
+            \draw[fill] (1, 1) circle [radius=.5pt];
+            \draw[fill] (-1, 0) circle [radius=.5pt];
+        \end{tikzpicture}
+        \end{center}
+    \end{enumerate}
+\end{enumerate}
 
 % subsection extra_handout (end)
 

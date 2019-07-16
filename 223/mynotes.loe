@@ -23,36 +23,36 @@
 \contentsline {eg}{\numberline {1.2.3}Example}{16}{eg.1.2.3}% 
 \contentsline {ex}{\numberline {1.3.1}Exercise}{18}{ex.1.3.1}% 
 \addvspace {10\p@ }
-\contentsline {defn}{\numberline {5}Definition\thmtformatoptarg {Induced Transformation}}{21}{defn.5}% 
-\contentsline {eg}{\numberline {2.1.1}Example}{21}{eg.2.1.1}% 
-\contentsline {eg}{\numberline {2.1.2}Example}{21}{eg.2.1.2}% 
-\contentsline {eg}{\numberline {2.1.3}Example}{21}{eg.2.1.3}% 
-\contentsline {eg}{\numberline {2.1.4}Example}{21}{eg.2.1.4}% 
-\contentsline {defn}{\numberline {6}Definition\thmtformatoptarg {Fundamental Subspaces}}{22}{defn.6}% 
-\contentsline {eg}{\numberline {2.1.5}Example}{22}{eg.2.1.5}% 
-\contentsline {eg}{\numberline {2.1.6}Example}{22}{eg.2.1.6}% 
-\contentsline {eg}{\numberline {2.1.7}Example}{22}{eg.2.1.7}% 
-\contentsline {eg}{\numberline {2.1.8}Example}{23}{eg.2.1.8}% 
-\contentsline {eg}{\numberline {2.1.9}Example}{23}{eg.2.1.9}% 
-\contentsline {eg}{\numberline {2.1.10}Example}{24}{eg.2.1.10}% 
-\contentsline {eg}{\numberline {2.1.11}Example}{24}{eg.2.1.11}% 
-\contentsline {eg}{\numberline {2.1.12}Example}{24}{eg.2.1.12}% 
-\contentsline {eg}{\numberline {2.1.13}Example}{25}{eg.2.1.13}% 
-\contentsline {defn}{\numberline {7}Definition\thmtformatoptarg {Rank}}{25}{defn.7}% 
-\contentsline {eg}{\numberline {2.1.14}Example}{25}{eg.2.1.14}% 
-\contentsline {eg}{\numberline {2.1.15}Example}{25}{eg.2.1.15}% 
-\contentsline {eg}{\numberline {2.2.1}Example}{26}{eg.2.2.1}% 
-\contentsline {crly}{\numberline {2}Corollary}{26}{crly.2}% 
-\contentsline {defn}{\numberline {8}Definition\thmtformatoptarg {Transpose of a Matrix}}{26}{defn.8}% 
-\contentsline {eg}{\numberline {2.2.2}Example}{26}{eg.2.2.2}% 
-\contentsline {crly}{\numberline {3}Corollary}{26}{crly.3}% 
-\contentsline {ex}{\numberline {2.2.1}Exercise}{27}{ex.2.2.1}% 
-\contentsline {ex}{\numberline {2.2.2}Exercise}{27}{ex.2.2.2}% 
-\contentsline {ex}{\numberline {2.2.3}Exercise}{27}{ex.2.2.3}% 
-\contentsline {ex}{\numberline {2.2.4}Exercise}{27}{ex.2.2.4}% 
-\contentsline {thm}{\numberline {4}Theorem\thmtformatoptarg {Rank-nullity}}{27}{thm.4}% 
-\contentsline {eg}{\numberline {2.2.3}Example}{27}{eg.2.2.3}% 
-\contentsline {eg}{\numberline {2.2.4}Example}{27}{eg.2.2.4}% 
-\contentsline {thm}{\numberline {5}Theorem\thmtformatoptarg {Rank-nullity for linear transformations}}{28}{thm.5}% 
-\contentsline {defn}{\numberline {9}Definition\thmtformatoptarg {Inverse Transformation}}{28}{defn.9}% 
-\contentsline {defn}{\numberline {10}Definition\thmtformatoptarg {Inverse Matrix}}{28}{defn.10}% 
+\contentsline {defn}{\numberline {5}Definition\thmtformatoptarg {Induced Transformation}}{25}{defn.5}% 
+\contentsline {eg}{\numberline {2.1.1}Example}{25}{eg.2.1.1}% 
+\contentsline {eg}{\numberline {2.1.2}Example}{25}{eg.2.1.2}% 
+\contentsline {eg}{\numberline {2.1.3}Example}{25}{eg.2.1.3}% 
+\contentsline {eg}{\numberline {2.1.4}Example}{25}{eg.2.1.4}% 
+\contentsline {defn}{\numberline {6}Definition\thmtformatoptarg {Fundamental Subspaces}}{26}{defn.6}% 
+\contentsline {eg}{\numberline {2.1.5}Example}{26}{eg.2.1.5}% 
+\contentsline {eg}{\numberline {2.1.6}Example}{26}{eg.2.1.6}% 
+\contentsline {eg}{\numberline {2.1.7}Example}{26}{eg.2.1.7}% 
+\contentsline {eg}{\numberline {2.1.8}Example}{27}{eg.2.1.8}% 
+\contentsline {eg}{\numberline {2.1.9}Example}{27}{eg.2.1.9}% 
+\contentsline {eg}{\numberline {2.1.10}Example}{28}{eg.2.1.10}% 
+\contentsline {eg}{\numberline {2.1.11}Example}{28}{eg.2.1.11}% 
+\contentsline {eg}{\numberline {2.1.12}Example}{28}{eg.2.1.12}% 
+\contentsline {eg}{\numberline {2.1.13}Example}{29}{eg.2.1.13}% 
+\contentsline {defn}{\numberline {7}Definition\thmtformatoptarg {Rank}}{29}{defn.7}% 
+\contentsline {eg}{\numberline {2.1.14}Example}{29}{eg.2.1.14}% 
+\contentsline {eg}{\numberline {2.1.15}Example}{29}{eg.2.1.15}% 
+\contentsline {eg}{\numberline {2.2.1}Example}{30}{eg.2.2.1}% 
+\contentsline {crly}{\numberline {2}Corollary}{30}{crly.2}% 
+\contentsline {defn}{\numberline {8}Definition\thmtformatoptarg {Transpose of a Matrix}}{30}{defn.8}% 
+\contentsline {eg}{\numberline {2.2.2}Example}{30}{eg.2.2.2}% 
+\contentsline {crly}{\numberline {3}Corollary}{30}{crly.3}% 
+\contentsline {ex}{\numberline {2.2.1}Exercise}{31}{ex.2.2.1}% 
+\contentsline {ex}{\numberline {2.2.2}Exercise}{31}{ex.2.2.2}% 
+\contentsline {ex}{\numberline {2.2.3}Exercise}{31}{ex.2.2.3}% 
+\contentsline {ex}{\numberline {2.2.4}Exercise}{31}{ex.2.2.4}% 
+\contentsline {thm}{\numberline {4}Theorem\thmtformatoptarg {Rank-nullity}}{31}{thm.4}% 
+\contentsline {eg}{\numberline {2.2.3}Example}{31}{eg.2.2.3}% 
+\contentsline {eg}{\numberline {2.2.4}Example}{31}{eg.2.2.4}% 
+\contentsline {thm}{\numberline {5}Theorem\thmtformatoptarg {Rank-nullity for linear transformations}}{32}{thm.5}% 
+\contentsline {defn}{\numberline {9}Definition\thmtformatoptarg {Inverse Transformation}}{32}{defn.9}% 
+\contentsline {defn}{\numberline {10}Definition\thmtformatoptarg {Inverse Matrix}}{32}{defn.10}% 
