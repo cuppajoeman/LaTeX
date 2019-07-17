@@ -699,6 +699,7 @@ We can stop here because we see that in the bottom row we have $0 = -13$ which i
 
 Images and Sets under transformations.
 
+% TODO : Question This whole thing is messed up office hours!
 \begin{enumerate}
     \item 
     \begin{enumerate}
@@ -720,6 +721,99 @@ Images and Sets under transformations.
             \draw[fill] (-1, 0) circle [radius=.5pt];
         \end{tikzpicture}
         \end{center}
+        % TODO : Question this is wrong ask why
+        \item We know that the convec linear combinations of $P$ look like 
+            \[
+                \left\{ \vec{x} \in \mathbb{R}^2: \vec{x} = t\vec{e_1} + \left( 1 - t \right)\vec{e_2} = \mat{ t \\ \left( 1 - t \right) } \text{ for some  }t \in \left[ 0,1 \right]\right\}
+            \]
+            And so vectors in the range of $\mathcal{M}$ should be the set
+            \[
+                \left\{ \vec{x} \in \mathbb{R}^2: \vec{x} = \mat{ 1 & -1 \\ 1 & 0 }\mat{ t \\ \left( 1 - t \right)}  \right\}
+            \]
+            which are the vectors
+            \[
+                \mat{ 2t - 1 \\ t } = \left( 2t - 1 \right)\vec{e_1} + t\vec{e_2} \text{ for some  } t \in \left[ 0,1 \right]
+            \]
+            \begin{center}
+                \begin{tikzpicture}[scale=0.5]
+                    \draw[step=.5,gray,very thin] (-3.9, -3.9) grid (3.9, 3.9);
+                    \draw[<->] (-4, 0) -- (4, 0);
+                    \draw[<->] (0, -4) -- (0, 4);
+                    \draw[pattern=north west lines] (0,-1) rectangle (1,1);
+                \end{tikzpicture}
+            \end{center}
+            We know that the span of a vector in $X$ will look like $\mat{ \alpha \\ 0 }\text{ for some  } \alpha \in \mathbb{R}$ and so the range will end up looking like
+        \[
+        \left\{ \vec{x} \in \mathbb{R} : \vec{x}  = \mat{ 1 & -1 \\ 1 & 0 } \mat{ \alpha  \\ 0 } \right\} 
+        \]
+        And equivalently 
+        \[
+        \left\{ \vec{x} \in \mathbb{R} :\vec{x} = \mat{ \alpha  \\ \alpha  } \right\} 
+        \]
+        which is exactly $\mathit{span} {\left\{ \mat{ 1 \\ 1 } \right\} } $ 
+        Drawing this we have
+        \begin{center}
+            \begin{tikzpicture}[scale=0.5]
+                \draw[step=.5,gray,very thin] (-3.9, -3.9) grid (3.9, 3.9);
+                \draw[<->] (-4, 0) -- (4, 0);
+                \draw[<->] (0, -4) -- (0, 4);
+                \draw[<->] (-3.9, -3.9) -- (3.9,3.9);
+            \end{tikzpicture}
+        \end{center}
+    \end{enumerate}
+\item Let $\ell = \left\{ a \vec{v} \text{ for some  } a \in \left[ 0, \beta  \right] \text{ for some  } \beta \in \mathbb{R}   \right\} $ then we'll look at the image of $\mathcal{M} $ which will look like 
+    \[
+    \left\{ \vec{x} \in \mathbb{R}^2 : \vec{x} = \mat{ 1 & -1 \\ 1 & 0 } \alpha \mat{ x \\ y } \right\} 
+    \]
+    Which equivalenlty is 
+    \[
+        \left\{ \vec{x} \in \mathbb{R}^2 :\vec{x} = \mat{ \alpha x - \alpha y  \\ \alpha x  } \right\} 
+    \]
+    which gives us the vectors
+    \[
+    \alpha \mat{ x - y \\ x }
+    \]
+    Which by definition is a line segment.\\
+    Alternatively we know that a line segment looks like $\alpha v + \vec{u} $ and that the image of this under some linear transformation $\mathcal{J} $ is the set of vectors $\left\{ \mathcal{J}\left(\alpha \vec{v}  + \vec{u} \right)  \right\}= \left\{ \alpha \mathcal{J}\left(\vec{v}\right)  + \mathcal{J}\left(\vec{u} \right)   \right\} $ which is also a line segment.
+    \item Q3
+    \begin{enumerate}
+        \item $\mathcal{A}\left(\mathbb{R}^2 \right) $ is the set
+            \begin{gather*}
+                \left\{ \vec{v} \in \mathbb{R}^2 :\vec{v} = \mat{ x - 2y \\ -2x + 4y + 2 } \text{ for some  } \mat{ x \\ y } \in \mathbb{R}^2  \right\} 
+            \end{gather*}
+        \item $\mathcal{A}\left(B\right) $ is the set
+            \begin{gather*}
+                \left\{ \vec{v} \in \mathbb{R}^2 :\vec{v} = \mat{ x - 2y \\ -2x + 4y + 2 } \text{ for some  } \mat{ x \\ y } \in B  \right\} 
+            \end{gather*}
+    \end{enumerate}
+    \item Q4
+    \begin{enumerate}
+        \item We know that the the xaxis is defined by the set $X$ 
+            \[
+            \left\{ \vec{x} \in \mathbb{R}^2 :\vec{x} = \mat{ \alpha  \\ 0 } \text{ for some  } \alpha \in \mathbb{R}  \right\} 
+            \]
+            And so the image under $\mathcal{Q} $ is the set 
+            \begin{gather*}
+                \left\{ \vec{v} \in \mathbb{R}^2 :\vec{v} = \mat{ x \\ y^2  } \text{ for some  } \mat{ x \\ y } \in X \right\} 
+            \end{gather*}
+            But we know the $y$ of any vector in $X$ is 0 so this just redfines the $X$ axis and we know that $\mathbb{R} $ is closed under addition and multiplication so this is certianly a subspace and a subset of $\mathbb{R}^2 $ for example take an element in $X$ and it's guarnteed to look like $\mat{ \alpha  \\ 0 } \subseteq \mathbb{R}^2 $ as required.
+        \item Let's call the line segment $\ell $ and we know that the image of $\ell $ under $\mathcal{Q} $ is the set
+            \[
+                \left\{ \vec{v} \in \mathbb{R}^2 :\vec{v} = \mat{ 3t \\ \left( 2 + t \right) ^2  } \text{ for some  } t \in \left[ 0,1 \right]  \right\} 
+            \]
+            We know that $\left( 2 + t \right) ^2 = 4 + 4t + t^2  $ and so the vectors in the image are of the form
+            \[
+            \mat{ 0 \\ 4 }  + t \mat{ 3 \\ 4 + t } 
+            \]
+            Which defines a line that has been shifted, nevertheless it ends as $t \in \left[ 0,1 \right] $ and thus it is a segment as required.
+    \end{enumerate}
+    \item A line segment is a line that is described by $\alpha \vec{v} \text{ for some  } a \in \left[ 0, \beta  \right] \text{ for some  } \beta \in \mathbb{R} $ we know if we look at $\ell= \left\{ \alpha \vec{v} \text{ for some  } \alpha \in \mathbb{R}   \right\} $ where $\vec{v} \neq \vec{0} $ and $\vec{v} \neq \vec{\vec{e_1} } $ and $\vec{v} \neq \vec{e_2} $ that the image will result in a vshape which cannot be described as a single line segment
+    \item Q5
+    \begin{enumerate}
+        \item 
+            \begin{gather*}
+                \left\{ \vec{v} \in \mathbb{R}^2 : \vec{v} = \mat{ e^{y} \cos{x} \\ e^{y} \sin{x} } \text{ for some  } \mat{ x \\ y } \in \mathbb{R}^2   \right\} \\
+            \end{gather*}
     \end{enumerate}
 \end{enumerate}
 
@@ -1194,5 +1288,128 @@ What if $M$ was $4 \times 3$ then we could be sure that every column is linearly
 % section tutorial_6 (end)
 
 % chapter week_10 (end)
+
+\chapter{Week 11}%
+\label{chp:week_11}
+% chapter week_11
+
+\section{Inverses}%
+\label{sec:inverses}
+% section inverses
+
+\subsection{56}%
+\label{sub:56}
+% subsection 56
+
+We start by applying some row operations to some identity matrices
+\begin{gather*}
+    \begin{gmatrix}[b]
+    	1 & 0 & 0 \\
+    	0 & 1 & 0 \\
+    	0 & 0 & 0
+        \rowops
+        \add[2]{0}{2} 
+    \end{gmatrix}
+    \rightsquigarrow 
+    \begin{gmatrix}[b]
+    	1 & 0 & 0 \\
+    	0 & 1 & 0 \\
+    	2 & 0 & 1 
+    \end{gmatrix}= E_{1} \\
+    \begin{gmatrix}[b]
+    	1 & 0 & 0 \\
+    	0 & 1 & 0 \\
+    	0 & 0 & 1
+        \rowops
+        \add[-2]{0}{2} 
+    \end{gmatrix}
+    \begin{gmatrix}[b]
+    	1 & 0 & 0 \\
+    	0 & 1 & 0 \\
+    	-2 & 0 & 1 
+    \end{gmatrix} = E_{2} 
+\end{gather*}
+
+Applying $E_{1} \text{ and } E_2$ to $A$ we can see...
+\begin{gather*}
+    \begin{bmatrix}
+    	1 & 2 & 3 \\
+    	4 & 5 & 6 \\
+    	7 & 8 & 9 
+    \end{bmatrix}
+    \begin{bmatrix}
+    	1 & 0 & 0 \\
+    	0 & 1 & 0 \\
+    	2 & 0 & 1 
+    \end{bmatrix}
+    = 
+    \begin{bmatrix}
+    	1 & 2 & 3 \\
+    	4 & 5 & 6 \\
+    	2 \cdot 1 + 7 & 2 \cdot 2 + 8 & 2 \cdot 3 + 9 
+    \end{bmatrix}
+\end{gather*}
+
+
+Which we note is the same thing as adding twice the first row to the third. Then we know that $E_2A$ would be subtracting two of row 1 from row 3.
+
+If we apply $E_1$ then $E_2$ then we just added and subtraced the first row which does nothing so $E_1E_2 = I= E_2E_1$ 
+    
+
+% subsection 56 (end)
+
+\subsection{57}%
+\label{sub:57}
+% subsection 57
+
+We know that matrix $A$ represents adding twice row 2 to row1 and adding -3 row 1 to row 3, by observation these operations will turn $D$ into the identity matrix, now let's look at it the other way.\\
+We can see that matrix $D$ represents adding 3 of row 1 to row 3 then adding -2 row 2 to row 1 which we can tell are the inverse operations as what $A$ does so we know this will yield the identity matrix. So we can say $A$ and $D$ are inverses of each other.
+
+
+
+% subsection 57 (end)
+
+We'll now prove why the algorithm to determine the inverse matrix actually works, for example if we have the matrix 
+\[
+\begin{bmatrix}
+    1 & 4 \\
+    0 & 2 
+\end{bmatrix}
+\]
+Then we would set something up like this
+\[
+\begin{bmatrix}[cc|cc]
+    1 & 4 & 1 & 0 \\
+    0 & 2 & 0 & 1 
+\end{bmatrix}
+\]
+Where on the right hand side we have the matrix that will hold an of the ro operations we do to transform this matrix on the left into the identity matrix, thus once we're done the matrix on the right will represent all the row operations that would tern it into the identity matrix.
+
+So it's just a way of keeping track of two different pieces of data visually.
+
+\begin{gather*}
+    \intertext{multiply row 2 by $\frac{1}{2}$, so now the matrix on the right represents this operation}
+    \begin{bmatrix}[c c | c c]
+    	1 & 4 & 1 & 0 \\
+    	0 & 1 & 0 & \frac{1}{2} 
+    \end{bmatrix}\\
+    \intertext{add -4 of row 2 to row 1}
+    \begin{bmatrix}[c c | c c]
+    	1 & 0 & 1 & -2 \\
+    	0 & 1 & 0 & -\frac{1}{2} 
+    \end{bmatrix}
+\end{gather*}
+
+And then we know the matrix on the right represents applying the two row operations that turn the matrix on the left into the identity matrix upon multiplication by the matrix. Thus we've found the inverse matrix for the left matrix.
+
+\begin{thm}[Inverse Existance]\index{Inverse Existance}\label{thm:inverse_existance}
+    A matrix has an inverse if and only if it is square and can be ``row reduced" to the identity matrix.\\
+    % TODO : Question Ask why it must be square
+    We know you can reach the identity matrix if you can reach row reduced echolelon form which means you must have a pivot for each column, so we also require that the columns must be linearly independent.
+\end{thm}
+
+% section inverses (end)
+
+% chapter week_11 (end)
 
 \end{document}

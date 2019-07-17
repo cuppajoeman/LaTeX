@@ -326,7 +326,7 @@ endsnippet
 
 context "math()"
 snippet ee "equality" iA
- = 
+= 
 endsnippet
 
 context "math()"
@@ -357,37 +357,37 @@ endsnippet
 
 context "math()"
 snippet pi "pi" iA
-\pi
+\pi $0
 endsnippet
 
 context "math()"
 snippet aa "alpha" iA
-\alpha
+\alpha $0
 endsnippet
 
 context "math()"
 snippet bb "beta" iA
-\beta
+\beta $0
 endsnippet
 
 context "math()"
 snippet gg "gamma" iA
-\gamma
+\gamma $0
 endsnippet
 
 context "math()"
 snippet dd "delta" iA
-\delta
+\delta $0
 endsnippet
 
 context "math()"
 snippet ep "var epsilon" iA
-\varepsilon
+\varepsilon $0
 endsnippet
 
 context "math()"
 snippet lda "lambda" iA
-\lambda
+\lambda $0
 endsnippet
 
 context "math()"
@@ -397,22 +397,22 @@ endsnippet
 
 context "math()"
 snippet && "AND" iA
-\land
+\land $0
 endsnippet
 
 context "math()"
 snippet ~ "NOT" i
-\neg
+\neg $0
 endsnippet
 
 context "math()"
 snippet xor "XOR" iA
-\oplus
+\oplus $0
 endsnippet
 
 context "math()"
 snippet VV "OR" iA
-\lor
+\lor $0
 endsnippet
 
 context "math()"
@@ -422,17 +422,17 @@ endsnippet
 
 context "math()"
 snippet st "such that" iA
-\text{ s.t. }
+\text{ s.t. } $0
 endsnippet
 
 context "math()"
 snippet txt "text" iA
-\text{ $1 }$0
+\text{ $1 } $0
 endsnippet
 
 context "math()"
 snippet iff "iff" Ai
-\iff
+\iff $0
 endsnippet
 
 context "math()"
@@ -467,33 +467,33 @@ endsnippet
 
 context "math()"
 snippet 3mat "3 by 1 Matrix" iA
-\mat{ $1 \\\\ $2 \\\\ $3 }$0
+\mat{ $1 \\\\ $2 \\\\ $3 } $0
 endsnippet
 
 context "math()"
 snippet 4mat "4 by 1 Matrix" iA
-\mat{ $1 \\\\ $2 \\\\ $3 \\\\ $4 }$0
+\mat{ $1 \\\\ $2 \\\\ $3 \\\\ $4 } $0
 endsnippet
 
 # Jesus this is getting out of hand...
 context "math()"
 snippet 5mat "4 by 1 Matrix" iA
-\mat{ $1 \\\\ $2 \\\\ $3 \\\\ $4 \\\\ $5 }$0
+\mat{ $1 \\\\ $2 \\\\ $3 \\\\ $4 \\\\ $5 } $0
 endsnippet
 
 context "math()"
 snippet 3rmat "1 by 3 Row Matrix" iA
-\mat{ $1 & $2 & $3 }$0
+\mat{ $1 & $2 & $3 } $0
 endsnippet
 
 context "math()"
 snippet 2mat "2 by 1 Matrix" iA
-\mat{ $1 \\\\ $2 }$0
+\mat{ $1 \\\\ $2 } $0
 endsnippet
 
 context "math()"
 snippet 2rmat "1 by 2 Row Matrix" iA
-\mat{ $1 & $2}$0
+\mat{ $1 & $2} $0
 endsnippet
 
 context "math()"
@@ -510,17 +510,17 @@ endsnippet
 
 context "math()"
 snippet rad "Add rows" iA
-\add[$1]{$2}{$3}
+\add[$1]{$2}{$3} $0
 endsnippet
 
 context "math()"
 snippet rmul "Multiply row" iA
-\mult{$2}{\cdot $3}$0
+\mult{$2}{\cdot $3} $0
 endsnippet
 
 context "math()"
 snippet rswap "Swap rows" iA
-\swap{$1}{$2}$0
+\swap{$1}{$2} $0
 endsnippet
 
 context "math()"
@@ -550,7 +550,7 @@ endsnippet
 
 context "math()"
 snippet lim "limit" w
-\lim_{${1:n}\to${2:\infty}}
+\lim_{${1:n}\to${2:\infty}} $0
 endsnippet
 
 context "math()"
@@ -590,47 +590,47 @@ endsnippet
 
 context "math()"
 snippet sr "^2" iA
-^2
+^2 $0
 endsnippet
 
 context "math()"
 snippet cb "^3" iA
-^3
+^3 $0
 endsnippet
 
 context "math()"
 snippet tt "to the ... power" iA
-^{$1}$0
+^{$1} $0
 endsnippet
 
 context "math()"
 snippet ss "subscript" iA
-_{$1}$0
+_{$1} $0
 endsnippet
 
 context "math()"
 snippet ooo "\infty" iA
-\infty
+\infty $0
 endsnippet
 
 context "math()"
 snippet rij "mrij" i
-(${1:x}_${2:n})_{${3:$2}\\in${4:\\N}}$0
+(${1:x}_${2:n})_{${3:$2}\\in${4:\\N}} $0
 endsnippet
 
 context "math()"
 snippet <= "leq" iA
-\le
+\le $0
 endsnippet
 
 context "math()"
 snippet >= "geq" iA
-\ge
+\ge $0
 endsnippet
 
 context "math()"
 snippet e= "congruent/equiv" iA
-\equiv
+\equiv $0
 endsnippet
 
 context "math()"
@@ -652,57 +652,57 @@ endsnippet
 
 context "math()"
 snippet obrace "overbrace" iA
-\overbrace{$1}^{$2}$0
+\overbrace{$1}^{$2} $0
 endsnippet
 
 context "math()"
 snippet ubrace "underbrace" iA
-\underbrace{$1}_{$2}$0
+\underbrace{$1}_{$2} $0
 endsnippet
 
 context "math()"
 snippet () "left( right)" iA
-\left( ${1:${VISUAL}} \right)$0
+\left( ${1:${VISUAL}} \right) $0
 endsnippet
 
 context "math()"
 snippet [] "left[ right]" iA
-\left[ ${1:${VISUAL}} \right]$0
+\left[ ${1:${VISUAL}} \right] $0
 endsnippet
 
 context "math()"
 snippet lr "left( right)" i
-\left( ${1:${VISUAL}} \right)$0
+\left( ${1:${VISUAL}} \right) $0
 endsnippet
 
 context "math()"
 snippet lr( "left( right)" i
-\left( ${1:${VISUAL}} \right)$0
+\left( ${1:${VISUAL}} \right) $0
 endsnippet
 
 context "math()"
 snippet lr| "left| right|" i
-\left| ${1:${VISUAL}} \right|$0
+\left| ${1:${VISUAL}} \right| $0
 endsnippet
 
 context "math()"
 snippet lr{ "left\{ right\}" i
-\left\\{ ${1:${VISUAL}} \right\\}$0
+\left\\{ ${1:${VISUAL}} \right\\} $0
 endsnippet
 
 context "math()"
 snippet lrb "left\{ right\}" i
-\left\\{ ${1:${VISUAL}} \right\\}$0
+\left\\{ ${1:${VISUAL}} \right\\} $0
 endsnippet
 
 context "math()"
 snippet lr[ "left[ right]" i
-\left[ ${1:${VISUAL}} \right]$0
+\left[ ${1:${VISUAL}} \right] $0
 endsnippet
 
 context "math()"
 snippet lra "leftangle rightangle" iA
-\left<${1:${VISUAL}} \right>$0
+\left<${1:${VISUAL}} \right> $0
 endsnippet
 
 context "math()"
@@ -720,49 +720,49 @@ context "math()"
 #                          '
 # SUBSCRIPTS
 
-context "math()"
-snippet xnn "xn" iA
-x_{n}
-endsnippet
+#context "math()"
+#snippet xnn "xn" iA
+#x_{n} $0
+#endsnippet
 
 context "math()"
 snippet ynn "yn" iA
-y_{n}
+y_{n} $0
 endsnippet
 
 context "math()"
 snippet xii "xi" iA
-x_{i}
+x_{i} $0
 endsnippet
 
 context "math()"
 snippet yii "yi" iA
-y_{i}
+y_{i} $0
 endsnippet
 
 context "math()"
 snippet xjj "xj" iA
-x_{j}
+x_{j} $0
 endsnippet
 
 context "math()"
 snippet yjj "yj" iA
-y_{j}
+y_{j} $0
 endsnippet
 
 context "math()"
 snippet xp1 "x" iA
-x_{n+1}
+x_{n+1} $0
 endsnippet
 
 context "math()"
 snippet n0 "x" iA
-n_{0}
+n_{0} $0
 endsnippet
 
 context "math()"
 snippet xmm "x" iA
-x_{m}
+x_{m} $0
 endsnippet
 
 #                       /$$
@@ -777,22 +777,22 @@ endsnippet
 
 context "math()"
 snippet afa "afa" iA
-\mathbb{A}
+\mathbb{A} $0
 endsnippet
 
 context "math()"
 snippet EU "E" iA
-\qathbb{E}
+\qathbb{E} $0
 endsnippet
 
 context "math()"
 snippet R0+ "R0+" iA
-\\R_0^+
+\\R_0^+ $0
 endsnippet
 
 context "math()"
 snippet Rp "Real Positive" iA
-\mathbb{R^+}
+\mathbb{R^+} $0
 endsnippet
 
 snippet plot "Plot" w
@@ -878,17 +878,17 @@ endsnippet
 
 
 snippet co "Tikz coordinate" w
-coordinate ($1)$0
+coordinate ($1) $0
 endsnippet
 
 context "math()"
 snippet vv "Vector" iA
-\vec{$1}$0
+\vec{$1} $0
 endsnippet
 
 context "math()"
 snippet bv "Basis Vector" iA
-\left[ $1 \right]_{\mathcal{$2}}$0
+\left[ $1 \right]_{\mathcal{$2}} $0
 endsnippet
 
 context "math()"
@@ -919,21 +919,21 @@ endsnippet
 # TODO: dry this up
 context "math()"
 snippet e1 "Basis" iA
-\vec{e_1}
+\vec{e_1} $0
 endsnippet
 
 context "math()"
 snippet e2 "Basis" iA
-\vec{e_2}
+\vec{e_2} $0
 endsnippet
 
 context "math()"
 snippet e3 "Basis" iA
-\vec{e_3}
+\vec{e_3} $0
 endsnippet
 
 snippet mcal "mathcal" iA
-\mathcal{$1}$0
+\mathcal{$1} $0
 endsnippet
 
 # snippet unit "unit vector" iA
@@ -942,22 +942,22 @@ endsnippet
 
 context "math()"
 snippet lll "l" iA
-\ell
+\ell $0
 endsnippet
 
 context "math()"
 snippet nabl "nabla" iA
-\nabla
+\nabla $0
 endsnippet
 
 context "math()"
 snippet xx "cross" iA
-\times
+\times $0
 endsnippet
 
 context "math()"
 snippet ** "cdot" iA
-\cdot
+\cdot $0
 endsnippet
 
 snippet slide "slide" bA
@@ -972,12 +972,12 @@ endsnippet
 
 context "math()"
 snippet norm "norm" iA
-\left\Vert $1 \right\Vert$0
+\left\Vert $1 \right\Vert $0
 endsnippet
 
 context "math()"
 snippet abs "absolute" iA
-\left| $1 \right|$0
+\left| $1 \right| $0
 endsnippet
 
 #  __      _
@@ -987,37 +987,37 @@ endsnippet
 #         /___/
 
 snippet '(?<!\\)arcsin' "sin" rwA
-\arcsin$1{${2:\theta}}$0
+\arcsin$1{${2:\theta}} $0
 endsnippet
 snippet '(?<!arc)(?<!\\)sine' "sine" rwA
-\sin$1{${2:\theta}}$0
+\sin$1{${2:\theta}} $0
 endsnippet
 snippet '(?<!\\)arccos' "cos" rwA
-\arccos$1{${2:\theta}}$0
+\arccos$1{${2:\theta}} $0
 endsnippet
 snippet '(?<!arc)(?<!\\)cos' "cos" rwA
-\cos$1{${2:\theta}}$0
+\cos$1{${2:\theta}} $0
 endsnippet
 snippet '(?<!\\)arctan' "tan" rwA
-\arctan$1{${2:\theta}}$0
+\arctan$1{${2:\theta}} $0
 endsnippet
 # snippet '(?<!arc)(?<!\\)tan' "tan" rwA
 # \tan
 # endsnippet
 snippet '(?<!\\)arccot' "cot" rwA
-\arccot$1{${2:\theta}}$0
+\arccot$1{${2:\theta}} $0
 endsnippet
 snippet '(?<!arc)(?<!\\)cot' "cot" rwA
-\cot$1{${2:\theta}}$0
+\cot$1{${2:\theta}} $0
 endsnippet
 snippet '(?<!\\)arccsc' "csc" rwA
-\arccsc$1{${2:\theta}}$0
+\arccsc$1{${2:\theta}} $0
 endsnippet
 snippet '(?<!arc)(?<!\\)csc' "csc" rwA
-\csc$1{${2:\theta}}$0
+\csc$1{${2:\theta}} $0
 endsnippet
 snippet '(?<!\\)arcsec' "sec" rwA
-\arcsec$1{${2:\theta}}$0
+\arcsec$1{${2:\theta}} $0
 endsnippet
 # snippet '(?<!arc)(?<!\\)sec' "sec" rwA
 # \sec
@@ -1025,51 +1025,51 @@ endsnippet
 
 context "math()"
 snippet '(?<!\\)ln' "ln" rwA
-\ln($1)$0
+\ln($1) $0
 endsnippet
 
 snippet '(?<!\\)exp' "exp" rw
-\exp
+\exp $0
 endsnippet
 
 
 snippet '(?<!\\)logo' "logo" rwA
-\log
+\log $0
 endsnippet
 
 context "math()"
 snippet -> "to" iA
-\to
+\to $0
 endsnippet
 
 context "math()"
 snippet !> "mapsto" iA
-\mapsto
+\mapsto $0
 endsnippet
 
 context "math()"
 snippet r> "right arrow" iA
-\rightarrow
+\rightarrow $0
 endsnippet
 
 context "math()"
 snippet invs "inverse" iA
-^{-1}
+^{-1} $0
 endsnippet
 
 context "math()"
 snippet CC "Complex Numbers" iA
-\mathbb{C}
+\mathbb{C} $0
 endsnippet
 
 context "math()"
 snippet cn "Complex Number" iA
-${1:\alpha} + ${2:\beta} i$0
+${1:\alpha} + ${2:\beta} i $0
 endsnippet
 
 context "math()"
 snippet bO "Big Oh- Notation" w
-\mathcal{O}($1)$0
+\mathcal{O}($1) $0
 endsnippet
 
 context "math()"
@@ -1079,87 +1079,87 @@ endsnippet
 
 context "math()"
 snippet BOM "Big Omega" w
-\Omega($1)$0
+\Omega($1) $0
 endsnippet
 
 context "math()"
 snippet LL "laplace" iA
-\mathcal{L}
+\mathcal{L} $0
 endsnippet
 
 context "math()"
 snippet HH "hamiltonian" iA
-\mathcal{H}
+\mathcal{H} $0
 endsnippet
 
 context "math()"
 snippet FF "overdekking" iA
-\mathcal{F}
+\mathcal{F} $0
 endsnippet
 
 context "math()"
 snippet \\\ "setminus" iA
-\setminus
+\setminus $0
 endsnippet
 
 context "math()"
 snippet >> ">>" iA
-\gg
+\gg $0
 endsnippet
 
 context "math()"
 snippet << "<<" iA
-\ll
+\ll $0
 endsnippet
 
 context "math()"
 snippet DD "delta" iA
-\Delta
+\Delta $0
 endsnippet
 
 context "math()"
 snippet ~~ "~" iA
-\sim
+\sim $0
 endsnippet
 
 context "math()"
 snippet star "star" iA
-^\star
+^\star $0
 endsnippet
 
 context "math()"
 snippet set "set" iA
-\\left\\{ $1 \\right\\}$0
+\\left\\{ $1 \\right\\} $0
 endsnippet
 
 context "math()"
 snippet pwr "Power set" iA
-\mathcal{P}($1)$0
+\mathcal{P}($1) $0
 endsnippet
 
 context "math()"
 snippet || "mid" iA
-\mid
+\mid $0
 endsnippet
 
 context "math()"
 snippet t. "therefore" iA
-\therefore
+\therefore $0
 endsnippet
 
 context "math()"
 snippet n| "nmid" iA
-\nmid
+\nmid $0
 endsnippet
 
 context "math()"
 snippet cc "subset" iA
-\subseteq
+\subseteq $0
 endsnippet
 
 context "math()"
 snippet c= "subset equal" iA
-\subseteq
+\subseteq $0
 endsnippet
 
 context "math()"
@@ -1169,22 +1169,22 @@ endsnippet
 
 context "math()"
 snippet inwend "mathring" i
-\mathring
+\mathring $0
 endsnippet
 
 context "math()"
 snippet sluit "overline" i
-\overline{$1}$0
+\overline{$1} $0
 endsnippet
 
 context "math()"
 snippet notin "not in " iA
-\not\in
+\not\in $0
 endsnippet
 
 context "math()"
 snippet in "in " iA
-\in
+\in $0
 endsnippet
 
 context "math()"
@@ -1199,67 +1199,79 @@ endsnippet
 
 context "math()"
 snippet Ff "Captial Function" iA
-\mathcal{${1:f}}\left(${2:x}\right)$0
+\mathcal{${1:f}}\left(${2:x}\right) $0
 endsnippet
 
 context "math()"
 snippet fog "function composition" i
-${1:f} \circ ${2:g}$0
+${1:f} \circ ${2:g} $0
 endsnippet
 
 context "math()"
 snippet surj "surjective" iA
-\forall y \in ${1:CD}, \exists x \in ${2:D} \text{ s.t. } y = ${3:f}(x)$0
+\forall y \in ${1:CD}, \exists x \in ${2:D} \text{ s.t. } y = ${3:f}(x) $0
 endsnippet
 
 context "math()"
 snippet inj "injective" iA
-\forall x_1, x_2 \in ${1:D}, ${2:f}(x_1) = ${3:f}(x_2) \implies x_1 = x_2$0
+\forall x_1, x_2 \in ${1:D}, ${2:f}(x_1) = ${3:f}(x_2) \implies x_1 = x_2 $0
 endsnippet
 
 context "math()"
 snippet NN "n" iA
-\mathbb{N}
+\mathbb{N} $0
 endsnippet
 
 context "math()"
 snippet Nn "cap" iA
-\cap
+\cap $0
 endsnippet
 
 context "math()"
 snippet UU "cup" iA
-\cup
+\cup $0
 endsnippet
 
 context "math()"
 snippet OO "emptyset" iA
-\emptyset
+\emptyset $0
+endsnippet
+
+# TODO Dry this up
+
+context "math()"
+snippet R1 "real" iA
+\mathbb{R} $0
 endsnippet
 
 context "math()"
-snippet RR "real" iA
-\mathbb{R}
+snippet R2 "real" iA
+\mathbb{R}^2 $0
+endsnippet
+
+context "math()"
+snippet R3 "real" iA
+\mathbb{R}^3 $0
 endsnippet
 
 context "math()"
 snippet RPn "Projective space" iA
-\mathbb{R \mathrm P^n}
+\mathbb{R \mathrm P^n} $0
 endsnippet
 
 context "math()"
 snippet QQ "Q" iA
-\mathbb{Q}
+\mathbb{Q} $0
 endsnippet
 
 context "math()"
 snippet ZZ "Z" iA
-\mathbb{Z}
+\mathbb{Z} $0
 endsnippet
 
 context "math()"
 snippet Zp "Z" iA
-\mathbb{Z ^ +}
+\mathbb{Z ^ +} $0
 endsnippet
 context "math()"
 # snippet opn "U" iA
@@ -1268,12 +1280,12 @@ context "math()"
 
 context "math()"
 snippet bbb "borel" iA
-\mathcal B
+\mathcal B $0
 endsnippet
 
 context "math()"
 snippet BB "Bezier" iA
-B_{${1:i}}^{${2:n}}(${3:t})$0
+B_{${1:i}}^{${2:n}}(${3:t}) $0
 endsnippet
 
 # snippet NN "Basespline" iA
@@ -1286,22 +1298,22 @@ endsnippet
 
 context "math()"
 snippet l_2n "l2n" iA
-\ell^2(\N)
+\ell^2(\N) $0
 endsnippet
 
 context "math()"
 snippet perp "perp" iA
-\perp
+\perp $0
 endsnippet
 
 context "math()"
 snippet <! "normal" iA
-\triangleleft
+\triangleleft $0
 endsnippet
 
 context "math()"
 snippet <> "hokje" iA
-\diamond
+\diamond $0
 endsnippet
 
 context "math()"

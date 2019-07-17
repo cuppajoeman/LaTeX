@@ -171,13 +171,19 @@ snippet marfig "Margin figure environment" b
 endsnippet
 
 snippet tikzp "tikzpicture environment" b
-\begin{tikzpicture}
-	$0
-\end{tikzpicture}
+\begin{center}
+	\begin{tikzpicture}${1:[scale=${2:0.5}]}
+		$0
+	\end{tikzpicture}
+\end{center}
 endsnippet
 
 snippet tdraw "tikzpicture draw command" b
 \draw${1:[${2:options}]} $0;
+endsnippet
+
+snippet trect "tikzpicture draw rect" b
+\draw[pattern=north west lines] ($1,$2) rectangle ($3,$4);$0
 endsnippet
 
 snippet tnode "tikzpicture node command" b
@@ -185,12 +191,12 @@ snippet tnode "tikzpicture node command" b
 endsnippet
 
 snippet taxis "tikzpicture axis snippet" b
-\draw[<->] (-${1:2}, 0) -- ($1, 0);
+\draw[<->] (-${1:4}, 0) -- ($1, 0);
 \draw[<->] (0, -$1) -- (0, $1);
 endsnippet
 
 snippet tgrid "tikzpicture grid snippet" b
-\draw[step=.5,gray,very thin] (-${1:1.9}, -$1) grid ($1, $1);
+\draw[step=.5,gray,very thin] (-${1:3.9}, -$1) grid ($1, $1);
 endsnippet
 
 snippet tpoint "tikzpicture axis snippet" b
