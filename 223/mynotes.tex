@@ -1575,8 +1575,40 @@ Some properties follow
         \end{align*}
     \item We know that $\mat{ \alpha  \\ \beta  } _{\mathcal{C} } =  \alpha \vec{c_1}  + \beta \vec{c_2} $ so then
         \begin{equation*}
-            T\left(\alpha \vec{c_1}  + \beta \vec{c_2} \right)=  \alpha T\left(\vec{c_1} \right) + \beta T\left(\vec{\vec{c_2} } \right)=  \alpha 2\vec{c_1}  + \beta \vec{c_2} =  
+            T\left(\alpha \vec{c_1}  + \beta \vec{c_2} \right)=  \alpha T\left(\vec{c_1} \right) + \beta T\left(\vec{\vec{c_2} } \right)=  \alpha 2\vec{c_1}  + \beta \vec{c_2} =  \mat{ 2\alpha  \\ \beta  }   
         \end{equation*}
+    \item Let $X$ be the matrix which induces the transformation $T$ on elements of the $\mathcal{C} $ basis we know the following
+        \[
+        \left[ T\left(\vec{c_1} \right) \right]_{\mathcal{C}} =  X\left[ \vec{c_1}  \right]_{\mathcal{C}} 
+        \]
+        But we have $\left[ T\left(\vec{c_1} \right) \right]_{\mathcal{C}} =  \mat{ 2 \\ 0 } $ we also know that $\left[ T\left(\vec{c_2} \right) \right]_{\mathcal{C}} =  \mat{ 0 \\ 1 } $ and thus 
+        \[
+        X=  \mat{ 2 & 0 \\ 0 & 1 }
+        \]
+        And here we know that $X =  \left[ T \right]_{\mathcal{C}} $ 
+    \item We know that we want to find $\left[ T \right]_{\mathcal{E}} $, remember that's the matrix $K$ such that the following properties holds 
+        \[
+        \left[ T\left(\vec{v} \right) \right]_{\mathcal{E}} = K\left[ \vec{v}  \right]_{\mathcal{E}} 
+        \]
+        Here's the plan, we know letting $\vec{v} = \vec{e_1} \text{ or } \vec{e_2} $ will give us the columns of $K$ but we must determine what $T\left(\vec{v} \right)$ is then convert that into the $\mathcal{E} $ basis. Though know what $\left[ T \right]_{\mathcal{C}} $ is which is useful in the following formula
+        \begin{equation*}
+            \left[ T\left(\vec{v} \right) \right]_{\mathcal{C}} = \left[ T \right]_{\mathcal{C}} \left[ \vec{v}  \right]_{\mathcal{C}} 
+        \end{equation*}
+    Ok, so let's start by converting $\vec{e_1} $ to the other basis, by observation we can tell that $\vec{e_1} = 3\vec{c_1}  - \vec{c_2} \Leftrightarrow \left[ \vec{e_1}  \right]_{\mathcal{C}} = \mat{ 3 \\ -1 } $ and also that $\vec{e_2} = -5\vec{c_1}  + 2\vec{c_2} \Leftrightarrow \left[ \vec{e_2}  \right]_{\mathcal{C}} = \mat{ -5 \\ 2 } $ and now we know 
+    \begin{align*}
+        \left[ T\left(\vec{e_1} \right) \right]_{\mathcal{C}} &= \mat{ 2 & 0 \\ 0 & 1 }\mat{ -5 \\ 2 }  \\
+        &= \mat{ -10 \\ 2 }
+    \end{align*}
+    And also 
+    \begin{align*}
+        \left[ T\left(\vec{e_2} \right) \right]_{\mathcal{C}} &= \mat{ 2 & 0 \\ 0 & 1 } \mat{ 3 \\ -1 } \\
+        &= \mat{ 6 \\ -1 }
+    \end{align*}
+    And thus we know that $T\left(\vec{e_2} \right)= \mat{ 7 \\ 3 } _{\mathcal{E} } $ and $T\left(\vec{e_1} \right) = \mat{ -10 \\ -4 } _{\mathcal{E} } $ and thus 
+    \[
+    K= \mat{ -10 & 7 \\ -4 & 3 }
+    \]
+    Alternatively we already know that $A^{-1} $ columns are $\left[ \vec{e_1}  \right]_{\mathcal{C}} \text{ and } \left[ \vec{e_2}  \right]_{\mathcal{C}} $ so we could have gone from there then multiplied by $\left[ T \right]_{\mathcal{C}} $ to get what $T\left(\vec{c_1} \right) \text{ and } T\left(\vec{c_2} \right)$ were.
 \end{itemize}
 
 % subsection 63 (end)
