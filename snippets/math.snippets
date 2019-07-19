@@ -326,32 +326,32 @@ endsnippet
 
 context "math()"
 snippet ee "equality" iA
-= 
+=  $0
 endsnippet
 
 context "math()"
 snippet neq "not equal" iA
-\neq
+\neq $0
 endsnippet
 
 context "math()"
 snippet ~= "approx equals" iA
-\approx
+\approx $0
 endsnippet
 
 context "math()"
-snippet => "implies" A
-\implies
+snippet imp "implies" A
+\implies $0
 endsnippet
 
 context "math()"
 snippet ~> "squiggley arrow" A
-\rightsquigarrow
+\rightsquigarrow $0
 endsnippet
 
 context "math()"
 snippet bimp "bi-conditional" Ai
-\Leftrightarrow
+\Leftrightarrow $0
 endsnippet
 
 
@@ -892,6 +892,11 @@ snippet bv "Basis Vector" iA
 endsnippet
 
 context "math()"
+snippet bas "" iA
+\mathcal{$1} $0
+endsnippet
+
+context "math()"
 snippet comp "Comp" iA
 \mathit{comp}_{$1} {$2} $0
 endsnippet
@@ -908,12 +913,37 @@ endsnippet
 
 context "math()"
 snippet range "Range" iA
-\mathit{range} {$1} $0
+\mathit{range} \left($1\right) $0
 endsnippet
 
 context "math()"
 snippet null "Null Space" iA
-\mathit{null} {$1} $0
+\mathit{null} \left($1\right) $0
+endsnippet
+
+context "math()"
+snippet rank "rank" iA
+\mathit{rank} \left($1\right) $0
+endsnippet
+
+context "math()"
+snippet rref "Row Reduced Echelon Form" iA
+\mathit{rank} \left($1\right) $0
+endsnippet
+
+context "math()"
+snippet dim "dimension" iA
+\mathit{dim} \left($1\right) $0
+endsnippet
+
+context "math()"
+snippet colsp "column space" iA
+\mathit{col} \left($1\right) $0
+endsnippet
+
+context "math()"
+snippet rowsp "row space" iA
+\mathit{row} \left($1\right) $0
 endsnippet
 
 # TODO: dry this up
@@ -1183,7 +1213,7 @@ snippet notin "not in " iA
 endsnippet
 
 context "math()"
-snippet in "in " iA
+snippet eo "in " iA
 \in $0
 endsnippet
 

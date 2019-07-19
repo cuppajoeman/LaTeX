@@ -11,6 +11,7 @@
 \usepackage{witharrows}
 \usepackage{cleveref}
 \usepackage{tikz}
+\usepackage{todonotes}
 \usetikzlibrary{patterns}
 \hypersetup{
     colorlinks=true, %set true if you want colored links
@@ -43,6 +44,8 @@
 % Theorems
 \newtheorem{remark}{Remark}[section]
 
+\newtheorem{ver}{Verfication}[section]
+
 \newtheorem{ex}{Exercise}[section]
 
 \newtheorem{eg}{Example}[section]
@@ -55,6 +58,7 @@
 \newtheorem{thm}{Theorem}
 
 % theorem envs without counter
+
 \newtheorem{propo}[thm]{Proposition}
 
 \newtheorem{crly}[thm]{Corollary}
@@ -82,6 +86,8 @@
     % warning env
 \newtheorem*{warning}{Warning}
 
+% So todo's don't get cut off
+\setlength{\marginparwidth}{3cm}
 
 % highlighting shortcuts
 \newcommand{\hlimpo}[1]{\textcolor{red}{\textbf{#1}}}

@@ -6,6 +6,10 @@ snippet prp "properties" w
 properties $0
 endsnippet
 
+snippet conv "convert(s)" w
+convert${1:s} $0
+endsnippet
+
 snippet min "minimum" w
 minimum $0
 endsnippet
@@ -42,6 +46,10 @@ snippet tan "tangent function" w
 tangent $0
 endsnippet
 
+snippet fun "function" w
+function $0
+endsnippet
+
 snippet cos "cosine function" w
 cosine $0
 endsnippet
@@ -52,36 +60,26 @@ endsnippet
 
 # Proof and Writing
 
-snippet bc "because" w
-because $0
-endsnippet
-
-snippet fa "for all" w
-for all $0
-endsnippet
-
-snippet fs "for some" w
-for some $0
-endsnippet
-
-snippet te "there exists" w
-there exists $0
-endsnippet
-
-snippet Twc "Thus we conclude" w
-Thus we conclude $0
-endsnippet
-
-snippet var "variable" w
-variable $0
-endsnippet
-
-snippet col "column(s)" w
-column${1:s} $0
-endsnippet
+# Function words
 
 snippet tt "that" w
 that $0
+endsnippet
+
+snippet sn "since" w
+since $0
+endsnippet
+
+snippet ts "thus" w
+thus $0
+endsnippet
+
+snippet t "the" w
+the $0
+endsnippet
+
+snippet a "and" w
+and $0
 endsnippet
 
 snippet ass "assume" w
@@ -124,18 +122,6 @@ snippet wwp "we will prove" w
 we will prove $0
 endsnippet
 
-snippet wlog "without loss of generality" w
-without loss of generality $0
-endsnippet
-
-snippet iff "if and only if" w
-if and only if $0
-endsnippet
-
-snippet IH "Induction Hypothesis" w
-Induction Hypothesis $0
-endsnippet
-
 snippet ift "it follows that" w
 it follows that $0
 endsnippet
@@ -148,7 +134,73 @@ snippet rc "recall" w
 recall $0
 endsnippet
 
+snippet bc "because" w
+because $0
+endsnippet
+
+snippet fa "for all" w
+for all $0
+endsnippet
+
+snippet fs "for some" w
+for some $0
+endsnippet
+
+snippet te "there exists" w
+there exists $0
+endsnippet
+
+snippet ex "exist" w
+exists $0
+endsnippet
+
+snippet Twc "Thus we conclude" w
+Thus we conclude $0
+endsnippet
+
+snippet Atwk "And thus we know" w
+And thus we know $0
+endsnippet
+
+snippet Wkt "We know that" w
+We know that $0
+endsnippet
+
+snippet var "variable" w
+variable $0
+endsnippet
+
+
+snippet wlog "without loss of generality" w
+without loss of generality $0
+endsnippet
+
+snippet iff "if and only if" w
+if and only if $0
+endsnippet
+
+snippet IH "Induction Hypothesis" w
+Induction Hypothesis $0
+endsnippet
+
+
 # Linear Algebra
+snippet col "column(s)" w
+column${1:s} $0
+endsnippet
+
+snippet rred "row reduction" w
+row reduction $0
+endsnippet
+
+snippet rref "reduced row echelon form" w
+reduced row echelon form $0
+endsnippet
+
+snippet mt "matrix" w
+matrix $0
+endsnippet
+
 snippet lc "linear combination" w
 linear combination $0
 endsnippet
@@ -163,6 +215,10 @@ endsnippet
 
 snippet ld "linearly dependent" w
 linear dependent $0
+endsnippet
+
+snippet vc "vector" w
+vector${1:s} $0
 endsnippet
 
 snippet nspace "null space" w

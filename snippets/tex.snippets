@@ -250,7 +250,7 @@ $0
 endsnippet
 
 snippet chp "Chapter" b
-\chapter{${1:chapter name}}%
+\chapter*{${1:chapter name}}%
 \label{chp:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
 % chapter $2
 
@@ -281,7 +281,7 @@ endsnippet
 
 
 snippet sub "Subsection" b
-\subsection{${1:subsection name}}%
+\subsection*{${1:subsection name}}%
 \label{sub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
 % subsection $2
 
@@ -482,10 +482,6 @@ snippet newth "newthought" b
 \newthought{$1} $0
 endsnippet
 
-snippet sn "sidenote" w
-\sidenote{$0}
-endsnippet
-
 snippet mn "marginnote" w
 \marginnote{$0}
 endsnippet
@@ -508,8 +504,8 @@ ${1:\newpage}
 \end{$3}
 endsnippet
 
-snippet todoq "TODO question tag" b
-% TODO : Question $0
+snippet todoq "TODO question tag" w
+\todo{$1} $0
 endsnippet
 
 snippet texprog "tex program to use" b

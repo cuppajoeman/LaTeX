@@ -1,17 +1,19 @@
-\documentclass[11pt]{article}
+\documentclass[11pt]{book}
 
-\usepackage{amsmath, amsfonts, amsthm}
+\RequirePackage{silence}
+\WarningFilter{remreset}{The remreset package}
 
-\theoremstyle{definition}
+\title{MAT223 - Linear Algebra}
+\author{Callum Cassidy-Nolan}
 
-\newtheorem{ver}{Verfication}[section]
+\input{mynotes-preamble.tex}
 
 \begin{document}
-\section{Chapter 1}%
-\label{sec:chapter_1}
-% section chapter_1
+\chapter*{Chapter 1}%
+\label{chp:1}
+% chapter 1
 
-\subsection{Complex Numbers}%
+\subsection*{Complex Numbers}%
 \label{sub:complex_numbers}
 % subsection complex_numbers
 
@@ -89,8 +91,8 @@
     multiplicative inverse
     Let $z \in \mathbb{C}$ so there exists some $\alpha, \beta \in \mathbb{R}$ so that $z = \alpha + \beta i$   let $w = \frac{\alpha}{\alpha^2 + \beta^2} + \frac{-\beta}{\alpha^2 + \beta^2} i$ 
     \begin{align*}
-        zw &= \left( \alpha + \beta i \right)\left( \frac{\alpha}{\alpha^2 + \beta^2} + \frac{-\beta}{\alpha^2 + \beta^2} \right)i\\
-           &= \frac{\alpha^2}{\alpha^2 + \beta^2} + \frac{\beta^2}{\alpha^2 + \beta^2} + \left( \frac{\alpha^2}{\alpha^2 + \beta^2} - \frac{\beta^2}{\alpha^2 + \beta^2} \right)\\
+        zw &= \left( \alpha + \beta i \right)\left( \frac{\alpha}{\alpha^2 + \beta^2} + \frac{-\beta}{\alpha^2 + \beta^2}i \right)\\
+           &= \frac{\alpha^2}{\alpha^2 + \beta^2} + \frac{\beta^2}{\alpha^2 + \beta^2} + \left( \frac{\alpha \beta }{\alpha^2 + \beta^2} - \frac{\alpha \beta }{\alpha^2 + \beta^2} \right)i\\
            &= 1 + 0i\\
            &=1
     \end{align*}
@@ -115,4 +117,8 @@
 % subsection complex_numbers (end)
 
 % section chapter_1 (end)
+
+
+% chapter 1 (end)
+
 \end{document}
