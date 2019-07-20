@@ -1016,38 +1016,58 @@ endsnippet
 #\__/_/ /_/\_, /
 #         /___/
 
+context "math()"
 snippet '(?<!\\)arcsin' "sin" rwA
-\arcsin$1{${2:\theta}} $0
+\arcsin$1{} $0
+\left( ${2:\theta} \right) 
 endsnippet
-snippet '(?<!arc)(?<!\\)sine' "sine" rwA
-\sin$1{${2:\theta}} $0
+
+context "math()"
+snippet '(?<!arc)(?<!\\)sin' "sin" rwA
+\sin$1 \left( ${2:\theta} \right) $0
 endsnippet
+
+context "math()"
 snippet '(?<!\\)arccos' "cos" rwA
-\arccos$1{${2:\theta}} $0
+\arccos $1 \left( ${2:\theta} \right) $0
 endsnippet
+
+context "math()"
 snippet '(?<!arc)(?<!\\)cos' "cos" rwA
-\cos$1{${2:\theta}} $0
+\cos $1 \left( ${2:\theta} \right) $0
 endsnippet
+
+context "math()"
 snippet '(?<!\\)arctan' "tan" rwA
-\arctan$1{${2:\theta}} $0
+\arctan $1 \left( ${2:\theta} \right) $0
 endsnippet
 # snippet '(?<!arc)(?<!\\)tan' "tan" rwA
 # \tan
 # endsnippet
+
+context "math()"
 snippet '(?<!\\)arccot' "cot" rwA
-\arccot$1{${2:\theta}} $0
+\arccot $1 \left( ${2:\theta} \right) $0
 endsnippet
+
+context "math()"
 snippet '(?<!arc)(?<!\\)cot' "cot" rwA
-\cot$1{${2:\theta}} $0
+\cot $1 \left( ${2:\theta} \right) $0
 endsnippet
+
+context "math()"
 snippet '(?<!\\)arccsc' "csc" rwA
-\arccsc$1{${2:\theta}} $0
+\arccsc $1 \left( ${2:\theta} \right) $0
 endsnippet
+
+context "math()"
 snippet '(?<!arc)(?<!\\)csc' "csc" rwA
-\csc$1{${2:\theta}} $0
+\csc $1 \left( ${2:\theta} \right) $0
 endsnippet
+
+context "math()"
 snippet '(?<!\\)arcsec' "sec" rwA
-\arcsec$1{${2:\theta}} $0
+\arcsec $1 \left( ${2:\theta} \right) $0
 endsnippet
 # snippet '(?<!arc)(?<!\\)sec' "sec" rwA
 # \sec

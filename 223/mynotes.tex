@@ -1613,7 +1613,172 @@ Some properties follow
 
 % subsection 63 (end)
 
+\section*{Tutorial 7}%
+\label{sec:tutorial_7}
+% section tutorial_7
 
+\begin{itemize}
+    \item Q1
+        \begin{itemize}
+            \item If $f$ is invertible this means that there exists a function $f^{-1} $ such that 
+            \begin{gather*}
+                f \circ f^{-1} = I\\
+                f^{-1}  \circ f = I\\
+                f\left(f^{-1} \left(\vec{x} \right)\right)= \vec{x} \text{ for all  } \vec{x} \text{ in f's range } \\
+                f^{-1} \left(f\left(\vec{x} \right)\right)= \vec{x} \text{ for all  } \vec{x} \text{ in f's domain }\\
+            \end{gather*}
+            \item We say that $A$ is invertible if there exists a matrix $A^{-1} $ such that 
+            \begin{equation*}
+                A A^{-1} = I= A^{-1} A
+            \end{equation*}
+        \end{itemize}
+    \item Q2
+        \begin{itemize}
+            \item We know that a is incorrect since matrix multiplication isn't commutative that is for any two matricies $A, B$ 
+            \begin{equation*}
+                AB \neq BA      
+            \end{equation*}
+            \item b is correct they multiplied by $A^{-1} $ from the left to both right hand side and left hand side .
+            \item This is incorrect division by a matrix is not defined $\frac{1}{A}$ 
+            \item d also fails due to the same reason as c.
+            \item division is not defined for vectors and so $\frac{1}{\vec{b} }$ doesn't make sense.
+        \end{itemize}
+    \item Q3
+        \begin{itemize}
+            \item R
+                \begin{itemize}
+                    \item We know it is invertible as the inverse function exists, namely the transformation $R^{-1} $, a rotation counter clockwise by $\frac{\pi }{6}$ 
+                    \item If we imagine all vectors in $\mathbb{R}^2 $ that have undergone a rotation of $\frac{\pi }{6} $ we still have $\mathbb{R}^2 $ and thus $\mathit{rank} \left(R\right) = 2$ 
+                \end{itemize}
+            \item D
+                \begin{itemize}
+                    \item We know that it is invertible as the inverse transformation exists namely anothether reflection about the line $y= 4x$ 
+                    \item If we imagine the image of $\mathbb{R}^2 $ under $D$ we can see that everything above and below the line get swapped, this still spans all of $\mathbb{R}^2 $ and so the $\mathit{rank} \left(R\right) = 2$ 
+                \end{itemize}
+            \item P
+                \begin{itemize}
+                    \item We know that $P$ does not have an inverse, for example multiples of a normal vector for the line $y= 4x$ will all get mapped to the zero vector thus the $P^{-1} \left(\vec{0}\right)$ doesn't have a unique value associated with it. 
+                    \item We know that the range looks like scalar multiples of the vector $\mat{ 1 \\ 4 } $ thus a basis is the set $\left\{ \mat{ 1 \\ 4 }  \right\} $ and so $\mathit{rank} \left(  P\right) = 1 $ 
+                \end{itemize}
+            \item S
+                \item We know that $S$ is invertible as there exists $S^{-1} $ namely halving the length of every vector.
+                \item Doubling every vector still will span $\mathbb{R}^2 $ and thus we know $\mathit{rank} \left(S\right) = 2$  
+        \end{itemize}
+    \item Q4
+        \begin{itemize}
+            \item I believe that a transformation $T : V \to W $   has an inverse if and only if $\mathit{rank} \left(V\right) = \mathit{rank} \left(W\right) $ 
+            \begin{proof}
+                For contradiction let's assume that $T$ has an inverse but $\mathit{rank} \left(V\right) \neq \mathit{rank} \left(W\right) $ . Let $n= \mathit{rank} \left(V\right) \text{ and } k= \mathit{rank} \left(W\right) $ 
+                \begin{itemize}
+                    \item Case 1 $n < k$ 
+                        \begin{itemize}
+                            \item We know that a basis for $V$ has n elements
+                            \[
+                            \left\{ \vec{v_1} , \ldots, \vec{v }_{n}   \right\} 
+                            \]
+                            
+                                and thus the range of $T$ looks like $\left\{ \vec{x} \in W: \vec{x} = T\left(\vec{y}\right) \text{ for some  } y \in V  \right\} $ and thus the range is 
+                                \[
+                                \left\{ T\left(\alpha _{1} \vec{v_1} + \dotsb  + \alpha _{5} \vec{v_5} \right) \text{ for some  } \alpha_{1} ,\ldots,\alpha _{n} \in \mathbb{R}  \right\} 
+                                \]
+                                which will be 
+                                \[
+                                \mathit{span} {T\left(\vec{v_1} \right), \ldots, T\left(\vec{v}_{n}  \right)} 
+                                \]
+                                and so the dimension of the range is less than or equal to $n$ so there will be vectors in $W$ that are not reached as it's dimension is greater than $n$ and so the inverse of these vectors won't be defined, so the inverse must not exist which is a contradiction.
+                        \end{itemize}
+                    \item Case $n > k$.
+                        \begin{itemize}
+                            \item Making the same argument as above shows but looking at the range of $T^{-1} $ will give the same contradiction.
+                        \end{itemize}
+                \end{itemize}
+            \end{proof}
+        \end{itemize}
+    \item We will determine the matrix which rotates a vector by $\theta $. We know that when $\vec{e_1} $ is rotated by $\theta $ that this situation is the same as the unit circle, in which we determined the $x,y$ coordinates to be $\cos{\theta}, \sin{\theta}  $ respectively as the hypotenuse is 1, thus we know that the first row of the matrix we are looking for is $\mat{ \cos{\theta}  \\ \sin{\theta}     }$. We'll determine the second row now by seeing what happens to $\vec{e_2} $ which gives the angle $\frac{\pi }{2} + \theta $ we know that sine of this angle is still the same thing but cosine of this angle is $ - \cos{\theta} $ and so the generic rotation matrix of $\theta $ radians is given by
+        \[
+            \mat{ \cos{\theta}  &  - \sin{\theta}  \\ \sin{\theta}  & \cos{\theta}  }
+        \]
+    \item We'll now observer what happens when $\vec{e_1} $ and $\vec{e_2}$ are reflected across the line $y = mx$ for some $m \in \mathbb{R}$ 
+        \begin{center}
+            \begin{tikzpicture}
+                \draw[step=.5,gray,very thin] (0,0) grid (4.0 - 0.1, 4.0 - 0.1);
+                \draw[->] (0, 0) -- (4.0, 0);
+                \draw[->] (0, 0) -- (0, 4.0);
+                \draw[-] (0,0) -- (2, 4) node[midway, above, sloped]{$y=mx$ } ;
+                \coordinate (c) at (2, 4);
+                \coordinate (b) at (0,0);
+                \coordinate (a) at (2, 0);
+                \pic [draw, ->, "$\theta$", angle eccentricity=1.5] {angle = a--b--c};
+                \draw[decoration={brace,mirror,raise=5pt},decorate] (0, 0) -- node[midway, below, yshift=-5pt] {$1$ } (2, 0);
+                \draw[decoration={brace,mirror, raise=5pt},decorate] (2, 0) -- node[midway, right, xshift=5pt] {$m$ } (2, 4);
+            \end{tikzpicture}
+        \end{center}
+        Thus we know the hypotenuse is $\sqrt{m^2  + 1^2 } $ and so $\sin{\theta} = \frac{m}{\sqrt{m^2  + 1} }$ and $\cos{\theta} = \frac{1}{\sqrt{m^2  + 1} }$ 
+        Observe, that when we reflect over the line
+        \begin{center}
+            \begin{tikzpicture}
+                \draw[step=.5,gray,very thin] (-4.0 - 0.1,0) grid (4.0 - 0.1, 4.0 - 0.1);
+                \draw[<->] (-4.0, 0) -- (4.0, 0);
+                \draw[->] (0, 0) -- (0, 4.0);
+                \draw[-] (0, 0) -- (2, 4) node[midway, above, sloped]{$y= mx$ } ;
+                \draw[line width=2pt,blue,-stealth] (0, 0) -- (2, 0) node[midway, above, sloped]{$\vec{e_1} $ } ;
+                \draw[line width=2pt,blue,-stealth] (0, 0) -- (-1, 1.65) node[midway, above, sloped]{} ;
+                \coordinate (a) at (1, 0);
+                \coordinate (b) at (0, 0);
+                \coordinate (c) at (1, 2);
+                \pic [draw, ->, "$\theta$", angle eccentricity=1.5] {angle = a--b--c};
+                \coordinate (a) at (1, 2);
+                \coordinate (b) at (0, 0);
+                \coordinate (c) at (-.45, .75);
+                \pic [draw, ->, "$\theta$", angle eccentricity=1.5] {angle = a--b--c};
+            \end{tikzpicture}
+        \end{center}
+        As we can see this is a counter clockwise rotation of $2\theta $ and thus we know that the vfirst column of the matrix must be 
+        \[
+            \mat{ \cos{2\theta }  \\ \sin{2\theta}  }
+        \]
+        we know that $\sin \left( 2\theta  \right) = \sin \left( \theta  + \theta  \right) = 2\sin \left( \theta \right) \cos \left( \theta \right) $ and that $\cos \left( 2\theta  \right) = \cos ^2  \left( \theta \right)  - \sin^2  \left( \theta \right) $ or equivalently 
+        \[
+        \mat{ \cos ^2  \left( \theta \right)  - \sin^2  \left( \theta \right) \\ 2\sin \left( \theta \right) \cos  \left( \theta \right) } 
+        \]
+        But we know from above that $\sin \left( \theta \right) = \frac{m}{\sqrt{m^2  + 1} }$ and $\cos  \left( \theta \right) = \frac{1}{\sqrt{m^2  + 1} }$ so we can say that $\cos ^2  \left( \theta \right)  - \sin^2  \left( \theta \right) = \frac{1 - m^2 }{m^2  + 1}$ and that $2\sin \left( \theta \right) \cos  \left( \theta \right) = \frac{2m}{m^2  + 1}$ and so so the first column is 
+        \[
+        \mat{ \frac{1 - m^2 }{m^2  + 1} \\ \frac{2m}{m^2  + 1} }    
+        \]
+        Now we'll see what happens to $\vec{e_2} $ 
+        \begin{center}
+            \begin{tikzpicture}
+                \draw[step=.5,gray,very thin] (-4.0 - 0.1,0) grid (4.0 - 0.1, 4.0 - 0.1);
+                \draw[<->] (-4.0, 0) -- (4.0, 0);
+                \draw[->] (0, 0) -- (0, 4.0);
+                \draw[line width=2pt,blue,-stealth] (0, 0) -- (0, 2) node[midway, above, sloped]{$\vec{e_2} $ } ;
+                \draw[-] (0, 0) -- (2, 4) node[midway, above, sloped]{} ;
+                \draw[line width=2pt,blue,-stealth] (0, 0) -- (1.7, 1) node[midway, above, sloped]{} ;
+                \coordinate (c) at (0, 1);
+                \coordinate (b) at (0, 0);
+                \coordinate (a) at (1, .5);
+                \pic [draw, ->, "$\alpha $", angle eccentricity=1.5] {angle = a--b--c};
+            \end{tikzpicture}
+        \end{center}
+        But this time notice that $\alpha = 2 \cdot \left( \frac{\pi }{2} - \theta  \right) = \pi  - 2\theta $ and thus 
+        \begin{align*}
+            \sin \left( \pi  - 2\theta  \right) &= \sin \left( \pi  \right) \cos  \left( 2\theta  \right)  - \cos  \left( \pi  \right) \sin \left( 2\theta  \right)  \\
+            &= 2\sin \left( \theta \right) \cos  \left( \theta \right) 
+            \intertext{as for cosine}
+            \cos  \left( \pi  - 2\theta  \right) &= \cos  \left( \pi  \right) \cos  \left( 2\theta  \right) + \sin \left( \pi  \right) \sin \left( 2\theta  \right)  \\
+            &= \sin^2  \left( \theta \right)  - \cos ^2  \left( \theta \right)  \\
+        \end{align*}
+        And thus our total matrix is 
+        \[
+        \begin{bmatrix}
+        	\frac{1 - m^2 }{m^2  + 1} &  \frac{-2m}{m^2  + 1} \\
+        	\frac{2m}{m^2 + 1 } &  \frac{m^2  - 1}{m^2  + 1}
+        \end{bmatrix}
+        \]
+        
+\end{itemize}
+
+% section tutorial_7 (end)
 
 % section lecture_2 (end)
 
