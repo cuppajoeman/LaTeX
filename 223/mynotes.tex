@@ -1288,6 +1288,178 @@ What if $M$ was $4 \times 3$ then we could be sure that every column is linearly
 
 % section tutorial_6 (end)
 
+\section*{Extra Textbook Questions}%
+\label{sec:extra_textbook_questions}
+% section extra_textbook_questions
+
+\begin{itemize}
+    \item Q1
+        \begin{enumerate}[label=\alph*)]
+            \item We can see that $\mat{ 3 \\ 2 } $ and $\mat{ -4 \\ 5 } $ are linearly independent and so we know that we can use row operations to get this turn this matrix into the identity matrix.
+            \begin{gather*}
+                \begin{gmatrix}[b]
+                	3 & -4 & 1 & 0 \\
+                	2 & 5 & 0 & 1 
+                    \rowops
+                    \add[-1]{1}{0} 
+                \end{gmatrix}
+                \rightsquigarrow 
+                \begin{gmatrix}[b]
+                	1 & -9 & 1 & -1 \\
+                	2 & 5 & 0 & 1 
+                    \rowops
+                    \add[-2]{0}{1} 
+                \end{gmatrix}\\
+                \rightsquigarrow 
+                \begin{gmatrix}[b]
+                	1 & -9 & 1 & -1 \\
+                	0 & 23 & -2 & 3
+                    \rowops
+                    \mult{1}{\cdot \frac{1}{23}} 
+                \end{gmatrix}
+                \rightsquigarrow 
+                \begin{gmatrix}[b]
+                	1 & -9 & 1 & -1 \\
+                	0 & 1 & -\frac{2}{23} & \frac{3}{23} 
+                \end{gmatrix}\\
+                \rightsquigarrow 
+                \begin{gmatrix}[b]
+                	1 & 0 & 1 - \frac{18}{23} & -1 + \frac{27}{23} \\
+                	0 & 1 & -\frac{2}{23} & \frac{3}{23} 
+                \end{gmatrix}
+            \end{gather*}
+            And so the inverse is 
+            \[
+            \frac{1}{23} \mat{ 5 & 4 \\ -2 & 3 }
+            \]
+            \item We can see that these are 3 linearly independent vectors and so it can be reduced to 3 pivots, so it is invertible
+            \item We know that the third column is 2 of the first column plus the second column thus we know that after row reduction we will only get two pivots \todo{why again?} and thus we can't get the identity matrix as that is 3.  
+            \item If we swap all the rows of this matrix and then reduce we can clearly see we can get the indentity matrix so we know it has an inverse
+            \item Row reduce and see if it it has 4 pivots.
+            \item Reduce upwards and we get the identity matrix, it's invertible.
+        \end{enumerate}
+    \item A2
+        \begin{enumerate}[label=a)]
+            \item Row reduce $B$ to I which we know must be possible as the columns are linearly independent and so $\vec{s} = B^{-1} \mat{ 1 \\ 1 \\ 1 }$ 
+            \item $\vec{x} = B^{-1} \mat{ -1 \\ 0 \\ 1 }$ 
+            \item Same as above.
+        \end{enumerate}
+    \item A4
+        \begin{enumerate}[label=a)]
+            \item If the rotation is counter clockwise by $\frac{\pi }{6}$ then then inverse must be a clockwise rotation by $\frac{\pi }{6}$.
+            \item This subtracts 3 times the y component of the vector from the x component a given input vector, so to invert this we add 3 times the y component to the x component to cancel it back out, so the matrix that represents the operation is 
+                \[
+                \mat{ 1 & 3 \\ 0 & 1 }      
+                \]
+            \item This matrix represents multiplying the x component of the vector by 5, the inverse is multiplying the x component of the vector by $\frac{1}{5}$ which is represented by the matrix 
+                \[
+                \mat{ \frac{1}{5} & 0 \\ 0 & 1 } 
+                \]
+            \item For some vector in $ \vec{v} \in \mathbb{R}^3 $ we know that it looks like $\mat{ x \\ y \\ z } $, after being operated on by this matrix, we multiply $y$ by $-1$ and so we get $\mat{ x \\  - y  \\ z } $ so we have to multiply by the same matrix to get back so the inverse is 
+                \[
+                \mat{ 1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 1 }
+                \]
+        \end{enumerate}
+    \item A1
+        \begin{gather*}
+            \begin{gmatrix}[b]
+            	1 & 0 & 0 \\
+            	0 & 1 & 0 \\
+            	0 & 0 & 1 
+                \rowops
+                \add[-5]{1}{0} 
+            \end{gmatrix}
+            \rightsquigarrow 
+            \begin{gmatrix}[b]
+            	1 & -5 & 0 \\
+            	0 & 1 & 0 \\
+            	0 & 0 & 1
+                \rowops
+                \swap{2}{1} 
+            \end{gmatrix}\\
+            \rightsquigarrow 
+            \begin{gmatrix}[b]
+            	1 & -5 & 0 \\
+            	0 & 0 & 1 \\
+            	0 & 1 & 0 
+                \rowops
+                \mult{1}{\cdot 6} 
+                \mult{2}{\cdot -1} 
+                \add[4]{0}{2} 
+            \end{gmatrix}
+            \rightsquigarrow 
+            \begin{gmatrix}[b]
+            	1 & -5 & 0 \\
+            	0 & 0 & 6 \\
+            	4 & -21 & 0 
+            \end{gmatrix}
+        \end{gather*}
+        Thus we know 
+        \[
+            \mat{ 1 & 0 & 0 \\ 0 & 0 & 0 \\ 4 & 0 & 1 } \mat{ 1 & 0 & 0 \\ 0 & 6 & 0 \\ 0 & 0 & 1 } \mat{ 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -1 } \mat{ 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 } \mat{ 1 & -5 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 } = B
+        \]
+        Where $B$ is the matrix which does all the row operations at once.
+    \item A3
+        \begin{enumerate}[label=\alph*)]
+            \item add $-4$ row 2 to row 3
+            \item multiply row 1 and row 3 by $-1$ (not elementary)
+            \item multiply row 1 by 3 and add row 3 (not elementary)
+            \item swap row 1 and 3
+            \item d) then swap row 1 and 2 (not elementary)
+            \item do nothing \todo{is this elementary?} 
+        \end{enumerate}
+    \item A4
+        \begin{enumerate}[label=\alph*)]
+            \item We'll start by describing the elementary row operations to get to $A$ from $I$. 
+                \begin{itemize}
+                    \item swap row 2 and 3
+                    \item add 3 row 3 to row 1
+                    \item multipy row 2 by 2
+                    \item add 2 row 2 to row 1
+                \end{itemize}
+            To undo this we do
+                \begin{itemize}
+                    \item add $-2$ row 2 to row 1
+                    \item multiply row 2 by $\frac{1}{2}$ 
+                    \item add $ - 3$ row 3 to row 1
+                    \item swap row 2 and 3
+                \end{itemize}
+            These steps represented as a matrix look like
+            \[
+            \mat{ 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 }\mat{ 1 & 0 & -3 \\ 0 & 1 & 0 \\ 0 & 0 & 1 }\mat{ 1 & 0 & 0 \\ 0 & \frac{1}{2} & 0 \\ 0 & 0 & 1 }\mat{ 1 & -2 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 }
+            \]
+            Which is the matrix
+            \begin{gather*}
+                \begin{gmatrix}[b]
+                	1 & 0 & 0 \\
+                	0 & 1 & 0 \\
+                	0 & 0 & 1
+                    \rowops
+                    \add[-2]{1}{0} 
+                \end{gmatrix}
+                \rightsquigarrow 
+                \begin{gmatrix}[b]
+                	1 & -2 & 0 \\
+                	0 & 1 & 0 \\
+                	0 & 0 & 1 
+                    \rowops
+                    \mult{1}{\cdot \frac{1}{2}} 
+                    \add[-3]{2}{0} 
+                    \swap{1}{2} 
+                \end{gmatrix}
+                \rightsquigarrow 
+                \begin{gmatrix}[b]
+                	1 & -2 & -3 \\
+                	0 & 0 & 1 \\
+                	0 & \frac{1}{2} & 0 
+                \end{gmatrix}
+            \end{gather*}
+        A is the product of the inverse operations as matricies ofthe steps to get to I from A, we can use the list I provided earlier. The rest of the questions are the same.
+        \end{enumerate}
+\end{itemize}
+
+% section extra_textbook_questions (end)
+
 % chapter week_10 (end)
 
 \chapter{Week 11}%
