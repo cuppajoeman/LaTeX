@@ -233,6 +233,13 @@ snippet lline "tikzpicture labelled line" b
 \draw[-] ($1, $2) -- ($3, $4) node[midway, above, sloped]{$5} ;
 endsnippet
 
+snippet ttri "tikzpicture triangle" b
+\coordinate${1:[label=$2:{$3}]}($4) at ($5, $6);
+\coordinate${7:[label=$8:{$9}]($10)} at ($11, $12);
+\coordinate${13:[label=$14:{$15}]($16)} at ($17, $18);
+\draw ($4) -- ($10) -- ($16) -- cycle;
+endsnippet
+
 snippet tvec "tikzpicture vector" b
 \draw[line width=2pt,blue,-stealth] ($1, $2) -- ($3, $4) node[midway, above, sloped]{$5} ;
 endsnippet

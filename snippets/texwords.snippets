@@ -6,8 +6,88 @@ snippet cor "correct" w
 correct $0
 endsnippet
 
+snippet coe "coefficients" w
+coefficients $0
+endsnippet
+
+snippet plp "parallelpiped" w
+parallelpiped $0
+endsnippet
+
+snippet plg "parallelogram" w
+parallelogram $0
+endsnippet
+
+snippet ind "indeed" w
+indeed $0
+endsnippet
+
+snippet orie "oriented" w
+oriented $0
+endsnippet
+
+snippet pos "positive" w
+positive${1:ly} $0
+endsnippet
+
+snippet neg "negative" w
+negative${1:ly} $0
+endsnippet
+
+snippet rec "recognize" w
+recognize $0
+endsnippet
+
+snippet dif "different" w
+different $0
+endsnippet
+
+snippet sq "square" w
+square $0
+endsnippet
+
+snippet cb "cube" w
+cube $0
+endsnippet
+
+snippet sph "sphere" w
+sphere $0
+endsnippet
+
+snippet vol "volume" w
+volume $0
+endsnippet
+
+snippet ori "origin" w
+origin $0
+endsnippet
+
+snippet locd "located" w
+located $0
+endsnippet
+
+snippet lwr "lower" w
+lower $0
+endsnippet
+
+snippet upr "upper" w
+upper $0
+endsnippet
+
+snippet std "standard" w
+standard $0
+endsnippet
+
+snippet sim "similar(ly)" w
+similar${1:ly} $0
+endsnippet
+
+snippet rep "represent" w
+represent $0
+endsnippet
+
 snippet equi "equivalently" w
-equivalently $0
+${1:e}quivalently $0
 endsnippet
 
 snippet cont "contradiction" w
@@ -16,6 +96,10 @@ endsnippet
 
 snippet invs "inverse" w
 inverse $0
+endsnippet
+
+snippet inv "invert" w
+invert${1:ible} $0
 endsnippet
 
 snippet len "length" w
@@ -46,7 +130,7 @@ snippet add "addition" w
 addition $0
 endsnippet
 
-snippet sub "subtraction" w
+snippet subt "subtraction" w
 subtraction $0
 endsnippet
 
@@ -59,7 +143,7 @@ properties $0
 endsnippet
 
 snippet obs "observation" w
-observation $0
+observ${1:ation} $0
 endsnippet
 
 snippet conv "convert(s)" w
@@ -147,7 +231,7 @@ that $0
 endsnippet
 
 snippet ti "that is" w
-that is $0
+${1:t}hat is $0
 endsnippet
 
 snippet wt "what" w
@@ -170,6 +254,10 @@ snippet t "the" w
 the $0
 endsnippet
 
+snippet Th "The" w
+The $0
+endsnippet
+
 snippet a "and" w
 and $0
 endsnippet
@@ -187,15 +275,11 @@ we have $0
 endsnippet
 
 snippet wk "we know" w
-we know $0
+${1:w}e know $0
 endsnippet
 
-snippet Twk "Thus we know" w
-Thus we know $0
-endsnippet
-
-snippet Wk "We know" w
-We know $0
+snippet twk "thus we know" w
+${1:t}hus we know $0
 endsnippet
 
 snippet ho "hold(s)" w
@@ -218,12 +302,12 @@ snippet wts "want to show" w
 want to show $0
 endsnippet
 
-snippet Wws "We will show" w
-We will show $0
+snippet wws "we will show" w
+${1:w}e will show $0
 endsnippet
 
-snippet Wwn "We will now" w
-We will show $0
+snippet wwn "we will now" w
+${1:w}e will now $0
 endsnippet
 
 snippet wwp "we will prove" w
@@ -240,6 +324,10 @@ endsnippet
 
 snippet st "such that" w
 such that $0
+endsnippet
+
+snippet sot "so that" w
+so that $0
 endsnippet
 
 snippet rc "recall" w
@@ -274,16 +362,12 @@ snippet ex "exist" w
 exists $0
 endsnippet
 
-snippet Twc "Thus we conclude" w
-Thus we conclude $0
+snippet twc "(T/t)hus we conclude" w
+${1:t}hus we conclude $0
 endsnippet
 
-snippet Atwk "And thus we know" w
-And thus we know $0
-endsnippet
-
-snippet Wkt "We know that" w
-We know that $0
+snippet wkt "we know that" w
+${1:w}e know that $0
 endsnippet
 
 snippet var "variable" w
@@ -366,10 +450,22 @@ vector space$0 $0
 endsnippet
 
 snippet dim "dimension" w
-dimension $0
+dimension${1:al} $0
+endsnippet
+
+snippet det "determinant" w
+determinant $0
 endsnippet
 
 # Calculus
+
+snippet rl "Real Numbers" w
+real numbers $0
+endsnippet
+
+snippet cpx "Real Numbers" w
+complex numbers $0
+endsnippet
 
 snippet sup "supremum" w
 supremum $0

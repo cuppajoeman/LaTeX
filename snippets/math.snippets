@@ -300,13 +300,18 @@ snippet ... "\ldots" iA
 endsnippet
 
 context "math()"
-snippet dots "Smart Dots" iA
-\dots${1:commas, binary, multiplication}$0
+snippet v.. "\vdots" iA
+\vdots
 endsnippet
+
+#context "math()"
+#snippet dots "Smart Dots" iA
+#\dots${1:commas, binary, multiplication}$0
+#endsnippet
 
 context "math()"
 snippet == "equals" iA
-&= $1 \\\\
+&= $1 ${2: \\\\ }$0
 endsnippet
 
 context "math()"
@@ -347,6 +352,16 @@ endsnippet
 context "math()"
 snippet ~> "squiggley arrow" A
 \rightsquigarrow $0
+endsnippet
+
+context "math()"
+snippet ~ "similar" A
+\sim $0
+endsnippet
+
+context "math()"
+snippet xra "arrow with text" A
+\xrightarrow${1:[$2]}{$3} $0
 endsnippet
 
 context "math()"
@@ -937,6 +952,11 @@ snippet dim "dimension" iA
 endsnippet
 
 context "math()"
+snippet det "determinant" iA
+\mathit{det} \left($1\right) $0
+endsnippet
+
+context "math()"
 snippet colsp "column space" iA
 \mathit{col} \left($1\right) $0
 endsnippet
@@ -1244,7 +1264,7 @@ endsnippet
 
 context "math()"
 snippet ff "function at x" iA
-${1:f}\left(${2:x}\right)$0
+${1:f}\left(${2:x}\right) $0
 endsnippet
 
 context "math()"
@@ -1290,18 +1310,8 @@ endsnippet
 # TODO Dry this up
 
 context "math()"
-snippet R1 "real" iA
+snippet RR "real" iA
 \mathbb{R} $0
-endsnippet
-
-context "math()"
-snippet R2 "real" iA
-\mathbb{R}^2 $0
-endsnippet
-
-context "math()"
-snippet R3 "real" iA
-\mathbb{R}^3 $0
 endsnippet
 
 context "math()"

@@ -428,6 +428,52 @@ onto $\vec{u}$.
 \label{sub:video_notes}
 % subsection video_notes
 
+Finding entries of the matrix $A$ below
+\[
+A \mat{ x \\ y \\ z } = \mat{ 3x  - z \\ -2x + 4y \\ 6y  - 3z } 
+\]
+
+We know that $A$ must be $3\times 3$ and so 
+\[
+A= \mat{ 3 & 0 & -1 \\ -2 & 4 & 0 \\ 0 & 6 & -3 }
+\]
+
+\subsubsection{Standard matrix of a linear transformation}%
+\label{ssub:standard_matrix_of_a_linear_transformation}
+% subsubsection standard_matrix_of_a_linear_transformation
+
+Let $T : \mathbb{R}^2  \to R^{m} \vec{v_1} = T\left(\vec{e_1} \right), \vec{v_2} = T\left(\vec{e_2} \right)$. We will now find the matrix $A_{T} $ that is the matrix which induces $T$. \\
+Let $\vec{x} \in \mathbb{R}^2 $ and so for some $x_1, x_2\in \mathbb{R}$ we know that 
+\[
+\vec{x} = \mat{ x_1 \\ x_2 } = x_1 \cdot \vec{e_1}  + x_2 \cdot \vec{e_2} 
+\]
+Then 
+\begin{align*}
+    T\left(\vec{x} \right) &= T\left(x_1\vec{e_1}  + x_2\vec{e_2} \right)  \\ 
+    &= x_1T\left(\vec{e_1} \right) + x_2T\left(\vec{e_2} \right)  \\ 
+    &= x_1\vec{v_1}  + x_2\vec{v_2} \\
+    &= \mat{ \vdots & \vdots \\ \vec{v_1}  & \vec{v_2}  \\ \vdots & \vdots } \mat{ x_1 \\ x_2 }\\
+    &= \mat{ \vdots & \vdots \\ \vec{v_1}  & \vec{v_2}  \\ \vdots & \vdots }\vec{x} 
+\end{align*}
+
+More generally we can say that matrix which induces the linear transformation $T : \mathbb{R} ^{n}  \to \mathbb{R} ^{m}  $ is the matrix
+\[
+A_{T} = \mat{ \vdots &  & \vdots \\ T\left(\vec{e_1} \right) & \ldots & T\left(\vec{e_{n} } \right) \\ \vdots &  & \vdots }
+\]
+
+For example let $T : \mathbb{R} ^{n}  \to \mathbb{R} ^{m} $ and we know
+\begin{align*}
+    T\left(\vec{e_1} \right)= \mat{ 2 \\ 3 \\ 4 }  && T\left(\vec{e_2} \right)= \mat{ 4 \\ 3 \\ 2 } 
+\end{align*}
+
+Then we know that $A_{T} $ is
+\[
+\mat{ 2 & 4 \\ 3 & 3 \\ 4 & 2 }
+\]
+
+
+
+% subsubsection standard_matrix_of_a_linear_transformation (end)
 
 
 % subsection video_notes (end)
@@ -685,8 +731,19 @@ We can stop here because we see that in the bottom row we have $0 = -13$ which i
                     \[
                     \left\{ \mat{ 1 \\ 0 \\ 2 \\ 0 \\ 3 }, \mat{ 0 \\ 1 \\ -1 \\ 0 \\ 1 }, \mat{ 0 \\ 0 \\ 0 \\ 1 \\ 1 } \right\}
                     \]
-                \item If the column space is a basis then it must be a basis for $\mathbb{R}^{4}$ as these vectors are four dimensional.
+                \item If the column space is a basis then it must be a basis for $\mathbb{R}^{4}$ as these vectors are four dimensional. We are looking for a basis for the column space of $A$, we know that if we have the set of the vectors who correspond to the pivots in reduced row echelon form of $A$ then we know that when they are row reduced we will only get the trivial solution to the zero vector and so they are linearly indepenednt. Thus a basis for the column space is
+                    \[
+                    \left\{ \mat{ 1 \\ 2 \\ 1 \\ 1 } , \mat{ 1 \\ 3 \\ 1 \\ 2 } , \mat{ 1 \\ 2 \\ 3 \\ -1 }  \right\} 
+                    \]
             \end{enumerate}
+        \begin{itemize}
+            \item We'll now find the solutions to 
+                \[
+                A\vec{x} = \vec{0} 
+                \]
+                We know that the matrix $A$ can be thought of as a augmented matrix where we are solving for the zero vector and so row reducing gives us solutions for the linear combinations of the columns which yield the zero vector. Thus from the reduced row echelon form of $A$ we can say that (where $\vec{x} = \mat{ x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 } $). \\
+                That $x_5= t \text{ for some  } t \in \mathbb{R} $,  $x_4= -t$ $x_3= s \text{ for some  } s \in \mathbb{R} $ $x_2= s - t$ and $x_1=  - \left( 3t  + 2s \right) $ as a general solution this is.
+        \end{itemize}
             % TODO : Question Finish this but also ask about this before class starts.
     \end{itemize}
 \end{ex}
@@ -1288,7 +1345,7 @@ What if $M$ was $4 \times 3$ then we could be sure that every column is linearly
 
 % section tutorial_6 (end)
 
-\section*{Extra Textbook Questions}%
+\section{Extra Textbook Questions}%
 \label{sec:extra_textbook_questions}
 % section extra_textbook_questions
 
@@ -1589,7 +1646,7 @@ And then we know the matrix on the right represents applying the two row operati
     Equivalent to \cref{thm:inverse_existance} we can require the rows be linearly independent as we know that $\mathit{dim} \left(\mathit{row} \left(A\right) \right) = \mathit{dim} \left(\mathit{col} \left(A\right) \right)= \mathit{rank} \left(A\right)  $  \todo[inline]{Why do we know this again?} 
 \end{remark}
 
-\subsection*{59}%
+\subsection{59}%
 \label{sub:59}
 % subsection 59
 
@@ -1609,7 +1666,7 @@ By definition $A^{-1} A = I$ and so since we know that $A$ has an inverse, then 
 
 % subsection 59 (end)
 
-\subsection*{60}%
+\subsection{60}%
 \label{sub:60}
 % subsection 60
 
@@ -1617,7 +1674,7 @@ We know that if we have two square matricies $X,Y$ that $\left( XY \right) ^{-1}
 
 % subsection 60 (end)
 
-\subsection*{61}%
+\subsection{61}%
 \label{sub:61}
 % subsection 61
 
@@ -1632,7 +1689,7 @@ And thus we know $X\left[ \vec{e_2}  \right]_{\mathcal{B}} = \left[ \vec{e_2}  \
 
 % subsection 61 (end)
 
-\subsection*{62}%
+\subsection{62}%
 \label{sub:62}
 % subsection 62
 
@@ -1731,7 +1788,7 @@ Some properties follow
     \]
 \end{eg}
 
-\subsection*{63}%
+\subsection{63}%
 \label{sub:63}
 % subsection 63
 
@@ -1955,5 +2012,149 @@ Some properties follow
 % section lecture_2 (end)
 
 % chapter week_11 (end)
+
+\chapter{Week 12}%
+\label{chp:week_12}
+% chapter week_12
+
+\section{Lecture 1 Week 12}%
+\label{sec:lecture_1_week_12}
+% section lecture_1
+
+Remember from last week, if we have that $X= \left[ T \right]_{\mathcal{C}} $ that that means for all $\vec{v} $ 
+\[
+\left[ T\left(\vec{v} \right) \right]_{\mathcal{C}} = X\left[ \vec{v}  \right]_{\mathcal{C}} 
+\]
+Specificially if $\vec{v} = \alpha \vec{c_1}  + \beta \vec{c_2} $ then we know
+\[
+\left[ T\left(\alpha \vec{c_1}  + \beta \vec{c_2} \right) \right]_{\mathcal{C}} = X\mat{ \alpha  \\ \beta  } 
+\]
+
+And so we recall that 
+\[
+\left[ \vec{v}  \right]_{\mathcal{C}} \xrightarrow{X} \left[ T\left(\vec{v} \right) \right]_{\mathcal{C}} 
+\]
+
+also if $Y= \left[ T\right]_{\mathcal{E}} $ then we know
+\[
+\left[ \vec{v}  \right]_{\mathcal{E}} \xrightarrow{Y} \left[ T\left(\vec{v} \right) \right]_{\mathcal{E}} 
+\]
+
+Thus if we only know what $X$ is and we want to find out what what $\left[ T\left(\vec{v} \right) \right]_{\mathcal{E}} $ then our process to do so would look like
+\begin{equation*}
+    \left[ \vec{v}  \right]_{\mathcal{E}} \xrightarrow{A^{-1} } \left[ \vec{v}  \right]_{\mathcal{C}} \xrightarrow{X} \left[ T\left(\vec{v} \right) \right]_{\mathcal{C}} \xrightarrow{A} \left[ T\left(\vec{v} \right) \right]_{\mathcal{E}} 
+\end{equation*}
+
+Thus we've determined the following
+\begin{equation*}
+    AXA^{-1} \left[ \vec{v}  \right]_{\mathcal{E}} = \left[ T\left(\vec{v} \right) \right]_{\mathcal{E}}        
+\end{equation*}
+
+Thus we conclude $AXA^{-1} = \left[ T \right]_{\mathcal{E}} $ 
+
+\begin{defn}[Similar Matricies]\index{Similar Matricies}\label{defn:similar_matricies}
+    We say that two matricies $A$ and $B$ are \hlnotea{similar } denoted $A \sim B$. If $A$ and $B$ represent the same linear transformation but in possibly different bases. Equivalently , $A \sim B $, if there exists an invertible matrix $X$ so that 
+    \[
+    A= XBX^{-1} 
+    \]
+\end{defn}
+
+\begin{defn}[Unit n-cube]\index{Unit n-cube}\label{defn:unit_n_cube}
+    The \hlnotea{unit n-cube} is the n-dimensional cube with sides given by the standard basis vectors and lower-left corner located at the origin. That is 
+    \[
+        C_{n} = \left\{ \vec{x} \in \mathbb{R} ^{n} : \vec{x} = \sum_{i=1}^{n} \alpha _{i} \vec{e_{i} } \text{ for some  } \alpha_1, \ldots, \alpha_{n} \in \left[ 0,1 \right]   \right\} = \left[ 0,1 \right] ^{n} 
+    \]
+\end{defn}
+
+\subsection{64}%
+\label{sub:64}
+% subsection 64
+
+\begin{itemize}
+    \item $T\left(\mat{ 1 \\ 0 } \right)= \mat{ 1 \\ \frac{1}{2} } $ we can see that $T\left(\vec{e_2} \right) = \mat{ \frac{1}{2} \\ 1 } $ thus a matrix for $T$ is
+        \[
+        T = \mat{ 1 & \frac{1}{2} \\ \frac{1}{2} & 1 }
+        \]
+    \item To find the volume of the image of the unit-square under $T$ we will subtract area from a square with length $\frac{3}{2}$ after some observation we recognize that the area we are subtracting is 6 squares of side length $\frac{1}{2}$ which is a total volume of $\frac{6}{4}$ then our answer is 
+        \begin{align*}
+            \left( \frac{3}{2} \right) ^2  - \frac{6}{4} &= \frac{3}{4} \\ 
+        \end{align*}
+\end{itemize}
+
+% subsection 64 (end)
+
+\begin{defn}[Determinant]\index{Determinant}\label{defn:determinant}
+    The \hlnotea{determinant } of a linear transformation $X : \mathbb{R} ^{n}  \to \mathbb{R} ^{n}  $ is the oriented volume of the image of the unit n-cube . The determinant of a square matrix is the determinant of it's induced transformation 
+\end{defn}
+
+\begin{eg}
+    We know that the determinant of $T$  should be positive since we can move $T\left(\vec{e_1} \right) $ and $T\left(\vec{e_2} \right) $ are positively oriented $\left\{ \mat{ 1 \\ \frac{1}{2} } , \mat{ \frac{1}{2} \\ 1 }  \right\} $ so indeed the determinant is $\frac{3}{4}$ 
+\end{eg}
+
+\subsection{65}%
+\label{sub:65}
+% subsection 65
+
+We already know what $C_{2} $ looks like lets see what $A\left(C_{2} \right) $ looks like.
+
+\begin{center}
+    \begin{tikzpicture}[scale=2]
+        \draw[step=.5,gray,very thin] (0,0) grid (4.0 - 0.1, 4.0 - 0.1);
+        \draw[->] (0, 0) -- (4.0, 0);
+        \draw[->] (0, 0) -- (0, 4.0);
+        \draw[pattern=north west lines] (0,0) -- (1, 1) -- (3,1) -- (2,0) -- cycle;
+    \end{tikzpicture}
+\end{center}
+
+We can see that the determinant should be positive and that the area is $1$ so $\mathit{det} \left(A\right) = 1$ 
+
+% subsection 65 (end)
+
+\subsection{66}%
+\label{sub:66}
+% subsection 66
+
+We will get
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[step=.5,gray,very thin] (-4.0 - 0.1,0) grid (4.0 - 0.1, 4.0 - 0.1);
+        \draw[<->] (-4.0, 0) -- (4.0, 0);
+        \draw[->] (0, 0) -- (0, 4.0);   
+        \draw[pattern=north west lines,rotate=30] (0,0) rectangle (2,2);
+    \end{tikzpicture}
+\end{center}
+
+We observe that this doesn't modify the cube in any way so $\mathit{det} \left(R\right) = 1$ 
+
+% subsection 66 (end)
+
+\subsection{67}%
+\label{sub:67}
+% subsection 67
+
+We can see that this just switches $\vec{e_2} \text{ and } \vec{e_1} $ so $\mathit{det} \left(F\right) = -1$ 
+
+% subsection 67 (end)
+
+\begin{thm}[Volume Theorem I]\index{Volume Theorem I}\label{thm:volume_theorem_i}
+    For a square matrix $M$, $\mathit{det} \left(M\right) $ is the oriented volume of the parallelpiped (n-dimensional parallelogram ) given by the column vectors of $M$  
+\end{thm}
+
+\begin{thm}[Volume Theorem II]\index{Volume Theorem II}\label{thm:volume_theorem_ii}
+    For a square matrix $M$,  $\mathit{det} \left(M\right) $ is the oriented volume of the parallelpiped (n-dimensional parallelogram ) given by the row vectors  of $M$.  \todo{Why???} 
+\end{thm}
+
+\subsection{68}%
+\label{sub:68}
+% subsection 68
+
+Well the columns of the matrix $M$ are $T\left(\vec{e_{i} } \right) $ and so if we look at linear combinations of those vectors where the coefficients are elements of the set $\left[ 0,1 \right] $ 
+
+% subsection 68 (end)
+
+% section lecture_1 (end)
+
+% chapter week_12 (end)
 
 \end{document}
