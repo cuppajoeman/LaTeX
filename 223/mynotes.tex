@@ -2145,6 +2145,14 @@ We can see that this just switches $\vec{e_2} \text{ and } \vec{e_1} $ so $\math
     For a square matrix $M$,  $\mathit{det} \left(M\right) $ is the oriented volume of the parallelpiped (n-dimensional parallelogram ) given by the row vectors  of $M$.  \todo{Why???} 
 \end{thm}
 
+\begin{eg}
+    Thus we know that $\mathit{det} \left(A\right) = \mathit{det} \left(A^{-1} \right) $ for example 
+    \begin{align*}
+        A= \mat{ \alpha  & \beta  \\ \gamma  & \delta  } && A^{-1} = \mat{ \alpha  & \gamma  \\ \beta  & \delta  } 
+    \end{align*}
+    
+\end{eg}
+
 \subsection{68}%
 \label{sub:68}
 % subsection 68
@@ -2152,6 +2160,292 @@ We can see that this just switches $\vec{e_2} \text{ and } \vec{e_1} $ so $\math
 Well the columns of the matrix $M$ are $T\left(\vec{e_{i} } \right) $ and so if we look at linear combinations of those vectors where the coefficients are elements of the set $\left[ 0,1 \right] $ 
 
 % subsection 68 (end)
+
+\begin{remark}
+    Let $\vec{v} \in C_{n} $ then there exists $\alpha _{1}, \alpha _{2}, \ldots, \alpha _{k - 1} \alpha _{k} \in \left[ 0,1 \right] $ such that $\vec{v} = \alpha _{1}\vec{e} _{1}  +  \alpha _{2}\vec{e} _{2}  +  \dotsb   +  \alpha _{k - 1}\vec{e} _{k - 1}  +  \alpha _{k}\vec{e} _{k} $ so then 
+    \begin{align*}
+        T\left(\vec{v} \right) &= T\left(\alpha _{1}\vec{e} _{1}  +  \alpha _{2}\vec{e} _{2}  +  \dotsb   +  \alpha _{k - 1}\vec{e} _{k - 1}  +  \alpha _{k}\vec{e} _{k} \right)   \\ 
+        &= \alpha _{1}T\left(\vec{e_{1} } \right)  +   \alpha _{2}T\left(\vec{e_{2} } \right)  +   \dotsb   \alpha _{k - 1}T\left(\vec{e_{k - 1} } \right)  +   \alpha _{k}T\left(\vec{e_{k} } \right)  \\ 
+    \end{align*}
+    And if $k= 2$ then visually we would have
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[step=.5,gray,very thin] (0,-4.0 - 0.1) grid (4.0 - 0.1, 4.0 - 0.1);
+            \draw[->] (0, 0) -- (4.0, 0);
+            \draw[<->] (0, -4.0) -- (0, 4.0);
+            \draw[line width=2pt,blue,-stealth] (0, 0) -- (2, 3) node[midway, above, sloped]{$T\left(\vec{e_1} \right) $ } ;
+            \draw[line width=2pt,blue,-stealth] (0, 0) -- (3, -1) node[midway, above, sloped]{$T\left(\vec{e_2} \right) $ } ;
+        \end{tikzpicture}
+    \end{center}
+    Then adding the coefficients we get the parallelogram defined by $T\left(\vec{e_1} \right) , T\left(\vec{e_2} \right) $ which would look like
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[step=.5,gray,very thin] (0,-5 - 0.1) grid (5 - 0.1, 5 - 0.1);
+            \draw[->] (0, 0) -- (5, 0);
+            \draw[<->] (0, -5) -- (0, 5);
+            \draw[pattern=north west lines] (0,0) -- (2,3) -- (5,2) -- (3, -1) -- cycle;
+        \end{tikzpicture}
+    \end{center}
+\end{remark}
+
+\begin{remark}
+    Let $T : \mathbb{R} ^{n}  \to \mathbb{R} ^{n}  $ we'll denote the volume of a translated unit-cube like this
+    \[
+    V\left(T\left(C_{n}  + \vec{b} \right) \right) \text{ for some  } \vec{b} \in \mathbb{R} ^{n} 
+    \]
+    Due to linearity we know
+    \begin{equation*}
+        V\left(T\left(C_{n} \right)  + T\left(\vec{b} \right) \right) = V\left(T\left(C_{n} \right) \right) = \mathit{det} \left(T\right) 
+    \end{equation*}
+\end{remark}
+
+\begin{remark}
+    Let's consider $V\left(T\left(\alpha C_{n} \right) \right) $ we know this either shrinks or stretches $C_{n} $ 
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[step=.5,gray,very thin] (0,0) grid (4.0 - 0.1, 4.0 - 0.1);
+            \draw[->] (0, 0) -- (4.0, 0);
+            \draw[->] (0, 0) -- (0, 4.0);
+            \draw[pattern=north east lines] (0,0) rectangle (2,2);
+            \draw[decoration={brace,raise=5pt},decorate] (0, 0) -- node[midway, left, xshift=-5pt] {1} (0,2);
+            \draw[pattern=north west lines] (0,0) rectangle (4,4);
+            \draw[decoration={brace,mirror,raise=5pt},decorate] (0, 0) -- node[midway, below, yshift=-5pt] {$\alpha $ } (4, 0);
+        \end{tikzpicture}
+    \end{center}
+    From our diagram we observe that the increase or decreasing in volume must be $\alpha ^2 $ and for the $n$ th dimension $a^{n} $thus it follows that 
+    \begin{align*}
+        V\left(\alpha T\left(c_{n} \right) \right) &= a^{n} V\left(T\left(C_{n} \right) \right)   \\ 
+        &= a^{n} \mathit{det} \left(T\right)  \\
+        &= V\left(\alpha C_{n} \right) \mathit{det} \left(T\right)  
+    \end{align*}
+    Thus we conclude 
+    \begin{equation*}
+        V\left(T\left(\alpha C_{n}  + \vec{b} \right) \right) = \mathit{det} \left(T\right) V\left(\alpha C_{n}  + \vec{b} \right) 
+    \end{equation*}
+\end{remark}
+
+We'll now show that it holds for any arbitrary shape $X$ 
+
+\begin{proof}
+    Let $X$ represent some arbitrary shape (set of vectors), we know that we can represent any shape as the sum of many or infinitely many squares of varying sizes, which some of which could also be infinitely small. So $X$ consists of elements that look like $\alpha C_{n}  + \vec{b} $ for some $\alpha \in \mathbb{R} , \vec{b} \in \mathbb{R} ^{n} $. \\
+    Let $T : R^{n}  \to \mathbb{R} ^{n}  $ be a linear transformation and then the image of $X$ under $T$ are the vectors $\vec{v} \in \mathbb{R} ^{n} $ that satisfy the following
+    \begin{align*}
+        \vec{v} &= T\left(\vec{y} \right) \text{ for some  } \vec{y} \in R^{n} \\
+        &= T\left(\alpha C_{n}  + \vec{b} \right)   \\ 
+        &= \alpha T\left(C_{n} \right)  + T\left(\vec{b} \right)  
+    \end{align*}
+    We must now find the volume of the image the which is the sum of each square we get so we have
+    \todo{complete this} 
+    \begin{align*}
+        \sum_{i=0}^{\infty } \alpha _{i} T\left(C_{n} \right)  + T\left(\vec{b_{i} } \right)  
+    \end{align*}
+\end{proof}
+
+\section{Week 12 lecture 2}%
+\label{chp:week_12_lecture_2}
+% section section_name
+
+Recall previously that if we have a transformation $T : \mathbb{R} ^{n}  \to \mathbb{R} ^{n}  $ and that 
+\[
+V\left(T\left(\alpha C_{n}  + \left\{ \vec{b}  \right\} \right) \right) = V\left(\alpha C_{n}  + \left\{ \vec{b}  \right\} \right) \left| \mathit{det} \left(T\right)  \right| 
+\]
+And so we know for any shape $A$ 
+\[
+V\left(T\left(A\right) \right) = \left| \mathit{det} \left(T\right)  \right| V\left(A\right) 
+\]
+
+
+\begin{itemize}
+    \item \underline{69} 
+        \begin{itemize}
+            \item $R_{1} = R_{2} = R_{3} = R_{4} = \frac{1}{4}$ and $R= 1$ 
+            \item $M\left(R_1\right) $ has area $\frac{1}{2}$, observe.
+                \begin{center}
+                    \begin{tikzpicture}[scale=2]
+                        \draw[step=.5,gray,very thin] (0,0) grid (2 - 0.1, 2 - 0.1);
+                        \draw[->] (0, 0) -- (2, 0);
+                        \draw[->] (0, 0) -- (0, 2);
+                        \draw[pattern=north west lines] (0,0) rectangle (1,0.5);
+                    \end{tikzpicture}
+                \end{center}
+            $M\left(R_{2} \right) $ has the same area of $M\left(R_{1} \right) $ we see,
+            \begin{center}
+                \begin{tikzpicture}[scale=2]
+                    \draw[step=.5,gray,very thin] (0,0) grid (2 - 0.1, 2 - 0.1);
+                    \draw[->] (0, 0) -- (2, 0);
+                    \draw[->] (0, 0) -- (0, 2);
+                    \draw[pattern=north west lines] (1,0) rectangle (2,.5);
+                    \draw[decoration={brace,mirror,raise=5pt},decorate] (1, 0) -- node[midway, below, yshift=-5pt] {$1$ } (2, 0);
+                    \draw[decoration={brace,mirror,raise=5pt},decorate] (2, 0) -- node[midway, right, xshift=5pt] {$\frac{1}{2}$ } (2, .5);
+                \end{tikzpicture}
+            \end{center}
+            And then $M\left(R\right) $ has area 2
+            \begin{center}
+                \begin{tikzpicture}[scale=2]
+                    \draw[step=.5,gray,very thin] (0,0) grid (2 - 0.1, 2 - 0.1);
+                    \draw[->] (0, 0) -- (2, 0);
+                    \draw[->] (0, 0) -- (0, 2);
+                    \draw[pattern=north west lines] (0,0) rectangle (2,1);
+                \end{tikzpicture}
+            \end{center}
+            \item Recall $V\left(T\left(R_{2} \right) \right) = \left| \mathit{det} \left(T\right)  \right| V\left(R_{2} \right) $ and thus $2 \cdot \frac{1}{4}= \frac{1}{2}$, we know that we are just translating $T\left(R\right) $ by the vector $T\left(\vec{e_2} \right) $ and so the oriented volume is still the same as the non-translated, 2. 
+            \item We start by proving the following claim. For any two linear transformations $S$, $T$ 
+                \[
+                V\left(S \circ T \left(R\right) \right) = \mathit{det} \left(S\right)  \cdot \mathit{det} \left(T\right)  \cdot V\left(R\right) 
+                \]
+            \begin{proof}
+                \begin{align*}
+                    V\left(S \circ T \left(R\right) \right) &= \mathit{det} \left(S\right)  \cdot V\left(T\left(R\right) \right)   \\ 
+                    &= \mathit{det} \left(S\right)  \cdot \mathit{det} \left(T\right)  \cdot V\left(R\right)  
+                \end{align*}
+            \end{proof}
+            \begin{crly}
+                for any two square matricies $A,B$ 
+                \[
+                \mathit{det} \left(AB\right) = \mathit{det} \left(A\right) \mathit{det} \left(B\right) 
+                \]
+                As $A,B$ must induce a transformation 
+            \end{crly}
+        \end{itemize}
+    \item \underline{70} 
+        \begin{itemize}
+            \item $E_{f} = \mat{ 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 } $ which is the transformation $f$ such that 
+                \[
+                f\left(\mat{ x \\ y \\ z } \right) = \mat{ y \\ x \\ z } 
+                \]
+                As we see this $f\left(\vec{e_1} \right) = \vec{e_2} $ and $f\left(\vec{e_2} \right) = \vec{e_1} $ and so it's negatively oriented as we can get to the standard basis by crossing once. Thus $\mathit{det} \left(f\right) = -1= \mathit{det} \left(E_{f} \right) $ 
+            \item $E_{m} = \mat{ 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 6 }$ 
+                \[
+                M\left(\mat{ x \\ y \\ z } \right) = \mat{ x \\ y \\ 6z } 
+                \]
+                and so the unit cube becomes
+                \begin{center}
+                    \begin{tikzpicture}
+                        \pic at (0, 0) {annotated cuboid={scale=1, width=1, height=6, depth=1, units=}};
+                    \end{tikzpicture}
+                \end{center}
+            And thus $\mathit{det} \left(M\right) = \mathit{det} \left(E_{m} \right) = 6$ 
+            \item $E_{A} = \mat{ 1 & 2 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 }$ and so $E_{A} \mat{ x \\ y \\ z } = \mat{ x + 2y \\ y \\ z } $ so $E_{A} \vec{e_1} = \vec{e_1} , E_{A} \vec{e_2} = \mat{ 2 \\ 1 \\ 0 } , E_{A} = \vec{e_3} $ and so let we let the $z$ axis point out of the page, thus the base of the base looks like
+                \begin{center}
+                    \begin{tikzpicture}
+                        \draw[step=.5,gray,very thin] (0,0) grid (4.0 - 0.1, 4.0 - 0.1);
+                        \draw[->] (0, 0) -- (4.0, 0);
+                        \draw[->] (0, 0) -- (0, 4.0);
+                        \draw[pattern=north west lines] (0,0) -- (1,2) -- (3, 2) -- (2, 0) -- cycle;
+                        \draw[decoration={brace,mirror,raise=5pt},decorate] (0, 0) -- node[midway, below, yshift=-5pt] {$1$ } (2, 0);
+                        \draw[decoration={brace,mirror,raise=5pt},decorate] (3, 0) -- node[midway, right, xshift=5pt] {$1$ } (3, 2);
+                    \end{tikzpicture}
+                \end{center}
+            And so the area of the base is 1, so $\mathit{det} \left(E_{A} \right) = 1$ \\
+            Notice that if we have the matrix $\mat{ 1 & \alpha  & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 }$ and so the middle column represents
+            \[
+            \alpha \vec{e_1}  + \vec{e_2} 
+            \]
+            and that $\alpha \vec{e_1} $ gives the shift to the parallelogram which we know doesn't actually change the area of the parallelogram 
+            \item $E_{f} E_{m} = \mat{ 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 6 }$ which takes a vector $\mat{ x \\ y \\ z } $ to $\mat{ y \\ x \\ 6z } $ which is the same as $E_{M} $ though $\vec{e_1} $ and $\vec{e_2} $ are now swapped thus it is negatively oriented so $\mathit{det} \left(f \circ m \right) = -6$ 
+            \item $\mathit{det} \left(4I_{3\times 3} \right) = 4^{3} = 64$ since $\vec{e_1} \to 4\vec{e_1}, \ldots $ 
+            \item We know that $W$ must look like
+                \begin{gather*}
+                    \begin{gmatrix}[b]
+                    	1 & 0 & 0 \\
+                    	0 & 1 & 0 \\
+                    	0 & 0 & 1
+                        \rowops
+                        \mult{2}{\cdot 6} 
+                        \mult{2}{\cdot 6} 
+                        \swap{0}{1} 
+                    \end{gmatrix}
+                    \rightsquigarrow 
+                    \begin{gmatrix}[b]
+                    	0 & 1 & 0 \\
+                    	1 & 0 & 0 \\
+                    	0 & 0 & 36
+                        \rowops
+                        \add[2]{1}{0} 
+                    \end{gmatrix}
+                    \rightsquigarrow 
+                    \begin{gmatrix}[b]
+                    	2 & 1 & 0 \\
+                    	1 & 0 & 0 \\
+                    	0 & 0 & 36
+                        \rowops
+                        \swap{0}{1} 
+                    \end{gmatrix}\\
+                    \rightsquigarrow 
+                    \begin{gmatrix}[b]
+                    	1 & 0 & 0 \\
+                    	2 & 1 & 0 \\
+                    	0 & 0 & 36 
+                    \end{gmatrix}
+                \end{gather*}
+                So we know the base has area $1$ with height $36$ so $\mathit{det} \left(W\right) = 36$ 
+        \end{itemize}
+\end{itemize}
+
+\section{Tutorial 75}%
+\label{sec:tutorial_75}
+% section tutorial_75
+
+\begin{itemize}
+    \item Q1\\
+    $\mathit{rank} \left(A\right) $ is the number of pivots in reduced row echelon form of $A$, the rank of $T$ is $\mathit{dim} \left(\mathit{range} \left(T\right) \right) $ 
+    \item Q2
+        \begin{enumerate}[label=\alph*)]
+            \item 
+                \[
+                    \mat{ 1 & 0 & 0 \\ 0 & 0 & 0 }
+                \]
+            \item 
+                \[
+                    \mat{ 1 & 0 & 0 \\ 0 & 1 & 0 }
+                \]
+            \item We know that the number of pivots in a matrix cannot exceed the number of rows of a matrix so this is impossible
+            \item 
+                \[
+                \mat{ 0 & 0 & 0 \\ 0 & 0 & 0 }
+                \]
+                We know that $\left\{ \vec{0}  \right\} $ is linearly dependent since for any $\gamma \in \mathbb{R}, \vec{0} = \gamma \vec{0} $ thus a non-trivial linear combination that yields the zero vector. 
+        \end{enumerate}
+    \item We'll simultaneously show a and b. \\
+    If $\mathcal{L} $ is not one-to-one then we have for some $\vec{x}, \vec{y}  \in R^{n} $ such that $\vec{x} \neq \vec{y} $ that
+    \begin{gather*}
+        \mathcal{L}\left(\vec{x} \right) = \mathcal{L}\left(\vec{y}\right) \\
+        \mathcal{L}\left(\vec{x}  - \vec{y} \right) = 0
+    \end{gather*}
+    But we recall that $\vec{x} \neq \vec{y} $ and so the null space is non-trivial and since the null space is a subspace we conclude that $\mathit{dim} \left(\mathit{null} \left(\mathcal{L}\left(x\right) \right) \right) \ge 1$ thus from the Rank Nullity Theorem we know that $\mathit{rank} \left(\mathcal{L} \right)  + nullity\left( \mathcal{L}  \right) = n$  and so $\mathit{rank} \left(\mathcal{L}\right)  + 1 \ge n $ thus we conclude that
+    \[
+    \boxed{\mathit{rank} \left(\mathcal{L} \right) < n}
+    \]
+    By the contrapositive of the statement we have just proven that $\mathit{rank} \left(\mathcal{L} \right) \ge n \implies \mathcal{L} \text{ is one-to-one  } $ but we know that $\mathit{rank} \left(row\left(A\right) \right) = \mathit{rank} \left(col\left( A \right)  \right) $ so then $\mathit{rank} \left(\mathcal{L} \right) \le \min\left(m, n\right) $ so the our implication changes to 
+    \[
+    \mathit{rank} \left(\mathcal{L} \right) = n \implies \mathcal{L} \text{ is one-to-one  } 
+    \]
+    This is actually a bi-implication so we have to prove the other direction. But our conclusion is that $\mathcal{L} \text{ is one-to-one  } $ if it is full rank
+    \item We'll show c and d now\\
+    Let $T : X \to Y $ we know that a function is onto if there exists an element in $X$ for every element in $Y$ so that it maps to it equivalently the range of $T$ is $Y$ or or we can say $T\left(X\right) = Y$ so we know
+    \begin{gather*}
+        image\left(\mathcal{L} \right) = R^{m} \\
+        \mathit{rank} \left(\mathcal{L} \right) = m
+    \end{gather*}
+    So we've shown that if $\mathcal{L} $ is onto then $\mathit{rank} \left(\mathcal{L} \right) = m$ \\
+    We'll show d now, remember for any $a, b \in \mathbb{R} $ one of the following is true
+    \[
+    a= b\lor a > b \lor a < b
+    \]
+    so if $\mathit{rank} \left(\mathcal{L} \right) \neq m \implies \left( \mathit{rank} \left(\mathcal{L} \right) < m \right) \lor \left( \mathit{rank} \left(\mathcal{L} \right) > m \right) $ though we know that $\mathit{rank} \left(\mathcal{L} \right) > m$ cannot be true so we know
+    \[
+    \text{ onto } \Leftrightarrow \mathit{rank} \left(\mathcal{L} \right) = m
+    \]
+    and so then 
+    \[
+    \text{ not-onto } \Leftrightarrow \mathit{rank} \left(\mathcal{L} \right) < m
+    \]
+    And finally we conclude if a function is both onto and one-to-one (bijective ) if $\mathit{rank} \left(\mathcal{L} \right) = m \land \mathit{rank} \left(\mathcal{L} \right) = n$ equivalently that is $m= n$ 
+\end{itemize}
+
+% section tutorial_75 (end)
+
+% chapter week_12_lecture_2 (end)
 
 % section lecture_1 (end)
 

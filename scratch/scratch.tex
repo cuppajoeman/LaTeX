@@ -2,15 +2,15 @@
 
 \usepackage{scratch} 
 
+\usepgfplotslibrary{polar}
+
 \begin{document}
-    \begin{center}
-        \begin{center}
-            \begin{tikzpicture}
-                \coordinate[label=above:{$A$ }](A) at (0, 0);
-                \coordinate[label=above:{$B$ }](B) at (-4, 0);
-                \coordinate[label=below:{$C$ }](C) at (0, -10);
-                \draw (A) -- (B) -- (C) -- cycle;
-            \end{tikzpicture}
-        \end{center}
-    \end{center}
+\begin{tikzpicture}
+  \begin{polaraxis}[
+      domain = -3600:3600,
+      samples = 4000
+    ]
+    \addplot[blue!50!black] {1 - sin(50*x/49) - sin(8*x)};
+  \end{polaraxis}
+\end{tikzpicture}
 \end{document}
