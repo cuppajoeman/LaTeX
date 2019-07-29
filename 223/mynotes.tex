@@ -2441,9 +2441,53 @@ V\left(T\left(A\right) \right) = \left| \mathit{det} \left(T\right)  \right| V\l
     \text{ not-onto } \Leftrightarrow \mathit{rank} \left(\mathcal{L} \right) < m
     \]
     And finally we conclude if a function is both onto and one-to-one (bijective ) if $\mathit{rank} \left(\mathcal{L} \right) = m \land \mathit{rank} \left(\mathcal{L} \right) = n$ equivalently that is $m= n$ 
+    \item Q4
+        \begin{enumerate}[label=\alph*)]
+            \item Let $\mathcal{T} $ be $\mathit{proj}_{\mathcal{P} } {\vec{x} } $ for all $\vec{x} \in \mathbb{R} ^{3} $ for some plane $\mathcal{P} $ and $\mathcal{S} $ be $\mathit{proj}_{\mathcal{Q} } {\vec{x} } $ for some plane $\mathcal{Q} $ for all $\vec{x} \in \mathbb{R} ^{3} $ for example $S= \mat[b]{ 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 }$, which removes the z component of every vector and drops it onto the $x-y$ plane. So $S= T= $ the projection onto the $x-y$ plane. 
+            \item If we first project onto the $x-y$ plane, then the $x-z$ plane, then we get the projection onto the $x-$ axis, so we have
+                \begin{align*}
+                    \mathcal{T} = \mat[b]{ 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 } && \mathcal{S} = \mat[b]{ 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 }
+                \end{align*}
+            And then applying both gives
+            \[
+            \mathcal{T}  \circ \mathcal{S} = \mat[b]{ 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 } 
+            \]
+            \item impossible, we know that $\mathit{rank} \left(S\right) = 2$ so by definition we know that 
+                \[
+                \mathit{dim} \left(\left\{ \mathcal{S} \left(\mathcal{T} \left(\vec{x} \right) \right) \text{ for some  } \vec{x} \in R^{3}  \right\} \right) 
+                \]
+                Recall that $\mathit{range} \left(\mathcal{T} \right) \subseteq \mathbb{R} ^{3} $ and so equivalently we have
+                \[
+                    \mathit{dim} \left(\left\{ \mathcal{S}\left(\vec{v} \right) \text{ for some  } \vec{v} \in \mathbb{R} ^{3}  \right\} \right) 
+                \]
+                which is equal to $2$ which is not $3$ 
+            \item Let $\mathcal{T}\left(\vec{x} \right) $ be the projection of $\vec{x} $ onto the $x-y$ axis, let $\mathcal{S}\left(\vec{x} \right) $ be the projection onto the $z$ axis, then a projection onto the $x-y$ then onto the $z$ axis only yields the 0 vector and so $\mathit{rank} \left(S \circ T \right) = 0$ as required.  
+        \end{enumerate}
+    \item Q5
+        \begin{itemize}
+            \item We say two matricies $A, B$ are similar if there exists a matrix $X$ such that $B= XAX^{-1} $ 
+            \item We know that 
+                \[
+                B= XAX^{-1} 
+                \]
+                We assume that $X^{-1} $ exists, so then it's columns and rows are linearly independent which means that we won't have a row of zero's also we know that $A$ doubles the second row and triples the third when it multiplies against a matrix and so we know the bottom right value of $XAX^{-1} $ is not zero, so such a matrix doesn't exist.
+        \end{itemize}
 \end{itemize}
 
 % section tutorial_75 (end)
+
+\section{Extra Homework Problems Determinants}%
+\label{sec:extra_homework_problems_determinants}
+% section extra_homework_problems_determinants
+
+\begin{itemize}
+    \item A1
+        \begin{enumerate}[label=\alph*)]
+            \item $\mathit{det} \left(A\right) = \mat[v]{ 1 & 2 & 4 \\ 3 & 1 & 0 \\ -1 & 3 & 2 }= 1\left( 2 \right)  - 2\left( 6 \right)  + 4\left( 9 \right) = $ 
+        \end{enumerate}
+\end{itemize}
+
+% section extra_homework_problems_determinants (end)
 
 % chapter week_12_lecture_2 (end)
 
