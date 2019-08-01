@@ -757,9 +757,9 @@ We can stop here because we see that in the bottom row we have $0 = -13$ which i
 Images and Sets under transformations.
 
 % TODO : Question This whole thing is messed up office hours!
-\begin{enumerate}
+\begin{itemize}
     \item 
-    \begin{enumerate}
+        \begin{enumerate}
         \item We know that $\mathcal{M}\left(P\right)$ is equal to 
             \[
             \left\{ \vec{x} \in \mathbb{R}^2: \vec{x} = M\vec{v} \text{ for some  } \vec{v} \in P \right\}
@@ -779,26 +779,13 @@ Images and Sets under transformations.
         \end{tikzpicture}
         \end{center}
         % TODO : Question this is wrong ask why
-        \item We know that the convec linear combinations of $P$ look like 
-            \[
-                \left\{ \vec{x} \in \mathbb{R}^2: \vec{x} = t\vec{e_1} + \left( 1 - t \right)\vec{e_2} = \mat{ t \\ \left( 1 - t \right) } \text{ for some  }t \in \left[ 0,1 \right]\right\}
-            \]
-            And so vectors in the range of $\mathcal{M}$ should be the set
-            \[
-                \left\{ \vec{x} \in \mathbb{R}^2: \vec{x} = \mat{ 1 & -1 \\ 1 & 0 }\mat{ t \\ \left( 1 - t \right)}  \right\}
-            \]
-            which are the vectors
-            \[
-                \mat{ 2t - 1 \\ t } = \left( 2t - 1 \right)\vec{e_1} + t\vec{e_2} \text{ for some  } t \in \left[ 0,1 \right]
-            \]
-            \begin{center}
-                \begin{tikzpicture}[scale=0.5]
-                    \draw[step=.5,gray,very thin] (-3.9, -3.9) grid (3.9, 3.9);
-                    \draw[<->] (-4, 0) -- (4, 0);
-                    \draw[<->] (0, -4) -- (0, 4);
-                    \draw[pattern=north west lines] (0,-1) rectangle (1,1);
-                \end{tikzpicture}
-            \end{center}
+        \item We have 
+            \begin{align*}
+                \mathcal{M}\left(S\right) &= \mathcal{M}\left(t\vec{e_1}  + \left( 1 - t \right) \vec{e_2} \right)  \\ 
+                \intertext{Due to the linearity of $M$ we know }
+                                          &= tM\left(\vec{e_1} \right)  + \left( 1 - t \right) \mathcal{M}\left(\vec{e_2} \right)  
+            \end{align*}
+            And thus this is the convex linear combinations of $\mat{ 1 \\ 1 } \text{ and } \mat{ -1 \\ 0 } $ 
             We know that the span of a vector in $X$ will look like $\mat{ \alpha \\ 0 }\text{ for some  } \alpha \in \mathbb{R}$ and so the range will end up looking like
         \[
         \left\{ \vec{x} \in \mathbb{R} : \vec{x}  = \mat{ 1 & -1 \\ 1 & 0 } \mat{ \alpha  \\ 0 } \right\} 
@@ -838,10 +825,28 @@ Images and Sets under transformations.
             \begin{gather*}
                 \left\{ \vec{v} \in \mathbb{R}^2 :\vec{v} = \mat{ x - 2y \\ -2x + 4y + 2 } \text{ for some  } \mat{ x \\ y } \in \mathbb{R}^2  \right\} 
             \end{gather*}
+            But equivalenty this is 
+            \[
+            \vec{v} = x\mat{ 1 \\ -2 }  + y\mat{ -2 \\ 4 }  + \mat{ 0 \\ 2 } 
+            \]
+            but notice that $\mat{ 1 \\ -2 } = -\frac{1}{2}\mat{ -2 \\ 4 } $ so then we have
+            \[
+            \vec{v} = s\mat{ 1 \\ -2 }  + \mat{ 0 \\ 2 } 
+            \]
         \item $\mathcal{A}\left(B\right) $ is the set
             \begin{gather*}
-                \left\{ \vec{v} \in \mathbb{R}^2 :\vec{v} = \mat{ x - 2y \\ -2x + 4y + 2 } \text{ for some  } \mat{ x \\ y } \in B  \right\} 
+                \left\{ \vec{v} \in \mathbb{R} ^{2} :\vec{v} = x\mat{ 1 \\ 2 } - \frac{1}{2}\mat{ 1 \\ -2 }  + \mat{ 0 \\ 2 }   \right\} \\
+                \left\{ \vec{v} \in \mathbb{R} ^{2} :\vec{v} = \left( x - \frac{1}{2y} \right) \mat{ 1 \\ -2 }  + \mat{ 0 \\ 2 }  \right\} 
             \end{gather*}
+            recall that $\left| x \right| , \left| y \right| \le 1$ thus by definition we have $-1 \le x,y \le 1$ and thus 
+            \[
+             - \frac{3}{2}\le x - \frac{1}{2}y\le \frac{1}{2}
+            \]
+            and so we can rewrite this set as 
+            \[
+                \left\{ \vec{v} \in \mathbb{R} ^2 :\vec{v} = s\mat{ 1 \\ -2 } + \mat{ 0 \\ 2 } \text{ for some  } s\in \left[ -\frac{3}{2},\frac{1}{2} \right]    \right\} 
+            \]
+            
     \end{enumerate}
     \item Q4
     \begin{enumerate}
@@ -856,23 +861,29 @@ Images and Sets under transformations.
             But we know the $y$ of any vector in $X$ is 0 so this just redfines the $X$ axis and we know that $\mathbb{R} $ is closed under addition and multiplication so this is certianly a subspace and a subset of $\mathbb{R}^2 $ for example take an element in $X$ and it's guarnteed to look like $\mat{ \alpha  \\ 0 } \subseteq \mathbb{R}^2 $ as required.
         \item Let's call the line segment $\ell $ and we know that the image of $\ell $ under $\mathcal{Q} $ is the set
             \[
-                \left\{ \vec{v} \in \mathbb{R}^2 :\vec{v} = \mat{ 3t \\ \left( 2 + t \right) ^2  } \text{ for some  } t \in \left[ 0,1 \right]  \right\} 
+                \left\{ \vec{v} \in \mathbb{R} ^2 :\vec{v} = \mathcal{Q}\left(\mat{ 3t \\ 0 }  + \mat{ 0 \\ 2 } \right)  \right\} 
             \]
-            We know that $\left( 2 + t \right) ^2 = 4 + 4t + t^2  $ and so the vectors in the image are of the form
+            But since $\mathcal{Q} $ is not linear then we can't proceed to break up the sum, so we have to add what's inside the function so we have
             \[
-            \mat{ 0 \\ 4 }  + t \mat{ 3 \\ 4 + t } 
+            \left\{ \vec{v} \in \mathbb{R} ^2 :\vec{v} = \mathcal{Q}\left(\mat{ 3t \\ 2 } \right)  \right\} 
             \]
-            Which defines a line that has been shifted, nevertheless it ends as $t \in \left[ 0,1 \right] $ and thus it is a segment as required.
+            And we know $\mathcal{Q} \left(\mat{ 3t \\ 2 } \right) = \mat{ 3t \\ 4 } $ which gives the line segment 
+            \[
+            t\mat{ 3 \\ 0 }  + \mat{ 0 \\ 4 } 
+            \]
+            
     \end{enumerate}
-    \item A line segment is a line that is described by $\alpha \vec{v} \text{ for some  } a \in \left[ 0, \beta  \right] \text{ for some  } \beta \in \mathbb{R} $ we know if we look at $\ell= \left\{ \alpha \vec{v} \text{ for some  } \alpha \in \mathbb{R}   \right\} $ where $\vec{v} \neq \vec{0} $ and $\vec{v} \neq \vec{\vec{e_1} } $ and $\vec{v} \neq \vec{e_2} $ that the image will result in a vshape which cannot be described as a single line segment
+    \item Take the line segment
+        \[
+            \alpha \left( \vec{e_1}  + \vec{e_2}  \right) \text{ for all  } \alpha \in \left[ -1, 1 \right] 
+        \]
+        We know when you square the $y$ values you get a parabola, proof that this is not a line segment, is that if you choose two points on it, there exists a point that is not part of that line. 
     \item Q5
-    \begin{enumerate}
         \item 
             \begin{gather*}
                 \left\{ \vec{v} \in \mathbb{R}^2 : \vec{v} = \mat{ e^{y} \cos{x} \\ e^{y} \sin{x} } \text{ for some  } \mat{ x \\ y } \in \mathbb{R}^2   \right\} \\
             \end{gather*}
-    \end{enumerate}
-\end{enumerate}
+\end{itemize}
 
 % subsection extra_handout (end)
 
@@ -1101,7 +1112,7 @@ Also we know that
         &= dim\left(col\left(M\right)\right) \\
         &= \text{ \# linearly independent columns of }M \\
         &= dim\left(row\left(rref\left(M\right)\right)\right) \Arrow{pivots are both \\horizontal and vertical} \\
-        &= dim\left(row\left(M\right)\right) \\
+        &= dim\left(row\left(M\right)\right)
     \end{WithArrows}$
 \end{crly}
 
@@ -2494,5 +2505,168 @@ V\left(T\left(A\right) \right) = \left| \mathit{det} \left(T\right)  \right| V\l
 % section lecture_1 (end)
 
 % chapter week_12 (end)
+
+\chapter{Week 13}%
+\label{chp:week_13}
+% chapter week_13
+
+\section{Week 13 Lecture 1}%
+\label{sec:week_13_lecture_1}
+% section week_13_lecture_1
+
+
+
+
+Recall:
+If $\mathcal{E} $ is an elementary matrix obtained from $\mathcal{I} _{n\times n} $ by the row opeation 
+\[
+R_{i} \to R_{i}  + \alpha R_{j} \text{ and } i \neq j
+\]
+Thus we know that $\mathit{det} \left(\mathcal{E} \right) = 1$ 
+
+\begin{proof}
+    We know $\mathcal{E} $ looks like 
+    \[
+    \mat[b]{ 1 & \ldots  & \alpha  \\ \vdots   & 1 & \vdots  \\ 0 & \ldots  & 1 }
+    \]
+    We know this represents
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[step=.5,gray,very thin] (0,0) grid (4.0 - 0.1, 4.0 - 0.1);
+            \draw[->] (0, 0) -- (4.0, 0);
+            \draw[->] (0, 0) -- (0, 4.0);
+            \draw[line width=2pt,blue,-stealth] (0, 0) -- (1, 4) node[midway, above, sloped]{} ;
+            \draw[line width=2pt,blue,-stealth] (0, 0) -- (1, 0) node[midway, above, sloped]{} ;
+            \draw[decoration={brace,mirror,raise=5pt},decorate] (1,0) -- node[midway, right, xshift=5pt] {$\alpha $ } (1, 4);
+        \end{tikzpicture}
+    \end{center}
+We know that this just gives the parallelogram a slant which doesn't change the area.
+\end{proof}
+
+\begin{eg}
+    Then we know 
+    \[
+    \mathit{det} \left(\mat[b]{ 1 & \alpha  \\ 0 & 1 }\right) = 1
+    \]
+\end{eg}
+
+\begin{eg}
+    \[
+    \mathit{det} \left(\mat[b]{ 1 & 0 & 0 \\ \beta  & 1 & 0 \\ 0 & 0 & 1 }\right) = 1
+    \]
+\end{eg}
+
+\subsection{Upper and Lower triangular matricies}%
+\label{sub:upper_and_lower_triangular_matricies}
+% subsection upper_and_lower_triangular_matricies
+
+Let's say we have 
+\begin{align*}
+    X= \mat[b]{ 2 & 1 & 3 & 6 \\ 0 & 3 & 2 & 5 \\ 0 & 0 & 1 & 4 \\ 0 & 0 & 0 & -1 } && J= \mat[b]{ 2 & 0 & 0 & 0 \\ 0 & 3 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & -1 }
+\end{align*}
+
+observe that we can obtain $X$ from elementary row operations applied to $J$. We know that each row operation relates to an elementary matrix and all of them applied at once is the multiplication of each of the elementary matricies say $\mathcal{E} _{x} $ so we know that
+\[
+X= \mathcal{E} _{x} J
+\]
+And so 
+\begin{align*}
+    \mathit{det} \left(X\right) &= \mathit{det} \left(\mathcal{E} _{x} J\right)   \\ 
+    &= \mathit{det} \left(\mathcal{E} _{x} \right)  \cdot \mathit{det} \left(J\right)   \\ 
+\end{align*}
+
+Recall that we have shown that the the determinant of an elementary matrix is 1 and that $E_{x} $ is the product of only elementary matricies and so $\mathit{det} \left(\mathcal{E }_{x}  \right) = 1$ thus we know 
+\[
+\mathit{det} \left(X\right) = 1  \cdot \mathit{det} \left(J\right) 
+\]
+And recall that $J$ is triangular so it's determinant is just the product of the diagonal and so $\mathit{det} \left(J\right) = 1 \cdot 2 \cdot 3 \cdot 1  \cdot -1 = -6$  
+
+Note that if a matrix is upper or lower triangular matrix is the product of the diagonal entries.
+\begin{eg}
+    \[
+    \mathit{det} \left(\mat[b]{ 1 & 0 & 0 \\ 4 & 2 & 0 \\ 5 & 6 & 3 }\right) = 6
+    \]
+\end{eg}
+
+% subsection upper_and_lower_triangular_matricies (end)
+
+\subsection{Value of the determinant}%
+\label{sub:value_of_the_determinant}
+% subsection value_of_the_determinant
+
+Let $T : \mathbb{R} ^2  \to \mathbb{R} ^2  $ if 
+\[
+\mathit{det} \left(T\right) \neq 0
+\]
+then we know that the parallelogram generated has area. We know this because if a parallelogram has no area that means $T\left(\vec{e_1} \right) , T\left(\vec{e_2} \right) $ are linearly dependent and so they define a line which clearly has no area. By the contrapositive we know that it has area thehn $T\left(\vec{e_1} \right) , T\left(\vec{e_2} \right) $ are linearly independent so we have
+\[
+\mathit{det} \left(T\right) = 0 \implies T\left(\vec{e_1} \right) = \alpha T\left(\vec{e_2} \right) \text{ for some  } \alpha \in \mathbb{R} 
+\]
+Equivalently we know if $A$ invokes $\mathcal{T} $ such that $A= \left[ T \right]_{\mathcal{E}} $ we have 
+\[
+\mathit{det} \left(A\right) \neq 0 \implies \text{ columns of $A$ are linearly independent  } 
+\]
+then also
+\[
+    \mathit{det} \left(A\right) = 0 \implies \text{ the cols of $A$ are linearly dependent, we lost at least one dimension  } 
+\]
+
+in particular 
+\begin{itemize}
+    \item If $\mathit{rref} \left(A\right) $ has a row of zeros then we know that at least one column is dependent thus we know $\boxed{\mathit{det} \left(A\right) = 0}$ 
+    \item $F_{A}  : \mathbb{R} ^2  \to \mathbb{R} ^2  $ is the projection onto $\mathit{span} {\left\{ \mat{ 1 \\ 2 }  \right\} } $ then we have 
+        \[
+        \boxed{\mathit{det} \left(A\right) = 0 }
+        \]
+    since all vectors in the range of $A$ are
+    \[
+    \alpha \mat{ 1 \\ 2 } \text{ for all  } \alpha \in \mathbb{R} 
+    \]
+    \item If $A$ is invertible then it's columns are linearly independent thus 
+        \[
+            \boxed{\mathit{det} \left(A\right) \neq 0}
+        \]
+    \item If $A$ is not invertible then $\mathit{rref} \left(A\right) $ has a row of zeros so then 
+        \[
+        \boxed{\mathit{det} \left(A\right) = 0}
+        \]
+    \item If $A$ has a trivial null space then we know the only solution to the zero vector is a trivial one, so then by definition the columns are linearly independent so 
+        \[
+        \boxed{\mathit{det} \left(A\right) \neq 0}
+        \]
+\end{itemize}
+
+Thus from the lemmas above we have 
+\begin{thm}[determinant properties ]\index{determinant properties }\label{thm:determinant_properties_}
+    \begin{align*}
+        \mathit{det} \left(A\right)= 0 &\Leftrightarrow \text{ columns of $A$ are linearly dependent  } \tag{Important!}\\
+                                    &\Leftrightarrow  \mathit{rref} \left(A\right) \text{ has a row of zeros  } \\
+                                    & \Leftrightarrow A \text{ is not invertible  } \\
+                                    & \Leftrightarrow A \text{ has a non trivial null space  } 
+    \end{align*}
+\end{thm}
+
+\subsection{inverse determinant }%
+\label{sub:inverse_determinant_}
+% subsection inverse_determinant_
+
+Let $A$ be a matrix that is invertible that is $A^{-1} $ exists we know
+\begin{gather*}
+    AA^{-1} = I\\
+    \mathit{det} \left(AA^{-1} \right) = \mathit{det} \left(I\right) \\
+    \mathit{det} \left(A\right) \mathit{det} \left(A^{-1} \right) = 1\\
+\end{gather*}
+We know that division is allowed since $\mathit{det} \left(A\right) \text{ and } \mathit{det} \left(A^{-1} \right) $ are non-zero 
+Thus we know 
+\begin{align*}
+    \boxed{\mathit{det} \left(A\right) = \frac{1}{\mathit{det} \left(A^{-1} \right) }} && \boxed{\mathit{det} \left(A^{-1} \right) = \frac{1}{\mathit{det} \left(A\right) }}
+\end{align*}
+
+% subsection inverse_determinant_ (end)
+
+% subsection value_of_the_determinant (end)
+
+
+% chapter week_13 (end)
 
 \end{document}

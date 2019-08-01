@@ -117,14 +117,14 @@ snippet itex "intertext" b
 \intertext{$1}$0
 endsnippet
 
-snippet warw "With Arrows" b
-$\begin{WithArrows}
-	$0
-\end{WithArrows}$
+snippet alw "Arrows" wA
+\begin{DispWithArrows}[format=c,notag]
+	$1
+\end{DispWithArrows}$0
 endsnippet
 
-snippet arw "Arrows" wA
-\Arrow{$1}$0
+snippet arw "Arrows" iA
+\Arrow[tikz={<->}]{$1} ${2: \\\\ }
 endsnippet
 
 snippet abs "abstract environment" b
@@ -284,7 +284,7 @@ snippet taxis3d "tikzpicture 3d axis snippet" b
 endsnippet
 
 snippet enum "Enumerate" b
-\begin{enumerate}${1:[label=$2]}
+\begin{enumerate}${1:[label=${2:\alph*)}]}
 	\item $0
 \end{enumerate}
 endsnippet

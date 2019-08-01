@@ -73,11 +73,11 @@ def create_inline_matrix(snip):
         rows = int(given.split("x", 2)[0][-1])
         cols = int(given.split("x", 2)[-1][0])
 
-        offset = cols + 1
+        offset = cols + 2
 
         snip.buffer[snip.line] = snip.buffer[snip.line][0:until - 7] 
 
-        final_str = "\\mat{"
+        final_str = "\\mat[$1]{"
 
         for i in range(rows):
                 final_str += ' '
@@ -114,6 +114,18 @@ endglobal
 
 snippet mm "Math" wA
 $${1:${VISUAL}}$`!p
+punctuation = t[2] and t[2][0] in [',', '.', '?', '-']
+if punctuation:
+	if len(t[2]) == 1:
+	  t[2] = t[2] + (' ' if t[2][0] in [',', '.', '?'] else '')
+	snip.rv=''
+else:
+	snip.rv=' '
+`$2
+endsnippet
+
+snippet bb "Brilliant Math" wA
+\(${1:${VISUAL}}\)`!p
 punctuation = t[2] and t[2][0] in [',', '.', '?', '-']
 if punctuation:
 	if len(t[2]) == 1:
@@ -193,7 +205,7 @@ snippet mod "modulo" iA
 \Mod{$1}$0
 endsnippet
 
-snippet boxed "box around equation" iA
+snippet box "box around equation" iA
 \boxed{$1}$0
 endsnippet
 
@@ -406,8 +418,23 @@ snippet lda "lambda" iA
 endsnippet
 
 context "math()"
+snippet edbo "expression with dots under some binary operation" iA
+$1 $2 $3 $2 \ldots $2 $4 $2 $5
+endsnippet
+
+context "math()"
 snippet vars "some finite number of variables" iA
 $1_{1}$2 $3 $1_{2}$2 $3 dots$4 $3 $1_{$5 - 1}$2 $3 $1_{$5}$2 $0
+endsnippet
+
+context "math()"
+snippet choo "n choose k" iA
+{${1:n} \choose ${2:k}} $0
+endsnippet
+
+context "math()"
+snippet bthm "binomial theorem" iA
+\sum_{$1=0}^{$2} {$2 \choose $1} $3^{$2-$1} $4^{$1}  
 endsnippet
 
 context "math()"
@@ -559,12 +586,12 @@ snippet dint "integral" w
 endsnippet
 
 context "math()"
-snippet int "integral" w
+snippet int "integral" iA
 \int ${1:${VISUAL}}\: d${2:x} $0
 endsnippet
 
 context "math()"
-snippet sum "sum" w
+snippet sum "sum" iA
 \sum_{${1:i}=${2:0}}^{${3:n}} ${4:${VISUAL}} $0
 endsnippet
 
@@ -644,12 +671,12 @@ snippet rij "mrij" i
 endsnippet
 
 context "math()"
-snippet <= "leq" iA
+snippet le "leq" iA
 \le $0
 endsnippet
 
 context "math()"
-snippet >= "geq" iA
+snippet ge "geq" iA
 \ge $0
 endsnippet
 
@@ -659,12 +686,12 @@ snippet e= "congruent/equiv" iA
 endsnippet
 
 context "math()"
-snippet EE "geq" iA
+snippet te "there exists" iA
 \exists $1 \in $0
 endsnippet
 
 context "math()"
-snippet AA "forall" iA
+snippet fa "forall" iA
 \forall $1 \in $0
 endsnippet
 
@@ -953,7 +980,7 @@ endsnippet
 
 context "math()"
 snippet rref "Row Reduced Echelon Form" iA
-\mathit{rank} \left($1\right) $0
+\mathit{rref} \left($1\right) $0
 endsnippet
 
 context "math()"
@@ -1054,7 +1081,7 @@ endsnippet
 
 context "math()"
 snippet '(?<!arc)(?<!\\)sin' "sin" rwA
-\sin$1 \left( ${2:\theta} \right) $0
+\sin $1 \left( ${2:\theta} \right) $0
 endsnippet
 
 context "math()"

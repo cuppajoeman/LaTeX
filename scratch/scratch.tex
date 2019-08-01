@@ -1,16 +1,17 @@
 \documentclass[11pt]{article}
 
 \usepackage{scratch} 
+\usepackage{amsfonts}
+\usepackage{witharrows}
 
-\usepgfplotslibrary{polar}
+\renewenvironment{gather}
+{\begin{DispWithArrows}[format=c,notag]}
+{\end{DispWithArrows}}
 
 \begin{document}
-\begin{tikzpicture}
-  \begin{polaraxis}[
-      domain = -3600:3600,
-      samples = 4000
-    ]
-    \addplot[blue!50!black] {1 - sin(50*x/49) - sin(8*x)};
-  \end{polaraxis}
-\end{tikzpicture}
+    
+\begin{gather}
+    \alpha x^2  + \beta x + c= 0\Arrow[tikz={<->}]{hell  $\frac{1}{\alpha }$}  \\ 
+\end{gather}
+
 \end{document}

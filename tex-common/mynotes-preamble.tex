@@ -21,13 +21,14 @@
     linkcolor=blue,  %choose some color if you want links to stand out
 }
 
+
 \setcounter{chapter}{-1}
 
 
 \theoremstyle{definition}
 
 % Matricies
-\newcommand\mat[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand\mat[2][b]{\begin{#1matrix}#2\end{#1matrix}}
 
 % Augmented matrix
 \makeatletter
