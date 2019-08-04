@@ -6,6 +6,106 @@ snippet cor "correct" w
 correct $0
 endsnippet
 
+snippet idn "identity" w
+identity $0
+endsnippet
+
+snippet resp "respectively" w
+respectively $0
+endsnippet
+
+snippet int "integer(s)" w
+integer${1:s} $0
+endsnippet
+
+snippet disc "discussed" w
+discussed $0
+endsnippet
+
+snippet desc "describe" w
+describe $0
+endsnippet
+
+snippet wn "we note" w
+${1:w}e note $0
+endsnippet
+
+snippet alt "alternate" w
+alternate $0
+endsnippet
+
+snippet yld "yield(s)" w
+yield${1:s} $0
+endsnippet
+
+snippet fst "first" w
+first $0
+endsnippet
+
+snippet scd "second" w
+second $0
+endsnippet
+
+snippet slv "solve" w
+solve $0
+endsnippet
+
+snippet prev "previously" w
+previously $0
+endsnippet
+
+snippet sat "satisfy" w
+satisfy $0
+endsnippet
+
+snippet val "value(s)" w
+value${1:s} $0
+endsnippet
+
+snippet poss "possible" w
+possible $0
+endsnippet
+
+snippet incr "increases" w
+increases $0
+endsnippet
+
+snippet orth "orthogonal" w
+orthogonal $0
+endsnippet
+
+snippet fd "find(ing)" w
+find${1:ing} $0
+endsnippet
+
+snippet giv "given" w
+given $0
+endsnippet
+
+snippet mvr "moreover" w
+moreover $0
+endsnippet
+
+snippet corr "corresponding" w
+corresponding $0
+endsnippet
+
+snippet app "applies" w
+applies $0
+endsnippet
+
+snippet fac "factor" w
+factor $0
+endsnippet
+
+snippet dir "direction" w
+direction $0
+endsnippet
+
+snippet str "stretch(es)" w
+stretch${1:es} $0
+endsnippet
+
 snippet abv "above" w
 above $0
 endsnippet
@@ -20,6 +120,10 @@ endsnippet
 
 snippet trv "trivial" w
 trivial $0
+endsnippet
+
+snippet ntrv "trivial" w
+non-trivial $0
 endsnippet
 
 snippet z "zero(s)" w
@@ -50,6 +154,22 @@ snippet diag "diagonal" w
 diagonal $0
 endsnippet
 
+snippet uni "unique" w
+unique $0
+endsnippet
+
+snippet mtd "method" w
+method $0
+endsnippet
+
+snippet gnt "guarenteed" w
+guarenteed $0
+endsnippet
+
+snippet dgzbl "diagonalizable" w
+diagonalizable $0
+endsnippet
+
 snippet utri "upper triangular" w
 upper triangular $0
 endsnippet
@@ -70,7 +190,7 @@ snippet elem "elementary" w
 elementary $0
 endsnippet
 
-snippet ctsq "complete the square" w
+snippet ctq "complete the square" w
 complete the square $0
 endsnippet
 
@@ -79,7 +199,7 @@ product $0
 endsnippet
 
 snippet eval "eval" w
-eval $0
+evalulate $0
 endsnippet
 
 snippet equ "equation" w
@@ -255,7 +375,11 @@ definition $0
 endsnippet
 
 snippet mul "multiplication" w
-multiplication $0
+multipl${1:ication} $0
+endsnippet
+
+snippet muld "multiplication" w
+multiplied $0
 endsnippet
 
 snippet mulpl "multiple(s)" w
@@ -300,6 +424,10 @@ endsnippet
 
 snippet max "maximum" w
 maximum $0
+endsnippet
+
+snippet maxi "maximize" w
+maximize $0
 endsnippet
 
 snippet lim "limit" w
@@ -378,6 +506,10 @@ snippet tn "then" w
 then $0
 endsnippet
 
+snippet red "reduced" w
+reduce${1:d} $0
+endsnippet
+
 snippet areq "as required" w
 as required $0
 endsnippet
@@ -390,8 +522,8 @@ snippet wt "what" w
 what $0
 endsnippet
 
-snippet dt "determine" w
-determine $0
+snippet dt "determine(d)" w
+determine${1:d} $0
 endsnippet
 
 snippet sn "since" w
@@ -402,16 +534,24 @@ snippet ts "thus" w
 thus $0
 endsnippet
 
+snippet twh "thus we have" w
+thus we have $0
+endsnippet
+
+snippet swk "so we know" w
+so we know $0
+endsnippet
+
+snippet ww "(W/w)e will" w
+${1:w}e will $0
+endsnippet
+
 snippet t "the" w
 the $0
 endsnippet
 
 snippet Th "The" w
 The $0
-endsnippet
-
-snippet a "and" w
-and $0
 endsnippet
 
 snippet ass "assume" w
@@ -459,7 +599,7 @@ ${1:w}e will now $0
 endsnippet
 
 snippet wwp "we will prove" w
-we will prove $0
+${1:w}e will prove $0
 endsnippet
 
 snippet ift "it follows that" w
@@ -511,7 +651,11 @@ there exists $0
 endsnippet
 
 snippet ex "exist" w
-exists $0
+exist${1:s} $0
+endsnippet
+
+snippet nex "not exist" w
+not exist${1:s} $0
 endsnippet
 
 snippet twc "(T/t)hus we conclude" w
@@ -605,8 +749,24 @@ snippet sca "scalar" w
 scalar${1:s} $0
 endsnippet
 
+snippet eibas "eigen basis" w
+eigen basis $0
+endsnippet
+
+snippet eivec "eigen vector" w
+eigen vector${1:s} $0
+endsnippet
+
+snippet eival "eigen value" w
+eigen value${1:s} $0
+endsnippet
+
 snippet vec "vector" w
 vector${1:s} $0
+endsnippet
+
+snippet ba "basis" w
+basis $0
 endsnippet
 
 snippet nsp "null space" w
@@ -663,8 +823,12 @@ snippet inf "infimum" w
 infimum $0
 endsnippet
 
-snippet sol "solution" w
-solution $0
+snippet sol "solution(s)" w
+solution${1:s} $0
+endsnippet
+
+snippet chpoly "characteristic polynomial" w
+characteristic polynomial $0
 endsnippet
 
 snippet polyn "polynomial" w

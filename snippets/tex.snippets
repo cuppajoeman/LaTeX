@@ -53,8 +53,9 @@ snippet "b(egin)?" "begin{} / end{}" br
 \end{$1}
 endsnippet
 
-snippet proofe "proof env" bA
+snippet prf "proof env" bA
 \begin{proof}
+$ $\newline
 	$0
 \end{proof}
 endsnippet
@@ -530,6 +531,12 @@ endsnippet
 
 snippet lb "Line Break" iA
 \\\\
+$0
+endsnippet
+
+snippet lif "Line Break with bi-implication" iA
+\\\\
+\ArrowBetweenLines
 $0
 endsnippet
 

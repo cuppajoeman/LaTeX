@@ -332,6 +332,11 @@ snippet pp "add two numbers" iA
 endsnippet
 
 context "math()"
+snippet pm "plus-minus" iA
+\pm 
+endsnippet
+
+context "math()"
 snippet nn "add the negative" iA
  - 
 endsnippet
@@ -385,6 +390,21 @@ endsnippet
 context "math()"
 snippet pi "pi" iA
 \pi $0
+endsnippet
+
+context "math()"
+snippet tp "two pi" iA
+2\pi $0
+endsnippet
+
+context "math()"
+snippet pb2 "pi by 2" wA
+\frac{\pi}{2} $0
+endsnippet
+
+context "math()"
+snippet 3pb2 "2pi by 3" iA
+\frac{3\pi}{2} $0
 endsnippet
 
 context "math()"
@@ -473,8 +493,28 @@ $1($2): \`\` $3 "\text{, where } $2 \in $4$0
 endsnippet
 
 context "math()"
-snippet st "such that" iA
+snippet tst "such that" iA
 \text{ s.t. } $0
+endsnippet
+
+context "math()"
+snippet tfa "for all" iA
+\text{ for all } $0
+endsnippet
+
+context "math()"
+snippet tand "and" iA
+\text{ and } $0
+endsnippet
+
+context "math()"
+snippet tfs "for some" iA
+\text{ for some } $0
+endsnippet
+
+context "math()"
+snippet fa "such that" iA
+\text{ for all } $0
 endsnippet
 
 context "math()"
@@ -1145,12 +1185,12 @@ snippet '(?<!\\)logo' "logo" rwA
 endsnippet
 
 context "math()"
-snippet -> "to" iA
+snippet to "to" iA
 \to $0
 endsnippet
 
 context "math()"
-snippet !> "mapsto" iA
+snippet mpt "mapsto" iA
 \mapsto $0
 endsnippet
 
