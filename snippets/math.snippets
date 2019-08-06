@@ -73,11 +73,11 @@ def create_inline_matrix(snip):
         rows = int(given.split("x", 2)[0][-1])
         cols = int(given.split("x", 2)[-1][0])
 
-        offset = cols + 2
+        offset = cols + 3
 
         snip.buffer[snip.line] = snip.buffer[snip.line][0:until - 7] 
 
-        final_str = "\\mat[$1]{"
+        final_str = "\\mat ${1:[$2]}{"
 
         for i in range(rows):
                 final_str += ' '
@@ -443,7 +443,12 @@ $1 $2 $3 $2 \ldots $2 $4 $2 $5
 endsnippet
 
 context "math()"
-snippet vars "some finite number of variables" iA
+snippet cli "comma list" iA
+$1, $2,  \ldots,  $4, $5
+endsnippet
+
+context "math()"
+snippet svars "some finite number of variables" iA
 $1_{1}$2 $3 $1_{2}$2 $3 dots$4 $3 $1_{$5 - 1}$2 $3 $1_{$5}$2 $0
 endsnippet
 
@@ -1175,10 +1180,6 @@ snippet '(?<!\\)ln' "ln" rwA
 \ln($1) $0
 endsnippet
 
-snippet '(?<!\\)exp' "exp" rw
-\exp $0
-endsnippet
-
 
 snippet '(?<!\\)logo' "logo" rwA
 \log $0
@@ -1240,8 +1241,8 @@ snippet HH "hamiltonian" iA
 endsnippet
 
 context "math()"
-snippet FF "overdekking" iA
-\mathcal{F} $0
+snippet FF "R or C" iA
+\mathbb{F} $0
 endsnippet
 
 context "math()"

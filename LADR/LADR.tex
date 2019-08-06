@@ -26,6 +26,11 @@
     \begin{equation*}
         w + z = \alpha + \beta i + j + k i = \left( \alpha + j \right) + \left( \beta +k \right)i = \left( j + \alpha  \right) + \left( k + \beta  \right) = z + w
     \end{equation*}
+    also from the commutivity of the Real Numbers it follows that 
+    \[
+        w \cdot z= \left( \alpha + \beta i  \right)  \cdot \left( j + k i  \right) = \left( \alpha j  - \beta k \right)  + \left( \alpha k + \beta j \right) i= \left( j\alpha  - k\beta  \right)  + \left( k\alpha  + j\beta  \right) = z \cdot w;
+    \]
+    
 \end{ver}
 
 \begin{ver}
@@ -113,6 +118,45 @@
     \end{align*}
 \end{ver}
 
+\begin{ver}
+    $\mathbb{F}   ^{n} $ is a vector space over $\mathbb{F}  $  we know 
+    \[
+        \mathbb{F} ^{n} = \left\{ \left( x_{1} , x_{2} , \dotsc  , x_{n - 1} , x_{n}  \right) : x_{j} \in \mathbb{F} \text{ for } j= 1, 2,  \ldots,  n-1, n  \right\} 
+    \]
+    Let $u, v \in \mathbb{F}^{n} $ 
+    \begin{itemize}
+        \item commutivity: we will show 
+            \[
+            u + v= v + u
+            \]
+            we have 
+            \begin{align*}
+                \left( u_{1} , u_{2} , \dotsc  , u_{n - 1} , u_{n}  \right)  + \left( v_{1} , v_{2} , \dotsc  , v_{n - 1} , v_{n}  \right) &= \left( u_{1} + v_{1} , \ldots  , u_{n} + v_{n}  \right) \\
+                \intertext{But since we have both commutivity for $\mathbb{R} $ and $\mathbb{C} $ it follows that }
+                                                                                                                                           &= \left( v_{1} + u_{1} ,\ldots , v_{n} + u_{n}  \right)   \\ 
+                                                                                                                                           &= v + u 
+            \end{align*}
+        \item associativity also follows similarly from the associativity of $\mathbb{R} \text{ and } \mathbb{C} $ 
+        \item the additive identity is $0 = \left( 0, 0,  \ldots,  0, 0 \right) $ we will prove $u + 0= u$. As we have the additive identity for both $\mathbb{R} \text{ and } \mathbb{C} $ 
+            \begin{align*}
+                \left( u_{1} , u_{2} , \dotsc  , u_{n - 1} , u_{n}  \right)  + 0 &=  \left( 0 + u_{1} , 0 + u_{2} , \dotsc  , 0 + u_{n - 1} , 0 + u_{n}  \right) \\ 
+                &=u 
+            \end{align*}
+        \item additive inverse: we have found an addtive inverse for the Real Numbers and complex numbers so if we are dealing with $\mathcal{F} $ we know there exists a $w \in \mathbb{F}^{n}  $ where $w$ is a list of additive inverses for each $u_{1} , u_{2} , \dotsc  , u_{n - 1} , u_{n} $ 
+            \[
+                u  + w= \left( u_{1} + w_{1} , u_{2} + w_{2} , \dotsc  , u_{n - 1} + w_{n - 1} , u_{n} + w_{n}  \right) = 0
+            \]
+        \item we know that the multiplicative identity of multiplying by 1, holds in the Real Numbers and complex numbers so we know 
+            \[
+                1\left( u \right) = \left( 1 \cdot u_{1} , 1 \cdot u_{2} , \dotsc  , 1 \cdot u_{n - 1} , 1 \cdot u_{n}  \right) = \left( u_{1} , u_{2} , \dotsc  , u_{n - 1} , u_{n}  \right) = u
+            \]
+        \item distributive property 
+            \begin{align*}
+                a\left( u + v \right) &=  \left( a \cdot (u_{1} + v_{1} ), a \cdot (u_{2} + v_{2} ), \dotsc  , a \cdot (u_{n - 1} + v_{n - 1} ), a \cdot (u_{n} + v_{n}  \right) \\
+                                      &= \left( a \cdot u_{1} + a \cdot v_{1}  a \cdot u_{2} + a \cdot v_{2}  \dotsc   a \cdot u_{n - 1} + a \cdot v_{n - 1}  a \cdot u_{n} + a \cdot v_{n}  \right)   \\ 
+            \end{align*}
+    \end{itemize}
+\end{ver}
 
 % subsection complex_numbers (end)
 

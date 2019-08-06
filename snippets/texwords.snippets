@@ -6,6 +6,26 @@ snippet cor "correct" w
 correct $0
 endsnippet
 
+snippet exp "expand" w
+expand${1:ing} $0
+endsnippet
+
+snippet comm "commence" w
+commence $0
+endsnippet
+
+snippet alg "algebra(ic)" w
+algebra${1:ic} $0
+endsnippet
+
+snippet cpnt "component" w
+component $0
+endsnippet
+
+snippet gmt "geometric" w
+geometric $0
+endsnippet
+
 snippet idn "identity" w
 identity $0
 endsnippet
@@ -143,7 +163,11 @@ particular $0
 endsnippet
 
 snippet invo "invokes" w
-invokes $0
+invoke${1:s} $0
+endsnippet
+
+snippet indu "induce" w
+induce${1:s} $0
 endsnippet
 
 snippet gen "generate" w
@@ -194,6 +218,18 @@ snippet ctq "complete the square" w
 complete the square $0
 endsnippet
 
+snippet commu "commutivity" w
+commutivity $0
+endsnippet
+
+snippet assoc "associativity" w
+associativity $0
+endsnippet
+
+snippet distp "distributive property" w
+distributive property $0
+endsnippet
+
 snippet prod "product" w
 product $0
 endsnippet
@@ -204,6 +240,10 @@ endsnippet
 
 snippet equ "equation" w
 equation $0
+endsnippet
+
+snippet eq "equal" w
+equal $0
 endsnippet
 
 snippet iden "identity" w
@@ -514,6 +554,10 @@ snippet areq "as required" w
 as required $0
 endsnippet
 
+snippet req "require" w
+require $0
+endsnippet
+
 snippet ti "that is" w
 ${1:t}hat is $0
 endsnippet
@@ -542,6 +586,14 @@ snippet swk "so we know" w
 so we know $0
 endsnippet
 
+snippet swh "so we have" w
+so we have $0
+endsnippet
+
+snippet aswht "and so we have that" w
+and so we have that $0
+endsnippet
+
 snippet ww "(W/w)e will" w
 ${1:w}e will $0
 endsnippet
@@ -554,8 +606,8 @@ snippet Th "The" w
 The $0
 endsnippet
 
-snippet ass "assume" w
-assume $0
+snippet ass "assum(e/ing)" w
+assum${1:ing} $0
 endsnippet
 
 snippet wc "we can" w
@@ -761,6 +813,10 @@ snippet eival "eigen value" w
 eigen value${1:s} $0
 endsnippet
 
+snippet eisp "eigen space" w
+eigen space $0
+endsnippet
+
 snippet vec "vector" w
 vector${1:s} $0
 endsnippet
@@ -771,6 +827,18 @@ endsnippet
 
 snippet nsp "null space" w
 null space $0
+endsnippet
+
+snippet csp "column space" w
+column space $0
+endsnippet
+
+snippet rsp "row space" w
+row space $0
+endsnippet
+
+snippet vsp "vector space" w
+vector space $0
 endsnippet
 
 snippet proj "projection" w
@@ -807,11 +875,11 @@ snippet oto "one-to-one" w
 one-to-one $0
 endsnippet
 
-snippet rl "Real Numbers" w
-real numbers $0
+snippet R "the Real Numbers" w
+the Real Numbers $0
 endsnippet
 
-snippet cpx "Real Numbers" w
+snippet C "Real Numbers" w
 complex numbers $0
 endsnippet
 

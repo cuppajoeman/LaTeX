@@ -2993,6 +2993,85 @@ $ $\newline
     it spans $\mathbb{R} ^{n} $ as we have a set of $n$ linearly independent vectors
 \end{proof}
 
+Textbook problems §6.1 A1-A2, B2, D1, D3
+\section{Textbook problems 6.1 A1-A2, B2, D1, D3}%
+\label{sec:textbook_problems_6_1_a1_a2_b2_d1_d3}
+% section textbook_problems_6_1_a1_a2_b2_d1_d3
+
+\begin{itemize}
+    \item A2
+        \begin{itemize}
+            \item $A\vec{v_1} $ results in a vector whos second row is non-zero so it's not an eigen vector
+            \item $A\vec{v_2} $ yields the zero vector which is $0 \vec{v_2} $ and so it is an eigen vector
+            \item $A\vec{v_3} = \mat{ -6 \\ -6 \\ 6 } = -6\vec{v_3} $ so it is an eigen vector
+            \item $A\vec{v_4}$ we can tell that the top two entries of the resulting vector will be the same, though to be an eigen vector for $\vec{v_4} $ we require that one must be positive and the other negative so $\vec{v_4} $   is not an eigen vector. 
+            \item $A\vec{v_5} = 4\vec{v_{5}} $ so $\vec{v_5} $ is an eigen vector. 
+        \end{itemize}
+    \item A3
+        \begin{itemize}
+            \item We will commence by finding the eigen values for the following matrix.
+                \[
+                A = \mat{ 0 & 1 \\ -6 & 5 }
+                \]
+                that is non-zero vectors $\vec{v} $ that satisfy 
+                \[
+                A\vec{v} = \lambda \vec{v} \text{ for some } \lambda \in \mathbb{R}     
+                \]
+                equivalently we solve 
+                \[
+                    \left( A - \lambda I \right) \vec{v} = 0
+                \]
+                though the only way this will produce solutions is if $\mathit{det} \left(A - \lambda I\right) = 0$ we know that 
+                \[
+                    A - \lambda I= \mat {  - \lambda  & 1 \\ -6 & 5 - \lambda  } \Leftrightarrow \mathit{det} \left(A - \lambda I\right) = \left(  - \lambda  \right) \left( 5 - \lambda  \right)   + 6
+                \]
+                expanding right hand side we get
+                \[
+                    \lambda ^2  - 5\lambda  + 6= \left( \lambda -2 \right) \left( \lambda  - 3 \right) 
+                \]
+                and so we have that $\lambda = 3 $ OR $\lambda = 2$ 
+                \begin{itemize}
+                    \item We'll now find the eigen space of $\lambda = 3$, so we're finding the non-zero vectors $\vec{v} $ that satisfy 
+                        \[
+                        A\vec{v} = 3\vec{v} \Leftrightarrow A\mat{ x \\ y } = 3\mat{ x \\ y }   
+                        \]
+                    and so we have that 
+                    \[
+                        x\mat{ 0 \\ -6 }  + y\mat{ 1 \\ 5} = 3\mat{ x \\ y } 
+                    \]
+                    thus we know $y= 3x$ so we have 
+                    \[
+                        x\left( \mat{ 1 \\ 3 }  \right) 
+                    \]
+                    and so the eigen space is 
+                    \[
+                    \mathit{span} {\left\{ \mat{ 1 \\ 3 }  \right\} } 
+                    \]
+                \end{itemize}
+            \item the eigen space for $\lambda = 2$ are the vectors that satisfy 
+                \[
+                    A\vec{v} = 2\vec{v} \Leftrightarrow \left( A - 2I \right) \vec{v} = 0
+                \]
+                equivalently the linear combinations of the columns of $A - 2I$ that yields the zero vector, we know 
+                \[
+                A  - 2I= \mat { -2 & 1 \\ -6 & 3 }
+                \]
+                So let's find the linear combinations of the columns that yield the zero vector. We observe that the second column is $-2$ times the first, and so we see that
+                \[
+                    1\mat{ -2 \\ -6 }  + -2\mat{ 1 \\ 3 } = 0 \Leftrightarrow \alpha \left( \mat{ -2 \\ -6 }  + -2\mat{ 1 \\ 3 }  \right) = 0
+                \]
+                And thus we get the solutions
+                \[
+                    \alpha \mat{ 1 \\ -2 } 
+                \]
+                And so the eigen space is
+                \[
+                \mathit{span} {\left\{ \mat{ 1 \\ -2 }  \right\} } 
+                \]
+        \end{itemize}
+\end{itemize}
+
+% section textbook_problems_6_1_a1_a2_b2_d1_d3 (end)
 
 
 
