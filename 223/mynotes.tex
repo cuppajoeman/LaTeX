@@ -3080,4 +3080,264 @@ Textbook problems §6.1 A1-A2, B2, D1, D3
 
 % chapter week_13 (end)
 
+\chapter{Week 14}%
+\label{chp:week_14}
+% chapter week_14
+
+\begin{thm}[Forced Diagonalization]\index{Forced Diagonalization}\label{thm:forced_diagonalization}
+
+Recall $A$ is an $n\times n$ matrix with n-distinct eigen values $\lambda _{1} , \lambda _{2} ,  \ldots,  \lambda _{n  - 1} \lambda _{n} , $ then $\left\{ \vec{v} _{1}, \vec{v} _{2},  \ldots,  \vec{v} _{n - 1}, \vec{v} _{n}   \right\} $ is an eigen basis for $\mathbb{R} ^{n} $ and are linearly independent , where $\vec{v} _{i} $ is the eigen vector corresponding to $\lambda _{i} $  
+If this is true then $A$ is diagonalizable since it has $n$ distinct eigen values\\
+Moreover, there will be only one choce for each $\vec{v} _{i} $ (up to a scalar multiple)      
+\end{thm}
+
+\begin{eg}
+    Suppose $char\left(A\right) =  - \lambda \left( 2 - \lambda  \right) \left(  - 3 - \lambda  \right) $. 
+    \begin{itemize}
+        \item Is $A$ diagonalizable?
+        \begin{itemize}
+            \item We know that there are $3$ distinct eigen values and that the matrix must be $3\times 3$ as the characteristic polynomial has 3 $\lambda $ 's, so it is diagonalizable 
+        \end{itemize}
+        \item is $A$ invertible? , where 
+            \[
+            D= \mat { 0 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & -3 }
+            \]
+            recall that 
+            \[
+            A= PDP^{-1} \Leftrightarrow A^{-1} = PD^{-1} P^{-1} 
+            \]
+            But we know that $D^{-1} $ must not exists as it cannot be row reduced to the identity matrix so then $A^{-1} $ doesn't exist either.\\
+            alternatively we know that 
+            \begin{align*}
+                \mathit{det} \left(A\right) &= \mathit{det} \left(P^{-1} DP\right)   \\ 
+                &= \mathit{det} \left(P^{-1} \right) \mathit{det} \left(D\right) \mathit{det} \left(P\right)   \\ 
+                \intertext{But recall}
+                \mathit{det} \left(P\right) = \frac{1}{\mathit{det} \left(P^{-1} \right) }\Leftrightarrow \mathit{det} \left(P\right) \mathit{det} \left(P^{-1} \right) = 1
+                \intertext{and so we have that }
+                \mathit{det} \left(A\right) &= \mathit{det} \left(D\right)   \\ 
+                &= 0  \\ 
+            \end{align*}
+            Thus we conclude that $A$ doesn't have an inverse (one of our eigen values is zero) 
+        \item Can we determine what $\mathit{dim} \left(\mathit{null} \left(a\right) \right) $ is?
+        observe that $A= A - 0I$ and recall that $0$ is an eigen value and then we know 
+        \[
+        A\vec{x} = 0\text{ for some } \vec{x} \neq \vec{0} 
+        \]
+        So then $\mathit{null} \left(A\right) $ is non-trivial and so we know that $\mathit{dim} \left(\mathit{null} \left(A\right) \right) >= 1$ but we know by n distinct eigen values theorem that \todo{Why??} 
+        \begin{align*}
+            \mathit{dim} \left(\mathit{null} \left(A\right) \right) = 1 && \mathit{dim} \left(\mathit{null} \left(A + 3I\right) \right) = 1
+        \end{align*}
+    when we analyze the characteristic polynomial we know we have found all the values that tell us that the determinant is zeros and so if if we choose an number for $\lambda $ that is not one of the eigen values we found then we know it must make the determinant non-zero, and so the columns of $A - kI$ where $k$ is not an eigen value are linearly independent. Thus we know 
+        
+        \[
+        \mathit{dim} \left(\mathit{null} \left(A - 3I\right) \right) = 0
+        \]
+        since $3$ is not an eigen value  
+    \end{itemize}
+\end{eg}
+
+\begin{defn}[Eigen Space]\index{Eigen Space}\label{defn:eigen_space}
+    Let $A$  be a matrix with the eigen values that follow
+    \[
+    \lambda _{1}, \lambda _{2},  \ldots,  \lambda _{m - 1}, \lambda _{m}  
+    \]
+    The eigen space of $A$ corresponding to $\lambda _{i} $ is 
+    \[
+        \mathit{null} \left(A - \lambda _{i} \right) \Leftrightarrow \left( A - \lambda _{i} I \right) \vec{v} = 0
+    \]
+    that is the space spanned by all the eigen vectors that have the eigen value $\lambda _{i} $  
+\end{defn}
+
+\begin{defn}[Geometric Multiplicity]\index{Geometric Multiplicity}\label{defn:geometric_multiplicity}
+    the geometric multiplicity of $\lambda _{i} $ is the dimension of its eigen space  
+\end{defn}
+
+\begin{defn}[Algebraic Multiplicity]\index{Algebraic Multiplicity}\label{defn:algebraic_multiplicity}
+    the algebraic multiplicity of $\lambda _{i} $ is the number of times $\left( \lambda  - \lambda _{i}  \right) $ occurs as a factor of $char\left(A\right) $ 
+\end{defn}
+
+\begin{eg}
+    \[
+    A= \mat { 3 & 0 \\ 0 & 3 }
+    \]
+    thus we have 
+    \[
+        char\left(A\right) = \left( 3 - \lambda  \right) \left( 3 - \lambda  \right) = \left( 3 - \lambda  \right) ^2 
+    \]
+    and we say $A$ has algebraic multiplicity 2 for $\lambda = 3$. 
+    \[
+        \left( A - 3I \right) = \mat { 0 & 0 \\ 0 & 0 }
+    \]
+    And so $\mathit{null} \left(A - 3I\right) $ are the vectors that get mapped to zero under
+    \[
+    \mat { 0 & 0 \\ 0 & 0 }\vec{x} = \vec{0} 
+    \]
+    observe that any vector times the zero matrix yields the zero vector so $\mathit{null} \left(A - 3I\right) = \mathbb{R} ^2 $ thus the dimension of this eigen space is 2, and the geometric multiplicity is 2    
+\end{eg}
+
+\begin{eg}
+    \[
+        A= \mat { 3 & 1 \\ 0 & 3 } \implies char\left(A\right) = \left( 3 - \lambda  \right) ^2     
+    \]
+    thus $A$ only has one eigen value namely $\lambda = 3$ with algebraic multiplicity 2.
+    \[
+    A - 3I= \mat { 0 & 1 \\ 0 & 0 }
+    \]
+    And so $\mathit{null} \left(A - 3I\right) = \left\{ \vec{v} \in \mathbb{R} ^2 :\vec{v} = \mat{ \alpha  \\ 0 } \text{ for some } \alpha \in \mathbb{R}  \right\} $ the dimension is 1 so the geometric multiplicity of $\lambda = 3$ is 1 
+    \begin{itemize}
+        \item Is A diagonalizable ?
+            \begin{itemize}
+                \item We know that all the eigen vectors of $A$ are $\mathit{span} {\left\{ \mat{ 1 \\ 0 }  \right\} } \implies $ they are not an eigen basis for $\mathbb{R} ^2 $ $\implies$ that the matrix that convert from $\mathcal{E} \to \mathcal{B} $ must not exist thus $A$ is not diagonalizable .\todo{Explain this again.}  \\
+                in fact we require that the geometric multiplicity be 2 $\implies$ we get two linearly independent vectors for our eigen basis .
+            \end{itemize}
+    \end{itemize}
+\end{eg}
+
+\begin{thm}[Diagonalizable and Multiplicities]\index{Diagonalizable and Multiplicities}\label{thm:diagonalizable_and_multiplicities}
+    A matrix is diagonalizable if and only if the algebraic multiplicity and geometric multiplicity are the same
+    \[
+    \boxed{\text{ diagonalizable }  \Leftrightarrow \text{ algebraic multiplicity  } = \text{ geometric multiplicity  } }
+    \]
+\end{thm}
+
+\begin{thm}[Algebraic and Geometric connection to roots and eigen basis ]\index{Algebraic and Geometric connection to roots and eigen basis }\label{thm:algebraic_and_geometric_connection_to_roots_and_eigen_basis_}
+    for an $n\times n$ matrix $A$ whose characteristic polynomial is a degree $n$ polynomial 
+    \begin{itemize}
+        \item It has $n$ roots and is diagonalizable or if it has less then $n$ it is not diagonalizable. For example, if we had for some matrix $A$ that
+            \[
+                char\left(A\right) = \left( \lambda ^2  + 1 \right) \lambda 
+            \]
+            then we know that $A$ is not diagonalizable.
+        \item If the sum of the geometric multiplicities taken over each $\lambda _{i} $ is $n$ $ \implies $ that taking bases for each eigen space each and finding that eigen space's dimension  aka (geometric multiplicity) call it $n_{i} $  and summing each $n_{i} $ yields $n$. Let $k$ be the number of distinct eigen values, then we have
+            \[
+            \sum_{i=0}^{k}  n_{i} = n
+            \]
+            in addition we get $n$ eigen vectors all of whom are linearly independent \todo{Why is this true?}, so we can append them all to a new set and get an eigen basis that spans $\mathbb{R} ^{n} $ 
+        \item The geometric multiplicity is greater than or equal to 1, recall this comes from the fact that every eigen value we find will give us a matrix whos columns are linearly dependent and so the dimension of the null space must be greater than or equal to 1 as we are guarenteed at least one degree of freedom in our solutions. Though suprisingly we also have that \todo{Why is this?} 
+            \[
+            \text{ geometric multiplicity  } \le \text{ algebraic multiplicity  } 
+            \]
+        We can now chain these together, we have \todo{Explain please} 
+        \begin{align*}
+            \text{ diagonalizable  } &\Leftrightarrow \sum \text{ geometric multiplicity  } = n \\
+            &\Leftrightarrow \sum \text{ algebraic multiplicity  } = n \\
+            &\text{ and } \text{ geometric multiplicity  } = \text{ algebraic multiplicity  } 
+        \end{align*}
+    \end{itemize}
+\end{thm}
+
+\begin{eg}
+    \[
+        char\left(A\right) = \left( \lambda ^2  + 1 \right) \lambda 
+    \]
+    then we only have one eigen value with algebraic multiplicity of 1 for $\lambda = 0$ so then $A$ is not diagonalizable. 
+\end{eg}
+
+\begin{eg}
+    How does this theorem imply 
+    \[
+    \text{ n distinct eigen values  } \implies \text{ diagonalizable  } 
+    \]
+    \begin{proof}
+    $ $\newline
+        If we have $n$ distinct eigen values then each one must have degree 1, and so then the sum of all the algebraic multiplicities for each $\lambda _{i} $ is $n$... \todo{complete this} 
+    \end{proof}
+\end{eg}
+
+\begin{eg}
+    \[
+    A= \mat { 1 & 1 & 1 \\ 0 & 2 & 1 \\ 0 & 0 & 2 }
+    \]
+    thus we know 
+    \[
+        char\left(A\right) = \left( 1 - \lambda  \right) \left( 2 - \lambda  \right) ^2 
+    \]
+    \begin{itemize}
+        \item the algebraic multiplicity for $\lambda = 1$ is 1
+        \item the algebraic multiplicity for $\lambda = 2$ is 2
+    \end{itemize}
+    then the sum of all the algebraic multiplicies is $3$ so $A$ is diagonalizable. We'll now double check our theorem which says that the sum of the geometric multiplicities must be equal to the sum of the algebraic multiplicities. 
+    \begin{itemize}
+        \item For $\lambda = 1$ we know the following 
+            \[
+            1\le \text{ geometric multiplicity  } \le \text{ algebraic multiplicity  } 
+            \]
+            But recall that the algebraic multiplicity for $\lambda = 1$ was one, so then this forces the geometric multiplicity to be 1.
+        \item For $\lambda = 2$ we'll verify the geometric multiplicity, that is the dimension of $\left( A - 2I \right) $ which is the number of linearly dependent columns  of $\left( A - 2I \right) $ or equivalently the number of free columns of reduced row echelon form of $A$ as each one adds a new parameter which leads to an independent vector for each one in the solution set. 
+            \[
+            \mat { 1 & 1 & 1 \\ 0 & 0 & 1 \\ 0 & 0 & 0 } \rightsquigarrow \mat { -1 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 }     
+            \]
+            and so the dimension of the null space of $\left( A - 2I \right) $ is 1 as we only get one parameter in the solution set. Thus the geometric multiplicity is 1, thus the sum of the geometric multiplicities does not sum to 3, only 2 so $A$ is not diagonalizable \todo{is this a contradiction ??} 
+    \end{itemize}
+\end{eg}
+
+\begin{eg}
+    \[
+    A= \mat { 1 & 1 & 1 \\ 0 & 2 & 0 \\ 0 & 0 & 2 }
+    \]
+    we have 
+    \[
+        char\left(A\right) = \left( 1 - \lambda  \right) \left( 2 - \lambda  \right) ^2 
+    \]
+    We know that from the previous example that the geometric multiplicity of $\lambda = 1$ is forced to be one so $A$ is diagonalizable if and only if $\lambda = 2$ has geometric multiplicity 2. We row reduce $\left( A - 2I \right) $ to get 
+    \[
+    \mat { -1 & 1 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 }
+    \]
+    which has 2 free columns and so the dimension of it's null space is 2 so it's geometric multiplicity is 2 so the sum of all the geometric multiplicities over each $\lambda _{i} $ gives $n$ so $A$ is diagonalizable. Also recall that the geometric multiplicity is dimension of the eigen basis associated with each $\lambda _{i} $ are all the vectors that get multiplied by $\lambda _{i} $ after $A$ being applied to it, and so we have that there are two basis vectors for the eigen space for $\lambda = 2$ and 1 basis vector for the eigen space for $\lambda = 1$ if we create a matrix $P$ where each column is a basis vector, we'll have
+    \[
+    P= \mat { \vdots  & \vdots  & \vdots  \\ \vec{v} _{1}  & \vec{v} _{2}  & \vec{v} _{3}  \\ \vdots  & \vdots  & \vdots  }
+    \]
+    We know from the $n$ distinct eigen vectors theorem that actually together they form a basis for $\mathbb{R} ^{3} $  and so $P$ has an inverse, then 
+    \[
+    P^{-1} AP= \mat { 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 2 }
+    \]
+    \todo{where does this equation come from??} 
+\end{eg}
+
+\section{Application of Diagonalization}%
+\label{sec:application_of_diagonalization}
+% section application_of_diagonalization
+
+suppose that $A= PDP^{-1} $ where
+\[
+P= \mat { 1 & 1 & -1 \\ 1 & 1 & 1 \\ 1 & -2 & 0 }, D= \mat { 2 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 1 }
+\]
+\begin{eg}
+    We will compute $A^{100} $, observe
+    \[
+    A^{100} =  PDP^{-1}   PDP^{-1}  \ldots PDP^{-1}   PDP^{-1}  = PD^{100} P^{-1} = P\mat { 2^{100}  & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 }P^{-1}  
+    \]
+\end{eg}
+
+\begin{eg}
+    We'll now compute $A^{100} \vec{x} $ where $B= \left\{ \vec{v} _{1} , \vec{v} _{2} \vec{v} _{3}  \right\} $ ($\vec{v} _{i} $ is the i'th column of $P$), and we know $\left[ \vec{x}  \right]_{\mathcal{B}} = \mat{ 1 \\ 3 \\ 4 } $
+    \begin{itemize}
+        \item recall that $P^{-1} : \mathcal{E} \to \mathcal{B} $ 
+        \item There exists a transformation $T$ such that $A$ induces it in the standard basis. That is 
+            \[
+            A^{100} \vec{x} = T^{100} _{A} \left(\vec{x} \right) 
+            \]
+            then we have \todo{how come we can do this step?} 
+            \[
+            \left[ A^{100} \vec{x}  \right]_{\mathcal{B}} = \left[ T^{100} _{A} \left(\vec{x} \right)  \right]_{\mathcal{B}} 
+            \]
+            but recall we know that matrix that induces $T_{A} $ in the $\mathcal{B} $ basis, so we have 
+            \begin{align*}
+                \left[ T_{A} ^{100} \left( \vec{x}  \right)  \right]_{\mathcal{B}} &= \left[ T^{100} _{A}  \right]_{\mathcal{B}}\left[ \vec{x}  \right]_{\mathcal{B}}    \\ 
+                &= \mat { 2^{100}  & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 } \mat{ 1 \\ 3 \\ 4 } \\
+                &= \mat{ 2^{100}  \\ 3 \\ 4 }  
+            \end{align*}
+        We must then find what $\left[ A^{100} \vec{x}  \right]_{\mathcal{E}} $ but we have $P$ so we have 
+        \[
+        \left[ A^{100} \vec{x}  \right]_{\mathcal{B}} = P\mat{ 2^{100}  \\ 3 \\ 4 } = \mat{ 2^{100}  - 1 \\ 2^{100}  + 7 \\ 2^{100} -6 } 
+        \]
+        
+    \end{itemize}
+\end{eg}
+
+
+% section application_of_diagonalization (end)
+
+% chapter week_14 (end)
+
 \end{document}
