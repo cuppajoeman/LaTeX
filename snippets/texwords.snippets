@@ -1,6 +1,47 @@
 priority -50
 
 # Common Words
+
+snippet und "understand" w
+understand $0
+endsnippet
+
+snippet pl "plus" w
+plus $0
+endsnippet
+
+snippet tsm "times" w
+times $0
+endsnippet
+
+snippet img "image" w
+image $0
+endsnippet
+
+snippet wch "which" w
+which $0
+endsnippet
+
+snippet sta "statement" w
+statement $0
+endsnippet
+
+snippet op "operation" w
+operation $0
+endsnippet
+
+snippet perf "perform" w
+perform $0
+endsnippet
+
+snippet bas "basis" w
+basis
+endsnippet
+
+snippet q "question" w
+question $0
+endsnippet
+
 snippet wrt "written" w
 written $0
 endsnippet
@@ -377,6 +418,10 @@ snippet prod "product" w
 product $0
 endsnippet
 
+snippet prcs "process" w
+process $0
+endsnippet
+
 snippet eval "eval" w
 evalulate $0
 endsnippet
@@ -702,7 +747,11 @@ reduce${1:d} $0
 endsnippet
 
 snippet areq "as required" w
-as required $0
+as required. $0
+endsnippet
+
+snippet prec "precisely" w
+precisely $0
 endsnippet
 
 snippet req "require" w
@@ -839,6 +888,10 @@ endsnippet
 
 snippet bc "because" w
 because $0
+endsnippet
+
+snippet bcm "become(s)" w
+become${1:s} $0
 endsnippet
 
 snippet fa "for all" w

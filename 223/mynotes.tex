@@ -2493,9 +2493,66 @@ V\left(T\left(A\right) \right) = \left| \mathit{det} \left(T\right)  \right| V\l
 
 \begin{itemize}
     \item A1
-        \begin{enumerate}[label=\alph*)]
-            \item $\mathit{det} \left(A\right) = \mat[v]{ 1 & 2 & 4 \\ 3 & 1 & 0 \\ -1 & 3 & 2 }= 1\left( 2 \right)  - 2\left( 6 \right)  + 4\left( 9 \right) = $ 
-        \end{enumerate}
+        \begin{itemize}
+            \item First we perform the following  row operation $R_{1} \mapsto R_{1}  + -R_{3} $, then the determinant is 30 and since the determinant is non-zero the original matrix  is invertible.
+            \item perform the following row operation $R_{2} \mapsto R_{2}  + -2R_{3} $ then the determinant is $-1$ , so the original matrix is invertible .
+            \item Same process as above, but with larger matricies.
+        \end{itemize}
+    \item A2
+        \begin{itemize}
+            \item perform the following row operation $R_{1} \mapsto R_{1}  + R_{2} $ then expand along the first row, then the det is 14.
+            \item $R_{1} \mapsto R_{1}  + -2R_{2} $ then expand along the first row and the det is $-12$. We note that we are looking for the row operation that yields  the most zeros in a row or column, so the determinant is simple to compute. 
+        \end{itemize}
+    \item A3
+        \begin{itemize}
+            \item To find all the values  of $p$ such that the matrix is invertible, equivalently we find the values of $p$ such that the determinant is zero, then exclude such values of $p$.
+            \item We will try to get lots of zeros in the third column, to do so we perform the following row operations 
+                \[
+                R_{1} \mapsto R_{1}  + R_{2} \text{ and } R_{3} \mapsto R_{3}  + -2R_{2} 
+                \]
+                then we compute the determinant expanding down the third column, whuch becomes $3\left( p - 2 \right)  - 8 = 0 \Leftrightarrow p= \frac{14}{3}$ so the determinant is zero if $p= \frac{14}{3}$ so we exlude this value, and the matrix is invertible if and only if $p\neq \frac{14}{3}$.  
+        \end{itemize}
+    \item D2
+        \begin{itemize}
+            \item We will prove the statement 
+                \begin{proof}
+                $ $\newline
+                    We have 
+                    \[
+                    \mathit{det} \left(AB\right) = 0 \Leftrightarrow \mathit{det} \left(A\right)  \cdot \mathit{det} \left(B\right) = 0
+                    \]
+                    which is only true if $\mathit{det} \left(B\right) = 0$ or $\mathit{det} \left(A\right) = 0$ as required.
+                \end{proof}
+        \end{itemize}
+    \item D7
+        \begin{proof}
+        $ $\newline
+        We commence by subtracting the first row from the other two, then compute the determinant expanding down the first column, which yields 
+        \begin{align*}
+            a\left( 4a + 4a^2  \right)  - \left( 2a  + a^2  \right) 2a &=  4a^2  + 4a^3  - 4a^2  - 2a^3\\ 
+            &= 2a^3    \\ 
+        \end{align*}
+        as required.
+        \end{proof}
+    \item A1
+        \begin{itemize}
+            \item Recall that the area of a parallelogram formed with two vectors $\mat{ a \\ b } \text{ and } \mat{ c \\ d } $ is given by 
+        \[
+        ad - cb
+        \]
+        and thus the area given by $\vec{u} \text{ and } \vec{v} $ is precisely $3 \cdot 7 - 10= 11$ 
+            \item Recall that the columns of $A$  are precisely the image of $\vec{e_1} \text{ and } \vec{e_2} $, now we want to find the image of $\vec{u} \text{ and } \vec{v} $, observe that 
+                \begin{align*}
+                    \vec{u} = 3\vec{e_1}  + 5\vec{e_2}  && \vec{v} = 2\vec{e_2}  + 7\vec{e_2} 
+                \end{align*}
+                recall that matrix multiplication is distributive and so $A\vec{u} $ is 3 times the first column plus 5 times the second and the same goes for $\vec{v} $ so we have 
+                \[
+                A\vec{u} = \mat{ 18 \\ 19 } \text{ and } A\vec{u} = \mat{ 38 \\ 20 } 
+                \]
+                also... we see that you can just multiply by the matrix, as it is the matrix which induces the transformation in the standard basis...
+            \item $-26$ 
+            \item Take time to understand.
+        \end{itemize}
 \end{itemize}
 
 % section extra_homework_problems_determinants (end)
