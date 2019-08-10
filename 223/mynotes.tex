@@ -2945,13 +2945,49 @@ We note that $A$ is similar to a diagonal matrix and thus we can say $A$ is diag
     \[
     \lambda _{1},  \lambda _{2},  \dotsc   \lambda _{n - 1},  \lambda _{n}
     \]
-    then 
+    and 
     \[
     \left\{ \vec{v} _{1} , \vec{v} _{2} , \dotsc  , \vec{v} _{n - 1} , \vec{v} _{n}  \right\} 
     \]
-    where $\vec{v} _{i} $ is an eigen vectors with eigen values $\lambda _{i} $ is a basis for $\mathbb{R} ^{n} $ \todo{prove this} 
+    where $\vec{v} _{i} $ is an eigen vectors with eigen values $\lambda _{i} $ then it is a basis (linearly independent set) for $\mathbb{R} ^{n} $ \todo{prove this} 
     moreover there will be only one choice for each $\vec{v} _{i} $ up to a scalar multiple.
 \end{thm}
+
+\begin{proof}
+$ $\newline
+Assume that $A$ has $n$ distinct eigen values  
+\[
+    \lambda _{1}, \lambda _{2},  \ldots,  \lambda _{n - 1}, \lambda _{n}  
+\]
+but that the following set is linearly dependent  
+\[
+\left\{ \vec{v} _{1}, \vec{v} _{2},  \ldots,  \vec{v} _{n - 1}, \vec{v} _{n}   \right\} 
+\]
+then there exists a $k\in \mathbb{Z} $ such that 
+\[
+X = \left\{ \vec{v} _{1}, \vec{v} _{2},  \ldots,  \vec{v} _{k - 2}, \vec{v} _{k - 1} \right\} \text{ and }  Y = \left\{ \vec{v} _{1}, \vec{v} _{2},  \ldots,  \vec{v} _{k - 1}, \vec{v} _{k} \right\} 
+\]
+And $X$ is linearly independent,and $Y$  is linearly dependent.
+\[
+    \alpha _{1}\vec{v} _{1}  +  \alpha _{2}\vec{v} _{2} +   \ldots +   \alpha _{k - 1}\vec{v} _{k - 1} +  \alpha _{k}\vec{v} _{k} = 0 \label{eq:ld} \tag{$\kappa$} 
+\]
+where there exists at least one $\alpha _{i} \neq 0$, then left multiplication by $A$ in the above equation yields  
+\[
+    \alpha _{1}\lambda _{1}\vec{v} _{1}  +  \alpha _{2}\lambda _{2}\lambda _{3}  +   \ldots  +   \alpha _{k - 1}\lambda _{k - 1}\vec{v} _{k - 1}  +  \alpha _{k}\lambda _{k}\vec{v} _{k}  = 0 \label{eq:ldgi} \tag{P} 
+\]
+But also multplying \eqref{eq:ld} by $\lambda _{k} $ we have 
+\[
+    \alpha _{1}\lambda _{k} \vec{v} _{1}  +  \alpha _{2}\lambda _{k} \vec{v} _{2} +   \ldots +   \alpha _{k - 1}\lambda _{k} \vec{v} _{k - 1} +  \alpha _{k}\lambda _{k} \vec{v} _{k} = 0 \label{eq:ldg} \tag{Q} 
+\]
+And subtracting equation $Q$ from $P$ we have 
+\[
+    \alpha _{1}(\lambda _{1} - \lambda _{k} )\vec{v} _{1}  +      \alpha _{2}(\lambda _{2}(\lambda _{3}  +   \ldots  +       \alpha _{k - 1}(\lambda _{k - 1} - \lambda _{k} )\vec{v} _{k - 1}  +      \alpha _{k}(\lambda _{k} - \lambda _{k} )\vec{v} _{k}  = 0
+\]
+But recall that we assumed that each $\lambda _{i} $ was distinct which means every $\alpha _{i} = 0$, but recall one was non-zero so we arrive at a contradiction thus we conclude that the following set is linearly independent 
+\[
+\left\{ \vec{v} _{1}, \vec{v} _{2},  \ldots,  \vec{v} _{n - 1}, \vec{v} _{n}   \right\} 
+\]
+\end{proof}
 
 \begin{eg}
     Let $A$ be an $n\times n$ matrix and suppose its eigen basis is, which spans $\mathbb{R} ^{n} $ 
@@ -3337,6 +3373,73 @@ P= \mat { 1 & 1 & -1 \\ 1 & 1 & 1 \\ 1 & -2 & 0 }, D= \mat { 2 & 0 & 0 \\ 0 & -1
 
 
 % section application_of_diagonalization (end)
+
+\section{Final Tutorial}%
+\label{sec:final_tutorial}
+% section final_tutorial
+
+\begin{itemize}
+    \item Q1
+        \begin{itemize}
+            \item $T\vec{v} = \lambda \vec{v} \text{ for some } \lambda \in \mathbb{R} \text{ and } \vec{v} \neq \vec{0} $ 
+            \item If $\vec{v} $ is an eigen vector for the linear transformation $T$ then it's image under $T$ is simply a scaled version of itself. 
+        \end{itemize}
+    \item Q2
+        \begin{itemize}
+            \item before we proceed observe that $\vec{v} _{6} $ is the zero vector, thus by definition it is not an eigen vector we also have that $\vec{v} _{5} $ upon left multiplication by any matrix is simply the first column of that matrix, we also see that this vector's y component is 0, and that none of the first columns of any of the matricies we are dealing with, share that properties thus we conclude that $\vec{v} _{5} $ is not an eigen vector. Finally the $C$ matrix has the following properties, that is 
+                \[
+                    \mat { -3 & 3 \\ -3 & 3 }\mat{ \alpha  \\ \beta  } = \mat{  - 3\alpha  + 3\beta  \\  - 3\alpha  + 3\beta  } = 3\left( \alpha  - \beta  \right) \mat{ 1 \\ 1 } 
+                \]
+                so any vector multiplied by is in the set $\mathit{span} {\left\{ \mat{ 1 \\ 1 }  \right\} } $ thus $\vec{v_4} $ is the only vector which is an eigen vector for this matrix.\\
+                The rest can be completed by left multiplication by a matrix onto each of the vectors that we have not verified.
+        \end{itemize}
+        \item Q3
+            \begin{itemize}
+                \item The eigen vectors for $\mathcal{P} $ are not ones that do not lay on the $x$-axis and $y$-axis as they drop down to the $x$-axis. So for all the vectors that lay on the $x$-axis clearlytheir image is the same as the original vector, so for any vector of the form $\mat{ \alpha  \\ 0 } $,  it's eigen value is $\lambda = 1$. Recall that any vector whose tip lays upon the $y$-axis drops down to zero, so all of these vectors $\mat{ 0 \\ \alpha  } $  must have an eigen value of $\lambda = 0$.
+                \item As for $\mathcal{R}$ we have already observed that every non-zero vector changes direction, exactly by $\frac{\pi}{2} $ counter clockwise and so there must not exist any eigen values. Alternatively, view that any vectors moves to the next quadrant thus either it's $x$ or $y$ component changes from positive to negative, and so it cannot be an eigen vector.    
+            \end{itemize}
+        \item Q4
+            \begin{itemize}
+                \item We have 
+                    \[
+                    T\left(\vec{v} \right) = 2\vec{v} 
+                    \]
+                    we suppose that $7\vec{v} $ is an eigen vector with eigen value 14, that is
+                    \[
+                        T\left(7\vec{v} \right) = 14\left( 7\vec{v}  \right) 
+                    \]
+                    But then 
+                    \[
+                    T\left(7\vec{v} \right) = 7T\left(\vec{v} \right) = 14\vec{v} 
+                    \]
+                    clearly $14 \cdot 7 \neq 14$ and so $7\vec{v} $ is is not an eigen vector for $T$ with eigen value 14.  
+            \end{itemize}
+        \item Q5
+        \begin{itemize}
+            \item Recall that the composition of linear transformation is once more a linear transformation, and so we have 
+                \[
+                T^{100} \left(\vec{w} \right) = T^{100} \left(\vec{v_1}  + \vec{v_2} \right) = T^{100} \left(\vec{v_1} \right)  + T^{100} \left(\vec{v_2} \right) 
+                \]
+                Observe that $T\left(\vec{v_1} \right) = \vec{v_1} \text{ and } T\left(\vec{v_2} \right) = \frac{1}{2}\vec{v} $ , thus applying the linear transformation $T$ 100 times to $\vec{v_1} $ results in $\vec{v_1} $ and applying $T$ to $\vec{v_2} $ 100 times results in $\frac{1}{2^{100} }\vec{v_2} $ . We will now approximate $T^{100} \left(\vec{w} \right) = \vec{v_1}  + \frac{1}{2^{100} }\vec{v_2} $, since their lengths are constrained within some finite value and that $\frac{1}{2^{100} }$ is much smaller compared to that finite value, then we know that $\frac{1}{2^{100} }\vec{v_2} $ is not very significant and thus we conclude $T^{100} \left(\vec{w} \right) \approx \vec{v_1} $ 
+            \item We commence by supposing that $\vec{v_1} \text{ and } \vec{v_2} $ do not form a basis, that is one is a linear combination of the other, so we have
+                \[
+                \vec{v_1} = \alpha \vec{v_2} \text{ for some } \alpha \in \mathbb{R}        
+                \]
+                thus we know 
+                \[
+                T\left(\vec{v_1} \right) = T\left(\alpha \vec{v_2} \right) \Leftrightarrow \vec{v_1} = \alpha \frac{1}{2}\vec{v_2} 
+                \]
+                but we then we have a contradiction so they must be linearly independent and thus form a basis.
+            \item Yes, observe that $\vec{v_1} \text{ and } \vec{v_2} $ are linearly independent and thus span $\mathbb{R} ^{2} $ then any vector $\mat{ \alpha  \\ \beta  } $ can be written as a linear combination of $\vec{v_1} \text{ and } \vec{v_2} $ then we know $T^{100} \left(j\vec{v_1}  + k\vec{v_2} \right) \approx j\vec{v_1} $ 
+            \item first we observe
+                \[
+                    \alpha ^{100} \approx 0 \text{ and } \beta ^{100} \ge 1 \text{ for some } \alpha \in \left[ 0, 1 \right), \beta \in \left[ 1, \infty  \right) 
+                \]
+                thus if $\alpha ,\beta $ are eigen values and $\vec{v_{\alpha } } \text{ and } \vec{v_{\beta } } $ are corresponding eigen vectors, then we know that they are linearly independent and form a basis (same proof as above) so then for any vector in $\mathbb{R} ^{2} $ it can be written as a linear combination of them and then $S^{100} \left(\vec{w} \right) \approx \beta ^{100} \vec{v_2} $ 
+        \end{itemize}
+\end{itemize}
+
+% section final_tutorial (end)
 
 % chapter week_14 (end)
 

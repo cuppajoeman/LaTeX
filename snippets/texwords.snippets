@@ -1,17 +1,104 @@
 priority -50
 
 # Common Words
+snippet wrt "written" w
+written $0
+endsnippet
+
+snippet fin "finite" w
+finite $0
+endsnippet
+
+snippet tir "their" w
+their $0
+endsnippet
+
+snippet aprx "approx(imate)" w
+approx${1:imate} $0
+endsnippet
+
+snippet dn "do not" w
+do not $0
+endsnippet
+
+snippet cmpo "composition" w
+composition $0
+endsnippet
+
+snippet chg "change" w
+change${1:s}
+endsnippet
+
+snippet quad "quadrant" w
+quadrant $0
+endsnippet
+
+snippet Iq "first quadrant" w
+first quadrant $0
+endsnippet
+
+snippet IIq "second quadrant" w
+second quadrant $0
+endsnippet
+
+snippet IIIq "third quadrant" w
+third quadrant $0
+endsnippet
+
+snippet IVq "fourth quadrant" w
+fourth quadrant $0
+endsnippet
+
+snippet clr "clearly" w
+clearly $0
+endsnippet
+
+snippet xa "x-axis" w
+$x$-axis $0
+endsnippet
+
+snippet ya "y-axis" w
+$y$-axis $0
+endsnippet
+
+snippet ver "verified" w
+verified $0
+endsnippet
+
+snippet hvnt "have not" w
+have not $0
+endsnippet
+
+snippet smp "simply" w
+simply $0
+endsnippet
+
+snippet bef "before" w
+before
+endsnippet
 
 snippet cor "correct" w
 correct $0
 endsnippet
 
+snippet simp "simplify(ing)" w
+simplify${1:ing} $0
+endsnippet
+
+snippet imp "implication" w
+implication $0
+endsnippet
+
+snippet bimp "bi-implication" w
+bi-implication $0
+endsnippet
+
 snippet cpt "compute" w
-compute $0
+comput${1:ations} $0
 endsnippet
 
 snippet supp "correct" w
-suppose $0
+suppos${1:ing} $0
 endsnippet
 
 snippet ge "greater than or equal to" w
@@ -90,6 +177,10 @@ snippet wn "we note" w
 ${1:w}e note $0
 endsnippet
 
+snippet wc "(W/w)e commence" w
+${1:w}e commence $0
+endsnippet
+
 snippet alt "alternate" w
 alternat${1:ively} $0
 endsnippet
@@ -150,8 +241,8 @@ snippet corr "corresponding" w
 corresponding $0
 endsnippet
 
-snippet app "applies" w
-applies $0
+snippet app "appl(ying)" w
+appl${1:ying} $0
 endsnippet
 
 snippet fac "factor" w
@@ -188,6 +279,10 @@ endsnippet
 
 snippet z "zero(s)" w
 zero${1:s} $0
+endsnippet
+
+snippet zv "zero vector" w
+zero vector $0
 endsnippet
 
 snippet nz "non-zero" w
@@ -286,7 +381,7 @@ snippet eval "eval" w
 evalulate $0
 endsnippet
 
-snippet equ "equation" w
+snippet equa "equation" w
 equation $0
 endsnippet
 
@@ -379,7 +474,7 @@ negative${1:ly} $0
 endsnippet
 
 snippet rec "recall" w
-recall $0
+${1:r}ecall $0
 endsnippet
 
 snippet recog "recognize" w
@@ -408,6 +503,10 @@ endsnippet
 
 snippet ori "origin" w
 origin $0
+endsnippet
+
+snippet orig "original" w
+original $0
 endsnippet
 
 snippet locd "located" w
@@ -455,7 +554,7 @@ invert${1:ible} $0
 endsnippet
 
 snippet len "length" w
-length $0
+length${1:s} $0
 endsnippet
 
 snippet defd "defined" w
@@ -470,7 +569,7 @@ snippet mul "multiplication" w
 multipl${1:ication} $0
 endsnippet
 
-snippet muld "multiplication" w
+snippet muld "multiplied" w
 multiplied $0
 endsnippet
 
@@ -487,7 +586,7 @@ addition $0
 endsnippet
 
 snippet subt "subtraction" w
-subtraction $0
+subtract${1:ion} $0
 endsnippet
 
 snippet subb "subbing" w
@@ -498,12 +597,12 @@ snippet inc "incorrect" w
 incorrect $0
 endsnippet
 
-snippet prop "properties" w
-properties $0
+snippet prop "propert(ies/y)" w
+propert${1:ies} $0
 endsnippet
 
 snippet obs "observation" w
-observ${1:ation} $0
+${1:o}bserv${2:ation} $0
 endsnippet
 
 snippet conv "convert(s)" w
@@ -634,6 +733,14 @@ snippet twh "thus we have" w
 thus we have $0
 endsnippet
 
+snippet wah "we also have" w
+we also have $0
+endsnippet
+
+snippet wa "we also" w
+we also $0
+endsnippet
+
 snippet swk "so we know" w
 so we know $0
 endsnippet
@@ -663,11 +770,7 @@ The $0
 endsnippet
 
 snippet ass "assum(e/ing)" w
-assum${1:ing} $0
-endsnippet
-
-snippet wc "we can" w
-we can $0
+${1:a}ssum${2:ing} $0
 endsnippet
 
 snippet wh "we have" w
@@ -943,11 +1046,11 @@ snippet oto "one-to-one" w
 one-to-one $0
 endsnippet
 
-snippet R "the Real Numbers" w
+snippet Rea "the Real Numbers" w
 the Real Numbers $0
 endsnippet
 
-snippet C "Real Numbers" w
+snippet Com "Real Numbers" w
 complex numbers $0
 endsnippet
 
