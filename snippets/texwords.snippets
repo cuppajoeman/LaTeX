@@ -2,6 +2,86 @@ priority -50
 
 # Common Words
 
+snippet lat "latter" w
+latter $0
+endsnippet
+
+snippet algo "algorithm" w
+algorithm $0
+endsnippet
+
+snippet comb "combination" w
+combination $0
+endsnippet
+
+snippet perm "permutation" w
+permutation $0
+endsnippet
+
+snippet ical "identical" w
+identical $0
+endsnippet
+
+snippet om "omit" w
+omit $0
+endsnippet
+
+snippet con "construct(ion)" w
+construct${1:ion} $0
+endsnippet
+
+snippet mp "map(ped)" w
+map${1:ped} $0
+endsnippet
+
+snippet tog "together" w
+together $0
+endsnippet
+
+snippet udr "under" w
+under $0
+endsnippet
+
+snippet arb "arbitrary" w
+arbitrary $0
+endsnippet
+
+snippet suff "sufficient" w
+sufficient $0
+endsnippet
+
+snippet wrt "with respect to" w
+with respect to $0
+endsnippet
+
+snippet can "canonical" w
+canonical $0
+endsnippet
+
+snippet sm "same" w
+same $0
+endsnippet
+
+snippet abs "absolute value" w
+absolute value $0
+endsnippet
+
+snippet rem "remember" w
+remember $0
+endsnippet
+
+snippet ele "element(s)" w
+element${1:s} $0
+endsnippet
+
+snippet calc "calculate" w
+calculate $0
+endsnippet
+
+snippet bal "but also" w
+but also $0
+endsnippet
+
 snippet und "understand" w
 understand $0
 endsnippet
@@ -14,7 +94,7 @@ snippet tsm "times" w
 times $0
 endsnippet
 
-snippet img "image" w
+snippet im "image" w
 image $0
 endsnippet
 
@@ -26,23 +106,19 @@ snippet sta "statement" w
 statement $0
 endsnippet
 
-snippet op "operation" w
-operation $0
+snippet op "operation(s)" w
+operation${1:s} $0
 endsnippet
 
 snippet perf "perform" w
 perform $0
 endsnippet
 
-snippet bas "basis" w
-basis
-endsnippet
-
 snippet q "question" w
 question $0
 endsnippet
 
-snippet wrt "written" w
+snippet wri "written" w
 written $0
 endsnippet
 
@@ -115,7 +191,7 @@ simply $0
 endsnippet
 
 snippet bef "before" w
-before
+before $0
 endsnippet
 
 snippet cor "correct" w
@@ -230,11 +306,15 @@ snippet yld "yield(s)" w
 yield${1:s} $0
 endsnippet
 
+snippet wy "which yields" w
+which yields $0
+endsnippet
+
 snippet fst "first" w
 first $0
 endsnippet
 
-snippet scd "second" w
+snippet sec "second" w
 second $0
 endsnippet
 
@@ -410,6 +490,10 @@ snippet distp "distributive property" w
 distributive property $0
 endsnippet
 
+snippet dist "distributive " w
+distributive $0
+endsnippet
+
 snippet dis "distinct" w
 distinct $0
 endsnippet
@@ -420,6 +504,10 @@ endsnippet
 
 snippet prcs "process" w
 process $0
+endsnippet
+
+snippet pro "procedure" w
+procedure $0
 endsnippet
 
 snippet eval "eval" w
@@ -648,6 +736,10 @@ endsnippet
 
 snippet obs "observation" w
 ${1:o}bserv${2:ation} $0
+endsnippet
+
+snippet wo "we observe" w
+${1:w}e observe $0
 endsnippet
 
 snippet conv "convert(s)" w
@@ -933,7 +1025,6 @@ endsnippet
 snippet var "variable" w
 variable $0
 endsnippet
-
 
 snippet wlog "without loss of generality" w
 without loss of generality $0

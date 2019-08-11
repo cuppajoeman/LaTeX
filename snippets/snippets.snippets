@@ -1,11 +1,18 @@
-snippet snip "The Snippet Snippet"
+snippet sn "The Snippet Snippet"
 snippet ${1:Trigger} "${2:Description}" ${3:Options}
 ${0}
 `echo endsnippet`
 endsnippet
 
-snippet wsnip "Word Snippet Snippet"
+snippet wsn "Word Snippet Snippet"
 snippet ${1:Trigger} "${2:Word}" ${3:Options}
 $2 \$0
+`echo endsnippet`
+endsnippet
+
+snippet msn "Math Snippet Snippet"
+context "math()"
+snippet ${1:Trigger} "${2:Description}" ${3:Options}
+${0}
 `echo endsnippet`
 endsnippet

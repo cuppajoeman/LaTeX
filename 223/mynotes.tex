@@ -2487,8 +2487,8 @@ V\left(T\left(A\right) \right) = \left| \mathit{det} \left(T\right)  \right| V\l
 
 % section tutorial_75 (end)
 
-\section{Extra Homework Problems Determinants}%
-\label{sec:extra_homework_problems_determinants}
+\section{Textbook problems 5.2 A1, A2(a)-(b), A3(a), D2, D7 and 5.4 A1-A3}%
+\label{sec:Textbook_problems_5.2_A1,_A2(a)-(b),_A3(a),_D2,_D7_and_5.4_A1-A3}
 % section extra_homework_problems_determinants
 
 \begin{itemize}
@@ -2551,7 +2551,34 @@ V\left(T\left(A\right) \right) = \left| \mathit{det} \left(T\right)  \right| V\l
                 \]
                 also... we see that you can just multiply by the matrix, as it is the matrix which induces the transformation in the standard basis...
             \item $-26$ 
-            \item Take time to understand.
+            \item Recall that 
+                \[
+                    \mat { A\vec{u}  & A\vec{v}  } \Leftrightarrow A \mat { \vec{u}  & \vec{v}  }
+                \]
+                then we can determine that 
+                \begin{align*}
+                    \mathit{det} \left(\mat { A\vec{u}  \\ A\vec{v}  }\right) &= \mathit{det} \left(\mat { 18 & 38 \\ 19 & 20 }\right)  
+                \end{align*}
+                but also 
+                \[
+                \mathit{det} \left(A\mat { \vec{u}  & \vec{v}  }\right) = \mathit{det} \left(A\right) \mathit{det} \left(\mat { \vec{u}  & \vec{v}  }\right) 
+                \]
+                thus we have found two different ways to calculate the area of the parallelogram induced by the image vectors. But remember that the determinant is the signed area based on whether the image of the vectors is positively or negatively oriented. So we must take the absolute value of both of the above. 
+        \end{itemize}
+    \item A2
+        \begin{itemize}
+            \item We observe that this transformation simply swaps the $x$ and $y$ component's of vectors who are elements of $\mathbb{R} ^{2} $ and so we have $R\vec{u} = \mat{ 3 \\ 1 } \text{ and } R\vec{v} = \mat{ 2 \\ -2 } $  then the area of the parallelogram determined by the image vectors is $\left| 3\left( -2 \right)  - 2 \right| = \left| -8 \right| = 8$ 
+            \item If we write each of the given vectors in a matrix as columns then determine the determinant of that matrix then we find the signed volume of that parallelpiped, and so we go forward with this idea, so we have 
+                \[
+                    \mat { 2 & 2 & 1 \\ 3 & -1 & 5 \\ 4 & -5 & 2 }
+                \]
+                then we apply the following row operations $R_{1} \mapsto R_{1}  + 2R_{2} $ then $R_{3} \mapsto R_{3}  + -5R_{2} $ then expand along the second column to get $63$.   
+            \item We follow the same procedure as before and do $R_{3} \mapsto R_{3}  + 2R_{1} $ then expand down the center column, and we get that the determinant of $A$ is $42$  
+            \item We now write the vectors under the linear transformation given by $A$ in a new matrix like
+                \[
+                    \mat { A\vec{u}  & A\vec{v}  & A\vec{w}  } = A\mat { \vec{u}  & \vec{v}  & \vec{w}  }
+                \]
+                thus the volume of the parallelpiped induced by the new vectors under the transformation is the two determinants multiplied together which yields $2646$ 
         \end{itemize}
 \end{itemize}
 
@@ -3092,7 +3119,7 @@ Textbook problems §6.1 A1-A2, B2, D1, D3
 % section textbook_problems_6_1_a1_a2_b2_d1_d3
 
 \begin{itemize}
-    \item A2
+    \item A1
         \begin{itemize}
             \item $A\vec{v_1} $ results in a vector whos second row is non-zero so it's not an eigen vector
             \item $A\vec{v_2} $ yields the zero vector which is $0 \vec{v_2} $ and so it is an eigen vector
@@ -3100,7 +3127,7 @@ Textbook problems §6.1 A1-A2, B2, D1, D3
             \item $A\vec{v_4}$ we can tell that the top two entries of the resulting vector will be the same, though to be an eigen vector for $\vec{v_4} $ we require that one must be positive and the other negative so $\vec{v_4} $   is not an eigen vector. 
             \item $A\vec{v_5} = 4\vec{v_{5}} $ so $\vec{v_5} $ is an eigen vector. 
         \end{itemize}
-    \item A3
+    \item A2
         \begin{itemize}
             \item We will commence by finding the eigen values for the following matrix.
                 \[
@@ -3151,17 +3178,85 @@ Textbook problems §6.1 A1-A2, B2, D1, D3
                 \]
                 So let's find the linear combinations of the columns that yield the zero vector. We observe that the second column is $-2$ times the first, and so we see that
                 \[
-                    1\mat{ -2 \\ -6 }  + -2\mat{ 1 \\ 3 } = 0 \Leftrightarrow \alpha \left( \mat{ -2 \\ -6 }  + -2\mat{ 1 \\ 3 }  \right) = 0
+                    1\mat{ -2 \\ -6 }  + 2\mat{ 1 \\ 3 } = 0 \Leftrightarrow \alpha \left( \mat{ -2 \\ -6 }  + 2\mat{ 1 \\ 3 }  \right) = 0
                 \]
                 And thus we get the solutions
                 \[
-                    \alpha \mat{ 1 \\ -2 } 
+                    \alpha \mat{ 1 \\ 2 } 
                 \]
                 And so the eigen space is
                 \[
-                \mathit{span} {\left\{ \mat{ 1 \\ -2 }  \right\} } 
+                \mathit{span} {\left\{ \mat{ 1 \\ 2 }  \right\} } 
                 \]
+            \item We now move to the next matrix 
+                \[
+                A = \mat { 1 & 3 \\ 0 & 1 }
+                \]
+                solving for 
+                \[
+                A\vec{v} = \lambda \vec{v} \text{ for some } \lambda \in \mathbb{R} \text{ and } \vec{v} \neq \vec{0} 
+                \]
+                equivalently 
+                \[
+                    \left( A - \lambda I \right) \vec{v} = 0
+                \]
+                but $\vec{v} $ is non-zero so we require the columns to be linearly dependent to get solutions, so we solve
+                \[
+                    \mathit{det} \left(A - \lambda I\right) = 0\Leftrightarrow \left( 1 - \lambda  \right) ^2 = 0
+                \]
+                we discern that the only eigen value is when $\lambda = 1$ and so, let us carry on and find the eigen space. When $\lambda = 1$ then 
+                \[
+                A - I= \mat { 0 & 3 \\ 0 & 0 }
+                \]
+                we note that the only vectors that get mapped to the zero vector are vectors of the construction 
+                \[
+                \mat{ \alpha  \\ 0 } \text{ for some } \alpha \in \mathbb{R} 
+                \]
+                then we have the eigen space of $\lambda = 1$ 
+                \[
+                \mathit{span} {\left\{ \mat{ 1 \\ 0 }  \right\} } 
+                \]
+            \item We follow the same procedure as above.
         \end{itemize}
+    \item B2, we omit it, as the method is identical.
+    \item D1
+        \begin{proof}
+        $ $\newline
+            We suppose that the following holds,i.e.
+            \begin{align*}
+                A\vec{v} = \lambda \vec{v}  && B\vec{v} = \mu \vec{v} 
+            \end{align*}
+            Recall that matrix multiplication is distributive and thus, we know 
+            \begin{align*}
+                A\vec{v}  + B\vec{v} = \lambda \vec{v}  + \mu \vec{v} &\Leftrightarrow \left( A + B \right) \vec{v} =  \left( \lambda  + \mu \right) \vec{v} 
+            \end{align*}
+            And our new eigen value for $\left( A + B \right) $ is $\left( \lambda  + \mu \right) $\\
+            We will now, find an eigen value corresponding to $AB$,
+            \begin{align*}
+                AB\vec{v} &= A\mu \vec{v}   \\ 
+                \intertext{at this point, we see we get a linear combination of the columns of $A$ and that we can factor out $\mu $ so we have }
+                &= \mu A \vec{v}   \\ 
+                &= \mu \lambda \vec{v} 
+            \end{align*}
+            And so our eigen value for $AB$ is $\mu \lambda $  
+        \end{proof}
+    \item D3
+        \begin{proof}
+        $ $\newline
+            We have 
+            \[
+            A\vec{v} = \lambda \vec{v} 
+            \]
+            Since $A$ is invertible we know 
+            \[
+                A^{-1} A = I \Leftrightarrow A^{-1} A\vec{v} = \vec{v} \Leftrightarrow A^{-1} \lambda \vec{v} = \vec{v} \Leftrightarrow \lambda A^{-1} \vec{v}  = \vec{v} 
+            \]
+            assuming $\lambda \neq 0$ we have,
+            \[
+            A^{-1} \vec{v} = \frac{1}{\lambda }\vec{v} 
+            \]
+            and so the eigen value for $A^{-1} $ is $\frac{1}{\lambda }$.  
+        \end{proof}
 \end{itemize}
 
 % section textbook_problems_6_1_a1_a2_b2_d1_d3 (end)
@@ -3430,6 +3525,157 @@ P= \mat { 1 & 1 & -1 \\ 1 & 1 & 1 \\ 1 & -2 & 0 }, D= \mat { 2 & 0 & 0 \\ 0 & -1
 
 
 % section application_of_diagonalization (end)
+
+\section{Texbook problems 6.1 A3 and 6.2 A2, A3, D5}%
+\label{sec:texbook_problems_6_1_a3_and_6_2_a2_a3_d5}
+% section texbook_problems_6_1_a3_and_6_2_a2_a3_d5
+
+\begin{itemize}
+    \item A3
+        \begin{itemize}
+            \item We commence with the following matrix 
+                \[
+                A= \mat { 2 & -2 \\ 0 & 3 }
+                \]
+                we find the eigen values, that is values of $\lambda $ such that the following holds
+                \[
+                \mathit{det} \left(A - \lambda I\right) = 0
+                \]
+                which is the characteristic polynomial 
+                \[
+                    \left( 2 - \lambda  \right) \left( 3 - \lambda  \right) = 0
+                \]
+                \begin{itemize}
+                    \item $\lambda = 2$, it's algebraic multiplicity is 1. We carry on to the geometric multiplicity,
+                        \[
+                        A - 2I= \mat { 0 & -2 \\ 0 & 1 }
+                        \]
+                        thus the null space is 
+                        \[
+                            \mathit{span} {\left\{ \mat{ \alpha  \\ 0 }  \right\} } \text{ for some } \alpha \in \mathbb{R} 
+                        \]
+                        We know that a basis for the eigen space is 
+                        \[
+                        \left\{ \mat{ 1 \\ 0 }  \right\} 
+                        \]
+                        thus the dimension of the eigen space is one and so the geometric multiplicity is 1 by definition. 
+                    \item $\lambda = 3$, algebraic multiplicity is 1, again we find the geometric multiplicity,
+                        \[
+                        A - 3I= \mat { -1 & -2 \\ 0 & 0 }
+                        \]
+                        the null space is 
+                        \[
+                            \mathit{span} {\left\{ \mat{ 0 \\ 1 }  \right\} } 
+                        \]
+                        so a basis is the set 
+                        \[
+                        \left\{ \mat{ 0 \\ 1 }  \right\} 
+                        \]
+                        thus the geometric multiplicity is 1, in addition we observe  that the sum of all the geometric multiplicities over every eigen value is 2, which is indeed the dimension we are working in, thus we know $A$ is diagonalizable. 
+                    \item We omit some quesions, and perform the same procedure on the following matrix 
+                        \[
+                        X = \mat { 2 & 2 & 2 \\ 2 & 2 & 2 \\ 2 & 2 & 2 }
+                        \]
+                        after some time I got that 
+                        \[
+                            char\left(X\right) =  - \lambda ^2 \left( \lambda  - 6 \right) 
+                        \]
+                        \item $\lambda = 6$ with algebraic multiplicity 1
+                            \[
+                            X - 6I= \mat { -4 & 2 & 2 \\ 2 & -4 & 2 \\ 2 & 2 & -4 }
+                            \]
+                            We observe that the third column of $X$ is equal to the first and second columns summed then multiplied by negative one, thus the null space is 
+                            \[
+                            \mathit{span} {\left\{ \mat{ 1 \\ 1 \\ 1 }  \right\} } 
+                            \]
+                            and so the geometric multiplicity is 1
+                        \item $\lambda = 0$ with algebraic multiplicity 2, when the eigen value is $0$ then we can analyze the original matrix. We have 
+                            \[
+                            \mat { 2 & 2 & 2 \\ 2 & 2 & 2 \\ 2 & 2 & 2 }
+                            \]
+                            we know that the reduced row echelon form of $X$ will be 
+                            \[
+                            \mat { 1 & 1 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 }
+                            \]
+                            Thus we get two free columns and thus our solutions are
+                            \[
+                            t\mat{ -1 \\ 1 \\ 0 }  + s \mat{ -1 \\ 0 \\ 1 } \text{ for some } t, s\in \mathbb{R} 
+                            \]
+                            and the geometric multiplicity is 2.
+                \end{itemize}
+        \end{itemize}
+        \item A2
+            \begin{itemize}
+                \item eigen values:
+                    \[
+                        char\left(A\right) = \left( 3 - \lambda  \right) \left( 6 - \lambda  \right)  - 10= \left( \lambda  - 1 \right) \left( \lambda  - 8 \right) 
+                    \]
+                \item $\lambda = 1$ 
+                    \[
+                    A - I= \mat { 2 & 2 \\ 5 & 5 }\Leftrightarrow \mathit{null} \left(A - I\right) = \mathit{span} {\left\{ \mat{ 1 \\ -1 }  \right\} } 
+                    \]
+                    so the geometric multiplicity is 1, at this point we know that the geometric multiplicity of $\lambda = 8$ will be 1, but let's find what the eigen vectors are for it
+                \item $\lambda = 8$ 
+                    \[
+                    A - 8I=  \mat { -5 & 2 \\ 5 & -2 }
+                    \]
+                    so the null space is
+                    \[
+                    \mathit{span} {\left\{ \mat{ 2 \\ 5 }  \right\} } 
+                    \]
+                \item Let the following be an ordered eigenbasis
+                    \[
+                    \mathcal{B} = \left\{ \mat{ 1 \\ -1 } , \mat{ 2 \\ 5 }  \right\} 
+                    \]
+                    then we know the matrix which induces $T_{A} $ in this new basis is 
+                    \[
+                    \left[ T_{A}  \right]_{\mathcal{B}} = \mat { 1 & 0 \\ 0 & 8 }
+                    \]
+                    Let $D$ be the above matrix. We'll now find $P$ which will convert $\mathcal{B} \to \mathcal{E} $, to do so the columns of $P$ must be $\vec{b_1} , \vec{b_2} $ written in the $\mathcal{E} $ basis. Recall that when we came up with our eigen basis we already had written them in terms of the standard basis.thus we have 
+                    \[
+                    P= \mat { 1 & 2 \\ -1 & 5 }
+                    \]
+                    We will now find $P^{-1} $ that is the matrix which converts from $\mathcal{E} \to  \mathcal{B} $, we can proceed in two ways, first we could use the algorithm which keeps track of elementary matricies, or we could convert $\vec{e_1} \text{ and } \vec{e_2} $ into the $\mathcal{B} $ basis. We'll perform the latter, thus we will solve 
+                    \[
+                        \vec{e_1} = \alpha \mat{ 1 \\ 1 }  + \beta \mat{ 2 \\ 5 } 
+                    \]
+                    we try $\alpha = 5 \text{ and } \beta = -1$ which yields $\mat{ 3 \\ 0 } $,  so then $\alpha = \frac{5}{3} \text{ and } \beta = -\frac{1}{3}$, then 
+                    \[
+                    \left[ \vec{e_1}  \right]_{\mathcal{B}} = \frac{1}{3} \mat{ 5 \\ -1 } 
+                    \]
+                    Now we will determine $\left[ \vec{e_2}  \right]_{\mathcal{B}} $ , that is the solutions for $j, k \in \mathbb{R} $ that satisfy 
+                    \[
+                        \vec{e_2} = j\mat{ 1 \\ 1 }  + k\mat{ 2 \\ 5 } 
+                    \]
+                    we try $j= 2, k = -1$ which yields 
+                    \[
+                    \mat{ 0 \\ -3 } 
+                    \]
+                    so then take $j= -\frac{2}{3}\text{ and } k= \frac{1}{3}$
+                    thus 
+                    \[
+                    P^{-1} = \frac{1}{3}\mat { 5 & -2 \\ -1 & 1 }
+                    \]
+                    Recall that $A= \left[ T_{A}  \right]_{\mathcal{E}} $ and that we know the following procedure gives us $A$ 
+                    \[
+                    \left[ \vec{x}  \right]_{\mathcal{E}} \xrightarrow{P^{-1} } \left[ \vec{x}  \right]_{\mathcal{B}} \xrightarrow{\left[ T_{A}  \right]_{\mathcal{B}} } \left[ T_{A} \vec{x}  \right]_{\mathcal{B}} \xrightarrow{P} \left[ T_{A} \vec{x}  \right]_{\mathcal{E}} 
+                    \]
+                    thus we have
+                    \[
+                    A= P\left[ T_{A}  \right]_{\mathcal{B}} P^{-1} 
+                    \]
+                    but recall $D= \left[ T_{A}  \right]_{\mathcal{B}} $ so 
+                    \[
+                    A= PDP^{-1} \Leftrightarrow P^{-1} AP= D
+                    \]
+                \item The rest of the questions follow the same procedure. Same goes for A3, may do an extra for more practice.
+            \end{itemize}
+        \item D5
+            \item Observe that when $PDP^{-1} $ is multiplied with itself repeatedly, then everything in the middle cancels and we are left with what is required. 
+            \item Let $D$ be the diagonal matrix obtained from A2 g and $P$ as well, then use the formula above.
+\end{itemize}
+
+% section texbook_problems_6_1_a3_and_6_2_a2_a3_d5 (end)
 
 \section{Final Tutorial}%
 \label{sec:final_tutorial}
