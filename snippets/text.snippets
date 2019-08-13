@@ -2,6 +2,18 @@ priority 1
 
 extends texwords
 
+snippet () "something in parenthesis" w
+($1) $0
+endsnippet
+
+snippet ff "f at x" w
+${1:f}(${2:x}) $0
+endsnippet
+
+snippet neq "not equal" w
+≠ $0
+endsnippet
+
 snippet imp "implies" w
 ⇒ $0
 endsnippet
@@ -68,6 +80,10 @@ endsnippet
 
 snippet NN "nats" w
 ℕ $0
+endsnippet
+
+snippet ~ "negation" w
+¬ $0
 endsnippet
 
 snippet && "AND" w

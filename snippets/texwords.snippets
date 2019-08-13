@@ -2,6 +2,26 @@ priority -50
 
 # Common Words
 
+snippet clo "close(st)" w
+close${1:st}
+endsnippet
+
+snippet equ "equation" w
+equation $0
+endsnippet
+
+snippet thf "therefore" w
+therefore $0
+endsnippet
+
+snippet arv "arrive" w
+arrive $0
+endsnippet
+
+snippet aw "as well" w
+as well $0
+endsnippet
+
 snippet lat "latter" w
 latter $0
 endsnippet
@@ -338,8 +358,8 @@ snippet poss "possible" w
 possible $0
 endsnippet
 
-snippet incr "increases" w
-increases $0
+snippet incr "increas(ing)" w
+increas${1:ing} $0
 endsnippet
 
 snippet orth "orthogonal" w
@@ -1170,6 +1190,10 @@ endsnippet
 
 snippet trns "transformation" w
 transformation $0
+endsnippet
+
+snippet tpos "transpose" w
+transpose $0
 endsnippet
 
 snippet vspace "vector space" w
