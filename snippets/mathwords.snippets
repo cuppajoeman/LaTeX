@@ -1,6 +1,14 @@
-priority -50
+snippet ojv "objective" w
+objective $0
+endsnippet
 
-# Common Words
+snippet ctn "contain" w
+contain $0
+endsnippet
+
+snippet tot "total" w
+total $0
+endsnippet
 
 snippet clo "close(st)" w
 close${1:st}
@@ -14,6 +22,10 @@ snippet thf "therefore" w
 therefore $0
 endsnippet
 
+snippet hn "hence" Options
+hence $0
+endsnippet
+
 snippet arv "arrive" w
 arrive $0
 endsnippet
@@ -24,18 +36,6 @@ endsnippet
 
 snippet lat "latter" w
 latter $0
-endsnippet
-
-snippet algo "algorithm" w
-algorithm $0
-endsnippet
-
-snippet comb "combination" w
-combination $0
-endsnippet
-
-snippet perm "permutation" w
-permutation $0
 endsnippet
 
 snippet ical "identical" w
@@ -114,10 +114,6 @@ snippet tsm "times" w
 times $0
 endsnippet
 
-snippet im "image" w
-image $0
-endsnippet
-
 snippet wch "which" w
 which $0
 endsnippet
@@ -142,10 +138,6 @@ snippet wri "written" w
 written $0
 endsnippet
 
-snippet fin "finite" w
-finite $0
-endsnippet
-
 snippet tir "their" w
 their $0
 endsnippet
@@ -162,40 +154,8 @@ snippet cmpo "composition" w
 composition $0
 endsnippet
 
-snippet chg "change" w
-change${1:s}
-endsnippet
-
-snippet quad "quadrant" w
-quadrant $0
-endsnippet
-
-snippet Iq "first quadrant" w
-first quadrant $0
-endsnippet
-
-snippet IIq "second quadrant" w
-second quadrant $0
-endsnippet
-
-snippet IIIq "third quadrant" w
-third quadrant $0
-endsnippet
-
-snippet IVq "fourth quadrant" w
-fourth quadrant $0
-endsnippet
-
 snippet clr "clearly" w
 clearly $0
-endsnippet
-
-snippet xa "x-axis" w
-$x$-axis $0
-endsnippet
-
-snippet ya "y-axis" w
-$y$-axis $0
 endsnippet
 
 snippet ver "verified" w
@@ -222,14 +182,6 @@ snippet simp "simplify(ing)" w
 simplify${1:ing} $0
 endsnippet
 
-snippet imp "implication" w
-implication $0
-endsnippet
-
-snippet bimp "bi-implication" w
-bi-implication $0
-endsnippet
-
 snippet cpt "compute" w
 comput${1:ations} $0
 endsnippet
@@ -246,10 +198,6 @@ snippet le "less than or equal to" w
 less than or equal to $0
 endsnippet
 
-snippet deg "degree" w
-degree $0
-endsnippet
-
 snippet nm "namely" w
 namely $0
 endsnippet
@@ -260,14 +208,6 @@ endsnippet
 
 snippet anz "analyze" w
 analyze $0
-endsnippet
-
-snippet tr "true" w
-true $0
-endsnippet
-
-snippet fl "false" w
-false $0
 endsnippet
 
 snippet exp "expand" w
@@ -282,10 +222,6 @@ snippet alg "algebra(ic)" w
 algebra${1:ic} $0
 endsnippet
 
-snippet cpnt "component" w
-component $0
-endsnippet
-
 snippet gmt "geometric" w
 geometric $0
 endsnippet
@@ -296,10 +232,6 @@ endsnippet
 
 snippet resp "respectively" w
 respectively $0
-endsnippet
-
-snippet int "integer(s)" w
-integer${1:s} $0
 endsnippet
 
 snippet disc "discussed" w
@@ -362,10 +294,6 @@ snippet incr "increas(ing)" w
 increas${1:ing} $0
 endsnippet
 
-snippet orth "orthogonal" w
-orthogonal $0
-endsnippet
-
 snippet fd "find(ing)" w
 find${1:ing} $0
 endsnippet
@@ -402,10 +330,6 @@ snippet abv "above" w
 above $0
 endsnippet
 
-snippet lem "lemma(s)" w
-lemma${1:s} $0
-endsnippet
-
 snippet on "only" w
 only $0
 endsnippet
@@ -420,18 +344,6 @@ endsnippet
 
 snippet z "zero(s)" w
 zero${1:s} $0
-endsnippet
-
-snippet zv "zero vector" w
-zero vector $0
-endsnippet
-
-snippet nz "non-zero" w
-non-zero $0
-endsnippet
-
-snippet in "infinity" w
-infinity $0
 endsnippet
 
 snippet parti "particular" w
@@ -466,60 +378,12 @@ snippet gnt "guarenteed" w
 guarenteed $0
 endsnippet
 
-snippet dgzbl "diagonalizable" w
-diagonalizable $0
-endsnippet
-
-snippet dgzn "diagonalization" w
-diagonalization $0
-endsnippet
-
-snippet utri "upper triangular" w
-upper triangular $0
-endsnippet
-
-snippet ltri "lower triangular" w
-lower triangular $0
-endsnippet
-
 snippet tri "triangle" w
 triangle $0
 endsnippet
 
-snippet trir "triangular" w
-triangular $0
-endsnippet
-
 snippet elem "elementary" w
 elementary $0
-endsnippet
-
-snippet ctq "complete the square" w
-complete the square $0
-endsnippet
-
-snippet commu "commutivity" w
-commutivity $0
-endsnippet
-
-snippet assoc "associativity" w
-associativity $0
-endsnippet
-
-snippet distp "distributive property" w
-distributive property $0
-endsnippet
-
-snippet dist "distributive " w
-distributive $0
-endsnippet
-
-snippet dis "distinct" w
-distinct $0
-endsnippet
-
-snippet prod "product" w
-product $0
 endsnippet
 
 snippet prcs "process" w
@@ -544,14 +408,6 @@ endsnippet
 
 snippet iden "identity" w
 identity $0
-endsnippet
-
-snippet pt "point(s)" w
-point${1:s} $0
-endsnippet
-
-snippet seg "segment" w
-segment $0
 endsnippet
 
 snippet lkw "likewise" w
@@ -582,48 +438,12 @@ snippet cons "consider" w
 consider $0
 endsnippet
 
-snippet coe "coefficients" w
-coefficients $0
-endsnippet
-
-snippet plp "parallelpiped" w
-parallelpiped $0
-endsnippet
-
-snippet plg "parallelogram" w
-parallelogram $0
+snippet cnst "consists" w
+consists $0
 endsnippet
 
 snippet ind "indeed" w
 indeed $0
-endsnippet
-
-snippet indp "independent" w
-independent $0
-endsnippet
-
-snippet dep "dependent" w
-dependent $0
-endsnippet
-
-snippet orie "oriented" w
-oriented $0
-endsnippet
-
-snippet pos "positive" w
-positive${1:ly} $0
-endsnippet
-
-snippet contrap "contrapositive" w
-contrapositive $0
-endsnippet
-
-snippet contra "contradiction" w
-contradiction $0
-endsnippet
-
-snippet neg "negative" w
-negative${1:ly} $0
 endsnippet
 
 snippet rec "recall" w
@@ -638,33 +458,15 @@ snippet dif "different" w
 different $0
 endsnippet
 
-snippet sq "square" w
-square $0
+snippet orig "original" w
+original $0
 endsnippet
 
-snippet cb "cube" w
-cube $0
-endsnippet
-
-snippet sph "sphere" w
-sphere $0
-endsnippet
 
 snippet vol "volume" w
 volume $0
 endsnippet
 
-snippet ori "origin" w
-origin $0
-endsnippet
-
-snippet orig "original" w
-original $0
-endsnippet
-
-snippet locd "located" w
-located $0
-endsnippet
 
 snippet lwr "lower" w
 lower $0
@@ -694,13 +496,6 @@ snippet equi "equivalently" w
 ${1:e}quivalently $0
 endsnippet
 
-snippet cont "contradiction" w
-contradiction $0
-endsnippet
-
-snippet invs "inverse" w
-inverse $0
-endsnippet
 
 snippet inv "invert" w
 invert${1:ible} $0
@@ -732,6 +527,10 @@ endsnippet
 
 snippet div "division" w
 division $0
+endsnippet
+
+snippet divi "divisible" w
+divisible $0
 endsnippet
 
 snippet add "addition" w
@@ -778,22 +577,6 @@ snippet maxi "maximize" w
 maximize $0
 endsnippet
 
-snippet lim "limit" w
-maximum $0
-endsnippet
-
-snippet log "logarithm" w
-logarithm $0
-endsnippet
-
-snippet mod "modulo" w
-modulo $0
-endsnippet
-
-snippet ran "range" w
-range $0
-endsnippet
-
 snippet rhs "right hand side" w
 right hand side $0
 endsnippet
@@ -801,26 +584,6 @@ endsnippet
 snippet lhs "left hand side" w
 left hand side $0
 endsnippet
-
-#snippet tan "tangent function" w
-#tangent $0
-#endsnippet
-
-snippet fun "function" w
-function $0
-endsnippet
-
-snippet hyp "hypotenuse" w
-hypotenuse $0
-endsnippet
-
-#snippet cos "cosine function" w
-#cosine $0
-#endsnippet
-
-#snippet sin "sine function" w
-#sine $0
-#endsnippet
 
 snippet cw "clockwise" w
 clockwise $0
@@ -841,10 +604,6 @@ endsnippet
 snippet refld "reflected" w
 reflected $0
 endsnippet
-
-# Proof and Writing
-
-# Function words
 
 snippet tt "that" w
 that $0
@@ -1050,219 +809,7 @@ snippet wlog "without loss of generality" w
 without loss of generality $0
 endsnippet
 
-snippet iff "if and only if" w
-if and only if $0
-endsnippet
-
-snippet IH "Induction Hypothesis" w
-Induction Hypothesis $0
-endsnippet
-
-
-# Linear Algebra
-snippet col "column(s)" w
-column${1:s} $0
-endsnippet
-
-snippet rred "row reduction" w
-row reduction $0
-endsnippet
-
-snippet rref "reduced row echelon form" w
-reduced row echelon form $0
-endsnippet
-
-snippet mat "matrix" w
-matrix $0
-endsnippet
-
-snippet mats "matricies" w
-matricies $0
-endsnippet
-
-snippet lc "linear combination" w
-linear combination $0
-endsnippet
-
-snippet pl "plane" w
-plane $0
-endsnippet
-
-snippet rnt "Rank Nullity Theorem" w
-Rank Nullity Theorem $0
-endsnippet
-
-snippet ntlc "linear combination" w
-non-trivial linear combination $0
-endsnippet
-
-snippet cxlc "convex linear combination" w
-convex linear combination${1:s} $0
-endsnippet
-
-snippet piv "pivot(s)" w
-pivot${1:s} $0
-endsnippet
-
-snippet li "linear independent" w
-linear independent $0
-endsnippet
-
-snippet lyi "linearly independent" w
-linearly independent $0
-endsnippet
-
-snippet lyd "linearly dependent" w
-linearly dependent $0
-endsnippet
-
-snippet ld "linearly dependent" w
-linear dependent $0
-endsnippet
-
-snippet sca "scalar" w
-scalar${1:s} $0
-endsnippet
-
-snippet eibas "eigen basis" w
-eigen basis $0
-endsnippet
-
-snippet eivec "eigen vector" w
-eigen vector${1:s} $0
-endsnippet
-
-snippet eival "eigen value" w
-eigen value${1:s} $0
-endsnippet
-
-snippet eisp "eigen space" w
-eigen space $0
-endsnippet
-
-snippet sp "space" w
-space $0
-endsnippet
-
-snippet geomul "geometric multiplicity" w
-geometric multiplicity $0
-endsnippet
-
-snippet algmul "algebraic multiplicity" w
-algebraic multiplicity $0
-endsnippet
-
-snippet vec "vector" w
-vector${1:s} $0
-endsnippet
-
-snippet ba "basis" w
-basis $0
-endsnippet
-
-snippet nsp "null space" w
-null space $0
-endsnippet
-
-snippet csp "column space" w
-column space $0
-endsnippet
-
-snippet rsp "row space" w
-row space $0
-endsnippet
-
-snippet vsp "vector space" w
-vector space $0
-endsnippet
-
-snippet proj "projection" w
-project${1:ion} $0
-endsnippet
-
-snippet ker "kernel" w
-kernel $0
-endsnippet
-
-snippet lt "linear transformation" w
-linear transformation $0
-endsnippet
-
-snippet trns "transformation" w
-transformation $0
-endsnippet
-
-snippet tpos "transpose" w
-transpose $0
-endsnippet
-
-snippet vspace "vector space" w
-vector space$0 $0
-endsnippet
-
-snippet dim "dimension" w
-dimension${1:al} $0
-endsnippet
-
-snippet det "determinant" w
-determinant $0
-endsnippet
-
-# Calculus
-
-snippet oto "one-to-one" w
-one-to-one $0
-endsnippet
-
-snippet Rea "the Real Numbers" w
-the Real Numbers $0
-endsnippet
-
-snippet Com "Real Numbers" w
-complex numbers $0
-endsnippet
-
-snippet sup "supremum" w
-supremum $0
-endsnippet
-
-snippet inf "infimum" w
-infimum $0
-endsnippet
-
-snippet sol "solution(s)" w
-solution${1:s} $0
-endsnippet
-
-snippet chpoly "characteristic polynomial" w
-characteristic polynomial $0
-endsnippet
-
-snippet polyn "polynomial" w
-polynomial $0
-endsnippet
-
-snippet cts "continuous" w
-continuous $0
-endsnippet
-
-snippet inj "injective" w
-injective $0
-endsnippet
-
-snippet surj "surjective" w
-surjective $0
-endsnippet
-
-snippet bij "bijective" w
-bijective $0
-endsnippet
-
-snippet nbd "neighbourhood" w
-neighbourhood $0
-endsnippet
-
-snippet der "derivative" w
-derivative $0
+snippet chg "change" w
+change${1:s}
 endsnippet
 
