@@ -5,14 +5,8 @@
 
 \begin{document}
 
-Let \(S = \left\{ 1, 2, 4, 8, 16, 32 \right\} \). \\
-Our main objective is to determine the total number of different sums that can be made with 3 distinct elements of \(S\) and to find the total number of these who are divisible by 4.
+To follow the advice given in the reading, we should try to make use of double counting, consider the following shape.
 
-Consider the set \(X = \left\{ 1, 2, 3, 4 \right\} \) observe that \(2 + 3= 1 + 4\) so the the total number of different sums of X, is not simply \(\binom{4}{2} \). So we must verify that indeed each of our sums are unique.
-
-We note that \(S\) consists of powers of two and we know that every binary number represents a unique decimal number, so indeed each sum is unique and therefore there are \(\binom{6}{3} \) of them. 
-
-We will now determine which sums are divisible by 4. 
-
+We can think of these as the corners of our new octahedron so we place 8 of these shapes together, though between every two triangles, we have an overlapping square therefore we double counted. Thus the total number of gray squares is \(\frac{8 \cdot 4}{2}= 12\), we observe that the white squares are just the sides of a regular cube and so there are 6 of them, and we still have 8 triangles from the original shape. So the transformed figure
 
 \end{document}
