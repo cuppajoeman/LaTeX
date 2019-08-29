@@ -176,6 +176,27 @@ snippet marfig "Margin figure environment" b
 \end{marginfigure}
 endsnippet
 
+# tkz-euclide
+snippet defp "tikz-euclide define point" w
+\tkzDefPoint($1, $2){$3} $0
+endsnippet
+
+snippet drc "draw circle" w
+\tkzDrawCircle[$1]($2,$3) $0
+endsnippet
+
+snippet drp "draw polygon" w
+\tkzDrawPolygon[$1]($2) $0
+endsnippet
+
+snippet inter "intersection" w
+\tkzInter$1($2,$3)($4,$5)\tkzGetPoints{$6}{$7} $0
+endsnippet
+
+snippet lsg "label segment" w
+\tkzLabelSegment[$1]($2){$3} $0
+endsnippet
+
 snippet tikzp "tikzpicture environment" b
 \begin{center}
 	\begin{tikzpicture}${1:[scale=${2:0.5}]}
