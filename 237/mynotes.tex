@@ -1,0 +1,166 @@
+\documentclass[11pt]{book}
+
+\RequirePackage{silence}
+\WarningFilter{remreset}{The remreset package}
+
+\title{MAT237 - Multi-variable Calculus}
+\author{Callum Cassidy-Nolan}
+
+\input{mynotes-preamble.tex}
+
+\begin{document}
+
+\input{mynotes-header.tex}
+
+\chapter{Lecture 1 - Review}%
+\label{chp:lecture_1_review}
+% chapter lecture_1_review
+
+\section{Sets \& tuples}%
+\label{sec:sets_&_tuples}
+% section sets_&_tuples
+
+
+
+% section sets_&_tuples (end)
+
+\begin{defn}[Tuple]\index{Tuple}\label{defn:tuple}
+    A $n$ tuple is an ordered list of $n$ elements $\left( x_1, \ldots ,  x_{n}  \right) $ 
+    notation 
+    \begin{itemize}
+        \item couple, a 2-tuple 
+        \item triple, a 3-tuple 
+    \end{itemize}
+    \underline{Fundamental Property } 
+    \[
+        \left( x_1, \ldots , x_{m}  \right) = \left( y_{1} , \ldots , y_{m}  \right) \Leftrightarrow \forall i \in \left\{ 1, \ldots , m \right\}, x_{i} = y_{i} 
+    \]
+\end{defn}
+
+Recall 
+\[
+\left\{ 1,2,3 \right\} = \left\{ 3,2,1 \right\} 
+\]
+But
+\[
+    \left( 1,2,3 \right) \neq \left( 3,2,1 \right) 
+\]
+In addition 
+\[
+    \left( 1,2,2,3 \right) \neq \left( 1,2,3 \right) 
+\]
+Also the comparison here doesn't even make sense since they are different sizes.
+
+\begin{defn}[Cartesian Product]\index{Cartesian Product}\label{defn:cartesian_product}
+    For sets $A,B$ 
+    \[
+        A\times B= \left\{ \left( a,b \right) : a \in A, b \in B \right\} 
+    \]
+    Note if we have $A= \emptyset $ or $B= \emptyset $ then $A\times B= \emptyset $  
+\end{defn}
+
+\begin{eg}
+    \[
+    A= \left\{ \pi , e \right\} \text{ and } B= \left\{ 1, \sqrt{2} , \pi  \right\} 
+    \]
+    \[
+        A\times B = \left\{ \left( \pi , 1 \right) , \left( \pi , \sqrt{2}  \right) , \left( \pi , \pi  \right) ,\ldots  \right\} 
+    \]
+\end{eg}
+
+For multiple cartesian products we have
+\[
+    A_{1} \times A_{2} , \ldots , A_{n} = \left\{ \left( a_1, a_2, \ldots , a_{m}  \right) : a_{i} \in A_{i}  \right\} 
+\]
+
+\begin{ex}
+    Is the following true ?
+    \[
+        \left( A\times B \right) \times C = A\times \left( B\times C \right) = A\times B\times C
+    \]
+    No, observe the tuples of $\left( A\times B \right) \times C$ are of the form
+    \[
+        \left( \left( a,b \right) ,c \right) 
+    \]
+    In the same way we observe that none of them are equal . Though in a functional type of sense, they are equal as they all still convey the same fundamental idea.
+\end{ex}
+
+\section{Functions}%
+\label{sec:functions}
+% section functions
+
+\begin{defn}[Function]\index{Function}\label{defn:function}
+    A function is the data of two sets, $A \text{ and } B$ together with a "rule" that associates to each $x\in A$ a unique $f\left(x\right) \in B$. \\
+    We define a function like this
+    \[
+    f : A \to B 
+    \]
+    Where $A$  is the domain and $B$ is the codomain.
+\end{defn}
+
+\begin{defn}[Image]\index{Image}\label{defn:image}
+    The image of $E \subseteq A$ by $f$ is
+    \[
+    f\left(E\right) = \left\{ f\left(x\right) : x\in E \right\} 
+    \]
+\end{defn}
+
+\begin{defn}[Pre-Image]\index{Pre-Image}\label{defn:pre_image}
+    The pre-image of $F\in B$ by $f$ is
+    \[
+    f^{-1} \left(F\right) = \left\{ x\in A: f\left(x\right) \in F \right\} 
+    \]
+\end{defn}
+
+\begin{defn}[Graph]\index{Graph}\label{defn:graph}
+    The graph of $f$ is 
+    \[
+        \Gamma f = \left\{ \left( x,y \right) \in A\times B:y = f\left(x\right)  \right\} 
+    \]
+\end{defn}
+
+\begin{defn}[Injective]\index{Injective}\label{defn:injective}
+    A function $f : A \to B $ is injective or one-to-one 
+    \[
+    \forall x_1,x_2 \in A, f\left(x_1\right) = f\left(x_2\right) \implies x_1= x_2
+    \]
+    We have the contrapositive 
+    \[
+    \forall x_1,x_2 \in A, x_1 \neq x_2 \implies f\left(x_1\right) \neq f\left(x_2\right) 
+    \]
+\end{defn}
+
+\begin{defn}[Onto]\index{Onto}\label{defn:onto}
+    A function is surjective or onto if
+    \[
+    \forall y \in B, \exists x \in A, y= f\left(x\right) 
+    \]
+\end{defn}
+
+\begin{defn}[Bijective]\index{Bijective}\label{defn:bijective}
+    $f : A \to B $ is bijective if it is injective and surjective.
+    \[
+    \forall y \in B, \exists! x \in A, y= f\left(x\right) 
+    \]
+\end{defn}
+
+\newpage
+
+\begin{defn}[Inverse]\index{Inverse}\label{defn:inverse}
+    $f : A \to B $ has an inverse if and only if there exists a function $g : B \to A $ such that 
+    \[
+        \forall x \in A, g \circ f\left( x \right) = x 
+    \]
+    and
+    \[
+    \forall x \in B, f \circ g \left(x\right) = x
+    \]
+    then we say that $g $ is the inverse of $f$ and $g = f^{-1} $ 
+\end{defn}
+
+% section functions (end)
+
+% chapter lecture_1_review (end)
+
+
+\end{document}

@@ -1,0 +1,114 @@
+\addvspace {10\p@ }
+\contentsline {defn}{\numberline {1}Definition\thmtformatoptarg {Linear Transformation}}{9}{defn.1}% 
+\contentsline {thm}{\numberline {1}Theorem\thmtformatoptarg {Unique Matrix for LT's}}{9}{thm.1}% 
+\contentsline {eg}{\numberline {1.1.1}Example}{9}{eg.1.1.1}% 
+\contentsline {eg}{\numberline {1.1.2}Example}{10}{eg.1.1.2}% 
+\contentsline {eg}{\numberline {1.1.3}Example}{10}{eg.1.1.3}% 
+\contentsline {note}{\numberline {1.1.1}Note}{10}{note.1.1.1}% 
+\contentsline {eg}{\numberline {1.1.4}Example}{11}{eg.1.1.4}% 
+\contentsline {defn}{\numberline {2}Definition\thmtformatoptarg {Image}}{11}{defn.2}% 
+\contentsline {ex}{\numberline {1.2.1}Exercise}{12}{ex.1.2.1}% 
+\contentsline {ex}{\numberline {1.2.2}Exercise}{12}{ex.1.2.2}% 
+\contentsline {ex}{\numberline {1.2.3}Exercise}{12}{ex.1.2.3}% 
+\contentsline {ex}{\numberline {1.2.4}Exercise}{12}{ex.1.2.4}% 
+\contentsline {ex}{\numberline {1.2.5}Exercise}{12}{ex.1.2.5}% 
+\contentsline {ex}{\numberline {1.2.6}Exercise}{12}{ex.1.2.6}% 
+\contentsline {ex}{\numberline {1.2.7}Exercise}{13}{ex.1.2.7}% 
+\contentsline {ex}{\numberline {1.2.8}Exercise}{13}{ex.1.2.8}% 
+\contentsline {eg}{\numberline {1.2.1}Example}{14}{eg.1.2.1}% 
+\contentsline {eg}{\numberline {1.2.2}Example}{14}{eg.1.2.2}% 
+\contentsline {defn}{\numberline {3}Definition\thmtformatoptarg {Range}}{15}{defn.3}% 
+\contentsline {defn}{\numberline {4}Definition\thmtformatoptarg {Null Space}}{15}{defn.4}% 
+\contentsline {ex}{\numberline {1.2.9}Exercise}{15}{ex.1.2.9}% 
+\contentsline {eg}{\numberline {1.2.3}Example}{16}{eg.1.2.3}% 
+\contentsline {ex}{\numberline {1.3.1}Exercise}{19}{ex.1.3.1}% 
+\addvspace {10\p@ }
+\contentsline {defn}{\numberline {5}Definition\thmtformatoptarg {Induced Transformation}}{31}{defn.5}% 
+\contentsline {eg}{\numberline {2.1.1}Example}{31}{eg.2.1.1}% 
+\contentsline {eg}{\numberline {2.1.2}Example}{31}{eg.2.1.2}% 
+\contentsline {eg}{\numberline {2.1.3}Example}{31}{eg.2.1.3}% 
+\contentsline {eg}{\numberline {2.1.4}Example}{32}{eg.2.1.4}% 
+\contentsline {defn}{\numberline {6}Definition\thmtformatoptarg {Fundamental Subspaces}}{32}{defn.6}% 
+\contentsline {eg}{\numberline {2.1.5}Example}{32}{eg.2.1.5}% 
+\contentsline {eg}{\numberline {2.1.6}Example}{32}{eg.2.1.6}% 
+\contentsline {eg}{\numberline {2.1.7}Example}{32}{eg.2.1.7}% 
+\contentsline {eg}{\numberline {2.1.8}Example}{33}{eg.2.1.8}% 
+\contentsline {eg}{\numberline {2.1.9}Example}{33}{eg.2.1.9}% 
+\contentsline {eg}{\numberline {2.1.10}Example}{34}{eg.2.1.10}% 
+\contentsline {eg}{\numberline {2.1.11}Example}{34}{eg.2.1.11}% 
+\contentsline {eg}{\numberline {2.1.12}Example}{34}{eg.2.1.12}% 
+\contentsline {eg}{\numberline {2.1.13}Example}{35}{eg.2.1.13}% 
+\contentsline {defn}{\numberline {7}Definition\thmtformatoptarg {Rank}}{35}{defn.7}% 
+\contentsline {eg}{\numberline {2.1.14}Example}{35}{eg.2.1.14}% 
+\contentsline {eg}{\numberline {2.1.15}Example}{35}{eg.2.1.15}% 
+\contentsline {eg}{\numberline {2.2.1}Example}{36}{eg.2.2.1}% 
+\contentsline {crly}{\numberline {2}Corollary}{36}{crly.2}% 
+\contentsline {defn}{\numberline {8}Definition\thmtformatoptarg {Transpose of a Matrix}}{36}{defn.8}% 
+\contentsline {eg}{\numberline {2.2.2}Example}{37}{eg.2.2.2}% 
+\contentsline {crly}{\numberline {3}Corollary}{37}{crly.3}% 
+\contentsline {ex}{\numberline {2.2.1}Exercise}{37}{ex.2.2.1}% 
+\contentsline {ex}{\numberline {2.2.2}Exercise}{37}{ex.2.2.2}% 
+\contentsline {ex}{\numberline {2.2.3}Exercise}{37}{ex.2.2.3}% 
+\contentsline {ex}{\numberline {2.2.4}Exercise}{37}{ex.2.2.4}% 
+\contentsline {thm}{\numberline {4}Theorem\thmtformatoptarg {Rank-nullity}}{37}{thm.4}% 
+\contentsline {eg}{\numberline {2.2.3}Example}{38}{eg.2.2.3}% 
+\contentsline {eg}{\numberline {2.2.4}Example}{38}{eg.2.2.4}% 
+\contentsline {thm}{\numberline {5}Theorem\thmtformatoptarg {Rank-nullity for linear transformations}}{38}{thm.5}% 
+\contentsline {defn}{\numberline {9}Definition\thmtformatoptarg {Inverse Transformation}}{38}{defn.9}% 
+\contentsline {defn}{\numberline {10}Definition\thmtformatoptarg {Inverse Matrix}}{39}{defn.10}% 
+\addvspace {10\p@ }
+\contentsline {thm}{\numberline {6}Theorem\thmtformatoptarg {Inverse Existance}}{46}{thm.6}% 
+\contentsline {remark}{\numberline {3.1.1}Remark}{46}{remark.3.1.1}% 
+\contentsline {remark}{\numberline {3.1.2}Remark}{46}{remark.3.1.2}% 
+\contentsline {eg}{\numberline {3.1.1}Example}{47}{eg.3.1.1}% 
+\contentsline {eg}{\numberline {3.2.1}Example}{48}{eg.3.2.1}% 
+\contentsline {eg}{\numberline {3.2.2}Example}{49}{eg.3.2.2}% 
+\contentsline {remark}{\numberline {3.2.1}Remark}{49}{remark.3.2.1}% 
+\contentsline {remark}{\numberline {3.2.2}Remark}{49}{remark.3.2.2}% 
+\contentsline {eg}{\numberline {3.2.3}Example}{49}{eg.3.2.3}% 
+\addvspace {10\p@ }
+\contentsline {defn}{\numberline {11}Definition\thmtformatoptarg {Similar Matricies}}{58}{defn.11}% 
+\contentsline {defn}{\numberline {12}Definition\thmtformatoptarg {Unit n-cube}}{58}{defn.12}% 
+\contentsline {defn}{\numberline {13}Definition\thmtformatoptarg {Determinant}}{58}{defn.13}% 
+\contentsline {eg}{\numberline {4.1.1}Example}{58}{eg.4.1.1}% 
+\contentsline {thm}{\numberline {7}Theorem\thmtformatoptarg {Volume Theorem I}}{60}{thm.7}% 
+\contentsline {thm}{\numberline {8}Theorem\thmtformatoptarg {Volume Theorem II}}{60}{thm.8}% 
+\contentsline {eg}{\numberline {4.1.2}Example}{60}{eg.4.1.2}% 
+\contentsline {remark}{\numberline {4.1.1}Remark}{60}{remark.4.1.1}% 
+\contentsline {remark}{\numberline {4.1.2}Remark}{61}{remark.4.1.2}% 
+\contentsline {remark}{\numberline {4.1.3}Remark}{61}{remark.4.1.3}% 
+\contentsline {crly}{\numberline {9}Corollary}{64}{crly.9}% 
+\addvspace {10\p@ }
+\contentsline {eg}{\numberline {5.1.1}Example}{73}{eg.5.1.1}% 
+\contentsline {eg}{\numberline {5.1.2}Example}{74}{eg.5.1.2}% 
+\contentsline {eg}{\numberline {5.1.3}Example}{74}{eg.5.1.3}% 
+\contentsline {thm}{\numberline {10}Theorem\thmtformatoptarg {determinant properties }}{76}{thm.10}% 
+\contentsline {defn}{\numberline {14}Definition\thmtformatoptarg {Eigen Vector}}{77}{defn.14}% 
+\contentsline {eg}{\numberline {5.2.1}Example}{77}{eg.5.2.1}% 
+\contentsline {remark}{\numberline {5.2.1}Remark}{78}{remark.5.2.1}% 
+\contentsline {remark}{\numberline {5.2.2}Remark}{78}{remark.5.2.2}% 
+\contentsline {eg}{\numberline {5.2.2}Example}{78}{eg.5.2.2}% 
+\contentsline {eg}{\numberline {5.2.3}Example}{78}{eg.5.2.3}% 
+\contentsline {remark}{\numberline {5.2.3}Remark}{80}{remark.5.2.3}% 
+\contentsline {defn}{\numberline {15}Definition\thmtformatoptarg {Characteristic Polynomial}}{81}{defn.15}% 
+\contentsline {eg}{\numberline {5.3.1}Example}{81}{eg.5.3.1}% 
+\contentsline {defn}{\numberline {16}Definition\thmtformatoptarg {Diagonizable}}{83}{defn.16}% 
+\contentsline {eg}{\numberline {5.3.2}Example}{83}{eg.5.3.2}% 
+\contentsline {thm}{\numberline {11}Theorem\thmtformatoptarg {n distinct eigen values }}{83}{thm.11}% 
+\contentsline {eg}{\numberline {5.3.3}Example}{84}{eg.5.3.3}% 
+\addvspace {10\p@ }
+\contentsline {thm}{\numberline {12}Theorem\thmtformatoptarg {Forced Diagonalization}}{91}{thm.12}% 
+\contentsline {eg}{\numberline {6.0.1}Example}{91}{eg.6.0.1}% 
+\contentsline {defn}{\numberline {17}Definition\thmtformatoptarg {Eigen Space}}{92}{defn.17}% 
+\contentsline {defn}{\numberline {18}Definition\thmtformatoptarg {Geometric Multiplicity}}{92}{defn.18}% 
+\contentsline {defn}{\numberline {19}Definition\thmtformatoptarg {Algebraic Multiplicity}}{93}{defn.19}% 
+\contentsline {eg}{\numberline {6.0.2}Example}{93}{eg.6.0.2}% 
+\contentsline {eg}{\numberline {6.0.3}Example}{93}{eg.6.0.3}% 
+\contentsline {thm}{\numberline {13}Theorem\thmtformatoptarg {Diagonalizable and Multiplicities}}{94}{thm.13}% 
+\contentsline {thm}{\numberline {14}Theorem\thmtformatoptarg {Algebraic and Geometric connection to roots and eigen basis }}{94}{thm.14}% 
+\contentsline {eg}{\numberline {6.0.4}Example}{94}{eg.6.0.4}% 
+\contentsline {eg}{\numberline {6.0.5}Example}{95}{eg.6.0.5}% 
+\contentsline {eg}{\numberline {6.0.6}Example}{95}{eg.6.0.6}% 
+\contentsline {eg}{\numberline {6.0.7}Example}{96}{eg.6.0.7}% 
+\contentsline {eg}{\numberline {6.1.1}Example}{97}{eg.6.1.1}% 
+\contentsline {eg}{\numberline {6.1.2}Example}{97}{eg.6.1.2}% 
