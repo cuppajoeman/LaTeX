@@ -160,6 +160,88 @@ For multiple cartesian products we have
 
 % section functions (end)
 
+\section{Function Questions}%
+\label{sec:function_questions}
+% section function_questions
+
+\subsection{Visual Sets}%
+\label{sub:visual_sets}
+% subsection visual_sets
+
+\begin{enumerate}
+    \item not a function, observe that d maps to two different elements so it doesn't map to a unique element. 
+    \item not a function, observe d is not being mapped to anything.
+    \item this is a function , it is injective as we can see no element in the codomain has two arrows leading to it, it is also surjective since for every element in the codomain there is an arrow leading to it. By definition it is bijective, and it's inverse is given by turning each arrow around.
+    \item It is a function, observe $f_{4} \left(c\right) = f_{4} \left(d\right) $ therefore it is not injective, though due to the same reasoning as the previous question it is surjective. Assume it's inverse exists then $g \circ f \left(c\right) = g \circ f \left(d\right) $   but then $c = d$ so a contradiction. 
+    \item It is a function, it is injective, though not surjective nor bijective, the inverse does not exist.
+    \item It is a function, not injective nor surjective therefore not bijective and the inverse must not exist.
+\end{enumerate}
+
+% subsection visual_sets (end)
+
+\subsection{Defined sets}%
+\label{sub:defined_sets}
+% subsection defined_sets
+
+\begin{enumerate}
+    \item $f_{7} $ I believe this is a function, if we take an element from the codomain for example $a e^{b} $ this must only have come from $\left( a,b \right) $.  It is not surjective 
+        \[
+        f\left(e,0\right) = f\left(1,1\right) 
+        \]
+        It is surjective, let $k\in \mathbb{R} $ then we have $f\left(k,0\right) $ 
+    \item $f_{8} $ I believe this is a function, take $f\left(j,k\right) $ this maps to the unique element $(e^{j}, k^2) $. Not injective consider $f\left(0, 1\right) \text{ and } f\left(0, -1\right) $. Not surjective, observe $e^{x} > 0$ therefore nothing maps to $\left( -1, p \right) $ 
+% section function_questions (end)
+\end{enumerate}
+
+% subsection defined_sets (end)
+
+\subsection{Image and Inverse Image}%
+\label{sub:image_and_inverse_image}
+% subsection image_and_inverse_image
+
+\begin{enumerate}
+    \item $f\left(\left\{ a,c,d \right\} \right) $ by definition
+        \[
+        \left\{ f\left(x\right) : x\in \left\{ a,b,c \right\}  \right\} = \left\{ 1,2 \right\} 
+        \]
+    \item $f^{-1} \left(\left\{ 2,3,4 \right\} \right) $ by definition 
+        \[
+        \left\{ x\in \left\{ a,b,c,d \right\} :f\left(x\right) \in \left\{ 2,3,4 \right\}  \right\} = \left\{ c,d,b \right\} 
+        \]
+    \item By definition we have 
+        \[
+            \left\{ \left( 1,3 \right) , \left( 2,5 \right) , \left( 3,1 \right) , \left( 4,5 \right)  \right\} 
+        \]
+    \item This first is a graph, by inspection There is a unique element in the codomain for every element in the domain.
+    \item The second is not, we observe $f(2) = j \text{ and } f\left(2\right) = k $ but $j\neq k$  
+\end{enumerate}
+
+
+% subsection image_and_inverse_image (end)
+\subsection{Final Four}%
+\label{sub:final_four}
+% subsection final_four
+
+\begin{enumerate}
+    \item Not injective $f\left(a,b,z\right) = f\left(a,b,x\right) ,x\neq z $. It is surjective, it is not bijective so the inverse does not exist .
+    \item Initially, I thought it may be possible it it is not injective since we have $x^2 $ though the $e^{x} $ showed me that idea would not work. So I'll prove it's injective. Assume 
+        \[
+            f\left(a,b\right) = f\left( j,k \right) \Leftrightarrow \left( e^{a} , \left( a^2  + 1 \right) b \right) = \left( e^{j} ,\left( j^2  + 1 \right) k \right) 
+        \]
+        we have $e^{a} = e^{j} \therefore a = j $, though we also have
+        \[
+            \left( a^2  + 1 \right) b = \left( j^2  + 1 \right) k \Leftrightarrow \left( a^2  + 1 \right) b= \left( a^2  + 1 \right) k \Leftrightarrow b= k
+        \]
+        therefore it's injective. We know $e^{x} > 0$ therefore $\left( a,k \right), a \le 0$ is not mapped to. It's not bijective so the inverse does not exist.
+    \item I'll try the same idea as the last question, 
+        \[
+            \left( a + b,  - a \right) = \left( j + k,  - j \right) 
+        \]
+        therefore $a = j$ then we have $a + b= j + k \Leftrightarrow b= k$ so its injective, we will show it's surjective, let $\left( l,m \right) \in \mathbb{R} ^2 $ then take $x=  - m$ and $y= m + l$ so $f\left(x,y\right) = \left(  - m  + m + l,  - \left(  - m \right)  \right) = \left( l,m \right) $, find the inverse next.
+\end{enumerate}
+
+% subsection final_four (end)
+
 % chapter lecture_1_review (end)
 
 
