@@ -1,0 +1,136 @@
+\documentclass[11pt]{book}
+
+\RequirePackage{silence}
+\WarningFilter{remreset}{The remreset package}
+
+\title{MAT246 - Concepts in Abstract Mathematics}
+\author{Callum Cassidy-Nolan}
+
+\input{mynotes-preamble.tex}
+
+\begin{document}
+
+\input{mynotes-header.tex}
+
+\chapter{Lecture 1}%
+\label{chp:lecture_1}
+% chapter lecture_1
+
+\section{Induction}%
+\label{sec:induction}
+% section induction
+
+\begin{nt}
+    \[
+    \mathbb{N} = \left\{ 1, 2, 3, \ldots  \right\} 
+    \]
+\end{nt}
+
+\begin{defn}[The principle of mathmatical induction ]\index{The principle of mathmatical induction }\label{defn:the_principle_of_mathmatical_induction_}
+suppose $S \subseteq \mathbb{N} $  
+
+If
+\begin{itemize}
+    \item $1\in S$ 
+    \item $k + 1 \in S$ whenever $k \in S$ 
+\end{itemize}
+Then
+\[
+    \boxed{ S = \mathbb{N} }
+\]
+
+\end{defn}
+
+The principle of mathmatical induction is simply saying if $1$ is in $S$ then $2, 3, \ldots $ is also in S
+
+\begin{eg}
+    Prove 
+    \[
+        \forall n \in \mathbb{N} , \underbracket{1^2  + 2^2  + \ldots  + n^2 = \frac{n\left( n + 1 \right) \left( 2n + 1 \right) }{6}}_{\chi} 
+    \]
+    \begin{proof}
+    $ $\newline
+        Let $S= \left\{ n \in \mathbb{N} : \chi \text{ holds }  \right\} $ At this point we don't know what $S$ consists of but we must show it is $\mathbb{N} $, then we can conclude that the formula holds for all natural numbers. We commence by verifying that $1\in S$, we have 
+        \[
+            1^2 = \frac{1\left( 1 + 1 \right) \left( 2 + 1 \right) }{6}
+        \]
+        both the right hand side and left hand side are equal to eachother, so the formula holds for $1$. 
+
+        We will now show if $k \in S$ then $k + 1 \in S$. We assume that $k \in S$, that is :
+        \[
+            1^2  + 2^2  + \ldots  + k^2 = \frac{k\left( k + 1 \right) \left( 2k + 1 \right) }{6}
+        \]
+        We observe that if we add $k + 1$ to both sides of the above equation we get the left hand side, of what we want to prove.
+        \begin{align*}
+            1^2  + 2^2  + \ldots  + k^2  + \left( k + 1 \right) ^2 &= \frac{k\left( k + 1 \right) \left( 2k + 1 \right) }{6} + \left( k + 1 \right) ^2 \\
+            &= \frac{k\left( k + 1 \right) \left( 2k + 1 \right)  + 6\left( k + 1 \right) ^2 }{6}  \\ 
+            &= \frac{\left( k + 1 \right) \left( k\left( 2k + 1 \right)  + 6\left( k + 1 \right)  \right) }{6}  \\ 
+            &= \frac{\left( k + 1 \right) \left( 2k^2  + 7k + 6 \right) }{6}  \\ 
+            &= \frac{\left( k + 1 \right) \left( k + 2 \right) \left( 2k + 3 \right) }{6} \\ 
+            &= \frac{\left( k + 1 \right) \left( \left( k + 1 \right)  + 1  \right) \left( 2\left( k + 1 \right)  + 1 \right) }{6}  \\ 
+        \end{align*}
+        After working out the right hand side it is the original formula with $k + 1$ subbed in. Therefore we have shown that  if $k \in S$ then $k + 1 \in S$ as wanted, thus by the principle of mathmatical induction 
+        \[
+        S= \mathbb{N} 
+        \]
+        .
+    \end{proof}
+\end{eg}
+
+\newpage
+
+\begin{defn}[Extended principle of mathmatical induction ]\index{Extended principle of mathmatical induction }\label{defn:extended_principle_of_mathmatical_induction_}
+    This is the same as normal induction, though now we don't have to start with 1.
+    If  
+    \begin{itemize}
+        \item Let $n_{0} \in \mathbb{N} , n_{0} \in S$
+        \item $k \in S \implies k + 1 \in S$ 
+    \end{itemize}
+    Then
+    \[
+    \boxed{S \supseteq \left\{ n_{0} , n_{0}  + 1, \ldots  \right\}  }
+    \]
+    Observe that $S$ is only a subset of these numbers as these are the ones that are guarenteed to be in $S$, there may be others. 
+\end{defn}
+
+\begin{eg}
+    Prove for all integers $n$ greater than or equal to 7 that the following holds:
+    \[
+        \underbracket{ n! \ge 3^{n} }{\chi}
+    \]
+    Let $S$ be the set of all natural numbers that $\chi $ holds for. We verify that $7 \in S$ 
+    \[
+    \underbracket{7!}_{5040} \ge \underbracket{3^{7} }_{2187} 
+    \]
+    therefore 7 satisfies $\chi$ and so $7 \in S$.
+    Let $k \in \mathbb{N} $,  we assume $\chi$ holds for $k$, that is 
+    \[
+    k! \ge 3^{k} 
+    \]
+    We will prove 
+    \[
+        \left( k + 1 \right) ! \ge 3^{k + 1} 
+    \]
+    We observe that $\left( k + 1 \right) ! = \left( k + 1 \right) k!$, but recall that we assumed that $k! \ge 3^{k} $ so we have 
+    \begin{align*}
+        k!\left( k + 1 \right) &\ge 3^{k} \left( k + 1 \right) \\
+        \intertext{Recall that $k\ge 7$ }
+        &\ge 3^{k} 8   \\ 
+        &\ge 3^{k + 1}
+    \end{align*}
+    Therefore, we've shown that
+    \[
+        \left( k + 1 \right) ! \ge 3^{k + 1} 
+    \]
+    as required, and so 
+    \[
+    S \supseteq \left\{ 7, 8, 9, \ldots  \right\} 
+    \]
+    
+\end{eg}
+
+% section induction (end)
+
+% chapter lecture_1 (end)
+
+\end{document}
