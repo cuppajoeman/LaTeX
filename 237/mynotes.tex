@@ -242,6 +242,102 @@ For multiple cartesian products we have
 
 % subsection final_four (end)
 
+\section{Geometry in Higher Dimensions}%
+\label{sec:geometry_in_higher_dimensions}
+% section geometry_in_higher_dimensions
+
+\begin{defn}[$R^{n} $ ]\index{$R^{n} $ }\label{defn:_r_n_}
+    \[
+        R^{n} = \left\{ \left( x_{1},  x_{2},  \dotsc   x_{n - 1},  x_{n},  \right): x_{i} \in \mathbb{R}   \right\} 
+    \]
+    Also note that it could be thought of as, though we get nesting couples.
+    \[
+        \underbracket{ \mathbb{R} \times \mathbb{R} \times \ldots \times \mathbb{R} \times \mathbb{R} }_{n \text{ times } }
+    \]
+\end{defn}
+
+\begin{itemize}
+    \item $\mathbb{R} ^{2} $ 
+        \begin{itemize}
+            \item We think of this as a plane, perhaps the $x, y$ coordinate system
+            \item $\left( x,y \right) \in \mathbb{R} ^2 $ 
+        \end{itemize}
+    \item $\mathbb{R} ^{3} $ 
+        \begin{itemize}
+            \item We can think of this as 3d, space the space we live in
+            \item $\left( x,y,z \right) \in  \mathbb{R} ^{3}  $ 
+        \end{itemize}
+    \item $\mathbb{R} ^{n} $ 
+        \begin{itemize}
+            \item This is $n$-dimensional space, hard to visualize, though it makes sense in an algebraic sense.
+            \item $\left( x_{1} , x_{2} , \dotsc  , x_{n - 1} , x_{n}  \right) \in \mathbb{R} ^{n} $ 
+            \item We denote an $n$-tuple of $\mathbb{R} ^{n} $ like this $\vec{x} $  
+        \end{itemize}
+    \item $\vec{e_{n} } = \left( 0, \ldots , 0, 1, \ldots  \right) $ where $1$ is at the n-th entry.
+\end{itemize}
+
+\subsection{Operations on n-tuples}%
+\label{sub:operations_on_n_tuples}
+% subsection operations_on_n_tuples
+
+Let $a = \left( a_{1} , a_{2} , \dotsc  , a_{n - 1} , a_{n}  \right) $, $b = \left( b_{1} , b_{2} , \dotsc  , b_{n - 1} , b_{n}  \right) $ and $\lambda \in \mathbb{R} $ 
+
+\begin{itemize}
+    \item Addition:
+       \[
+           a + b = \left( a_{1} + b_{1} , a_{2} + b_{2} , \dotsc  , a_{n - 1} + b_{n - 1} , a_{n} + b_{n}  \right) 
+       \]
+    \item scalar multiplication 
+        \[
+            \lambda a = \left( \lambda a_{1} , \lambda a_{2} , \dotsc  , \lambda a_{n - 1} , \lambda a_{n}  \right) 
+        \]
+\end{itemize}
+
+\begin{defn}[Dot Product]\index{Dot Product}\label{defn:dot_product}
+    \[
+    a \cdot b = \underbracket{\sum_{i=0}^{n} a_{i} b_{i}}_{\chi}  = b \cdot a 
+    \]
+    Note $\chi \in \mathbb{R} $ 
+\end{defn}
+
+\begin{itemize}
+    \item $\left( \lambda a \right)  \cdot b= \lambda \left( a  \cdot b \right) $ 
+    \item $\left( a + b \right)  \cdot c= a \cdot c + b \cdot c$ 
+    \item $a\neq \vec{0} \implies a \cdot a > 0$ also $a \cdot a = 0 \implies a = \vec{0} $ additionally $\vec{0}  \cdot a = 0$ 
+\end{itemize}
+
+\begin{defn}[Norm]\index{Norm}\label{defn:norm}
+    Let $a \in \mathbb{R}^{n}  $ 
+    \[
+    \left\Vert a \right\Vert = \sqrt{a \cdot a} = \sqrt{a_{1}^2   +  a_{2}^2   +  \dotsb   +  a_{n - 1}^2   +  a_{n}^2  } 
+    \]
+    geometrically this is the length of $a$, also $\left\Vert a - b \right\Vert $ is the distance between $a \text{ and } $ 
+\end{defn}
+
+
+% subsection operations_on_n_tuples (end)
+
+\subsection{Important properties of the norm}%
+\label{sub:important_properties_of_the_norm}
+% subsection important_properties_of_the_norm
+
+Prove the following.
+\begin{enumerate}
+    \item $\left\Vert a \right\Vert \ge 0$ 
+    \item $\left\Vert a \right\Vert = 0 \implies a = \vec{0} $ 
+    \item $\left\Vert \lambda a \right\Vert = \left| \lambda  \right| \left\Vert a \right\Vert  $ 
+    \item $\left\Vert a + b \right\Vert \le \left\Vert a \right\Vert  + \left\Vert b \right\Vert $, (hint use 5)
+    \item $\left| a \cdot b \right| \le \left\Vert a \right\Vert \left\Vert b \right\Vert $ 
+    \item $a \cdot e_{j} = a_{j} $ 
+    \item $e_{j}  \cdot e_{j} = 1$ 
+    \item for $i\neq j$,  $e_{j}  \cdot e_{i} = 0$ 
+    \item $a \cdot b = \frac{1}{4}\left( \left\Vert a + b \right\Vert ^2  - \left\Vert a - b \right\Vert ^2  \right) $ (Polarization identity )
+\end{enumerate}
+
+% subsection important_properties_of_the_norm (end)
+
+% section geometry_in_higher_dimensions (end)
+
 % chapter lecture_1_review (end)
 
 
