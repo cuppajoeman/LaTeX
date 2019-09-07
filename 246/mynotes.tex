@@ -98,34 +98,37 @@ The principle of mathmatical induction is simply saying if $1$ is in $S$ then $2
     \[
         \underbracket{ n! \ge 3^{n} }{\chi}
     \]
-    Let $S$ be the set of all natural numbers that $\chi $ holds for. We verify that $7 \in S$ 
-    \[
-    \underbracket{7!}_{5040} \ge \underbracket{3^{7} }_{2187} 
-    \]
-    therefore 7 satisfies $\chi$ and so $7 \in S$.
-    Let $k \in \mathbb{N} $,  we assume $\chi$ holds for $k$, that is 
-    \[
-    k! \ge 3^{k} 
-    \]
-    We will prove 
-    \[
-        \left( k + 1 \right) ! \ge 3^{k + 1} 
-    \]
-    We observe that $\left( k + 1 \right) ! = \left( k + 1 \right) k!$, but recall that we assumed that $k! \ge 3^{k} $ so we have 
-    \begin{align*}
-        k!\left( k + 1 \right) &\ge 3^{k} \left( k + 1 \right) \\
-        \intertext{Recall that $k\ge 7$ }
-        &\ge 3^{k} 8   \\ 
-        &\ge 3^{k + 1}
-    \end{align*}
-    Therefore, we've shown that
-    \[
-        \left( k + 1 \right) ! \ge 3^{k + 1} 
-    \]
-    as required, and so 
-    \[
-    S \supseteq \left\{ 7, 8, 9, \ldots  \right\} 
-    \]
+    \begin{proof}
+    $ $\newline
+        Let $S$ be the set of all natural numbers that $\chi $ holds for. We verify that $7 \in S$ 
+        \[
+        \underbracket{7!}_{5040} \ge \underbracket{3^{7} }_{2187} 
+        \]
+        therefore 7 satisfies $\chi$ and so $7 \in S$.
+        Let $k \in \mathbb{N} $,  we assume $\chi$ holds for $k$, that is 
+        \[
+        k! \ge 3^{k} 
+        \]
+        We will prove 
+        \[
+            \left( k + 1 \right) ! \ge 3^{k + 1} 
+        \]
+        We observe that $\left( k + 1 \right) ! = \left( k + 1 \right) k!$, but recall that we assumed that $k! \ge 3^{k} $ so we have 
+        \begin{align*}
+            k!\left( k + 1 \right) &\ge 3^{k} \left( k + 1 \right) \\
+            \intertext{Recall that $k\ge 7$ }
+            &\ge 3^{k} 8   \\ 
+            &\ge 3^{k + 1}
+        \end{align*}
+        Therefore, we've shown that
+        \[
+            \left( k + 1 \right) ! \ge 3^{k + 1} 
+        \]
+        as required, and so 
+        \[
+        S \supseteq \left\{ 7, 8, 9, \ldots  \right\} 
+        \]
+    \end{proof}
     
 \end{eg}
 

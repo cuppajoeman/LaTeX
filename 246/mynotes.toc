@@ -1,2 +1,0 @@
-\contentsline {chapter}{\numberline {1}Lecture 1}{9}{chapter.1}% 
-\contentsline {section}{\numberline {1.1}Induction}{9}{section.1.1}% 
