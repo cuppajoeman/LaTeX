@@ -46,13 +46,65 @@
 
 % section to_do_well (end)
 
-\section{Slides}%
-\label{sec:slides}
-% section slides
+\newpage
 
+\section{Useful Terminology}%
+\label{sec:useful_terminology}
+% section useful_terminology
 
+\begin{defn}[Random Experiment]\index{Random Experiment}\label{defn:random_experiment}
+    A process of gathering data or observations. We can perform the experiment multiple times so long as the conditions aren't changed and the outcome of each experiment is random, we don't know what the result will be, though we know the set of possible outcomes. 
+\end{defn}
 
-% section slides (end)
+\underline{Examples} 
+
+\begin{itemize}
+    \item Rolling a die, and observing the number on the top face. 
+    \item Rolling $n$ dice and observing the resulting pair of numbers. 
+    \item Drawing 3 cards from a deck of cards
+    \item Asking a professor how old they are
+\end{itemize}
+
+\begin{defn}[Sample Space]\index{Sample Space}\label{defn:sample_space}
+    This is the set of all possible outcomes/results from a random experiment , we denote this set as
+    \[
+    \Omega \text{ or } S
+    \]
+    The sample space depends on the outcome of interest.
+\end{defn}
+
+\begin{nt}
+    If our outcome of interest is say, whether after flipping a coin it is heads or tails, we don't care how many times it turned in the air before landing on the ground.
+\end{nt}
+
+\begin{enumerate}
+    \item [\textbf{Examples}] 
+    \item $S = \left\{ n \in \mathbb{N} : 1 \le  n \le 20 \right\} $.  All the faces of the dice.
+    \item $\Omega _{1} = \left\{ \text{ True } , \text{ False } \right\} $ 
+    \item $\Omega _{2} = \mathbb{R} ^{\ge 0} $. If they are precise in their measurement, though more likely to any hour between 0 and 10. 
+\end{enumerate}
+
+\begin{defn}[Event]\index{Event}\label{defn:event}
+    Any subset of our sample space of interest. 
+    \begin{itemize}
+        \item Simple Event: One with exactly one outcome
+        \item Compound Event: One with multiple outcomes 
+    \end{itemize}
+\end{defn}
+
+    \begin{itemize}
+        \item [\textbf{Simple Event}] 
+        \item flipping a coin, and observing whether it has landed on it's edge (that's possible!)
+        \item [\textbf{Compound Event}] 
+        \item flipping 3 coins, and observing whether at least one has landed on it's edge. 
+    \end{itemize}
+
+\begin{defn}[Complement]\index{Complement}\label{defn:complement}
+    The \underline{complement} of an event A is the event consisting of outcome that are nto in A. We denote this as $A^{c} $ .\\
+    \textbf{For example:} the complement of our previous example, that would be if no, coin has landed on it's edge.
+\end{defn}
+
+% section useful_terminology (end)
 
 % chapter lecture_1 (end)
 
