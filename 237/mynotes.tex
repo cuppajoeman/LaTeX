@@ -237,8 +237,27 @@ For multiple cartesian products we have
         \[
             \left( a + b,  - a \right) = \left( j + k,  - j \right) 
         \]
-        therefore $a = j$ then we have $a + b= j + k \Leftrightarrow b= k$ so its injective, we will show it's surjective, let $\left( l,m \right) \in \mathbb{R} ^2 $ then take $x=  - m$ and $y= m + l$ so $f\left(x,y\right) = \left(  - m  + m + l,  - \left(  - m \right)  \right) = \left( l,m \right) $, find the inverse next.
+        therefore $a = j$ then we have $a + b= j + k \Leftrightarrow b= k$ so its injective, we will show it's surjective, let $\left( l,m \right) \in \mathbb{R} ^2 $ then take $x=  - m$ and $y= m + l$ so $f\left(x,y\right) = \left(  - m  + m + l,  - \left(  - m \right)  \right) = \left( l,m \right) $, since it is bijective then we know that the inverse exists, so we must find it. Observe we require
+        \[
+            h^{-1} \left( h\left(x, y\right)  \right) =  \left( x,y \right) \Leftrightarrow h^{-1} \left(x + y,  - x\right) = \left( x,y \right) 
+        \]
+        So we define $h^{-1}\left( j, k \right) = \left( j - k, j + y \right)  $ let's verify, the two properties 
+    \item I believe $l$ is surjective and injective, 
+        \begin{proof}
+        $ $\newline
+        We'll show it's surjective , let $x,y$ bet two non-negative natural numbers we assume that $l\left(x\right) = l\left(y\right) $.\\
+        We observe that $l\left(x\right) \text{ and } l\left(y\right) $ are either both positive or negative, or else we get a contradiction. \\
+        Without loss of generality we assume they are both positive this implies that both $x \text{ and } y$ are even, then for contradiction we assume that $x \neq y$, then from our assumtion we have $\frac{x}{2}= \frac{y}{2} \Leftrightarrow x = y $, but then this is a contradiction, so then $x = y$ \\
+        We'll now show it's surjective , let $k \in \mathbb{Z} $ 
+        \begin{itemize}
+            \item If $k \ge 0$. Then take $x= 2k$ then we have $l\left(2k\right) = k $ as required
+            \item Otherwise $k \le 0$. Then take $x = 1 - 2k$ and so $l\left(1 - 2k\right) = k$. 
+        \end{itemize}
+        \end{proof}
+        Let $n$ be a non-negative natural number and $y \in  \mathbb{Z} $, we require $l^{-1} \left(l\left(n\right) \right) = n$ and $  l\left(l^{-1} \left(y\right) \right) = y$. For the first part if $n$ is even we have $l^{-1} \left(\frac{n}{2}\right) = n$ and so $l^{-1} $ should just multiply by 2, in the other case we also undo the algebra. For $y$ we observe that the algebra steps are also undone, as required.
 \end{enumerate}
+
+\newpage
 
 % subsection final_four (end)
 
@@ -332,6 +351,53 @@ Prove the following.
     \item $e_{j}  \cdot e_{j} = 1$ 
     \item for $i\neq j$,  $e_{j}  \cdot e_{i} = 0$ 
     \item $a \cdot b = \frac{1}{4}\left( \left\Vert a + b \right\Vert ^2  - \left\Vert a - b \right\Vert ^2  \right) $ (Polarization identity )
+\end{enumerate}
+
+\underline{Proofs} 
+
+\begin{enumerate}
+    \item $\left\Vert a \right\Vert \ge 0$
+        \begin{proof}
+        $ $\newline
+            $\forall x \in \mathbb{R} , x^2 \ge 0 \implies \sum_{i=0}^{n} a_{i} ^2 \ge 0 \implies \sqrt{\sum_{i=0}^{n} a_{i} ^2  } \ge 0 \Leftrightarrow \left\Vert a \right\Vert \ge 0$
+        \end{proof}
+    \item $\left\Vert a \right\Vert = 0 \implies \vec{a} = \vec{0} $
+        \begin{proof}
+        $ $\newline
+            Assume $\left\Vert a \right\Vert = 0$, for contradiction we assume $\exists i \in \left\{ 1, \ldots , n \right\} \text{ such that } a_{i} \neq 0 $  then $\sqrt{\sum_{i=0}^{n} a_{i} ^2}  \neq 0 \Leftrightarrow \left\Vert a \right\Vert \neq 0$ thus we have a contradiction therefore $a = \vec{0} $.  
+        \end{proof}
+    \item $\left\Vert \lambda a \right\Vert = \left| \lambda  \right| \left\Vert a \right\Vert $ 
+    \begin{proof}
+    $ $\newline
+    We commence ,
+    \begin{align*}
+        \left\Vert \lambda a \right\Vert &= \sqrt{\sum_{i=0}^{n} \left( \lambda a_{i}  \right) ^2  } \\
+        &= \sqrt{\lambda ^2 \sum_{i=0}^{n} a_{i} ^2  }   \\ 
+        &= \lambda \sqrt{\sum_{i=0}^{n} a_{i} ^2  }   \\ &= \lambda \left\Vert a \right\Vert   \\ 
+    \end{align*}
+    \end{proof}
+    \item $\left\Vert a + b \right\Vert \le \left\Vert a \right\Vert  + \left\Vert b \right\Vert $ 
+    \item $\left| a \cdot b \right| \le \left\Vert a \right\Vert \left\Vert b \right\Vert $ 
+    \begin{proof}
+    $ $\newline
+        Let $f\left(t\right) = \left\Vert a + tb \right\Vert ^2 $, for $t \in \mathbb{R}, a, b \in  \mathbb{R} ^{n}  $  
+\begin{align*}
+    \left\Vert a + tb \right\Vert ^2 &= \left( a + tb \right) ^2 
+    \\ 
+    &= \left( a \cdot a \right)  + 2\left( a \cdot tb \right)  + \left\Vert b \right\Vert ^2 t^2 
+\end{align*}
+    observe we have a quadratic polynomial whose leading coefficient is non-negative, and that $f\left(t\right) \ge 0$ since the norm of any vector is non-negative. Therefore it can have at most one solution, that is only if the inner part of the descriminant is less than or equal to 0
+    \[
+    \sqrt{b^2  - 4ac} \le 0
+    \]
+    though in our case we have, using the fact that $\sqrt{x^2 } = \left| x \right| $ 
+    \begin{gather*}
+        \sqrt{4\left( a \cdot b \right) ^2 }  - 4\left\Vert a \right\Vert ^2 \left\Vert b \right\Vert ^2 \le 0\\
+        4\left( a \cdot b \right) ^2  - 4\left\Vert a \right\Vert ^2 \left\Vert b \right\Vert ^2 \le 0\\
+        \left( a \cdot b \right) ^2 \le \left\Vert a \right\Vert ^2 \left\Vert b \right\Vert ^2 \\
+        \left| a \cdot b \right| \le \left\Vert a \right\Vert \left\Vert b \right\Vert 
+    \end{gather*}
+    \end{proof}
 \end{enumerate}
 
 % subsection important_properties_of_the_norm (end)
