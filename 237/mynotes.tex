@@ -1,3 +1,4 @@
+
 \documentclass[11pt]{book}
 
 \RequirePackage{silence}
@@ -19,7 +20,6 @@
 \section{Sets \& tuples}%
 \label{sec:sets_&_tuples}
 % section sets_&_tuples
-
 
 
 % section sets_&_tuples (end)
@@ -380,6 +380,27 @@ Prove the following.
     \item $\left| a \cdot b \right| \le \left\Vert a \right\Vert \left\Vert b \right\Vert $ 
     \begin{proof}
     $ $\newline
+    We will commense with left hand side 
+        \begin{align*}
+            \left\Vert a + b \right\Vert &= \left\Vert \left( a_1 + b_1, \ldots ,  + a_{n}  + b_{n}  \right)  \right\Vert   \\ 
+            &= \sqrt{\left( a_{1}  + b_1 \right)^2  + \ldots  + \left( a_{n}  + b_{n}  \right) ^2  }   \\ 
+            &= \sqrt{\left( a_1^2  + 2a_1b_1 + b^2  \right)  + \ldots  + \left( a_{n} ^2  + 2a_{n} b_{n}  + b_{n} ^2  \right) }   \\ 
+            &= \sqrt{\sum_{i=1}^{n} a_{i} ^2  + \sum_{i=1}^{n} b_{i} ^2  + 2\left( a \cdot b \right)   }   \\ 
+            &\le    \sqrt{\sum_{i=1}^{n} a_{i} ^2  + \sum_{i=1}^{n} b_{i} ^2  + 2\left| a \cdot b \right|     }   \\ 
+            \intertext{From 5, it follows that } 
+            &\le     \sqrt{\sum_{i=1}^{n} a_{i} ^2  + \sum_{i=1}^{n} b_{i} ^2  + 2\left( \left\Vert a \right\Vert \left\Vert b \right\Vert  \right)     }   \\ 
+            &= \sqrt{\left\Vert a \right\Vert ^2  + \left\Vert b \right\Vert ^2  + 2\left\Vert a \right\Vert \left\Vert b \right\Vert }   \\ 
+            &= \sqrt{\left( \left\Vert a \right\Vert  +  \left\Vert b \right\Vert  \right)^2  }  \\ 
+            &= \left\Vert a \right\Vert  + \left\Vert b \right\Vert    \\ 
+        \end{align*}
+        Therefore 
+        \[
+        \left\Vert a + b \right\Vert \le \left\Vert a \right\Vert  + \left\Vert b \right\Vert 
+        \]
+        as required
+    \end{proof}
+    \begin{proof}
+    $ $\newline
         Let $f\left(t\right) = \left\Vert a + tb \right\Vert ^2 $, for $t \in \mathbb{R}, a, b \in  \mathbb{R} ^{n}  $  
 \begin{align*}
     \left\Vert a + tb \right\Vert ^2 &= \left( a + tb \right) ^2 
@@ -398,13 +419,175 @@ Prove the following.
         \left| a \cdot b \right| \le \left\Vert a \right\Vert \left\Vert b \right\Vert 
     \end{gather*}
     \end{proof}
+    \item We will prove $a \cdot e_{j} = a_{j} $ 
+        \begin{proof}
+        $ $\newline
+        we have $e_{j} = \left( 0, \ldots , 1, \ldots , 0 \right) $ where $1$ is at the $j$-th entry then in the dot product we have 
+        \begin{align*}
+            a \cdot e_{j} = \sum_{i=1}^{n} a_{i} e_{j,i} = 0  + \ldots  + a_{j} \left( 1 \right)  + \ldots  + 0=  a_{j} 
+        \end{align*}
+        \end{proof}
+    \item We will prove $e_{j}  \cdot e_{j} = 1$ 
+        \[
+            e_{j}  \cdot e_{j} = 0  \cdot 0  +  \ldots   + 1 \cdot 1  + 0 \cdot 0 \ldots  + 0 \cdot 0 = 1
+        \]
+    \item We will prove for $i \neq j, e_{j}  \cdot e_{i} = 0$ 
+        We know that zero multiplied by anything is also 0, therefore the only chance that this sum is non-zero, is if $e_{j} \text{ and } e_{i} $ would have a non-zero value at the same entry, though by construction, it does not, therefore $e_{j}  \cdot e_{i} = 0$.
 \end{enumerate}
 
 % subsection important_properties_of_the_norm (end)
 
+\begin{defn}[Orthogonality]\index{Orthogonality}\label{defn:orthogonality}
+    two vectors $a,b$ are orthogonal if and only if $a \cdot b= 0$ 
+\end{defn}
+\begin{itemize}
+    \item Observe that if we have $\left\Vert u \right\Vert = 1$ then $u$ is a unit vector, and $v$ be any vector, then $\left( u \cdot v \right) u$ is the projection of $v$ onto the line defined by $u$. Since $\left( u \cdot v \right) $ is $\left\Vert u \right\Vert \left\Vert v \right\Vert \cos  \left( \theta \right) $, where $\theta $ is the angle between the two vectors, and that $\left\Vert u \right\Vert = 1$ then $\left( u \cdot v \right) $ is the length of the adjacent side, then multiply a the unit vector which gives the projection.  
+    \item If we have $v = v_1 + v_2$ where $v_1$ is parrallel to $u$ and $v_2$ is orthogonal to $u$ then $\left( u \cdot v \right) u$ gives us the projection onto $\vec{u} $ which is just $v_{1} $
+        \item $u \cdot v$ is the length of the projection of $v$ onto $u$ which is the same as $v_1 \cdot u$, but recall that $v_1$ and $u$ are paralell, therefore the angle between them is either $0$ or $\pi $,  therefore we have $\left\Vert u \right\Vert \left\Vert v \right\Vert \cos \left( \theta \right) = \pm \left\Vert u \right\Vert \left\Vert v_1 \right\Vert $   
+        \item Finally, we form a right triangle with hypotenuse given by $v$ with a base which lies along $u$, then the base is given by $\left( u \cdot v \right) u$ using the same reasoning as in our first observation.
+\end{itemize}
+
+\begin{defn}[Subspace]\index{Subspace}\label{defn:subspace}
+    a subspace of euclidiean space $\mathbb{R} ^{n} $ is a set $V$ such that, if $a, b \in V$ then $c_1a + c_2b \in V$ for all $c_1, c_2\in  \mathbb{R} $. Observe, that $\vec{0} \in V$ always. 
+\end{defn}
+
+suppose A is $m\times n$ matrix 
+\begin{itemize}
+    \item If each of the $n$ columns of $A$ are linearly independent, then $\left\{ Ax: x \in  \mathbb{R} ^{n}  \right\} $ spans all of $n$ dimensional space, we call the subspace consisting of all the linear combinations of $A$ the column space or image of $A$.
+    \item take $m = 3 \text{ and } n= 2$, then we get a plane spanned by the two column vectors of $A$ assuming they are linearly independent. 
+    \item If each of the $m$ rows of $A$ are linearly independent, then $\left\{ x \in \mathbb{R} ^{n} : Ax= 0 \right\} $ is $\left( m - n \right) $ dimensional, since by the Rank Nullity Theorem, we know that the dimension of the null space added to the rank, gives $n$. Observe, that this is the sub space of vectors that are orthogonal to every row of $A$ by the way that matrix vector multiplication is defined.  Say we have $m= 2 \text{ and } n = 3$ then the null space must be orthogonal to both of the row vectors who define a plane, and the null space is orthognal to every point on this plane.
+\end{itemize}
+
+\newpage
+
+\begin{defn}[Cross Product]\index{Cross Product}\label{defn:cross_product}
+    Only in $\mathbb{R} ^{3} $ we have a different way of multiplying two vectors. For $a, b$,  the cross product (a vector) denoted as $a\times b$ id defined, algebraically by 
+    \[
+        a\times b= \left( a_2b_3 - a_3b_2, a_3b_1 - a_1b_3, a_1b_2 - a_2b_1 \right) 
+    \]
+    Geometrically, $a\times b = \vec{0} $ if $a, b$ are linearly dependent , otherwise it is the unique vector that is orthogonal to both $a \text{ and } b$ with length given by
+    \[
+        \left\Vert a\times b \right\Vert ^2 = \left\Vert a \right\Vert ^2 \left\Vert b \right\Vert ^2  - \left( a \cdot b \right) ^2 
+    \]
+    so that the parallelpiped formed by $a, b \text{ and } a\times b$ is positively oriented.
+\end{defn}
+
+We can verify that the definitions are the same algebraically, that $a  \cdot \left( a\times b \right) = 0$ and $b \cdot \left( a\times b \right) = 0$ 
+\begin{align*}
+    a \cdot \left( a\times b \right) &= a_1a_2b_3 - a_1a_3b_2 + a_2a_3b_1 - a_2 a_1 b_3 + a_3a_1 b_2 - a_3a_2b_1 = 0 \\ 
+\end{align*}
+
+$\left\Vert a\times b \right\Vert ^2 = \left\Vert a \right\Vert ^2 \left\Vert b \right\Vert ^2  - \left( a \cdot b \right) ^2 $, computations follow 
+The determinant of $[a, b, a\times b]$ turns out to be the sum of squares...
+
+\subsection{Properties of the Cross Product}%
+\label{sub:properties_of_the_cross_product}
+% subsection properties_of_the_cross_product
+
+\begin{itemize}
+    \item $a\times b =  - \left( b\times a \right) $
+    \item $\left( cx + dy \right)\times z = \left( cx \times z \right)  + \left( dy\times z \right)  $ where $c, d \in \mathbb{R} $ 
+    \item $\left\Vert a\times b \right\Vert = \left\Vert a \right\Vert \left\Vert b \right\Vert \sin  \left( \theta \right) $ that is the length of $a\times b$ is equal to the area of the parallelogram generated by $a \text{ and } b$  
+        \item The cross product is not associative, \todo{Help coming up with examples} 
+\end{itemize}
+
+% subsection properties_of_the_cross_product (end)
+
 % section geometry_in_higher_dimensions (end)
 
-% chapter lecture_1_review (end)
+\section{Visualizing Mult-Var}%
+\label{sec:visualizing_mult_var}
+% section visualizing_mult_var
 
+consider $f : \mathbb{R} ^2  \to \mathbb{R}  $ 
+\begin{itemize}
+    \item We have the graph, that is 
+        \[
+            \left\{ \left( x,y, z \right) \in  \mathbb{R} ^{3} : z= f\left(x, y\right)  \right\}    
+        \]
+        Observe this yields a two-dimensional surface, with a given height $z$ over a point $\left( x,y \right) $ 
+\end{itemize}
+
+\begin{defn}[Level Curve]\index{Level Curve}\label{defn:level_curve}
+    For $c \in  \mathbb{R} $,  the level curve (level set or contour plot ) of $f : \mathbb{R} ^2  \to R $ is 
+    \[
+        \left\{ \left( x, y \right) \in \mathbb{R} : f\left(x,y\right) = c \right\} 
+    \]
+\end{defn}
+
+Observe, we have the 3d graph of $f\left(x, y\right) = \frac{1}{9}x^2  + \frac{1}{4}y^2 $  
+
+\begin{center}
+    \includegraphics[width=0.7\columnwidth]{assets/3d-graph.jpg}
+\end{center}
+
+Then the level curve of the same function 
+
+\begin{center}
+    \includegraphics[width=0.7\columnwidth]{assets/level-c.jpg} 
+\end{center}
+
+Note that the values of $c$ are chosen to be evenly spaced, thefeore we can observe when the curves are closer together we can see that the function changes faster.
+
+\subsection{Level Curve Questions}%
+\label{sub:level_curve_questions}
+% subsection level_curve_questions
+We'll match the graph to the level curve.
+\begin{itemize}
+    \item for the first graph we note that it has flat sides, therefore if we were to slice through it, we will obtain squares, therefore this matches to the 2nd level curve
+    \item The second has flat sides, with curved edges, therefore, though it's rotated $\frac{\pi}{2} $ from the previous graph, therefore this matches to the second last graph.
+    \item The third graph is similar to the first though it has been pinched on the corners, therefore the contour plot, is the one that is similar ot the second, with the pinch, so we conclude that it is the last contour plot
+    \item We see that the fourth graph is similar to the first, though it's sides are softer, so we conclude it matches to the first graph
+    \item The last grpah looks like a cone, since it has no corners, therefore if we slice through it we should obtain circles, so the correct contour plot is the third.
+\end{itemize}
+
+% subsection level_curve_questions (end)
+
+\subsection{3-Variable Functions}%
+\label{sub:3_variable_functions}
+% subsection 3_variable_functions
+
+consider $f : \mathbb{R} ^{3}  \to \mathbb{R} $ a graph can still make sense: 
+\[
+    \left\{ \left( x,y,z,w \right) \in \mathbb{R} ^{4} : w= f\left(x,y,z\right)  \right\} 
+\]
+this s a 3 dimensional shape sitting inside 4-dimensional space and is very hard to visualize, therefore we can use a level set to attempt to describe it, that is 
+\[
+    \left\{ \left( x,y,z \right) \in  \mathbb{R}^{3} : f\left( x,y,z \right) = c \right\} 
+\]
+for different choices of $c$. We call these a level surface since they are 3-dimensional and let us visuzlize them easier, for the function $f\left(x,y,z\right) = \frac{1}{9}x^2  - \frac{1}{4}y^2  + \frac{1}{9}z^2 $,  the level surface for $c= -2$ is given below
+
+\begin{center}
+    \includegraphics[width=\textwidth]{assets/-2-surf.jpg} 
+\end{center}
+
+Sometimes the level surfaces can be written in the form $z=f(x,y)-c$, and you can picture them as shifted graphs of a function of two variables. This situation is the simplest possible, so it may help you visualize what happens in higher dimensions, but it is rare.
+
+\todo{What does this even mean?} 
+
+% subsection 3_variable_functions (end)
+
+\subsection{4 or more}%
+\label{sub:4_or_more}
+% subsection 4_or_more
+
+We can still define a graph for the function $f : \mathbb{R} ^{n}  \to \mathbb{R}  $ 
+\[
+    \left\{ \left( x_{1} , x_{2} , \dotsc  , x_{n } , x_{n + 1}  \right) \in \mathbb{R} ^{n + 1} : x_{n + 1} = f\left(x_{1} , x_{2} , \dotsc  , x_{n - 1} , x_{n} \right)   \right\} 
+\]
+
+And also the level set
+\[
+    \left\{ \left( x_{1} ,  x_{2} ,  dotsc ,  x_{n - 1} ,  x_{n}  \right) \in \mathbb{R} ^{n} : f\left(x_{1} , x_{2} , \dotsc  , x_{n - 1} , x_{n} \right) = c \right\} 
+\]
+Though it's impossible to imagine these for $n\ge 4$. 
+
+
+
+% subsection 4_or_more (end)
+
+% section visualizing_mult_var (end)
+
+% chapter lecture_1_review (end)
 
 \end{document}
