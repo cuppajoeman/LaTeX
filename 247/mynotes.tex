@@ -1,5 +1,4 @@
-\documentclass[11pt]{book}
-
+\documentclass[11pt]{book} 
 \RequirePackage{silence}
 \WarningFilter{remreset}{The remreset package}
 
@@ -104,7 +103,228 @@
     \textbf{For example:} the complement of our previous example, that would be if no, coin has landed on it's edge.
 \end{defn}
 
+\begin{defn}[Union]\index{Union}\label{defn:union}
+    The union of two events $A \text{ and } B$ is the event consisting of outcomes in $A $  or $B$ or both. Denoted as $A\cup B$ 
+    \begin{itemize}
+        \item The union of events is usually said as $A$ or $B$ 
+        \item Observe $AUA^{c} = \Omega $  
+    \end{itemize}
+\end{defn}
+
+\begin{defn}[Intersection]\index{Intersection}\label{defn:intersection}
+    The intersection of two events $A \text{ and } B$ is the event consisting of outcomes in both $A \text{ and } B$, written as $A\cap C$ 
+    \begin{itemize}
+        \item The intersection of events is described by $A \text{ and } B$ 
+        \item We see $A\cap A^{c} = \emptyset $ 
+    \end{itemize}
+\end{defn}
+
+\begin{defn}[Disjoint]\index{Disjoint}\label{defn:disjoint}
+    events $A \text{ and } B$ are disjoint, if they have no overlapping events , that is $A\cap B= \emptyset $ 
+\end{defn}
+
 % section useful_terminology (end)
+
+\section{Event Laws}%
+\label{sec:event_laws}
+% section event_laws
+
+\begin{itemize}
+    \item Commutative Law: $A \cup B= B\cup A$ 
+    \item Associative Law:
+        \begin{gather*}
+            \left( A\cup B \right) \cup C = A\cup \left( B\cup C \right) \\
+            \left( A \cap B \right) \cap C = A \cap \left( B\cap C \right) 
+        \end{gather*}
+    \item Distributive Law: $A \cap \left( B\cup C \right) = \left( A\cap B \right) \cup \left( A\cap C \right) $ (This one will be useful for proving $P\left(A\cup B\cup C\right) = P\left(A\right)  + P\left(B\right)  + \ldots  +  P\left(A\cap B\cap C\right) $ )
+\end{itemize}
+
+% section event_laws (end)
+
+\section{Mutually Exclusive}%
+\label{sec:mutually_exclusive}
+% section mutually_exclusive
+
+\begin{defn}[Mutually Exclusive]\index{Mutually Exclusive}\label{defn:mutually_exclusive}
+    Two events are mutually exclusive if the events cannot both occur. That is if event A occurs, event $B$ cannot occur. In a Venn Diagram $A \text{ and } B$ being disjoint means that $A\cap B= \emptyset $.
+\end{defn}
+
+\begin{itemize}
+    \item [\textbf{Example}] 
+    \item The events $A= \left\{ \text{ Roll and even \# }  \right\} $ and $B= \left\{ \text{ Roll and odd \# }  \right\} $ from rolling a die are mutually exclusive, since a number is either even or odd, not both.
+\end{itemize}
+
+% section mutually_exclusive (end)
+
+\section{Independence}%
+\label{sec:independence}
+% section independence
+
+\begin{defn}[Independent]\index{Independent}\label{defn:independent}
+    Two events $A \text{ and } B$ are independent if the occurance of one event does not affect the occurance of the other in any way.
+\end{defn}
+
+\paragraph{Example}
+\begin{itemize}
+    \item The events 
+        \begin{itemize}
+            \item $C = \left\{ \text{ Roll an even \# on the first toss }  \right\} $ and 
+            \item $D= \left\{ \text{ Roll an odd \# on the second toss}  \right\} $ 
+        \end{itemize}
+        are independent of each other.
+\end{itemize}
+
+\underline{mutually exclusive events must be dependent } recall that two mutually exclusive events cannot both occur, therefore if one of the events is true, it forces the other to be false, and so the occurance of one does affect the occurance of the other.
+
+\begin{eg}
+    Are all dependent events mutually exclusive ?
+    recall, if $A$ is mutually exclusive of $B$, that is 
+    \[
+    A \text{ occurs  }  \implies P\left(B\right) = 0
+    \]
+    and if $A$ is dependent on B \todo{Should this be swapped?} 
+    \[
+    A \text{ occurs  } \implies P\left(B \text{ given  } A \text{ ocurred } \right) \neq P\left(B\right) 
+    \]
+    \paragraph{Example}: Let $A$ be the event that the person next to me is sick, and $B$ the event that I am sick, note the outcome of interest is sickness. We can see that if indeed the person next to me is sick then the probability of me being sick shall increase. Though they are not mutually exclusive of eachother, if I am sick, it is possible that the person next to me is as well. 
+\end{eg}
+
+
+% section independence (end)
+
+\section{DeMorgan's Laws}%
+\label{sec:demorgan_s_laws}
+% section demorgan_s_laws
+
+From Venn Diagrams, some results follow, between union and intersection of events.
+
+\begin{itemize}
+    \item $\left( A\cup B \right) ^{c} = A^{c} \cap B^{c} $, saying Not in either $A$ nor $B$ is the same as not in $A$ and not in $B$ 
+        \begin{center}
+            \includegraphics[width=100mm]{assets/dml1.jpg} 
+        \end{center}
+    \item $\left( A\cap B \right)^{c} = A^{c} \cup B^{c} $, that is not both and and B, is not in A, or not in B or not in either A or B
+        \begin{center}
+            \includegraphics[width=100mm]{assets/dml2.jpg} 
+        \end{center}
+    The general version we have for set events  $\left\{ A_{1} , A_{2} , \ldots , A_{n}  \right\} $ 
+    \begin{itemize}
+        \item $\left( \bigcup_{i= 1}^{n} A_{i}  \right) ^{c} = \bigcap_{i=1}^{n} A_{i} ^{c} $ 
+        \item $\left( \bigcap_{i=1}^{n} A_{i}  \right) ^{c} = \bigcup_{i=1}^{n} A_{i} ^{c} $ 
+    \end{itemize}
+\end{itemize}
+
+% section demorgan_s_laws (end)
+
+\section{Sample Space Examples}%
+\label{sec:sample_space_examples}
+% section sample_space_examples
+
+\begin{enumerate}
+    \item Flipping a coin 3 times in a row
+        \[
+        \Omega = \left\{ HHH, HHT, HTH, HTT, TTT, TTH, THT, THH \right\}  
+        \]
+        observe that getting two heads, means you also got one tail, therefore $P\left(\text{ Two H } \right) = P\left(\text{ One T } \right) = \frac{3}{8}$ 
+    \item Flipping a fair coin 3 times and measuring the number of tails
+        \[
+        \Omega = \left\{ 0, 1, 2, 3 \right\} 
+        \]
+        Not all of these are equally as likely, as there are multiple ways of getting just 1 tail, ex, $HHT \text{ and } HTH$ 
+    \item Number Selection of an individual's Lotto649 ticket
+        \[
+            \Omega = \left\{ \left( a,b,c,d,e,f \right) : 1 \le a,b,c,d,e,f \le 49 \in \mathbb{Z}  \right\} 
+        \]
+        note $n\left(\Omega \right) = 6^{49} $ since there are 49 options for each position
+\end{enumerate}
+
+% section sample_space_examples (end)
+
+\section{Event Examples}%
+\label{sec:event_examples}
+% section event_examples
+
+\begin{enumerate}
+    \item Tossing two different dice. The event of tossing a double
+        \[
+            D= \left\{ \left( 1,1 \right) , \left( 2,2, \right) ,\ldots , \left( 6,6 \right)  \right\} 
+        \]
+    \item Tossing such that the sum of the two dice is 8
+        \[
+            S = \left\{ \left( 2,6 \right) ,\left( 3,5 \right) ,\left( 4,4 \right) , \left( 5,3 \right) ,\left( 6,2 \right)  \right\} 
+        \]
+        observe that the first index of the tuple is the first dice and the second position is for the second dice, therefore $\left( 2,6 \right) \neq \left( 6,2 \right) $ 
+    \item Tossing doubles or tossing a sum of 8
+        \[
+        C= A\cup B 
+        \]
+    \item Tossing doubles and tossing a sum of 8
+        \[
+            D= A\cap B= \left\{ \left( 4,4 \right)  \right\} 
+        \]
+        
+\end{enumerate}
+
+% section event_examples (end)
+
+\section{Exclusive \& independence Examples}%
+\label{sec:exclusive_&_independence_examples}
+% section exclusive_&_independence_examples
+
+\begin{enumerate}[label=\alph*)]
+    \item If we know that the course subject is comp sci, then we can assume that the percntage of males will be higher, if we do not know the course subject, then we have no idea, then we don't know if the percentage of males will be higher. Therefore \underline{Dependent}. 
+    \item The fact that the coin is baised doesn't matter, every time the coin is tossed, it is still the same probability, therefore getting a head on the first toss tells us nothing about what will happen on the second toss. \underline{Independent} 
+    \item If we have someone who doesn't like hiking, then we know that the probability of them climbing mount everest, is lower than just a normal random individual climbing mount everest,therefore by definition it is dependent, though note it is not mutually exclusive since even if they don't like hiking, maybe they want to conquer their fear, so they climb the mountain.
+    \item \underline{dependent }, $P\left(\text{ Red Card } \right)= \frac{1}{2} \text{ and } P\left(\text{ Red Card if QoH } \right) = 1$ therefore by definition we know it is dependent . Note if $G$ occurs then , $P\left(\text{ H given G } \right) > \frac{1}{52} $ since one card has been removed
+\end{enumerate}
+
+% section exclusive_&_independence_examples (end)
+
+\section{Intro to Probability}%
+\label{sec:intro_to_probability}
+% section intro_to_probability
+
+\begin{defn}[Probability]\index{Probability}\label{defn:probability}
+In a random experiment with sample space $\Omega $,  the \underline{probability} of an event $A$, denoted $P\left(A\right) $ is a function that assigns to event $A$ a numerical value that measures the chance that event $A$ will occur.      
+\end{defn}
+
+\subsection{Axioms of Probability}%
+\label{sub:axioms_of_probability}
+% subsection axioms_of_probability
+
+\begin{enumerate}
+    \item $P\left(A\right) \ge 0$ , negative probability doesn't make sense
+    \item $P\left(\Omega \right) = 1$,  that is the probability for anything to happen must be 100%
+    \item For a set of disjoint events (that is they are mutually exclusive ) $A_{1} , A_{2} , \dotsc  , A_{n - 1} , A_{n} $ in $\Omega $ 
+        \[
+        P\left(\bigcup_{i=1}^{n} A_{i} \right) = \sum_{i=1}^{n} P\left(A_{i} \right)  
+        \]
+        this says that probability of any of them happening, is the sum of each probability individually. note this one is very useful for proving things
+\end{enumerate}
+
+% subsection axioms_of_probability (end)
+
+\subsection{probability proof}%
+\label{sub:probability_proof}
+% subsection probability_proof
+
+We'll show the complement relationship
+\begin{proof}
+    $ $\newline
+    Recall $A\cup A^{c} = \Omega $, and $A\cap A^{c} = \emptyset $ , it follows that 
+    \begin{gather*}
+        P\left(\Omega \right) = P\left(A\cup A^{c} \right) \\
+        1= P\left(A\right)  + P\left(A^{c} \right) \\
+        P\left(A\right) = 1 - P\left(A^{c} \right) 
+    \end{gather*}
+\end{proof}
+
+\paragraph{Example} 
+If there is a 30\% chance it will rain tommorow, we can conclude that there is a 70\% chance that it will not.
+
+% subsection probability_proof (end)
+
+% section intro_to_probability (end)
 
 % chapter lecture_1 (end)
 

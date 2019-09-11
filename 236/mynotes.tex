@@ -1,0 +1,60 @@
+
+\documentclass[11pt]{book}
+
+\RequirePackage{silence}
+\WarningFilter{remreset}{The remreset package}
+
+\title{MAT236 - Intro to the Theory of Computation}
+\author{Callum Cassidy-Nolan}
+
+\input{mynotes-preamble.tex}
+
+\begin{document}
+
+\input{mynotes-header.tex}
+
+\chapter{Preliminaries}%
+\label{chp:preliminaries}
+% chapter preliminaries
+
+\section{Sets}%
+\label{sec:sets}
+% subsection sets
+
+\begin{itemize}
+    \item We now have the concept of the cardinality of a set being infinity that is for a set $A$ we have, $\left| A \right| = \infty $
+    \item $\infty $: for all integers $k$ we have $k < \infty $ 
+    \item Describing by listing all elements explicitly is called an \underline{extensional}  description, we can state the property that characterises it's elements, then we have an \underline{internal} description (set-builder).
+    \item A \underline{proper}  sub/super $A \subset B$ set means that every element of $A$ is also an element of $B$ moreover, there is at least one element of $B$ that is not in $A$.   
+    \item If $A \cap  B = \emptyset  $ , that is $A \text{ and } B$ have nothing in common, then we say they are \underline{disjoint}.
+    \item The difference of $A - B$ is the set of elements in $A$, that don't belong to $B$ 
+    \item The intersection or union of an arbitary number, or infinite number of sets, is written as ($I$ is a set of indicies)
+        \begin{gather*}
+            \cup _{i \in I} A_{i} = \left\{ x: \text{ for some } i\in I, x \in A_{i}  \right\} \\
+            \cap  _{i \in I} A_{i} = \left\{ x: \text{ for each } i\in I, x \in A_{i}  \right\} 
+        \end{gather*}
+    \item Partition: For a set $A$ a partition of $A$ is a set, that satisifies the following.
+        \begin{itemize}
+            \item $\mathcal{X} \subseteq \mathcal{P}(A) $ such that $X \in \mathcal{X}, \mathcal{X} \neq \emptyset $ 
+        \item $X,Y \in \mathcal{X} \text{ such that } X\neq Y, X\cap Y= \emptyset $ and $\cup _{X\in \mathcal{X} } X= A$ 
+        \end{itemize}
+\end{itemize}
+
+\subsection{Ordered Pairs}%
+\label{sub:ordered_pairs}
+% subsection ordered_pairs
+
+\begin{itemize}
+    \item Ordered pairs actually can be defined more primitively, we have $\left( a,b  \right) $ we can define it as the set $\left\{ \left\{ a \right\} , \left\{ a, b \right\}  \right\} $, the element that is of length 1, is viewed as the first element of the ordered set, the element of size two represents the ordered pair, one of which is the first, and the other is the second. 
+    \item For example if we have $\left( j, k  \right) = \left( l, m \right)$, then $\left\{ \left\{ j \right\} , \left\{ j, k \right\}  \right\} = \left\{ \left\{ l \right\} , \left\{ l, m \right\}  \right\} $ therefore we must verify that they are subsets of eachother. 
+\end{itemize}
+
+
+% subsection ordered_pairs (end)
+
+
+% subsection sets (end)
+
+% chapter preliminaries (end)
+
+\end{document}
