@@ -136,4 +136,132 @@ The principle of mathmatical induction is simply saying if $1$ is in $S$ then $2
 
 % chapter lecture_1 (end)
 
+\chapter{Lecture 2}%
+\label{chp:lecture_2}
+% chapter lecture_2
+
+\begin{defn}[Well Ordering Principle]\index{Well Ordering Principle}\label{defn:well_ordering_principle}
+   Every subset of $\mathbb{N} $ other than $\emptyset $ has a smallest      element. 
+\end{defn}
+
+\section{Proof of Induction}%
+\label{sec:proof_of_induction}
+% section proof_of_induction
+
+\begin{remark}
+    We accepted the Principle of Mathematical Induction, though we should prove it.
+\end{remark}
+
+Recall, the Principle of Mathematical Induction, suppose $S \subseteq N$, if  
+\begin{itemize}
+    \item $1 \in S$ 
+    \item $k + 1 \in S$ whnever $k\in S$ 
+\end{itemize}
+then 
+\[
+S= \mathbb{N} 
+\]
+
+We'll prove the statement
+\begin{proof}
+$ $\newline
+    Let $T= \left\{ n\in \mathbb{N} : n \not\in S  \right\} $. suppose that $T\neq \emptyset $,  therefore by the Well Ordering Principle we know that $T$ has a smallest element, let $n_{0} $ be that element. Note that $n_{0} \in \mathbb{N}, n_{0} \neq 1 $ since $1\in S \therefore 1 \not\in T$, therefore $n_{0} \ge 2$.\\
+    since $n_{0} \ge 2 $ we know $n_{0}  - 1 \in \mathbb{N} $ and that $n_{0}  - 1 \not\in T$ since $n_{0} $ is the smallest element in $T$. 
+    \[
+    n_{0}  - 1 \not\in T \implies n_{0}  - 1 \in S
+    \]
+    But by property 2, of $S$ we know that if $n_{0} \in S$ then $n_{0} \in S$,  though this is a contradiction as $n_{0} \not\in S$\\
+    Therefore $T = \emptyset $ and $S = \mathbb{N} $ 
+\end{proof}
+
+
+% section proof_of_induction (end)
+
+\section{Division}%
+\label{sec:division}
+% section division
+
+\begin{defn}[Divides]\index{Divides}\label{defn:divides}
+    for $a, b \in \mathbb{N} $ we say that $a$ divides $b$ if there exists a $c \in \mathbb{N} $ such that 
+    \[
+    b= ca
+    \]
+    And we say 
+    \[
+    a \mid b
+    \]
+\end{defn}
+\begin{remark}
+    $2 \cdot 3.5 = 7$, though our definition is only for natural numbers, since no $c \in \mathbb{N} $ gives $2 \cdot c = 7$ 
+\end{remark}
+
+\begin{defn}[Prime]\index{Prime}\label{defn:prime}
+    $p \in \mathbb{N} $ is \underline{prime} if the only divisor of $p$ are $1 \text{ and } p$ and $p\neq 1$ 
+\end{defn}
+
+\paragraph{Example} 
+\begin{itemize}
+    \item 7 is prime, since the only divisor is 1 and 7
+    \item 10 is not prime, 2 and 5 divide 10
+\end{itemize}
+
+\begin{thm}[Product of Primes]\index{Product of Primes}\label{thm:product_of_primes}
+    for all $n \in \mathbb{N} ,n \neq 1$ $n$ can be written as a product of primes 
+\end{thm}
+
+\paragraph{Example} 
+\begin{itemize}
+    \item $42 = 2  \cdot 3 \cdot 7$ 
+    \item $12 = 3  \cdot 2^{2} $ 
+\end{itemize}
+
+\newpage
+
+\begin{defn}[Complete Induction]\index{Complete Induction}\label{defn:complete_induction}
+    Let $S\subseteq \mathbb{N} $ 
+    \begin{itemize}
+        \item if $n_{0} \in S$ 
+        \begin{itemize}
+            \item and $k + 1 \in S$ when $n_{0} , n_{0}  + 1, \ldots , k \in S$ 
+        \end{itemize}
+        Then 
+        \[
+        S \supseteq \left\{ n_{0} , n_{0}  + 1, \ldots  \right\} 
+        \]
+    \end{itemize}
+\end{defn}
+
+We will prove the product of primes theorem
+\begin{proof}
+$ $\newline
+    Let $S= \left\{ n \in \mathbb{N} : \text{ theorem holds for } n \right\} $ we will prove 
+    \[
+    S= \mathbb{N} 
+    \]
+    \begin{itemize}
+        \item 2, is prime therefore it is a product of primes and so the Base Case holds. 
+        \item We assume if $2, 3, \ldots , k \in S$ then $k + 1 \in S$ 
+            \begin{itemize}
+                \item \textbf{Case 1}: $k + 1$ is prime, then we are done like the base case
+                \item \textbf{Case 2}: $k + 1$  is not prime, then there exists an $m \in \mathbb{N} $ such that $1 < m < k + 1$ and $m \mid k + 1$ by definition this means 
+                    \[
+                    k + 1 = c \cdot m, \text{ for some } c \in \mathbb{N} 
+                    \]
+                    observe that $1 < c < k + 1$ since if $c = 1$,$c= k + 1$ or if larger we get a contradiction.\\
+                    Therefore we can use the Induction Hypothesis on $c \text{ and } m$ to write thpem both as a product of primes, multiplying them together gives us a new product of primes equal  to $k + 1$ as required. 
+            \end{itemize}
+    \end{itemize}
+Therefore by the principle of complete induction we can say that 
+\[
+S \supseteq \left\{ 2, 3, \ldots  \right\} 
+\]
+though we want to show that $S= \left\{ 1, 2,3, \ldots  \right\} $ observe  that $1$ is not a product of primes as it is not prime and also not composite, therefore $1 \not\in S$ so $S= \left\{ 2, 3, \ldots  \right\} $  
+\end{proof}
+
+The intuition behind this proof comes from the fact that if we take a number say $24$ it is either prime  or not, in this case it is not, and we can write it as $24 = 6  \cdot 4$ then by an inductive argument, we already know that $6 $  and $4$ are already product of primes so we are done. We will show next that in fact this is a unique product.
+
+% section division (end)
+
+% chapter lecture_2 (end)
+
 \end{document}
