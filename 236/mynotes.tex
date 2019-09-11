@@ -34,15 +34,313 @@ Allows us to prove a predicate P holds for all natural numbers greater than or e
 \forall n \in \mathbb{N}, n \ge b \implies P\left(n\right) 
 \]
 
-The principle bhind it is this
+The principle behind it is this
 \begin{itemize}
-    \item If $P\left(b\right) $ 
+    \item If $P\left(b\right) $ holds , and we have $\forall k \in \mathbb{N} , k \ge b, P\left(k\right) \implies P\left(k + 1\right) $ 
+    \item Then $\forall n \in \mathbb{N} , n \ge b \implies P\left(n\right) $ holds 
 \end{itemize}
+
+\underline{Justification, Informal}
+\begin{itemize}
+    \item suppose $P\left(b\right)  $  hold (base case) 
+    \item suppose $\forall k \in \mathbb{N} , k \ge b, P\left(k\right) \implies P\left(k + 1\right) $ (Induction Step) 
+\end{itemize}
+
+Then 
+\[
+P\left(b\right) \implies P\left(b + 1\right) \implies \ldots 
+\]
+
+Prove the following 
+\[
+    \forall n \in \mathbb{N} , \sum_{i=0}^{n} = \frac{n\left( n + 1 \right) }{2} 
+\]
+
+\begin{proof}
+    $ $\newline
+    We define the following predicate 
+    \[
+        P(n): `` \sum_{i=0}^{n} i = \frac{n\left( n + 1 \right) }{2} "\text{, where } n \in \mathbb{N} 
+    \]
+
+    
+\end{proof}
+\begin{proof}
+    $ $\newline Be begin
+    \begin{itemize}
+        \item \textbf{Base Case:}\\
+            We show that $P(0)$ holds, we know 
+            \[
+                \sum_{i=0}^{0} = \frac{0\left( 0 + 1 \right) }{2} 
+            \]
+            therefore right hand side equals left hand side, so we have $P\left(0\right) $ holds .
+        \item \textbf{Induction Step:}\\
+            Let $k \in \mathbb{N}$ and assume that $P(k)$ holds, that is 
+            \[
+                \sum_{i=0}^{k} i = \frac{k\left( k + 1 \right) }{2} 
+            \]
+            
+            We'll show that $P(k + 1)$ holds, so we must show that 
+            \[
+                \sum_{i=0}^{k + 1} i = \frac{\left( k + 1 \right) \left( k + 2 \right) }{2} 
+            \]
+            Intuition: We need to get to our IH, let's break the summation down, we know 
+            \begin{align*}
+                \sum_{i=0}^{k + 1} i &= \sum_{i=0}^{k} i  + \left( k + 1 \right)   \\
+                &= \frac{k\left( k + 1 \right) }{2} + \left( k + 1 \right)   \\ 
+                &= \frac{k + 1\left( k + 2 \right) }{2} 
+            \end{align*}
+    \end{itemize}
+    Thus by the principle of induction we have proven the original statement.
+\end{proof}
+
+\paragraph{Summary}
+\begin{enumerate}
+    \item Define the predicate 
+    \item Prove that the base case holds 
+    \item Induction Step: Assume the Induction Hypothesis, show what we will prove.
+    \item Use Induction Hypothesis to prove $P\left(k + 1\right) $ 
+\end{enumerate}
+
+% subsection  (end)
+
+We will prove 
+\[
+a_{n} = 2^{n + 1}  - 1
+\]
+
+Where $a_{0} = 1, a_{n} = 2a_{ - 1}  + 1$ for $n\ge 1$  
+
+\begin{proof}
+    $ $\newline
+    We define the following predicate
+    \[
+    P(n): `` a_{n} = 2^{n + 1}  - 1 "\text{, where } n \in \mathbb{N} 
+    \]
+    \begin{itemize}
+        \item \textbf{Base Case:}\\
+            We show that $P(0)$ holds, we know 
+            \[
+            a_{0} = 2^{1}  - 1
+            \]
+            therefore $P\left(0\right) $ holds 
+        \item \textbf{Induction Step:}\\
+            Let $k \in \mathbb{N}$ and assume that $P(k)$ holds, that is 
+            \[
+            a_{k} = 2^{k + 1}  - 1
+            \]
+            
+            We'll show that $P(k + 1)$ holds, so we must show that 
+            \[
+            a_{k + 1} = 2^{k + 2}  - 1
+            \]
+            Intuition: we use the recurvie definition to access the Induction Hypothesis, we know 
+            \begin{align*}
+                a_{k + 1} &= 2a_{k}  + 1  \\ 
+                &= 2\left( 2^{k + 1}  - 1 \right)  + 1  \\ 
+                &= 2^{k + 2}  - 2  + 1\\
+                &= 2^{k + 2}  - 1 
+            \end{align*}
+    \end{itemize}
+    Thus by the principle of induction we have proven the original statement.
+\end{proof}
+
+\paragraph{Homework Quesiton}
+We will prove 
+\[
+\forall n \in \mathbb{N} , n > 4 \implies 2^{n} > n^2 
+\]
+
+\begin{proof}
+    $ $\newline
+    We define the following predicate
+    \[
+    P(n): `` 2^{n} > n^2  "\text{, where } n \in \mathbb{N} 
+    \]
+    \begin{itemize}
+        \item \textbf{Base Case:}\\
+            We show that $P(5)$ holds, we know 
+            \[
+            2^{5} > 5^2 \Leftrightarrow 32 > 25
+            \]
+            therefore $P\left(5\right) $ holds .
+        \item \textbf{Induction Step:}\\
+            Let $k \in \mathbb{N}$ and assume that $P(k)$ holds, that is 
+            \[
+            2^{k} > k^2 
+            \]
+            
+            We'll show that $P(k + 1)$ holds, so we must show that 
+            \[
+                2^{k + 1} > \left( k + 1 \right) ^2 
+            \]
+            We know 
+            \[
+                2^{k} 2 > 2k^2  \\ 
+            \]
+            At this point if we can show that $2k^2 \ge \left( k + 1 \right) ^2 $ we are done, let's see if it's true
+            \begin{gather*}
+                k > 5 > 4\\
+                \left( k - 1 \right) ^2 > 9 > 2\\
+                \left( k - 1 \right) ^2 > 2\\
+                k^2  - 2k + 1 > 2\\
+                k^2 > 2k  + 1\\
+                2k^2 > \left( k + 1 \right) ^2 
+            \end{gather*}
+            So it is true, therefore we can say 
+            \[
+                2^{k + 1} > \left( k + 1 \right) ^2 
+            \]
+            as required. 
+    \end{itemize}
+    Thus by the principle of induction we have proven the original statement.
+\end{proof}
 
 
 % section simple_induction (end)
 
 % chapter lecture_1 (end)
+
+\chapter{Lecture 2}%
+\label{chp:lecture_2}
+% chapter lecture_2
+
+\section{Simple Induction Downfall}%
+\label{sec:simple_induction_downfall}
+% section simple_induction_downfall
+
+Observe if we are attempting to prove a statement, that requires us to know something more than just a property of the previous element we are proving over, for example a proof of prime factorization requires, us to know about all previous primes, this will become clear soon.
+
+We will prove 
+\[
+\forall n \in \mathbb{N} , n \ge 2 \implies n \text{ has a prime factorization  } 
+\]
+
+In our Induction Step we observe that we will have $k + 1 = a \cdot b$ where $a, b$ are definelty not both $k + 1$,  therefore , we will not be able to conclude anything about both of them, and we cannot proceed , therefore we need a stronger hypothesis.
+
+\begin{defn}[Complete Induction]\index{Complete Induction}\label{defn:complete_induction}
+    It is similar to Induction, with the following modifications
+    \begin{itemize}
+        \item Base Case : show $P\left(b\right) $ holds 
+        \item Induction Step: let $k\in \mathbb{N} , k\ge b$ we assume the following our (Induction Hypothesis )
+            \[
+            P\left(b\right) , P\left(b + 1\right) , \ldots , P\left(k\right) 
+            \]
+            Or equivalently, for $k\ge b$ 
+            \[
+            \forall j \in \mathbb{N} , b \le j \le k, P\left(j\right) 
+            \]
+    \end{itemize}
+\end{defn}
+
+We will prove the statement we tried earlier with simple induction.
+
+\begin{proof}
+    $ $\newline
+    We define the following predicate
+    \[
+    P(n): `` n \text{ has a prime factorization  }  "\text{, where } n \in 
+    \]
+    note, formally this means
+    \[
+    n = \prod_{i=1}^{n} q_{i}  
+    \]
+    where $q_{k} \in \mathbb{N} \text{ and } $ is prime .
+    \begin{itemize}
+        \item \textbf{Base Case:}\\
+            We show that $P(2)$ holds, we know that $2$ is a prime number , therefore it is itself a product of primes, as required.
+            
+        \item \textbf{Induction Step:}\\
+            Let $k \in \mathbb{N} \text{ such that } k\ge 2$ and assume that $\forall j \in \mathbb{N} , 2 \le j \le k, P\left(j\right) $ holds, that is $j$ has a prime factorization.
+            We'll show that $P(k + 1)$ holds, so we must show that $j$ has  a prime factorization.
+            \begin{itemize}
+                \item \textbf{Case 1}: $j$ is prime, then we are done as it is already a product of primes.
+                \item \textbf{Case 2}: $j$ is composite, that is there exists an $a, b \in \mathbb{N} \text{ such that }, j= ab $ also $  a, b \neq 1 \land a, b \neq j $, we know that $a \text{ and } b$ cannot exceed j, or else $ab > j$ a contradiction same goes for $b$. Therefore $1 < a,b < j$ so by our Induction Hypothesis , they have a prime factorization. And thus we take the product of these two product of primes and $j$ is then a product of primes.
+            \end{itemize}
+    \end{itemize}
+    Thus by the principle of complete induction we have proven the original statement.
+\end{proof}
+
+\begin{note}
+observe in the above proof that an intricate part of the proof was to show that $a, b$ where in fact in the correct range of the Induction Hypothesis, this is very important.
+\end{note}
+
+% section simple_induction_downfall (end)
+
+\section{Common Problems in Complete Induction}%
+\label{sec:common_problems_in_complete_induction}
+% section common_problems_in_complete_induction
+
+We will prove 
+\[
+\forall n \in \mathbb{N} , n\ge 1, a_{n} = 2f_{n}  - 1
+\]
+Where 
+\[
+    f_{n}  = 
+    \begin{cases}
+        1, \text{ if } n= 1\\
+        1, \text{ if } n= 2\\
+        \text{ otherwise  }, f_{n - 1}  + f_{n  - 2} 
+    \end{cases}
+\]
+\[
+a_{n} = 
+\begin{cases}
+    1, \text{ if } n = 1\\
+    2, \text{ if } n= 2 \\
+    \text{ otherwise  } a_{n  - 1}  + a_{n - 2}  + 1
+
+\end{cases}
+\]
+
+\begin{proof}
+    $ $\newline
+    We define the following predicate
+    \[
+    P(n): `` a_{n} = 2f_{n}  - 1 "\text{, where } n \in \mathbb{N} 
+    \]
+    \begin{itemize}
+        \item \textbf{Base Case:}\\
+            We show that $P(1)$ holds, we know 
+            \[
+                a_{1} = 2f_{1} -1 \Leftrightarrow 1= 2 - 1
+            \]
+            therefore $P\left(1\right) $ holds 
+        \item \textbf{Induction Step:}\\
+            Let $k \in \mathbb{N}, k \ge 1$ and assume that $\forall j \in \mathbb{N} , 1 \le  j \le k, P\left(j\right)$ holds, that is 
+            \[
+                a_{j} = 2f_{j}  - 1
+            \]
+            We'll show that $P(k + 1)$ holds, so we must show that 
+            \[
+            a_{k + 1} = 2f_{k + 1}  - 1
+            \]
+            \begin{itemize}
+                \item \textbf{Case 1}: $k + 1 \ge 3$,  if so we have
+                    \begin{align*}
+                        a_{k + 1} &= a_{k}  + a_{k - 1}  + 1  \tag{$\alpha$ }\\ 
+                        &= 2f_{k}  - 1 + \left( 2f_{k - 1}  - 1 \right)  + 1\\
+                        &= 2f_{k}  + 2f_{k - 1}  - 1  \\ 
+                        &= 2\left( f_{k}  + f_{k - 1}  \right)  - 1 \\
+                        &= 2f_{k + 1} -1 
+                    \end{align*}
+                \item \textbf{Case 2}: $k + 1 \le 2 \Leftrightarrow k = 1$
+                    \begin{align*}
+                        a_{2} = 2f_{2}  - 1 \Leftrightarrow 1= 1
+                    \end{align*}
+            \end{itemize}
+            We know 
+    \end{itemize}
+    Thus by the principle of complete induction we have proven the original statement.
+\end{proof}
+
+The above proof may have seemed, fine, though there is a problem. $k \ge 1$ so $k - 1 \ge 0$, though we we only have information about $P\left(j\right) , \text{ for } j \in \left\{ 1, \ldots , k \right\} $ . 
+
+
+% section common_problems_in_complete_induction (end)
+
+% chapter lecture_2 (end)
 
 \chapter{Preliminaries}%
 \label{chp:preliminaries}
