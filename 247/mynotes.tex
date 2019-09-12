@@ -324,6 +324,104 @@ If there is a 30\% chance it will rain tommorow, we can conclude that there is a
 
 % subsection probability_proof (end)
 
+\section{Inculsion/Exclusion Principle}%
+\label{sec:inculsion_exclusion_principle}
+% section inculsion_exclusion_principle
+
+We will prove 
+\[
+P\left(A\cup B\right) = P\left(A\right)  + P\left(B\right)  - P\left(A \cap B\right) 
+\]
+intuitively, this makes sense as we must subtract what we have double counted.
+
+\begin{center}
+    \noindent\rule{8cm}{0.4pt}
+\end{center}
+
+
+Before we continue we will prove a lemma, that is
+\[
+    P\left(B \cup A^{c} \right) = P\left(B\right)  - P\left(B \cap A\right) 
+\]
+\begin{center}
+    \includegraphics[width=100mm]{assets/p1.jpg} 
+\end{center}
+
+Before we continue with the proof, observe the following from above, 
+\[
+    P\left(\left( B \cup A^{c}  \right) \cup \left( P \cap A \right) \right) = P\left(B\right) 
+\]
+
+Though note, that $\left( B \cup A^{c}  \right)\text{ and }  \left( B \cap A \right) $ are disjoint, not proof but visually we can observe it. By axiom 3, we know 
+\[
+    P\left(B\right) = P\left(\left( B\cup A^{c}  \right) \right)  + P\left(B\cap A\right) \Leftrightarrow P\left(B\cup A^{c} \right) = P\left(B\right)  - P\left(B\cap A\right) 
+\]
+
+We will now continue to the main proof 
+\begin{proof}
+$ $\newline
+Observe $A\cup B= A \cup \left( B\cap A^{c}  \right) $ 
+\begin{center}
+    \includegraphics[width=100mm]{assets/ch1_mp.jpg} 
+\end{center}
+Therefore we know that $A \text{ and } A^{c} \cap B$ are disjoint, it follows that 
+\begin{align*}
+    P\left(A\cup B\right) &= P\left(A\cup \left( B\cap A^{c}  \right) \right)   \\ 
+    &= P\left(A\right)  + P\left(A\cap A^{c} \right) \tag{By axiom 3}  \\ 
+    &= P\left(A\right)  + P\left(B\right)  - P\left(A\cap B\right) \tag{By our lemma}
+\end{align*}
+\end{proof}
+
+\subsection{Triple Example}%
+\label{sub:triple_example}
+% subsection triple_example
+
+\begin{center}
+    \includegraphics[width=100mm]{assets/lec1_triple.jpg} 
+\end{center}
+
+In this example we want to find $P\left(A\cup B\cup C\right) $,  observe  if we find $P\left(A\right)  + P\left(B\right)  + P\left(C\right) $ then clearly we have over counted, but by how much? Let's find out,
+\begin{itemize}
+    \item From the dots and circles we can see that $A\cup B$ has been double couned.
+    \item From the squares and circles, $B\cup C$ has been double counted
+    \item From the dots and squares we see that $A\cup C$ has been double counted
+    \item Therefore we must subtract both circles from $A\cup B$, both squares from $B\cup C$ and both dots from $C\cup A$ 
+\end{itemize}
+
+\begin{center}
+    \includegraphics[width=100mm]{assets/lec1_triple_2.jpg} 
+\end{center}
+
+After doing so, we see that we have removed all counts of $A\cup B\cup C$ therefore we must add it back, giving us the formula 
+\[
+P\left(A\cup B\cup C\right) = P\left(A\right)  + P\left(B\right)  + P\left(B\right) - P\left(A\cup B\right)  - P\left(B\cup C\right)  - P\left(C\cup A\right)  + P\left(A\cup B\cup C\right) 
+\]
+
+\newpage
+
+Then for $n$ events we get 
+\begin{defn}[Inclusion Exclusion Principle]\index{Inclusion Exclusion Principle}\label{defn:inclusion_exclusion_principle}
+    \begin{align*}
+        P\left(\bigcup_{i=1}^{n} A_{i} \right) &= \sum_{i=0}^{n} P\left(A_{i} \right)  \\
+        &- \sum_{1\le i<j \le n}^{n} P\left(A_{i} \cap A_{j} \right)     \\ 
+        &+    \sum_{1\le i < j< k \le n} P\left(A_{i} \cup A_{j} \cap A_{k} \right)  \\ 
+        &\vdots    \\ 
+        &+ \left( -1 \right) ^{n - 1} P\left(\bigcup_{i=1}^{n} A_{i} \right)   
+    \end{align*}
+\end{defn}
+
+The left hand side is the probability of the union of $n$ events
+
+\begin{itemize}
+    \item On the first line of the right hand side we count the probability of being in each set invidually and add it up, though if the sets $A_{i} $ are not disjoint, the some elements have been counted more than once.
+    \item therefore on the second line we must subtract anything that was double counted, that is some of the $P\left(A_{i} \cap A_{j} \right) $ may be 0, though if not then we are in fact removing double counts. Since $A_{j} \cap A_{i} = A_{i} \cap A_{j} $ , to avoid duplications we decide to consider only pairs $(A_{i} , A_{j} )$ with $i < j$.
+    \item On the previous line we also may have double subtracted though, consider an event who is in $A_{i} \cup A_{j} \cup A_{k} $ it would have been counted for in $A_{i} \cup A_{j} $ in $A_{i} \cup A_{k} $ and $A_{j}\cup  A_{k} $  therefore we add back any elements that had been subtracted more than once
+    \item The process contines until the end.
+\end{itemize}
+% subsection triple_example (end)
+
+% section inculsion_exclusion_principle (end)
+
 % section intro_to_probability (end)
 
 % chapter lecture_1 (end)
