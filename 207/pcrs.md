@@ -443,6 +443,37 @@ while (A[i++] < 7);
       return (curr == null)? null : curr.value;
 ```
 
+## Classes
+### Variables defined at teh class level
+* When we define variables outside of any method, they come in two types
+  * Instance varaibles: Evern instance of the class contins their own instance of each of these variables. And are generated when the instance is constructed `new X()`
+  * Class Variables: Every instance of the class shares a single instance of each class variable, this is useful if we want the instances to acculmulated a value together. For example if we had a class `Monster` with a class varaible called `population` this should be a class variable since we want the sum of each moster stored in one location, not the literal value `1` stored in each population associated with an instance of a new monster.
+  * We indicated a variable to be a class variable by using `static` when we declare it, through unlike the english definition of static: these values can change.
+```java
+ // The number of Monsters created so far.
+    private static int population = 0;
+
+    // === Instance Variables ===
+
+    // The size of this Monster.
+    private int size;
+    // The name of this Monster.
+    private String name;
+    // The contents of this Monster's belly.
+    private Monster[] belly;
+    // The number of items in this Monster's belly.
+    private int fullness;
+```
+
+## Representation Invariants
+* Any type of constraints between the values of the instance variables, and relationships between them. Methods must make sure of the following
+  * At the start of themethod body, we assume that the constraints hold, as to help us accomplish whtat the method is to do
+  * By the end of the method body, we ensuer that the constraints are in fact still true. This guides us with the development of the method body, and tells us a part of what we must accomplish
+  * An example: Say we have an "eat" method, though our RI's state that the belly array is already sorted based on monster size, our eat method havs to make sure that the belly array is sorted by the end of the method, though we assume that the array was sorted at the beghinning therefore we only have to insert the new item into the right spot in the sorted array.
+
+## Constructor
+* Has the same name as the class, with no return type. It is called automatically when an insatnce of the class is created, when "new" is used.
+* We can in fact have multiple constructors so long as their signatures are different. This is useful if we want to be able to provide different sorts or amounts of information on intiialization, for example, we could initialize a `Monster` with , name size and bellyCapacity, or we could not provide any information, in which case the defaults will be used. Java figures this out by the number and type of arguments we provide.
 
 # Quest 2
 
