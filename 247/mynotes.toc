@@ -1,0 +1,23 @@
+\contentsline {chapter}{\numberline {1}Lecture 1}{9}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Stats vs Probability}{9}{section.1.1}% 
+\contentsline {section}{\numberline {1.2}To do Well}{9}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}Useful Terminology}{10}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}Event Laws}{12}{section.1.4}% 
+\contentsline {section}{\numberline {1.5}Mutually Exclusive}{12}{section.1.5}% 
+\contentsline {section}{\numberline {1.6}Independence}{12}{section.1.6}% 
+\contentsline {paragraph}{Example}{12}{section*.4}% 
+\contentsline {paragraph}{Example}{13}{section*.6}% 
+\contentsline {section}{\numberline {1.7}DeMorgan's Laws}{13}{section.1.7}% 
+\contentsline {section}{\numberline {1.8}Sample Space Examples}{15}{section.1.8}% 
+\contentsline {section}{\numberline {1.9}Event Examples}{15}{section.1.9}% 
+\contentsline {section}{\numberline {1.10}Exclusive \& independence Examples}{16}{section.1.10}% 
+\contentsline {section}{\numberline {1.11}Intro to Probability}{16}{section.1.11}% 
+\contentsline {subsection}{\numberline {1.11.1}Axioms of Probability}{16}{subsection.1.11.1}% 
+\contentsline {subsection}{\numberline {1.11.2}probability proof}{17}{subsection.1.11.2}% 
+\contentsline {paragraph}{Example}{17}{section*.7}% 
+\contentsline {section}{\numberline {1.12}Inculsion/Exclusion Principle}{17}{section.1.12}% 
+\contentsline {subsection}{\numberline {1.12.1}Triple Example}{19}{subsection.1.12.1}% 
+\contentsline {subsection}{\numberline {1.12.2}Inclusion Exclusion Examples}{21}{subsection.1.12.2}% 
+\contentsline {paragraph}{Watched Both movies}{22}{section*.12}% 
+\contentsline {paragraph}{Watched only one of the two movies}{22}{section*.13}% 
+\contentsline {paragraph}{Did not watch Bandersnatch}{23}{section*.14}% 

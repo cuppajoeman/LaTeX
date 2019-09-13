@@ -420,6 +420,55 @@ The left hand side is the probability of the union of $n$ events
 \end{itemize}
 % subsection triple_example (end)
 
+\subsection{Inclusion Exclusion Examples}%
+\label{sub:inclusion_exclusion_examples}
+% subsection inclusion_exclusion_examples
+
+In our class of 200, suppose 87 students had seen Bandersnatch and 45
+students had seen Bird Box, while 78 students had watched neither of
+these two films. Determine the number of students who...
+
+\paragraph{Watched Both movies} 
+\begin{itemize}
+    \item Let $A$ be the event of watching Bandersnatch, and $B$ the event of watching Bird Box we want to find the number of people, we need $n\left(A\cap B\right) $ though recall we don't have a formula for that, though we do have one for $n\left(A\cup B\right) $, that is 
+        \[
+        n\left(A\cup B\right) = n\left(A\right)  + n\left(B\right)  - n\left(A\cap B\right) \Leftrightarrow n\left(A\cap B\right) = n\left(A\right)  + n\left(B\right)  - n\left(A\cup B\right) 
+        \]
+        We also note that 
+        \[
+            n\left(A\cup B\right) = 200  - n\left(\left( A\cup B \right) ^{c} \right) = 200  - 78 = 122
+        \]
+        
+        thus we can continue we have 
+        \begin{align*}
+            n\left(A\cap B\right) &= n\left(A\right)  + n\left(B\right)  - n\left(A\cup B\right) \\
+            &= 87 + 45 - 122  \\ 
+            &= 132 - 122  \\ 
+            &= 10 
+        \end{align*}
+\end{itemize}
+
+\paragraph{Watched only one of the two movies} 
+
+We want to find the two lunes of $A$ and $B$  on the Venn Diagram, like so
+\begin{center}
+    \includegraphics[width=100mm]{assets/lec1_lune.jpg} 
+\end{center}
+
+We can write this as $n\left(\left( A^{c} \cap B \right) \cup \left( A\cup B^{c}  \right) \right) $ we observe that they are disjoint therefore we have $n\left(\left( A^{c} \cap B \right) \cup \left( A\cup B^{c}  \right) \right) = n\left(A^{c} \cap B\right)  + n\left(A \cap B^{c} \right) $ 
+\begin{itemize}
+    \item Note that $n\left(A^{c} \cap B\right) = n\left(B\right)  - n\left(A\cap B\right) $ and $n\left(A\cup B^{c} \right) = n\left(A\right)  - n\left(A\cap B\right) $, so we continue with the calculation to get
+        \begin{align*}
+            n\left(A^{c} \cup B\right)  + n\left(A\cup B^{c} \right) &= n\left(B\right)  - n\left(A\cap B\right)  + n\left(A\right)  - n\left(A\cap B\right)   \\ 
+            &= 45  - 10  + 87  - 10  \\ 
+            &= 112  \\ 
+        \end{align*}
+\end{itemize}
+
+\paragraph{Did not watch Bandersnatch} 
+
+% subsection inclusion_exclusion_examples (end)
+
 % section inculsion_exclusion_principle (end)
 
 % section intro_to_probability (end)
