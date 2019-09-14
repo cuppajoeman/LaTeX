@@ -319,10 +319,84 @@ Let $a = \left( a_{1} , a_{2} , \dotsc  , a_{n - 1} , a_{n}  \right) $, $b = \le
     Note $\chi \in \mathbb{R} $ 
 \end{defn}
 
+\begin{defn}[Dot Product (Geometric)]\index{Dot Product (Geometric)}\label{defn:dot_product_geometric_}
+    \[
+    a \cdot b= \left\Vert a \right\Vert \left\Vert b \right\Vert \cos  \left( \theta \right) 
+    \]
+    where $\theta$ is the angle between $a \text{ and } b$ 
+\end{defn}
+
+
+\paragraph{Properties of the Dot Product} 
 \begin{itemize}
     \item $\left( \lambda a \right)  \cdot b= \lambda \left( a  \cdot b \right) $ 
     \item $\left( a + b \right)  \cdot c= a \cdot c + b \cdot c$ 
     \item $a\neq \vec{0} \implies a \cdot a > 0$ also $a \cdot a = 0 \implies a = \vec{0} $ additionally $\vec{0}  \cdot a = 0$ 
+\end{itemize}
+
+Observe from the following image that
+\begin{center}
+    \includegraphics[width=100mm]{assets/lec1_orth.png} 
+\end{center}
+\[
+\left\Vert u \right\Vert = \cos  \left( \theta \right) \left\Vert a \right\Vert 
+\]
+by trigonometry and so if we want to find what $\vec{u} $ is then we know it's in the direction of $\vec{b} $ so we scale $\vec{b} $ to be a unit vector and then multiply by $\left\Vert u \right\Vert $ that gives
+\[
+\vec{u} = \left\Vert a \right\Vert \cos  \left( \theta \right) \frac{\vec{b} }{\left\Vert b \right\Vert }
+\]
+
+Then the projection of $\vec{a} $ on $\mathit{span} {\vec{b} } $ follows, observe 
+\[
+    \vec{u} = \left\Vert a \right\Vert \cos  \left( \theta \right) \frac{\vec{b} }{\left\Vert b \right\Vert } \left( \frac{\left\Vert b \right\Vert }{\left\Vert b \right\Vert } \right) = \left\Vert a \right\Vert \left\Vert b \right\Vert \cos  \left( \theta \right) \frac{\vec{b} }{\left\Vert b \right\Vert ^2 }= \frac{a \cdot b}{\left\Vert b \right\Vert ^2 }\vec{b} 
+\]
+
+\begin{defn}[Orthogonal Projection]\index{Orthogonal Projection}\label{defn:orthogonal_projection}
+    For two vectors $\vec{a} , \vec{b} $ the orthogonal projection is given by
+    \[
+    \frac{a \cdot b}{\left\Vert b \right\Vert ^2 }\vec{b} 
+    \]
+\end{defn}
+
+\subsection{Law of Cosines}%
+\label{sub:law_of_cosines}
+% subsection law_of_cosines
+
+\begin{center}
+    \includegraphics[width=100mm]{assets/lec1_loc.png} 
+\end{center}
+
+We have
+\[
+    \left\Vert a - b \right\Vert ^2 = \left( a - b \right)  \cdot \left( a - b \right) = \left\Vert a \right\Vert ^2  + \left\Vert b \right\Vert ^2  - 2\left( a  \cdot b \right) 
+\]
+which matches the geometric intuition 
+
+\paragraph{Homework} 
+
+\begin{center}
+    \includegraphics[width=100mm]{assets/lec1_hw.jpg} 
+\end{center}
+
+Let $\vec{x} = \vec{AB} \text{ and } \vec{y} = \vec{AC} $, 
+\begin{itemize}
+    \item Algebraically we have $\vec{x}  \cdot \vec{y} = \left( \frac{3}{2} \right) ^2  + \left( \frac{\sqrt{3} }{2} \right) \left( \frac{ - \sqrt{3} }{2} \right) = \frac{9}{4} - \frac{3}{4}= \frac{6}{4}= \frac{3}{2}$ 
+    \item Geometrically, we have $\left\Vert x \right\Vert  \left\Vert y \right\Vert \cos  \left( \theta \right) $,  note $\left\Vert x \right\Vert = \left\Vert y \right\Vert $ and that $\left\Vert x \right\Vert = \sqrt{3} $ so then we have $3\cos  \left( \theta \right) = \frac{3}{2} \Leftrightarrow \cos  \left( \theta \right) = \frac{1}{2}$ so that is if $\theta = \frac{\pi }{6}$ by symetry, we know the other two angles are $\frac{5\pi }{12}$ 
+\end{itemize}
+
+% subsection law_of_cosines (end)
+
+
+\newpage
+
+\begin{defn}[Orthogonality]\index{Orthogonality}\label{defn:orthogonality}
+    two vectors $a,b$ are orthogonal if and only if $a \cdot b= 0$ 
+\end{defn}
+\begin{itemize}
+    \item Observe that if we have $\left\Vert u \right\Vert = 1$ then $u$ is a unit vector, and $v$ be any vector, then $\left( u \cdot v \right) u$ is the projection of $v$ onto the line defined by $u$. Since $\left( u \cdot v \right) $ is $\left\Vert u \right\Vert \left\Vert v \right\Vert \cos  \left( \theta \right) $, where $\theta $ is the angle between the two vectors, and that $\left\Vert u \right\Vert = 1$ then $\left( u \cdot v \right) $ is the length of the adjacent side, then multiply a the unit vector which gives the projection.  
+    \item If we have $v = v_1 + v_2$ where $v_1$ is parrallel to $u$ and $v_2$ is orthogonal to $u$ then $\left( u \cdot v \right) u$ gives us the projection onto $\vec{u} $ which is just $v_{1} $
+        \item $u \cdot v$ is the length of the projection of $v$ onto $u$ which is the same as $v_1 \cdot u$, but recall that $v_1$ and $u$ are paralell, therefore the angle between them is either $0$ or $\pi $,  therefore we have $\left\Vert u \right\Vert \left\Vert v \right\Vert \cos \left( \theta \right) = \pm \left\Vert u \right\Vert \left\Vert v_1 \right\Vert $   
+        \item Finally, we form a right triangle with hypotenuse given by $v$ with a base which lies along $u$, then the base is given by $\left( u \cdot v \right) u$ using the same reasoning as in our first observation.
 \end{itemize}
 
 \begin{defn}[Norm]\index{Norm}\label{defn:norm}
@@ -437,15 +511,6 @@ Prove the following.
 
 % subsection important_properties_of_the_norm (end)
 
-\begin{defn}[Orthogonality]\index{Orthogonality}\label{defn:orthogonality}
-    two vectors $a,b$ are orthogonal if and only if $a \cdot b= 0$ 
-\end{defn}
-\begin{itemize}
-    \item Observe that if we have $\left\Vert u \right\Vert = 1$ then $u$ is a unit vector, and $v$ be any vector, then $\left( u \cdot v \right) u$ is the projection of $v$ onto the line defined by $u$. Since $\left( u \cdot v \right) $ is $\left\Vert u \right\Vert \left\Vert v \right\Vert \cos  \left( \theta \right) $, where $\theta $ is the angle between the two vectors, and that $\left\Vert u \right\Vert = 1$ then $\left( u \cdot v \right) $ is the length of the adjacent side, then multiply a the unit vector which gives the projection.  
-    \item If we have $v = v_1 + v_2$ where $v_1$ is parrallel to $u$ and $v_2$ is orthogonal to $u$ then $\left( u \cdot v \right) u$ gives us the projection onto $\vec{u} $ which is just $v_{1} $
-        \item $u \cdot v$ is the length of the projection of $v$ onto $u$ which is the same as $v_1 \cdot u$, but recall that $v_1$ and $u$ are paralell, therefore the angle between them is either $0$ or $\pi $,  therefore we have $\left\Vert u \right\Vert \left\Vert v \right\Vert \cos \left( \theta \right) = \pm \left\Vert u \right\Vert \left\Vert v_1 \right\Vert $   
-        \item Finally, we form a right triangle with hypotenuse given by $v$ with a base which lies along $u$, then the base is given by $\left( u \cdot v \right) u$ using the same reasoning as in our first observation.
-\end{itemize}
 
 \begin{defn}[Subspace]\index{Subspace}\label{defn:subspace}
     a subspace of euclidiean space $\mathbb{R} ^{n} $ is a set $V$ such that, if $a, b \in V$ then $c_1a + c_2b \in V$ for all $c_1, c_2\in  \mathbb{R} $. Observe, that $\vec{0} \in V$ always. 
@@ -480,6 +545,11 @@ We can verify that the definitions are the same algebraically, that $a  \cdot \l
 $\left\Vert a\times b \right\Vert ^2 = \left\Vert a \right\Vert ^2 \left\Vert b \right\Vert ^2  - \left( a \cdot b \right) ^2 $, computations follow 
 The determinant of $[a, b, a\times b]$ turns out to be the sum of squares...
 
+To recall the definition for the cross product we can use the following diagram
+\begin{center}
+    \includegraphics[width=100mm]{assets/lec1_cp.png} 
+\end{center}
+
 \subsection{Properties of the Cross Product}%
 \label{sub:properties_of_the_cross_product}
 % subsection properties_of_the_cross_product
@@ -488,8 +558,38 @@ The determinant of $[a, b, a\times b]$ turns out to be the sum of squares...
     \item $a\times b =  - \left( b\times a \right) $
     \item $\left( cx + dy \right)\times z = \left( cx \times z \right)  + \left( dy\times z \right)  $ where $c, d \in \mathbb{R} $ 
     \item $\left\Vert a\times b \right\Vert = \left\Vert a \right\Vert \left\Vert b \right\Vert \sin  \left( \theta \right) $ that is the length of $a\times b$ is equal to the area of the parallelogram generated by $a \text{ and } b$  
-        \item The cross product is not associative, \todo{Help coming up with examples} 
+        \item The cross product is not associative, observe 
+            \[
+                \left( i\times i \right) \times j = 0 
+            \]
+            But 
+            \[
+                i \times \left( i\times j \right) =  - j
+            \]
+            
 \end{itemize}
+
+\paragraph{From Lecture} 
+\begin{enumerate}
+    \item $b\times a =  - \left( a\times b \right) $ 
+    \item $\left( \lambda a + b \right) \times c = \lambda \left( a\times b \right)  + b\times c$ 
+    \item $a\times a = 0$ 
+    \item $\left\Vert a\times b \right\Vert^2  + \left( a \cdot b \right) ^2 = \left\Vert a \right\Vert ^2 \left\Vert b \right\Vert ^2 $ 
+    \item $\left\Vert a\times b \right\Vert = \left\Vert a \right\Vert \left\Vert b \right\Vert \left| \sin  \left( \theta \right)  \right| $ 
+    \item $a \cdot \left( a\times b \right) = 0 \text{ and } b \cdot \left( a\times b \right) = 0$ 
+    \item $i\times j= k, j\times k= i, k\times i= j$ 
+    \item $a\times \left( b\times c \right) = \left( a \cdot b \right) b - \left( a \cdot b \right) c$ also $\left( a\times b \right) \times c = \left( a \cdot c \right) b  -  \left( b - c \right) a$ 
+    \item $a\times \left( b\times c \right)  + b\times \left( c\times a \right)  + c \times \left( a\times b \right) = 0$ 
+    \item $\left( a\times b \right)  \cdot c = \mathit{det} \left(
+            \begin{bmatrix}
+            	a_{1}  &b_{1}   & c_{1}  \\
+            	a_{2}  &b_{2}   & c_{2}  \\
+            	a_{3}  &b_{3}   & c_{3}  
+            \end{bmatrix}
+        \right) $ 
+\end{enumerate}
+
+\todo{Add rest of lecture here} 
 
 % subsection properties_of_the_cross_product (end)
 
@@ -581,7 +681,6 @@ And also the level set
     \left\{ \left( x_{1} ,  x_{2} ,  dotsc ,  x_{n - 1} ,  x_{n}  \right) \in \mathbb{R} ^{n} : f\left(x_{1} , x_{2} , \dotsc  , x_{n - 1} , x_{n} \right) = c \right\} 
 \]
 Though it's impossible to imagine these for $n\ge 4$. 
-
 
 
 % subsection 4_or_more (end)
