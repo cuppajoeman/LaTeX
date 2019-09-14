@@ -327,6 +327,7 @@ We will prove that the prime factorization of any natural number greater than 1 
 
 \begin{proof}
 $ $\newline
+We commence
 \begin{itemize}
     \item Suppose there are some numbers with two distinct factorizations into primes.
     \item Let $\mathcal{X} $ be the set of these numbers, observe that $\mathcal{X} \subseteq \mathbb{N} $ thus by the Well Ordering Principle we let $n$ be the smallest such number in $\mathcal{X} $, we have 
@@ -343,7 +344,7 @@ $ $\newline
         \begin{itemize}
             \item We note $n = q_1 q_2 \dotsb q_{l - 1} q_{l} > p_1 q_2 \dotsb q_{l - 1} q_{l}$ 
             \item $p_1 q_2 \dotsb q_{l - 1} q_{l} < n \Leftrightarrow 0 < n - p_1 q_2 \dotsb q_{l - 1} q_{l}$ 
-            \item Note that $p_{i} , q_{j} \in \mathbb{N} $ so the product of any of them is also an element of the naturals, and then also $n - p_1 q_2 \dotsb q_{l - 1} q_{l} \in \mathbb{N}$.  \todo{This part} 
+            \item Note that $p_{i} , q_{j} \in \mathbb{N} $ so the product of any of them is also an element of the naturals, and then also $n - p_1 q_2 \dotsb q_{l - 1} q_{l} \in \mathbb{N}$.
         \end{itemize}
     \item Note that $m < n \implies m$ has a unique factorization into primes \todo{Why?}, we know
         \begin{itemize}
@@ -363,6 +364,80 @@ $ $\newline
         \end{itemize}
 \end{itemize}
 \end{proof}
+
+\paragraph{Techniques Used in this proof} 
+\begin{itemize}
+    \item Here
+\end{itemize}
+
+\begin{defn}[Composite]\index{Composite}\label{defn:composite}
+    A natural number $c$ is called composite if
+    \begin{align*}
+        c \neq 1 && c \text{ is not prime } 
+    \end{align*}
+\end{defn}
+
+Q: Can we find 20 consecutive composite numbers?
+
+Yes, consider 
+\[
+21! + 2, 21!  + 3, \ldots , 21!  + 21
+\]
+Observe 2 divides the first number, 3, divides the next on until 21, giving us 20 composites
+
+Q: Can we find $k$ consecutive composite numbers?
+
+Yes, using hte same method we have 
+\[
+    \left( k + 1 \right)!  + 2, \left( k + 1 \right) !  + 3, \ldots , \left( k + 1 \right) !  + k + 1
+\]
+thus we conclude there are arbitrary long stretches of composite numbers.
+
+\section{Modular Arithmetic}%
+\label{sec:modular_arithmetic}
+% section modular_arithmetic
+
+For some intuition, consider military time, if somone tells us it's 15 o clock we know that this is equivalent to 3 o clock, and this will help us represent this type of situation
+
+First we define the integers that is 
+\[
+\mathbb{Z} = \left\{ 0, \pm 1, \pm 2, \ldots  \right\} 
+\]
+
+\begin{defn}[Congruence]\index{Congruence}\label{defn:congruence}
+    Let $a, b \in \mathbb{Z} $,  $m \in \mathbb{N} $.  if 
+    \[
+        m \mid \left( a - b \right) 
+    \]
+    then we say $a$ is \underline{congruent} to $b$ and we write
+    \[
+    a \equiv b \Mod{m}
+    \]
+\end{defn}
+
+\paragraph{Example} 
+\begin{itemize}
+    \item Let $m = 12$ (the hours on the clock)
+        \begin{itemize}
+            \item it follows that $13 \equiv 1 \Mod{12} $ since $12 \mid \left( 13  - 1 \right) $ 
+            \item $14 \equiv 2 \Mod{12} $ and $23 \equiv -1 \Mod{12} $ 
+            \item So this shows us in the world of the clock some numbers are the ``same"
+        \end{itemize}
+    \item $m = 2$ 
+        \begin{itemize}
+            \item We observe 
+                \begin{itemize}
+                    \item $0 \equiv 0 \Mod{2} \Leftrightarrow 2 \mid \left( 0  - 0 \right) $ which is true since we take $c = 0$ in the definition of divisibility.
+                    \item $1 \equiv 1 \Mod{2} $ 
+                    \item $2 \equiv 0 \Mod{2} $ 
+                    \item $3 \equiv 1 \Mod{2} $ 
+                    \item $4 \equiv 0 \Mod{2} $ 
+                    \item $5 \equiv 1 \Mod{2} $ 
+                \end{itemize}
+        \end{itemize}
+\end{itemize}
+
+% section modular_arithmetic (end)
 
 % chapter lecture_4 (end)
 

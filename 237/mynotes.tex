@@ -261,6 +261,10 @@ For multiple cartesian products we have
 
 % subsection final_four (end)
 
+\chapter{Lecture 2}%
+\label{chp:lecture_2}
+% chapter lecture_2
+
 \section{Geometry in Higher Dimensions}%
 \label{sec:geometry_in_higher_dimensions}
 % section geometry_in_higher_dimensions
@@ -595,6 +599,15 @@ To recall the definition for the cross product we can use the following diagram
 
 % section geometry_in_higher_dimensions (end)
 
+% chapter lecture_2 (end)
+
+\chapter{Lecture 3}%
+\label{chp:lecture_3}
+% chapter lecture_3
+
+
+% chapter lecture_3 (end)
+
 \section{Visualizing Mult-Var}%
 \label{sec:visualizing_mult_var}
 % section visualizing_mult_var
@@ -629,8 +642,8 @@ Then the level curve of the same function
 
 Note that the values of $c$ are chosen to be evenly spaced, thefeore we can observe when the curves are closer together we can see that the function changes faster.
 
-\subsection{Level Curve Questions}%
-\label{sub:level_curve_questions}
+\subsection{Level Curve Questions - Online}%
+\label{sub:level_curve_questions_online}
 % subsection level_curve_questions
 We'll match the graph to the level curve.
 \begin{itemize}
@@ -640,6 +653,38 @@ We'll match the graph to the level curve.
     \item We see that the fourth graph is similar to the first, though it's sides are softer, so we conclude it matches to the first graph
     \item The last grpah looks like a cone, since it has no corners, therefore if we slice through it we should obtain circles, so the correct contour plot is the third.
 \end{itemize}
+
+\newpage
+
+\subsection{Mountains and Valleys - Lecture}%
+\label{sub:mountains_and_valleys_lecture}
+% subsection mountains_and_valleys_lecture
+
+We note we are taking slices of of the mountains one at a time, and so just like slicing through a cone, if we observe concentric circles that decrease in radius it is most likely a mountain, if we can see that the elevation is increasing then it is for sure.
+
+\begin{center}
+    \includegraphics[width=100mm]{assets/lec2_mount.png} 
+\end{center}
+
+% subsection mountains_and_valleys_lecture (end)
+
+\subsection{Level Curve Harder}%
+\label{sub:level_curve_harder}
+% subsection level_curve_harder
+
+Find some level curves of $f\left(x,y\right) = y^2  - x^2 $ 
+\[
+    f\left(x,y\right) = y^2  - x^2 = \left( y + x \right) \left( y  - x \right) 
+\]
+
+We then make a change of variable so 
+\begin{align*}
+    u = y  - x && v= y + x
+\end{align*}
+\todo{Understand and complete this} 
+
+
+% subsection level_curve_harder (end)
 
 % subsection level_curve_questions (end)
 
@@ -687,6 +732,156 @@ Though it's impossible to imagine these for $n\ge 4$.
 
 % section visualizing_mult_var (end)
 
-% chapter lecture_1_review (end)
+\section{Topology}%
+\label{sec:topology}
+% section topology
+
+\begin{defn}[Open Ball]\index{Open Ball}\label{defn:open_ball}
+    Let $a \in R^{n} $, $r \in \mathbb{R} > 0$,  the open ball centered at $a$ with radius $r$ is
+    \[
+    B\left(a, r\right) \coloneqq \left\{ x\in \mathbb{R} ^{n} : \left\Vert a - x \right\Vert \le r \right\} 
+    \]
+\end{defn}
+
+\paragraph{Example} 
+\begin{itemize}
+    \item $B\left(\left( 1,2 \right) 1\right) \subseteq \mathbb{R} ^2 $ 
+    \begin{center}
+        \includegraphics[height=50mm]{assets/lec3_ball-ex.jpg} 
+    \end{center}
+    \item $B\left(2, 1\right) = \left( 1,3 \right)\subseteq \mathbb{R}  $ 
+        \begin{center}
+            \includegraphics[width=50mm]{assets/lec3_ball-1d.jpg} 
+        \end{center}
+    \item For these examples notice that there is no outer edge, like an onion with a thin layer peeled off.
+\end{itemize}
+
+\newpage
+
+\begin{defn}[Closed Ball]\index{Closed Ball}\label{defn:closed_ball}
+    The closed ball centered at $a$,  and radius $r$ is 
+    \[
+    \bar{B} \left(a, r\right) \coloneqq \left\{ x\in \mathbb{R} ^{n} : \left\Vert a - x \right\Vert \le r \right\} 
+    \]
+    Notice this differs from the open ball since it contains boundary points.
+\end{defn}
+
+\begin{defn}[Sphere]\index{Sphere}\label{defn:sphere}
+    The sphere with center $a$ and radius $r$ is 
+    \[
+    S\left(a, r\right) \coloneqq \left\{ x\in \mathbb{R} ^{n} : \left\Vert x - a \right\Vert = r \right\} 
+    \]
+    This is only the boundary points now.
+\end{defn}
+
+\begin{defn}[Bounded]\index{Bounded}\label{defn:bounded}
+    Let $S \subseteq \mathbb{R} ^{n} $, $S$ is bounded if there exists $r > 0$ such that $S  \subseteq B\left(\vec{0} , r\right) $ formally that is 
+    \[
+    \exists r > 0, \forall x \in S, \left\Vert x \right\Vert \le r
+    \]
+    It's contained within an open ball.
+    \begin{center}
+        \includegraphics[width=25mm]{assets/lec3-bounded.jpg} 
+    \end{center}
+\end{defn}
+
+\paragraph{Example} 
+We will prove $B\left(a, r\right) \subseteq \mathbb{R} ^{m} $ is bounded.
+
+Intuition, geometrically we have 
+\begin{center}
+    \includegraphics[width=50mm]{assets/lec3-bounded-prf.jpg} 
+\end{center}
+
+\paragraph{Rough Work}
+\begin{gather}
+    \left\Vert a \right\Vert  + r > \left\Vert x - a \right\Vert  + \left\Vert a \right\Vert \\
+    \intertext{From the triangle inequality}
+    \left\Vert x - a \right\Vert  + \left\Vert a \right\Vert \ge \left\Vert x \right\Vert = \left\Vert x \right\Vert 
+\end{gather}
+
+\begin{proof}
+$ $\newline
+    The set that bounds $B\left(a, r\right) $ is $B\left(a, r  + \left\Vert a \right\Vert \right) $ .Let $x \in B\left(\vec{0} , r\right) $ by definition we need to show that $\left\Vert x \right\Vert \le r + \left\Vert a \right\Vert $ we have 
+    \begin{align*}
+        \left\Vert x \right\Vert &= \left\Vert x  - a  + a \right\Vert \\
+        &\le \left\Vert x - a \right\Vert  + \left\Vert a \right\Vert    \\ 
+        &< r  + \left\Vert a \right\Vert    \\ 
+    \end{align*}
+\end{proof}
+
+\begin{defn}[Interior Point]\index{Interior Point}\label{defn:interior_point}
+    We say that $x \in \mathbb{R} ^{m} $ is an interior point of $S$ if 
+    \[
+    \exists \varepsilon  > 0, B\left(x, \varepsilon \right) \subseteq S
+    \]
+    This says that if you can have a ball around a point which is completely contained within $S$ then it is on the interior.
+\end{defn}
+
+\begin{defn}[Interior]\index{Interior}\label{defn:interior}
+    The interior of $S$ is 
+    \[
+        \mathring{S} \coloneqq \left\{ x\in \mathbb{R} ^{n} : \forall \varepsilon  > 0, B\left(x, \varepsilon \right) \subseteq S \right\} 
+    \]
+    that is the set of all points that are interior to $S$ 
+\end{defn}
+
+\newpage
+
+\begin{defn}[Closure Point]\index{Closure Point}\label{defn:closure_point}
+    we say that $x \in R^{n} $ is a closure point of $S$ if
+    \[
+    \forall \varepsilon  > 0, B\left(x, \varepsilon \right) \cap S \neq \emptyset  
+    \]
+    So points that lay on the boundary or are inside, must necessarily have this property
+\end{defn}
+
+\begin{defn}[Closure]\index{Closure}\label{defn:closure}
+    The closure of $S$ is
+    \[
+        \bar{S} \coloneqq \left\{ x \in \mathbb{R} ^{n} : \forall \varepsilon  > 0, B\left(x, \varepsilon \right) \cap S \neq \emptyset   \right\} 
+    \]
+    that is, the set of all closure points of $S$ 
+\end{defn}
+
+\begin{thm}[Connection between Closure and Interior]\index{Connection between Closure and Interior}\label{thm:connection_between_closure_and_interior}
+    For any $S$, we have 
+    \[
+        \mathring{S} \subseteq S \subseteq \bar{S} 
+    \]
+\end{thm}
+
+\begin{proof}
+$ $\newline
+    First we will prove $\mathring{S} \subseteq S$. 
+    \begin{itemize}
+        \item Let $x \in \mathring{S} $ by definition 
+            \[
+            \exists \varepsilon _{0}  > 0 \text{ such that } B\left(x, \varepsilon _{0} \right) \subseteq S 
+            \]
+            But note $x \in B\left(x, \varepsilon _{0} \right) \subseteq S$ therefore $x\in S$
+    \end{itemize}
+    We will prove $S \subseteq \bar{S} $ 
+    \begin{itemize}
+        \item let $x \in S$ we know for all $\varepsilon > 0$ that 
+            \[
+            x\in B\left(x, \varepsilon \right) \cap S
+            \]
+            so then the intersection of $B\left(x, \varepsilon \right) \cap S \neq 0 $ so $x \in \bar{S} $ 
+    \end{itemize}
+\end{proof}
+
+\newpage
+
+\begin{defn}[Boundary]\index{Boundary}\label{defn:boundary}
+    The boundary of $S$ is 
+    \[
+    \partial S \coloneqq \bar{S} \setminus \mathring{S} 
+    \]
+\end{defn}
+
+% section topology (end)
+
+% chapter view (end)
 
 \end{document}

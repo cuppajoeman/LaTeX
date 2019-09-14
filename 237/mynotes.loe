@@ -11,6 +11,7 @@
 \contentsline {defn}{\numberline {8}Definition\thmtformatoptarg {Onto}}{11}{defn.8}% 
 \contentsline {defn}{\numberline {9}Definition\thmtformatoptarg {Bijective}}{11}{defn.9}% 
 \contentsline {defn}{\numberline {10}Definition\thmtformatoptarg {Inverse}}{12}{defn.10}% 
+\addvspace {10\p@ }
 \contentsline {defn}{\numberline {11}Definition\thmtformatoptarg {$R^{n} $ }}{15}{defn.11}% 
 \contentsline {defn}{\numberline {12}Definition\thmtformatoptarg {Dot Product}}{16}{defn.12}% 
 \contentsline {defn}{\numberline {13}Definition\thmtformatoptarg {Dot Product (Geometric)}}{16}{defn.13}% 
@@ -19,4 +20,15 @@
 \contentsline {defn}{\numberline {16}Definition\thmtformatoptarg {Norm}}{19}{defn.16}% 
 \contentsline {defn}{\numberline {17}Definition\thmtformatoptarg {Subspace}}{22}{defn.17}% 
 \contentsline {defn}{\numberline {18}Definition\thmtformatoptarg {Cross Product}}{24}{defn.18}% 
-\contentsline {defn}{\numberline {19}Definition\thmtformatoptarg {Level Curve}}{25}{defn.19}% 
+\addvspace {10\p@ }
+\contentsline {defn}{\numberline {19}Definition\thmtformatoptarg {Level Curve}}{27}{defn.19}% 
+\contentsline {defn}{\numberline {20}Definition\thmtformatoptarg {Open Ball}}{31}{defn.20}% 
+\contentsline {defn}{\numberline {21}Definition\thmtformatoptarg {Closed Ball}}{32}{defn.21}% 
+\contentsline {defn}{\numberline {22}Definition\thmtformatoptarg {Sphere}}{32}{defn.22}% 
+\contentsline {defn}{\numberline {23}Definition\thmtformatoptarg {Bounded}}{32}{defn.23}% 
+\contentsline {defn}{\numberline {24}Definition\thmtformatoptarg {Interior Point}}{33}{defn.24}% 
+\contentsline {defn}{\numberline {25}Definition\thmtformatoptarg {Interior}}{33}{defn.25}% 
+\contentsline {defn}{\numberline {26}Definition\thmtformatoptarg {Closure Point}}{34}{defn.26}% 
+\contentsline {defn}{\numberline {27}Definition\thmtformatoptarg {Closure}}{34}{defn.27}% 
+\contentsline {thm}{\numberline {1}Theorem\thmtformatoptarg {Connection between Closure and Interior}}{34}{thm.1}% 
+\contentsline {defn}{\numberline {28}Definition\thmtformatoptarg {Boundary}}{35}{defn.28}% 
