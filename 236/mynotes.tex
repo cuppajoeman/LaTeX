@@ -1,4 +1,3 @@
-
 \documentclass[11pt]{book}
 
 \RequirePackage{silence}
@@ -307,8 +306,15 @@ a_{n} =
                 a_{1} = 2f_{1} -1 \Leftrightarrow 1= 2 - 1
             \]
             therefore $P\left(1\right) $ holds 
+            \begin{itemize}
+                \item \underline{Additional Base Case Required!} 
+                \item we show that $P\left(2\right) $ holds ,that is 
+                    \[
+                    1 = 2  - 1 \Leftrightarrow a_{2} = 2f_{2}  - 1
+                    \]
+            \end{itemize}
         \item \textbf{Induction Step:}\\
-            Let $k \in \mathbb{N}, k \ge 1$ and assume that $\forall j \in \mathbb{N} , 1 \le  j \le k, P\left(j\right)$ holds, that is 
+            Let $k \in \mathbb{N}, k \ge \cancelto{2}{1}$ and assume that $\forall j \in \mathbb{N} , 1 \le  j \le k, P\left(j\right)$ holds, that is 
             \[
                 a_{j} = 2f_{j}  - 1
             \]
@@ -335,10 +341,32 @@ a_{n} =
     Thus by the principle of complete induction we have proven the original statement.
 \end{proof}
 
-The above proof may have seemed, fine, though there is a problem. $k \ge 1$ so $k - 1 \ge 0$, though we we only have information about $P\left(j\right) , \text{ for } j \in \left\{ 1, \ldots , k \right\} $ . 
+The above proof may have seemed, fine, though there is a problem. $k \ge 1$ so $k - 1 \ge 0$, though we we only have information about $P\left(j\right) , \text{ for } j \in \left\{ 1, \ldots , k \right\} $. Therefore we necessarily require, $k - 1 \ge 1$ so that it is contained within the Induction Hypothesis bounds, that is true if and only if $k \ge 2$, so we add an additional Base Case to cover the gap we created.
 
+\subsection{Looking for Flaws in Strong Induction}%
+\label{sub:looking_for_flaws_in_strong_induction}
+% subsection looking_for_flaws_in_strong_induction
+
+When looking for flaws, whenever the Induction Hypothesis is used, you must verify that in fact is in the correct range. If we have a proof by induction and our Induction Hypothesis assumed over $0, \ldots k$ and in our algebra we have used the Induction Hypothesis on $k  - 1$,  then we know this will cause problems, so then we must say $k  - 1 \ge 0 \Leftrightarrow k \ge 1$ and thus we must fill in the extra base case, usually if the statement is false, then this is what causes a contradiction.
+
+% subsection looking_for_flaws_in_strong_induction (end)
 
 % section common_problems_in_complete_induction (end)
+
+\subsection{Induction on Different Sets}%
+\label{sub:induction_on_different_sets}
+% subsection induction_on_different_sets
+
+\begin{itemize}
+    \item We can induct on the set of even natural numbers, say we prove $P\left(0\right) $,  and also $P\left(k\right) \implies P\left(k + 2\right) $ then we get all even numbers.
+    \item $P\left(0\right) $ and we show the following 
+        \begin{align*}
+            P\left(k\right) \implies P\left(k + 1\right)  && P\left(k\right) \implies P\left(k - 1\right) 
+        \end{align*}
+    \item Recall that there is no smallest rational number, and that the sum of two rational numbers is also a rational number, therefore there is no smallest increment that we can induct on, so I believe we cannot induct over $\mathbb{Q} $ 
+\end{itemize}
+
+% subsection induction_on_different_sets (end)
 
 % chapter lecture_2 (end)
 
