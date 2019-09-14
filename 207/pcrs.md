@@ -473,9 +473,27 @@ while (A[i++] < 7);
 
 ## Constructor
 * Has the same name as the class, with no return type. It is called automatically when an insatnce of the class is created, when "new" is used.
-* We can in fact have multiple constructors so long as their signatures are different. This is useful if we want to be able to provide different sorts or amounts of information on intiialization, for example, we could initialize a `Monster` with , name size and bellyCapacity, or we could not provide any information, in which case the defaults will be used. Java figures this out by the number and type of arguments we provide.
+* We can in fact have multiple constructors so long as their signatures are different. This is useful if we want to be able to provide different sorts or amounts of information on intiialization, for example, we could initialize a `Monster` with , name size and bellyCapacity, or we could not provide any information, in which case the defaults will be used note how we do this below. Java figures this out by the number and type of arguments we provide.
+```java
+    public Monster(String name, int size, int bellyCapacity) {
 
-# Quest 2
+        this.size = size;
+        this.name = name;
+        this.belly = new Monster[bellyCapacity];
+        this.fullness = 0;
+        this.population += 1;
+    }
+    public Monster() {
+        this("Monster" + String.valueOf(population), 10, 3);
+    }
+```
+* No-contructor
+  * If we don't define any constructor at all, then one is supplied by the complier with no parameters and no body (no-arg  constructor), it is only there so the `new` statement compliles and runs. If you define a constructor, then the no-arg constructor is no longer supplied so then if that constructor contained at least one parameter, then the following wouldn't compile `Monster m4 = new Monster();`
+
+## Methods
+* A return type must be declared in front of the method name, note if it returns nothing then we write `void` as it's type.
+* Returning is identical to pyth, though in a void method we don't return anything, so it cannot have a return statement.
+* If we reach the end of a method without encountering a return statement then, unlike pyth, we don't return anything
 
 ## Overloading
 Method overloading is a feature that allows a class to have more than one method with the same name, if their argument list differ. Unlike overriding, they both still exist separately though the parameters you will input will be different.
@@ -489,6 +507,128 @@ They must differ in one of two ways
 3. Sequence of parameters
 `f(int, float)` then `f(float, int)`
 
+* The reason we would use it is to provide the option of using default values for argument, in python we could do this in the signature but in java we don't not have this functionality
+* Overloading is good style
+```java
+  /**
+     * Grows this Monster.
+     *
+     * @param factor The factor by which this Monster is to grow.
+     */
+    public void grow(int factor) {
+        this.size = this.size * factor;
+    }
+
+
+
+    /**
+     * Grows this Monster by a default factor.
+     */
+    public void grow() {
+        /*
+           Again, we call the other "grow" method to do the work.  This method
+           would be one line long either way, but it is still smart to not
+           repeat the code here.
+        */
+
+
+
+        grow(2);
+    }
+```
+
+## Accessibility Modifiers
+* `public` - vizible and can be accessed from all classes everywhere and the methods are included in the API for the class
+* `private` - Consdider a method `X` which uses `z` as a helper, if we want to prevent client code from calling it we can declare it as private, this means it can only be called by other methods in the same class. Even subclasses wouldn't be able to access it.
+* You can also control these modifiers on instance and class variables
+* The philosophy in java is to make everything private unless you have a good reason not to. Methods may be part of the API, in which case they are public, but variables rarely belong in the API since it ties you down to your current implementation.
+  * If we client code wants to know the value of a private variable, instead of changing the accessibility modifier we can define a public method which will return that value. If we want client code to be able to change theses values then we do the same thing, these are called "getters" and "setters"
+  * We use getters and setters for good reason, here is an example. Let's say the class monster had an instance variable that kept track of their population, if instead we removed this variable kept track of the monsters in a Queue and made a method that returns the population using the Queue implementation, then no code would have to change. If instead we just had an inststance variable that kept track of the literal number then if we do the same change as above then every piece of client code that uses that insace variable would have to change
+
+## toString
+* the `toString` method is like the `__str__` method from pyth and is called implictly if we print an object, since all classes are descendents of class Object, so if he toString is not defined then it inherits one from class Object which returns a unique identifier for the object whose toString was called.
+
+## @Override
+* This annotation tells the reader and java what we will be doing, that is overriding
+* It has a use which is to help catch errors, so if we accidentally mistype the name of the method we are attempting to override it will throw an error instead of defining a completely new one.
+
+## equals
+* This is java's version of python's `__eq__` method, though note, when we use `==` that is identity equality, then the equals method is not used, if we want to use it, it must be called by name
+* The default equals method from Object it checks for identity equality, and so we can override it if we want different functionality
+* When we override it though there are details which must be followed that is 
+    1. Symmetry: For non-null references a and b, a.equals(b) if and only if b.equals(a)
+    2. Reflexivity:  a.equals(a)
+    3. Transitivity: If a.equals(b) and b.equals(c), then a.equals(c)
+    * In addition we must also override an inherited method by the name of hashCode, the hashCode of an object is an integervalue that obeys this property
+      * If two objects are equal (according to the equals method), they have the same hashCode. Though note it's possible for two objects to have the same hashCode and them to be different
+
+## Class Methods
+* Like class variables we use `static` to declare them
+* Recall this allows a method to be associated with the class and not the instance, by prefixing the method with the class name like so: 
+` System.out.println("Monster population: " + Monster.population()); `
+* A class method cannot access an instance variable or call an instance method directly and you cant use `this` inside this method, the only way we can access an instance variable or call an instance method is if a reference to an object is passed to the method.
+```java
+    public static int population() {
+        /* Using a class variable
+
+        Because population was declared "static", there is only one,
+        shared by all instances of Monster.  It is not stored in every
+        instance of Monster.  So it would not make sense to say:
+              return this.population;
+        and in fact, that line would not compile.  We can access the
+        variable through the class name, as below.  If we omit the
+        class name and say simply:
+              return population;
+        Java would still find the class variable and the code would
+        work the same.  However, it's good practise to be explicit
+        and say that you mean to refer to a class variable. XXX Agreed?
+         */
+        return Monster.population;
+    }
+```
+
+## Parameters
+* Recall the following process when we call a method
+    1. A new stack frame is pushed onto the stack
+    2. Each parameter is defined in that stack frame
+    3. The value of each argument is assigned to it's corresponding parameter.
+* When we hit a return statement or get to the end of the method, the stack frame for that method is popped off the stack and all variables defined in it, that is local variables and parameters dissappear.
+* From part of 3 of the process when a method is called we know something like the following happens `p1 = a1, p2 = a2`, that is the parameters are assigned to their arguments, this leads to different implications based on if they are primitive types or if they are reference types.
+```java
+static void increase(int i) {
+        i = i + 1000;
+    }
+
+
+    public static void main(String[] args) {
+        int cost = 14;
+        increase(cost);
+        System.out.println(cost);
+    }
+```
+In the above example, we can see that since cost is a primitive when we have `i = cost`, the reference to cost is not passed, but the number 14, is which is stored directly inside it. In python it would fail due to another reason though, it would fail since when we evaluate what is on the rhs of the equals sign it gets stored in a new memory addres and then i is assigned to that.
+Back to java, in order to solve this problem we should instead define a new method that returns the changed value and in the calling code, assign it to the variable we wish to change, we could call this new function `increased`.
+
+### Reference Types cause Aliasing
+* If the argument to a method is a variable, the parameter is assigned to the value contained that is contained within the variable. If it is a reference type then a reference is stored within the parameter, causing aliasing.
+* An example of passing in a mutable type
+```java 
+
+static void increase(StringBuilder sb) {
+    sb.append(sb);
+    sb.append("!");
+}
+
+
+public static void main(String[] args) {
+    StringBuilder word = new StringBuilder("rah");
+    increase(word);
+    System.out.println(word);
+}
+```
+See here that in fact the call to `increase` has side effects, that is it modifies a variable outside of it's local scope.
+
+# Quest 2
 ### Interface
 This is like abstract classes in python. An interface in java is like a class though all methods are abstract  and (final fields)? are constants. We can implement an interface by providing code for each method from the interface.
 ```java
