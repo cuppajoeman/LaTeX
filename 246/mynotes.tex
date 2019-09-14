@@ -264,4 +264,107 @@ The intuition behind this proof comes from the fact that if we take a number say
 
 % chapter lecture_2 (end)
 
+\chapter{Lecture 3}%
+\label{chp:lecture_3}
+% chapter lecture_3
+
+Recall from last lecture we showed that every natural number besides 1 can be written as a product of primes. Thus we have the following 
+\[
+\forall n \in \mathbb{N} , n \ge 1 \implies n \text{ is divisible by some prime } 
+\]
+Let's call the above $\alpha $ 
+
+
+\section{There is no largest prime}%
+\label{sec:there_is_no_largest_prime}
+% section there_is_no_largest_prim
+
+\begin{proof}
+$ $\newline
+    suppose by contradiction $p$ is the largest prime, that is 
+    \[
+    \left\{ 2, 3, \ldots , p \right\} 
+    \]
+    are all the primes.
+    Let $m= \left( 2 \cdot 3 \cdot \dotsm  \cdot p \right)  + 1$,  we note that for any $j \in \left\{ 2, 3, \ldots ,p \right\} $ they must not division $m$ as they each of a remainder of 1. We observe that $m \ge 1$ thus by $\alpha $ we know that there exists some $q \in \mathbb{N} $ where $q$ is prime such that 
+    \[
+    q \mid m
+    \]
+    So then $q \neq 2, 3, \ldots ,p$ and so we have found a new prime, which contradicted that we had found all primes, so we get a contradiction, therefore there is no largest prime.
+\end{proof}
+
+% section there_is_no_largest_prime (end)
+
+% chapter lecture_3 (end)
+
+\chapter{Lecture 4}%
+\label{chp:lecture_4}
+% chapter lecture_4
+
+\begin{thm}[Fundamental Theorem of Arithmetic]\index{Fundamental Theorem of Arithmetic}\label{thm:fundamental_theorem_of_arithmetic}
+    Every natural number other than 1, is a product of primes (proved last lecture) and the primes in the product are unique (including multiplicity)  except for the order in which they occur.
+\end{thm}
+
+Recall given $n\in \mathbb{N}, n \neq 1, n $ is a product of primes that is 
+\[
+n = p_1 p_2 \dotsb p_{k - 1} p_{k}
+\]
+
+for example 
+\[
+180 = 9 \cdot 10 \cdot 2= 3^{2} 5^{1} 2^{2} 
+\]
+
+So equivalently we have 
+\[
+\forall n \in \mathbb{N} , 1 < n \implies n = p_{1} ^{\alpha _{1} } p_{2} ^{\alpha _{2} } \dotsm p_{k} ^{\alpha _{k} }  
+\]
+where $p_{i} $ are distinct primes and $\alpha _{i} \in \mathbb{N} $ 
+
+We will prove that the prime factorization of any natural number greater than 1 has is unique by contradiction.
+
+\newpage
+
+\begin{proof}
+$ $\newline
+\begin{itemize}
+    \item Suppose there are some numbers with two distinct factorizations into primes.
+    \item Let $\mathcal{X} $ be the set of these numbers, observe that $\mathcal{X} \subseteq \mathbb{N} $ thus by the Well Ordering Principle we let $n$ be the smallest such number in $\mathcal{X} $, we have 
+        \[
+        n= p_1 p_2 \dotsb p_{k - 1} p_{k} = q_1 q_2 \dotsb q_{l - 1} q_{l}
+        \]
+        (Note here we aren't using powers, but we allow for repeated primes, and that $p_{i} ,q_{j} $ are primes)
+    \item Suppose that the two product of primes share at least one factor, say $p_{r} = q_{r} $, then in each product of primes they cancel out and we get that a new smaller number that can be written as a product of primes, though this would cause a contradiction since we assumed $n$ was the smallest such number with this property. 
+        \begin{itemize}
+            \item Therefore all the $p_{i} $ are different than the $q_{j} $ 
+        \end{itemize}
+    \item Since we know $p_{i} \neq q_{j} $ then specifically $p_{1} \neq q_{1} $ if this is true there are two cases either $p_{1} \le q_{1} $ or $p_{1} \ge q_{1} $.
+    \item \textbf{Case 1}: $p_{1} < q_{1} $ 
+        \begin{itemize}
+            \item We note $n = q_1 q_2 \dotsb q_{l - 1} q_{l} > p_1 q_2 \dotsb q_{l - 1} q_{l}$ 
+            \item $p_1 q_2 \dotsb q_{l - 1} q_{l} < n \Leftrightarrow 0 < n - p_1 q_2 \dotsb q_{l - 1} q_{l}$ 
+            \item Note that $p_{i} , q_{j} \in \mathbb{N} $ so the product of any of them is also an element of the naturals, and then also $n - p_1 q_2 \dotsb q_{l - 1} q_{l} \in \mathbb{N}$.  \todo{This part} 
+        \end{itemize}
+    \item Note that $m < n \implies m$ has a unique factorization into primes \todo{Why?}, we know
+        \begin{itemize}
+            \item $m = p_1 p_2 \dotsb p_{k - 1} q_{k}  - q_1 q_2 \dotsb q_{l - 1} q_{l}= p_{1} \left( p_2 \dotsb p_{k - 1} p_{k} - q_2 \dotsb q_{l - 1} q_{l} \right) $ 
+            \item $m = q_1 q_2 \dotsb q_{l - 1} q_{l} - p_1 q_2 \dotsb q_{l - 1} p_{l} = \left(  q_2 \dotsb q_{l - 1} q_{l} \right) \left( q_{1}  - p_{1}  \right) $ 
+            \begin{itemize}
+                \item Together
+                    \[
+ p_{1} \left( p_2 \dotsb p_{k - 1} p_{k} - q_2 \dotsb q_{l - 1} q_{l} \right) = \underbracket{\left(  q_2 \dotsb q_{l - 1} q_{l} \right)}_{\chi}  \left( q_{1}  - p_{1}  \right) 
+                    \]
+            \end{itemize}
+        \end{itemize}
+    \item The left hand side of the above tells us that $p_{1} $ is a prime factor of $m$ which means it is also a factor of the right hand side.
+        \begin{itemize}
+            \item But observe $p_{1} \nmid \chi$ since $p_{1} \neq q_{j} $ 
+            \item Therefore it must be that $p_{1} | \left( q_{1}  - p_{1}  \right) $ this is true if and only if $p_{1} \mid q_{1} $ since $q_{1} $ is prime this means that $p_{1} = 1$ or $p_{1} = q_{1} $ either of which are contradictions, therefore \todo{What does this contradict?} 
+        \end{itemize}
+\end{itemize}
+\end{proof}
+
+% chapter lecture_4 (end)
+
+
 \end{document}

@@ -1,7 +1,0 @@
-\contentsline {chapter}{\numberline {1}Lecture 1}{9}{chapter.1}% 
-\contentsline {section}{\numberline {1.1}Induction}{9}{section.1.1}% 
-\contentsline {chapter}{\numberline {2}Lecture 2}{13}{chapter.2}% 
-\contentsline {section}{\numberline {2.1}Proof of Induction}{13}{section.2.1}% 
-\contentsline {section}{\numberline {2.2}Division}{14}{section.2.2}% 
-\contentsline {paragraph}{Example}{14}{section*.4}% 
-\contentsline {paragraph}{Example}{14}{section*.5}% 
