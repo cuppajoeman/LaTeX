@@ -466,11 +466,157 @@ We can write this as $n\left(\left( A^{c} \cap B \right) \cup \left( A\cup B^{c}
 \end{itemize}
 
 \paragraph{Did not watch Bandersnatch} 
-By the completment relation ship we have $n\left(x\right) $ 
+By the completment relation ship we have 
+\[
+n\left(A^{c} \right) = 200 - n\left(A \right)  = 200  - 87 = 113
+\]
+
 
 % subsection inclusion_exclusion_examples (end)
 
+\subsection{Disjoint Events on a Venn Diagram}%
+\label{sub:disjoint_events_on_a_venn_diagram}
+% subsection disjoint_events_on_a_venn_diagram
+
+\begin{center}
+    \includegraphics[width=75mm]{assets/lec1_disj.jpg} 
+\end{center}
+
+Two events are disjoint if their intersection is $\emptyset $ the intersection between any of $1, 2, \ldots , 7$ are all $\emptyset $ so the disjoint events are
+\begin{enumerate}
+    \item $\left( Y\cup Z \right)^{c}  \cap X$ 
+    \item $\left( X\cap Y \right) \cap Y^{c} $ 
+    \item $\left( X\cup Y \right) ^{c} \cap Z$ 
+    \item $\left( Z\cap Y \right) \cap X^{c} $ 
+    \item $\left( Z\cup X \right) ^{c} \cap Y$ 
+    \item $\left( X \cap Y \right) \cap Z^{c} $ 
+    \item $\left( X\cap Y \right) \cap Z$ 
+    \item $\left( X \cup Y\cup Z \right) ^{c} $ 
+\end{enumerate}
+
+We will now sketch the region $\left( Y^{c} \cap Z^{c}  \right) \cap X$, for the left part, we know that $Y^{c} $ is everything not in $Y$ and that $Z^{c} $ is everything not in $Z$ so then $Y^{c} \cap Z^{c} $ is everything not in $Z$ nor in $Y$ then we require that it is also in $X$ which yields. Formally, by demorgan's laws we know $\left( Y^{c} \cap Z^{c}  \right) = \left( Z\cup Y \right) ^{c} $, which is faster
+\begin{center}
+    \includegraphics[width=100mm]{assets/lec1-sketch.jpg} 
+\end{center}
+
+
+% subsection disjoint_events_on_a_venn_diagram (end)
+
 % section inculsion_exclusion_principle (end)
+
+\subsection{Denoting Events \& More Calculation}%
+\label{sub:denoting_events_&_more_calculation}
+% subsection denoting_events_&_more_calculation
+
+\paragraph{Question}
+
+In a class of 60 students, 13 could not roll their tongue, 17 had attached
+earlobes, and 10 could roll their tongues and had attached earlobes. A
+student is randomly selected from the class. Let T denote the event that
+the student can roll their tongue, and E denote the event that they have
+attached earlobes. Symbolically denote the following events and identify
+the number of students in each.
+
+\begin{itemize}
+    \item The student can roll their tongue
+        \[
+        n\left(T\right) = 60 - n\left(T^{c} \right) = 60  - 13 = 47
+        \]
+    \item The student can neither roll his or her tongue nor has attached earlobes.
+        \[
+            n\left(T^{c} \cap E^{c} \right) = n\left( \left( T \cup E \right) ^{c}  \right) 
+        \]
+        By DeMorgan's Laws, then 
+        \[
+            n\left(\left( T\cup C \right) ^{c} \right) = 60  - n\left(T\cup C\right) = 60  - 10 = 50
+        \]
+    \item The student has attached earlobes but cannot roll his or her tongue. Symbolically, we have $n\left(E\cap T^{c} \right) $. Observe that $E = \left( E\cap T^{c}  \right) \cup \left( E \cap T \right) \Leftrightarrow n\left(E\right) = n\left(E\cap T^{c} \right)  + n\left(E\cap T\right) $  , therefore 
+        \[
+        n\left(E\cap T^{c} \right) = n\left(E\right)  - n\left(E\cap T\right) = 17 - 10= 7
+        \]
+    \item The student can roll his or her tongue or has attached earlobes, but not both.
+        \begin{itemize}
+            \item Symbolically:
+                \[
+                    n\left(\left( E\cap T^{c}  \right) \cup \left( E^{c} \cap T \right) \right) = n\left(E\cap T^{c} \right)  + n\left(E^{c} \cap T \right) 
+                \]
+                since they are disjoint .
+            \item We must find what $n\left(E^{c} \cap T\right) $ is, similarly from the previous question we have 
+                \[
+                n\left(E^{c} \cap T\right) = n\left(T\right)  - n\left(T\cap E\right) = 47  - 10 = 37
+                \]
+            \item thus we have 
+                \[
+                n\left(E\cap T^{c} \right)  + n\left(E^{c}  \cap T\right) = 7  + 37= 44
+                \]
+        \end{itemize}
+\end{itemize}
+
+\subsection{Shows Question}%
+\label{sub:shows_question}
+% subsection shows_question
+
+\paragraph{Question} In a class of 300 students, 147 students have watched Stranger Things (S), 111 students have watched Game of Thrones (G), and 59 students have watched The Haunting of Hill House (H). There are 68 students have watched both Stranger Things and Game of Thrones, 31 students have watched both Game of Thrones and The Haunting of Hill House, while 10 students have watched all three shows and 79 students have watched none.
+\paragraph{What we know} 
+\begin{tabular}{|c|c|c|c|}
+\end{tabular}
+
+\begin{tabular}{|c|c|c|c|}
+\hline
+    $n\left(\Omega \right) = 300$  & $n\left(S\right) = 147$  & $n\left(G\right) = 111$  & $n\left(H\right) = 59$  \\
+\hline
+    $n\left(S \cap G\right) = 68$ & $n\left(G\cap H\right) = 31$  & $n\left(S \cap G\cap H\right) = 10$  & $n\left(\left( S\cap G\cap H \right) ^{c} \right) = 79$  \\
+\hline
+\end{tabular}
+
+
+\begin{enumerate}[label=\alph*)]
+    \item How many students have watched only The Haunting of Hill House  and Game of Thrones.
+        \begin{itemize}
+            \item Symbolically:
+                \[
+                    n\left(\left( G\cap H \right) \cap \left( G\cap S\cap H \right) ^{c} \right) 
+                \]
+            \item Observe 
+                \begin{align*}
+                    n\left(G\cap H\right) &=n\left(\left( \left( G\cap H \right) \cap \left( G\cap S\cap H \right) ^{c}  \right) \cup \left( G\cap S\cap H \right) \right) \\
+                    &= n\left(\left( G\cap H \right) \cap \left( G\cap S\cap H \right) ^{c} \right)  + n\left(G\cap H\cap S\right)  \tag{Axiom 3} \\ 
+                \end{align*}
+            $\therefore $ 
+                \begin{align*}
+                    n\left(\left( G\cap H \right) \cap \left( G\cap S\cap H \right) ^{c} \right) &= n\left(G\cap H\right)  - n\left(G\cap H\cap S\right) \\
+                    &= 31  - 10\\ 
+                    &= 21  
+                \end{align*}
+        \end{itemize}
+    \item Illustrate with a Venn diagram and complete the missing numbers. You may need to solve a simple system of linear equations.
+        \begin{center}
+            \includegraphics[width=100mm]{assets/lec2_movie.jpg} 
+        \end{center}
+        Let $k = \text{ the star } $,  we know 
+        \[
+            k\cup \left( S\cap G \right) \cup \left( G\cap H \right) = G
+        \]
+        and that $k$ is disjoint from any other set so we get 
+        \[
+            n\left(k\right)  + n\left(\left( S\cap H \right) \cup \left( G\cap H \right) \right) = n\left(G\right) 
+        \]
+        And so by the inclusion exclusion principle we have
+        \[
+        n\left(k\right)  + n\left(S\cap G\right)  + n\left(G\cap H\right)  - n\left(S\cap G\cap H\right) = n\left(G\right) 
+        \]
+        so then we can isolate for $n\left(k\right) $ to find the answer \todo{Finish this} 
+    \item If a student were randomly selected, what is the probability that the student wants to watch none of the three shows?
+        \begin{itemize}
+            \item From the previous question we know $n\left(X, Y, Z, \ldots A \right) $ that is the total number of students in each disjoint event therefore the sum of each gives $n\left(S\cup G\cup H\right) = l$  and so the probability is $\frac{300 - l}{300} \cdot  100$ 
+        \end{itemize}  
+    \item \todo{finish} 
+\end{enumerate}
+
+% subsection shows_question (end)
+
+
+% subsection denoting_events_&_more_calculation (end)
 
 % section intro_to_probability (end)
 
