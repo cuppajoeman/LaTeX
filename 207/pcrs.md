@@ -835,3 +835,5 @@ In this case the following is true `s1 == s2` , `s1.equals(s2);`,
 * Remember the last comparsion is true due to the special case we just discussed.
 * Second one in part two is false, remember that if you don't define the equals method that that reference equality is inherited from `Object`
 
+## Comparables
+* this allows for sorting, a default sort method is provided that allows for arrays of ints or other primities to sorted. This method is overloaded, and there are multiples methods, that handle one of the primitive types, these methods are defined in the Arrays class, as a static method.

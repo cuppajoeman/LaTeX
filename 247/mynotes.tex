@@ -615,12 +615,158 @@ the number of students in each.
 
 % subsection shows_question (end)
 
-
 % subsection denoting_events_&_more_calculation (end)
 
 % section intro_to_probability (end)
 
+\section{Suggested Exercises}%
+\label{sec:suggested_exercises}
+% section suggested_exercises
+
+\subsection{2.8}%
+\label{sub:2_8}
+% subsection 2_8
+
+Info:
+\begin{tabular}{|c|c|}
+\hline
+    $n\left(\Omega \right) = 50$  & $n\left(D\right) = 25$  \\
+\hline
+$n\left(D\cap C\right) = 7$  & $n\left(\left( D\cup C \right) ^{c} \right) = 18 $  \\
+\hline
+\end{tabular}
+
+\begin{enumerate}[label=\alph*)]
+    \item $C^{c} \cap D$,  we note
+        \[
+            \left( C^{c} \cap D \right) \cup \left( C\cap D \right) = D
+        \]
+        therefore by axiom 3 we have 
+        \[
+        n\left(C^{c} \cap D\right)  + n\left(C\cap D\right) = D
+        \]
+        therefore 
+        \[
+        n\left(C^{c} \cap D\right) = 25  - 7 = 18
+        \]
+    \item $C$ , we have 
+        \[
+            C^{c} = \left( D\cap C \right) ^{c} \cup \left( C^{c} \cap D \right) 
+        \]
+        Note the two sets on the right hand side are disjoint so by axiom 3 and by the complement relationship we have 
+        \begin{gather*}
+            n\left(C^{c} \right) = n\left(\left( D \cup  C \right) ^{c} \right)  + n\left(C^{c} \cap D\right) \tag{By axiom 3}\\
+            50  - n\left(C\right) = 18  + 18 \tag{Complement}\\
+            n\left(C\right) = 14
+        \end{gather*}
+    \item $D^{c} \cup C$ we have 
+        \[
+            \left( D^{c} \cap C \right) \cup \left( D\cap C \right) = C
+        \]
+        and so 
+        \begin{gather*}
+            n\left(D^{c} \cap c\right)  + n\left(D\cap C\right) = n\left(C\right) \\
+            n\left(D^{c} \cap C\right) = 17  - 4 = 7
+        \end{gather*}
+    \item $\left( D^{c} \cap C \right) \cup \left( D\cap C^{c} \right) $, then since they are disjoint 
+        \[
+            n\left(\left( D^{c} \cap C \right) \cup \left( D\cap C^{c}  \right) \right) = n\left(D^{c} \cap C\right)  + n\left(D\cap C^{c} \right) = 18  + 7 = 25
+        \]
+\end{enumerate}
+
+% subsection 2_8 (end)
+
+\subsection{2.9}%
+\label{sub:2_9}
+% subsection 2_9
+
+\begin{enumerate}[label=\alph*)]
+    \item sample space, rename to 1, 2, 3, 4
+        \[
+        \left\{ \left\{ 1,2 \right\} ,\left\{ 1,3 \right\} \left\{ 1,4 \right\} ,\left\{ 2,3 \right\} ,\left\{ 2,4 \right\} ,\left\{ 3,4 \right\}  \right\} 
+        \]
+    \item $A$ contains 3 different outcomes, that is the bm with each of the other 3 in pairs 
+    \item Every event is a choice of two, if we have a gup, but no gold or neon, then we have bm and gup, which there is one way to choose.
+\end{enumerate}
+
+% subsection 2_9 (end)
+
+\subsection{2.10}%
+\label{sub:2_10}
+% subsection 2_10
+
+\begin{enumerate}[label=\alph*)]
+    \item The set containing each pair of possible choices for applicants, it's size is given by $\binom{5}{3} $ 
+    \item Let $J$ be the event that Jim is chosen, and $D$  the event Don is chosen then we know we are looking for $J\cup D$ we know 
+        \[
+        n\left(J\cup D\right) = n\left(J\right)  + n\left(D\right)  - n\left(J\cap D\right) 
+        \]
+        We know that $n\left(J\right) = 4$ since he can be paired with the 4 others and the same for $n\left(D\right) $ and there is only 1 way to get $n\left(J\cap D\right) $ so we have 
+        \[
+        n\left(J\cup D\right) = 4 + 4  - 1 = 7
+        \]
+        
+    \item We remove the J and D case we get 6\\
+    Formally $J\cup D \setminus J\cap D$ or $\left( J\cap D^{c}  \right) \cup \left( J^{c} \cap D \right) = X $ we know 
+        \[
+        X \cup J\cap D= J\cup D
+        \]
+        therefore since they are disjoint we have 
+        \[
+        n\left(X\right) = n\left(J\cup D\right)  - n\left(J\cap D\right) = 7  - 1 = 6
+        \]
+    \item $A \cap B^{c} $ that is there is at least one male selected but not exactly one
+    \item \todo{finish} 
+\end{enumerate}
+
+% subsection 2_10 (end)
+
+\subsection{2.12}%
+\label{sub:2_12}
+% subsection 2_12
+
+Let $A$ be the event that the student drank alcohol, and $T$ be the event that a student used tobacco.  
+\begin{enumerate}[label=\alph*)]
+    \item We must find $P\left(A\cap T\right) $, by re-arranging the inclusion/exclusion principle
+        \[
+        P\left(A\cap T\right) = P\left(A\right)  + P\left(T\right)  - P\left(A\cup T\right) = .84  + .33  - .86 = .31
+        \]
+        therefore $31\%$.
+    \item $\left( A\cup T \right) ^{c} $ recall $P\left(\left( A\cup T \right) \right) = .86$ therefore $P\left(\left( A\cup T \right) ^{c} \right) = 1  - .86= .14$ so $14\%$ 
+    \item $X = \left( A^{c} \cap T \right) \cup \left( A \cap T^{c}  \right) $ recall from 2.10 part c we have
+        \[
+        P\left(X\right) = P\left(A\cup T\right)  - P\left(A\cap T\right) = .86  - .31 = .55
+        \]
+        so $55\%$ 
+\end{enumerate}
+
+% subsection 2_12 (end)
+
+\subsection{2.15}%
+\label{sub:2_15}
+% subsection 2_15
+
+\begin{center}
+    \includegraphics[width=100mm]{assets/sug-dist.jpg} 
+\end{center}
+
+% subsection 2_15 (end)
+
+\subsection{2.16}%
+\label{sub:2_16}
+% subsection 2_16
+
+\begin{center}
+    \includegraphics[width=100mm]{assets/sug-morg.jpg} 
+\end{center}
+
+% subsection 2_16 (end)
+
+% section suggested_exercises (end)
+
 % chapter lecture_1 (end)
+
+
 
 
 \end{document}
