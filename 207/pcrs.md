@@ -640,8 +640,42 @@ public interface Playable
 
 
 ### Questions
+#### Part 1, overloading
 1. No methods are being overloaded each method `func` for both class `A` and `B` are completely separate
 2. class B is overriding, not overloading.
 3. Yes, this involves overloading, we now have two methods that are named the same though their arguments differ.
 4. I believe this involves overriding, class B extends A therefore it has inherits the original `func(int i)` and then we overload it by saying `func(String s)` now, we have two different methods with the same name, note it doesn't matter that it's calling the super class method, since any method could do that, I think they were trying to trick us into thinking this method extends the function that it inherited.
-5. We have overloading here as we have two methods with 
+5. We have overloading here as we have two methods with the same name but different signatures
+
+#### Part 2, overloading
+1. We can differentiate between the two different functions
+2. These are pretty much the same function, so this should probably error, and it only checks # of parameters and type not the name
+3. Diff no of params, so should be fine
+4. Same func, but with different return value, this is not enough information for the complier to figure out which is which, so error
+5. Yes, order is diff
+6. This does not result in an error but also it doesn't even involve overloading
+
+#### Part 3, overloading
+```java
+public class MyHashing {
+    private int seed = 100;
+    public MyHashing() {
+    }
+    public MyHashing(int seed) {
+        this.seed = seed;
+    }
+    public int hash(String s) {
+        int total = 0;
+        for (char ch: s.toCharArray()) {
+            total += ch;
+        }
+        return total;
+    }
+    public int hash(int i) {
+        int tseed = this.seed;
+        this.seed = i;
+        return tseed;
+    }
+    
+}
+```
