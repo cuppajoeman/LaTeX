@@ -679,3 +679,159 @@ public class MyHashing {
     
 }
 ```
+#### Static Questions, pt1
+* `static` types means that they all share the same variable, it's a class variable, so by the end, they all share 3, as for the other variable, it is not a class variable, each one has been increased so they are all equal to 1.
+
+* In a static method we cannot access `this`
+1. We can access a class variable in the class method
+2. We canot access an instance variable in the class method
+3. We can access a class variable in a instance method
+4. We can access a instance variable in a instance method
+5. It's fine to access a class method like class.method()
+6. We can't do this with non-class methods
+
+#### Static Questions, pt2
+* Candy Mountain
+```java
+import java.util.Random;
+
+public class CandyPlayer {
+
+  private static int totalCandy = (new Random()).nextInt(100);
+  private int candies;
+    
+    public CandyPlayer(int candies) {
+        this.candies = candies;
+    }
+    public int getMyCandy() {
+        return this.candies;
+    }
+    static int getMountainCandy() {
+        return totalCandy;
+    }
+    public boolean play(int gcan) {
+        if (gcan <= this.candies) {	
+            this.candies -= gcan;
+            totalCandy += gcan;
+            if (totalCandy - 2*gcan >= 0) {
+                this.candies += 2*gcan;
+                totalCandy -= 2* gcan;
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+}
+```
+part 2
+```java
+import java.util.Random;
+
+public class CandyPlayer {
+
+  private static int totalCandy = (new Random()).nextInt(100);
+    private int candies;
+    
+    // New variables
+    private static int turn;
+    private static int nop;
+    
+    private int uid;
+    
+    // Getters
+    public static int getTurn() {
+        return turn;
+    }
+    public static int getNumberOfPlayers() {
+        return nop;
+    }
+   // Setters
+    public static void setTurn(int nturn) {
+        turn = nturn;
+    }
+    public static void setNumberOfPlayers(int nnop) {
+        nop = nnop;
+    }
+    
+    public CandyPlayer(int candies) {
+        this.candies = candies;
+    }
+    public int getMyCandy() {
+        return this.candies;
+    }
+    static int getMountainCandy() {
+        return totalCandy;
+    }
+    public boolean play(int gcan) {
+        // Not your turn!
+
+        if (!(this.uid == turn)) {
+            return false;
+        }
+        // Ok You can play, it is your turn
+        
+        turn += 1;
+        if (turn == nop) {
+            turn = 0;
+        }
+        if (gcan <= this.candies){	
+            this.candies -= gcan;
+            totalCandy += gcan;
+            if (totalCandy - 2*gcan >= 0) {
+                this.candies += 2*gcan;
+                totalCandy -= 2* gcan;
+            }
+
+            return true;
+        } else {
+
+            return false;
+        }
+    }
+    
+    
+}
+```
+
+#### toString and equals
+* Remember that when overriding the equals method, you must specify the parameter to be object so we don't overload, and we must cast this object to the correct type.
+* If two hashcodes are the same then we are not sure if the objects are the same, only the opposite implication holds, therefore when we put into the hashmap we don't know which ones go into which bucket.
+##### Part 3 last Q
+* coord, 1, 2, 4 will have the same hashcode
+
+## Equality
+* Recall that in java `==` checks if we have two reference to the very same object, the equals method is used to check if the two objects have equivalent content, for example if we do 
+```java
+X l = X(z);
+X o = X(z);
+```
+* Then `l == o` is false, since they reference different instances of `X`, but `l.equals(o)` holds, as we can see that they were built using the same paramter, therefore their content should be the same.
+
+```java
+X k = o;
+```
+* And then `k == o` would hold as they reference the same object
+* java's implementation for the String object is as follows 
+>"the result is true if and only if the argument is not null and is a String object that represents the same sequence of characters as this object."
+* So when we write our own versions we can define any type of behavior we want.
+* Recall that if you don't define an equals method you inherit one from class Object, it checks for identity equality.
+
+### Special Case with String shortcut
+if we construct a string like `x = "cat"`, that is we don't use `new` like `x = new String("cat");` then java saves spaces by only using one object for each unique string we create (String Interning), this yields some different results
+```java
+String s1 = "ice cream";
+// Since the RHS of this assignment evaluates to the same String, "ice cream",
+// Java doesn't bother to make a new String object.  It lets s2 reference the
+// same String object as s1.
+String s2 = "ice " + "cream";
+// This may seem risky, but since Strings are immutable, no side effects 
+// can occur despite the aliasing that is created.
+```
+In this case the following is true `s1 == s2` , `s1.equals(s2);`, 
+
+#### Equality Quesitons
+* Remember the last comparsion is true due to the special case we just discussed.
+* Second one in part two is false, remember that if you don't define the equals method that that reference equality is inherited from `Object`
+
