@@ -762,6 +762,154 @@ Let $A$ be the event that the student drank alcohol, and $T$ be the event that a
 
 % subsection 2_16 (end)
 
+\subsection{2.20}%
+\label{sub:2_20}
+% subsection 2_20
+
+\begin{enumerate}[label=\alph*)]
+    \item Recall 
+        \[
+            \left( A\cap B^{c}  \right) \cup \left( A\cap B \right) = A
+        \]
+        therefore 
+        \[
+            P\left(A\right) = P\left(A\cap B^{c} \right)  + P\left(A\cap B\right) = .30  + .10 = .4
+        \]
+        thus the probability is $40\%$ 
+    \item Recall 
+        \[
+            A\cup B= \left( \left( A^{c} \cap B \right) \cup \left( A \cap B^{c}  \right)  \right)  \cup \left( A\cap B \right) 
+        \]
+        therefore 
+        \[
+        P\left(A\cup B\right) = P\left(A^{c} \cap B\right)  + P\left(A\cap B^{c} \right)  + P\left(A\cap B\right) = .30  + .40  + .10 = .80
+        \]
+        thus from the complement relationship $P\left(\left( A\cup B \right) ^{c} \right) = .20$, remember our goal is to find $P\left(B^{c} \right) $, note $B^{c} = \left( A\cup B \right) ^{c} \cup \left( A\cap B^{c}  \right) $ thus 
+        \[
+            P\left(B^{c} \right) = P\left(\left( A\cup B \right) ^{c} \right)  + P\left(A \cap B^{c} \right) = .80  - .40 = .40
+        \]
+        So the probability is $40\%$ 
+    \item We need $A^{c} \cup B^{c} $ by DeMorgan's law we have $\left( A\cap B \right) ^{c} $ and by the complement relationship it follows that $P\left(\left( A\cap B \right) ^{c} \right) = 1  - P\left(A\cap B\right) = 1  - .1 = .90$ therefore the probability is $90\%$ 
+    \item We are looking for $A^{c} \cap B^{c} $ by DeMorgan we have $\left( A\cup B \right) ^{c} $ by the complement relationship we have $P\left(\left( A\cup B \right) ^{c} \right) = 1 - P\left(A \cup B\right) = 1 - .80 = .2$ so the probability is $20\%$ 
+\end{enumerate}
+
+% subsection 2_20 (end)
+
+\subsection{2.21}%
+\label{sub:2_21}
+% subsection 2_21
+
+Before we continue, remember that you can only have one blood type
+\begin{enumerate}[label=\alph*)]
+    \item One in every two people gave $O^{+} $ so $50\%$ chance.
+    \item Giving type $O^{+}(X) $ and $O^{-}(Y) $ are disjoint events, and giving $O$ is $X \cup Y$ therefore we can add the probability, that is $\frac{1}{2} + \frac{1}{11}= \frac{13}{22} \approx 59\%$ 
+    \item Using the same reasoning from the last question we can take the sum that is 
+        \[
+        \frac{1}{4} + \frac{1}{20}= \frac{6}{20}= \frac{30}{100}= 30\%
+        \]
+    \item Same as above
+    \item Let $X$ be the event of the first person showing up and having type $A^{+} $  or $O^{+} $, we are looking for $X^{c} $ so if they dont have those two they have one of $O^{-} $ or $A^{-} $ in that case we add the probability again.
+\end{enumerate}
+
+% subsection 2_21 (end)
+
+\subsection{2.23}%
+\label{sub:2_23}
+% subsection 2_23
+
+\begin{enumerate}[label=\alph*)]
+    \item We need $P\left(B\cap S^{c} \right) = P\left(B\right)  - P\left(B\cap S\right) = .8  - .2 = .6$ so $6\%$ 
+    \item $P\left(S\cup B\right) = P\left(B\right)  + P\left(S\right)  - P\left(S\cap B\right) = .10  + .8  - .2 = .16 = 16\%$ 
+    \item $P\left(\left( S\cup B \right) \setminus \left( S\cap B \right) \right) = P\left(S\cup B\right)  - P\left(S\cap B\right) = .16  - .2= .14 = 14\%$ 
+    \item $P\left(\left( A\cup B \right) ^{c} \right) = 1 - P\left(A\cup B\right) = 1  - .16= .84 = .84\%$ 
+\end{enumerate}
+
+% subsection 2_23 (end)
+
+\subsection{2.24}%
+\label{sub:2_24}
+% section 2_24
+
+\begin{enumerate}[label=\alph*)]
+    \item Histogram?
+    \item Again?
+\end{enumerate}
+
+% section 2_24 (end)
+
+\subsection{2.27}%
+\label{sub:2_27}
+% section 2_27
+
+We will prove 
+\[
+P\left(A\cap B\right) \le P\left(A\right) 
+\]
+recall $A= \left( A\cap B^{c}  \right) \cup \left( A\cap B \right)  $ therefore 
+\begin{align*}
+    P\left(A \cup B\right) &\le P\left(A\cup B\right)  + P\left(A\cap B^{c} \right) \tag{Axiom 1}   \\ 
+    &= P\left(A\right) \tag{Axiom 3} \\ 
+\end{align*}
+
+% section 2_27 (end)
+
+\subsection{2.28}%
+\label{sub:2_28}
+% subsection 2_28
+
+Recall from the Inculsion/Exclusion Principle  and re-arranging we have 
+\[
+P\left(A\cap B\right) = P\left(A\right)  + P\left(B\right)  - P\left(A\cup B\right) 
+\]
+We note that any event $X \subseteq \Omega $ therefore $P\left(X\right) \le 1$ and so $P\left(A\cup B\right) \le 1 \Leftrightarrow -P\left(A\cup B\right) \ge -1$ thus we have 
+\[
+P\left(A\cap B\right) = P\left(A\right)  + P\left(B\right)  - P\left(A\cup B\right) \ge P\left(A\right)  + P\left(B\right)  - 1
+\]
+so we have
+\[
+P\left(A\cup B\right) \ge P\left(A\right)  + P\left(B\right)  - 1
+\]
+
+% subsection 2_28 (end)
+
+\subsection{2.29}%
+\label{sub:2_29}
+% subsection 2_29
+
+We will prove 
+\[
+P\left(A\cap B^{c} \right) = P\left(A\right)  - P\left(A\cap B\right) 
+\]
+
+Note that $\left( A\cap B^{c}  \right) \cup \left( A\cap B  \right) = A$, let $L$ be the left hand side and $R$ be the right hand side. We will prove that in fact $L = R$ 
+
+\begin{itemize}
+    \item Let $x \in L$ 
+        \begin{itemize}
+            \item \textbf{Case 1}: $x\in \left( A\cap B^{c}  \right) $ then $x\in A$. 
+            \item \textbf{Case 2}: $x\in \left( A\cap B \right) $ then $x\in A$ as required.
+        \end{itemize}
+    \item Therefore $L \subseteq R$ 
+    \item Let $y \in R$ then $y \in A$ and so $y \in \left( A\cap B^{c}  \right) $, in addition $y \in A\cap B$ 
+    \item so $R \cup L$ therefore 
+        \[
+        \boxed{R = L}
+        \]
+\end{itemize}
+
+Then we note that $\left( A\cap B^{c}  \right) \text{ and } \left( A\cap B \right) $ are disjoint (do we have to prove this) and so by axiom 3, we have 
+\[
+P\left(A\cap B^{c} \right)  + P\left(A\cap B\right) = P\left(A\right) 
+\]
+and we conclude
+\[
+    \boxed{P\left(A\cap B^{c} \right) = P\left(A\right)  - P\left(A\cap B\right) }
+\]
+
+
+
+% subsection 2_29 (end)
+
 % section suggested_exercises (end)
 
 % chapter lecture_1 (end)

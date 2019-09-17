@@ -821,7 +821,7 @@ $ $\newline
 \begin{defn}[Interior]\index{Interior}\label{defn:interior}
     The interior of $S$ is 
     \[
-        \mathring{S} \coloneqq \left\{ x\in \mathbb{R} ^{n} : \forall \varepsilon  > 0, B\left(x, \varepsilon \right) \subseteq S \right\} 
+        \mathring{S} \coloneqq \left\{ x\in \mathbb{R} ^{n} : \exists \varepsilon  > 0, B\left(x, \varepsilon \right) \subseteq S \right\} 
     \]
     that is the set of all points that are interior to $S$ 
 \end{defn}
@@ -880,7 +880,52 @@ $ $\newline
     \]
 \end{defn}
 
+\subsection{Slide Questions}%
+\label{sub:slide_questions}
+% subsection slide_questions
+
+\begin{enumerate}
+    \item $\mathring{S} = \left( 0,3 \right) , \bar{S} = \left[ 0,3 \right] , \partial S = \left\{ 0,3 \right\} $ 
+    \item $\mathring{S} = \left( 0,3 \right) , \bar{S} = \left[ 0,3 \right] , \partial S = \left\{ 0,3 \right\} $ 
+    \item $\mathring{S} = \left( 0,3 \right) , \bar{S} = \left[ 0,3 \right] , \partial S = \left\{ 0,3 \right\} $ 
+    \item $\mathring{S} = \left( 0,3 \right) , \bar{S} = \left[ 0,3 \right] , \partial S = \left\{ 0,3 \right\} $ 
+    \item $\mathring{S} = \emptyset , \bar{S} = \left\{ 0, 3 \right\} , \partial S= \left\{ 0, 3 \right\}  $ 
+    \item $\mathring{S} = \mathbb{R} \setminus \left\{ 0 \right\} , \bar{S} = \mathbb{R} = \left\{ 0 \right\} $
+    \item $\mathring{S} = \left(  - \infty , 0 \right), \bar{S} = (  - \infty , 0] , \partial S = \left\{ 0 \right\} $ 
+    \item $\mathring{S} = \left(  - \infty ,0 \right) \cup \left( 3, \infty  \right), \bar{S} = (n\infty , 0] \cup [3, \infty ) , \partial S = \left\{ 0, 3 \right\} $ 
+    \item $\mathring{S} = \left( 0, 3 \right) \times \left\{ 0 \right\}, \bar{S} = \left[ 0, 3 \right] \times \left\{ 0 \right\} , \partial S = \left\{ \left( 0, 0 \right) , \left( 3, 0 \right)  \right\}   $ 
+    \item First we go geometric
+        \begin{center}
+            \includegraphics[width=100mm]{assets/lec3-graph.jpg} 
+        \end{center}
+        So $\mathring{S} = S, ,\bar{S} = \left\{ \left( x,y \right) \in \mathbb{R} ^2 : \left| y - x \right| \ge  1 \right\}, \partial S= \left\{ \left( x,y \right) \in \mathbb{R} ^2 : \left| y - x \right| = 1 \right\} $ 
+    \item Note that we can find $x \in \mathbb{Q} $ as small as we want, so then we get gaps as small as we want, so we get $[0, 1)$ with infinitely small holes in it. So $\mathring{S} = \emptyset , \bar{S} = [0, 1), \partial S = [0, 1)$ 
+    \item $\mathring{S} = B\left(\vec{0} , 1\right) , \bar{S} = \bar{B} \left(\vec{0}, 1 \right) , \partial S= S\left(\vec{0} , 1\right) $ 
+    \item $\mathring{S} = \mathbb{R} ^{n} , \bar{S} = \mathbb{R} ^{n} , \partial S = \emptyset $ 
+    \item We know that no element is in $\emptyset $ so clearly no ball contained within $\emptyset $ so $\mathring{S} = \emptyset $,  Also the intersection of anything and $\emptyset $ is also empty so $\bar{S} = \emptyset $,  $\partial S= \emptyset $ 
+\end{enumerate}
+
+% subsection slide_questions (end)
+
 % section topology (end)
+
+\chapter{Homework Week 1}%
+\label{chp:homework_week_1}
+% chapter homework_week_1
+
+\begin{enumerate}
+    \item We know that $T_{A}  : R^{7}  \to R^{6}  $ and that $\mathit{null} \left(A\right) $ is the set of elements from $\mathbb{R} ^{7} $ that get mapped to $\vec{0} $
+        \begin{enumerate}
+            \item So $\mathit{null} \left(A\right) \subseteq \mathbb{R} ^{7} $ 
+            \item elements  of the null space are in $\mathbb{R} ^{7} $ no chance to be a sub space in $\mathbb{R} ^{6} $ 
+            \item The codomain is what it outputs, we already knwo it is a subset of the domain .
+        \item Yes, the null space is a sub space also note that since $A$ represents a linear transformation that $T_{A} \left(0\right) = 0$ and so $A\vec{0} = 0$ and so $\vec{0} \in \mathit{null} \left(A\right) $. 
+        \end{enumerate}
+    \item If the rank is 4 and the nullspace has dimension 2 by the Rank Nullity Theorem we know there are 6 columns to $A$ the column space is the linear combinations of the columns so if it is a sub space of $\mathbb{R} ^{5} $    that means each column has 5 vertical entries so we can say this matrix is $5 \times 6$ 
+    \item Visual Inspection for the rest of the questions
+\end{enumerate}
+
+% chapter homework_week_1 (end)
 
 % chapter view (end)
 
