@@ -837,3 +837,13 @@ In this case the following is true `s1 == s2` , `s1.equals(s2);`,
 
 ## Comparables
 * this allows for sorting, a default sort method is provided that allows for arrays of ints or other primities to sorted. This method is overloaded, and there are multiples methods, that handle one of the primitive types, these methods are defined in the Arrays class, as a static method.
+* In order to sort objects of other types and new ones we define, the designers of java have made a general sort method that accepts in an array of Object
+* This sort method requires that every element have the `Comparable` interface, that is they must define the `compareTo` method
+```java
+ int compareTo(T o)
+    // Compares this object with the specified object for order.
+    // Returns a negative integer, zero, or a positive integer
+    // as this object is less than, equal to, or greater than
+    // the specified object.
+```
+* Let's say there is a MonthDay class which implements the `compareTo` method, then we k

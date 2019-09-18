@@ -370,6 +370,181 @@ When looking for flaws, whenever the Induction Hypothesis is used, you must veri
 
 % chapter lecture_2 (end)
 
+\chapter{Lecture 3}%
+\label{chp:lecture_3}
+% chapter lecture_3
+
+\section{Induction on Word Problems}%
+\label{sec:induction_on_word_problems}
+% section induction_on_word_problems
+
+\begin{itemize}
+    \item Identify the statement we must prove, in the Aaron and Bianca problem our predicate was defined in english as so
+        \begin{itemize}
+            \item $P\left(n\right) $ : given the rules of the game \& assuming the games starts with two pies, each with $n$ matches. If Aaron goes first then Bianca has a winning strat.
+        \end{itemize}
+        \begin{note}
+            We require a variable that represents the size of the problem
+        \end{note}
+    \item For the second quesiton we had a sum with variables $n, m$ like
+        \[
+            \sum_{i=0}^{n} \left( m \right)^{i}   
+        \]
+        and that if we increase $m$ in our induction step then it's quite hard to simply, and so we just induct on $n$ and prove like
+        \[
+            \forall n \in \mathbb{N}, m \ge 2 \implies \ldots 
+        \]
+\end{itemize}
+
+\begin{defn}[Well Ordering Principle]\index{Well Ordering Principle}\label{defn:well_ordering_principle}
+    Any subset $A $ of $\mathbb{N} $ contradiction contains a minimum element that is for all $A\subseteq \mathbb{N} $ such that $A\neq \emptyset $ there exists an $a \in A, \text{ such that } \forall b \in A, a \le b$  
+\end{defn}
+
+\begin{eg}
+    $X$ : The set of odd natural numbers, $X \subseteq \mathbb{N} , X \neq \emptyset $ by the Well Ordering Principle , $X$ has a minimum element namely 1.
+\end{eg}
+
+\begin{thm}[Well Ordering Principle and Induction Equivalence]\index{Well Ordering Principle and Induction Equivalence}\label{thm:well_ordering_principle_and_induction_equivalence}
+    The Well Ordering Principle, Principle of Mathematical Induction and Complete induction are equivalent.
+    \[
+    \text{ PSI } \Leftrightarrow \text{ WOP } \Leftrightarrow \text{ PCI } 
+    \]
+    that is if we have proof using simple induction, then we can also prove it with Well Ordering Principle or complete induction.
+\end{thm}
+
+
+% section induction_on_word_problems (end)
+
+\section{Well Ordering Principle Proof}%
+\label{sec:well_ordering_principle_proof}
+% section well_ordering_principle_proof
+
+we will prove 
+\[
+    \forall n \in \mathbb{N} , \sum_{i=0}^{n} i = \frac{n\left( n + 1 \right) }{2} 
+\]
+
+We define the predicate $P\left(n\right) :$ 
+\[
+    \sum_{i=0}^{n} i = \frac{n\left( n + 1 \right) }{2} 
+\]
+
+\newpage
+
+
+\begin{proof}
+$ $\newline
+    For contradiction sake, we assume the negation of the statement we want to prove that is
+    \[
+    \exists k \in \mathbb{N} \text{ such that } \neg P\left(k\right) 
+    \]
+    \begin{itemize}
+        \item Let $S$ be a set of natural numbers $j$ such that $j\in S$ if and only if $\neg P\left(j\right) $ 
+            \begin{itemize}
+                \item if $j\in S \implies \neg P\left(j\right) $ 
+                \item if $j \not\in S \implies P\left(j\right) $ 
+            \end{itemize}
+        \item observe $k \in S$ therefore $S \neq \emptyset $ and by definition $S \subseteq \mathbb{N} $ therefore by the Well Ordering Principle there exists a minimum element of $S$ Let $a$ be said element.  
+        \item \underline{Claim:} $a > 0 \Leftrightarrow a \ge 1$,  observe
+            \[
+                \sum_{i=0}^{0} i = 0 = \frac{0\left( 0 + 1 \right) }{2}
+            \]
+            so $P\left(0\right) $ holds, thus by definition $0 \not\in S$
+            \item since $S\subseteq \mathbb{N} $ \& $a$ is the minimum elements of $S$ then $a > 0 \Leftrightarrow a \ge 1$ therefore 
+                \[
+                a - 1 \ge 0 \text{ and } a - 1 \in \mathbb{N} 
+                \]
+            \item Recall $a$ is the minimum element of $S$ therefore $a - 1 \in S$ so by the definition of $S$ $P\left(a - 1\right) $ holds that is 
+            \begin{gather*}
+                \sum_{i=0}^{a - 1} i = \frac{\left( a - 1 \right) a}{2}\\
+                \sum_{i=0}^{a - 1} i  + a =  \frac{\left( a - 1 \right) a}{2}  + a\\
+                \sum_{i=0}^{a} i = \frac{\left( a - 1 \right) a  + 2a}{2}\\
+                \sum_{i=0}^{a} i = \frac{a\left( a + 1 \right) }{2}  
+            \end{gather*}
+        \item But then $P\left(a\right) $ holds , but $a \in S$ so by definition $\neg P\left(n\right) $ holds, thus a contradiction so then our original statement is false and 
+            \[
+            \forall n \in \mathbb{N} , P\left(n\right) 
+            \]
+    \end{itemize}
+    
+\end{proof}
+
+
+% section well_ordering_principle_proof (end)
+
+\section{Well Ordering Principle Comments}%
+\label{sec:well_ordering_principle_comments}
+% section well_ordering_principle_comments
+
+\begin{itemize}
+    \item The base case is similar to shoiwng $a > 0$
+    \item Induction Step is simliar to $P\left(a - 1\right) \implies P\left(a\right) $ giving a contradiction.
+\end{itemize}
+
+\paragraph{Steps Involved} 
+\begin{enumerate}
+    \item define predicate 
+    \item Assume for contradiction $\neg \left( \forall n \in \mathbb{N} , P\left(n\right)  \right) $ 
+    \item Define $S$ such that $k \in S \Leftrightarrow \neg P\left(k\right) $ so 
+        \[
+            S = \left\{ k \in \mathbb{N} : \neg P\left(k\right)  \right\} 
+        \]
+    \item Show by assumption $S \neq \emptyset $ 
+    \item Use Well Ordering Principle to get smallest element of $S$  
+    \item Reach contradiction using $a$  and values less than $a$ that hold so you can get $P\left(x\right) \implies P\left(a\right) $ which gives a contradiction.
+    \item Conclude the original assumption is false 
+\end{enumerate}
+
+\begin{note}
+    The last steps aren't always the same and require creativity
+\end{note}
+
+% section well_ordering_principle_comments (end)
+
+\newpage
+
+\section{Harder Well Ordering Principle Proof}%
+\label{sec:harder_well_ordering_principle_proof}
+% section harder_well_ordering_principle_proof
+
+We will prove that every natural number has a prime factorization we define the predicate 
+\[
+    P(n): `` n \text{ has a prime factorization  }  "\text{, where } n \in \mathbb{N} 
+\]
+
+\begin{proof}
+$ $\newline
+    assume for the sake of contradiction that there exists an $x \in \mathbb{N}, x \ge 2$ such that $\neg P\left(x\right) $ 
+    \begin{itemize}
+        \item Let $S$ be the a subset of the natural numbers $j \ge 2$ such that $j\in S$ if and only if $\neg P\left(j\right) $ 
+        \item Observe $S \neq \emptyset $ since $x \in S$, therefore by the Well Ordering Principle there exists a $c \in S$ such that $c$ is the minimum element of $S$
+        \item Observe that no prime could be in $S$ as a prime number has a prime factorization, that is just itself. Therefore we know $c$ is not prime, that is it is composite so there exists $a, b \in \mathbb{N} \text{ such that } $ 
+            \[
+            a \cdot b = c \text{ and } 1 < a, b < c
+            \]
+            since $a, b \le c$ then $a, b \not\in S$ thus $P\left(a\right) \land P\left(b\right) $ hold, so they have a prime factorization so 
+            \[
+            a = p_1 p_2 \dotsb p_{k - 1} p_{k} \text{ and } b = r_1 r_2 \dotsb r_{s - 1} r_{s}
+            \]
+            and so 
+            \[
+            c = p_1 p_2 \dotsb p_{k - 1} p_{k}  \cdot r_1 r_2 \dotsb r_{s - 1} r_{s}
+            \]
+            So $c$ can be written as a product of primes therefore $P\left(c\right) $ holds , but $c \in S$ so by definition $\neg P\left(c\right) $ thus a contradiction and so the original assumption is false, os 
+            \[
+                \forall n \in \mathbb{N}, n \ge 2 \implies P\left(n\right) 
+            \]
+    \end{itemize}
+\end{proof}
+
+\begin{note}
+    Notice the last step is very simliar to induction, and the fact that $c \ge 2$ wouldn't help with the proof and we needed something stronger in order to prove the statement, note that coming up with this property of $c$ that leads to a contradiction is hard and takes time.
+\end{note}
+
+% section harder_well_ordering_principle_proof (end)
+
+% chapter lecture_3 (end)
+
 \chapter{Preliminaries}%
 \label{chp:preliminaries}
 % chapter preliminaries
