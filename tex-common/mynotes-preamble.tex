@@ -60,7 +60,6 @@
 
 \theoremstyle{break}
 
-\newtheorem{remark}{Remark}[section]
 
 \newtheorem{ver}{Verfication}[section]
 
@@ -74,6 +73,9 @@
 % Note env
 \newmdtheoremenv{nt}{Note}
 
+% Remark env
+\newtheorem{remark}{Remark}[section]
+
 % definition env no num
 \newtheorem*{defnnonum}{Definition}
 
@@ -84,7 +86,7 @@
 
 \newtheorem{propo}[thm]{Proposition}
 
-\newtheorem{crly}[thm]{Corollary}
+\newmdtheoremenv{crly}[thm]{Corollary}
 
 \newtheorem{lemma}[thm]{Lemma}
 

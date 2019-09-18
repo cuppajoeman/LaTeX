@@ -20,11 +20,11 @@
 \label{sec:induction}
 % section induction
 
-\begin{nt}
+\begin{note}
     \[
     \mathbb{N} = \left\{ 1, 2, 3, \ldots  \right\} 
     \]
-\end{nt}
+\end{note}
 
 \begin{defn}[The principle of mathmatical induction ]\index{The principle of mathmatical induction }\label{defn:the_principle_of_mathmatical_induction_}
 suppose $S \subseteq \mathbb{N} $  
@@ -386,7 +386,7 @@ We commence
     \item The left hand side of the above tells us that $p_{1} $ is a prime factor of $m$ which means it is also a factor of the right hand side.
         \begin{itemize}
             \item But observe $p_{1} \nmid \chi$ since $p_{1} \neq q_{j} $ 
-            \item Therefore it must be that $p_{1} | \left( q_{1}  - p_{1}  \right) $ this is true if and only if $p_{1} \mid q_{1} $ since $q_{1} $ is prime this means that $p_{1} = 1$ or $p_{1} = q_{1} $ either of which are contradictions, therefore \todo{What does this contradict?} 
+            \item Therefore it must be that $p_{1} | \left( q_{1}  - p_{1}  \right) $ this is true if and only if $p_{1} \mid q_{1} $ since $q_{1} $ is prime this means that $p_{1} = 1$ or $p_{1} = q_{1} $ either of which are contradictions, therefore this contradcicts our original assumption and so in fact every prime factorization is unique.
         \end{itemize}
 \end{itemize}
 \end{proof}
@@ -418,6 +418,8 @@ Yes, using hte same method we have
     \left( k + 1 \right)!  + 2, \left( k + 1 \right) !  + 3, \ldots , \left( k + 1 \right) !  + k + 1
 \]
 thus we conclude there are arbitrary long stretches of composite numbers.
+
+\newpage
 
 \section{Modular Arithmetic}%
 \label{sec:modular_arithmetic}
@@ -467,5 +469,130 @@ First we define the integers that is
 
 % chapter lecture_4 (end)
 
+\chapter{Lecture 5}%
+\label{chp:lecture_5}
+% chapter lecture_5
+
+\begin{remark}
+    From last lecture we noted that $a \equiv b \Mod{m} $ which meant $m 
+    \mid \left( a - b \right) $ that is $\left( a - b \right) = jm$ for some $j\in \mathbb{Z} $ then also $\left( b - a \right) =  - jm$ and so $m \mid \left( b - a \right) $ \todo{But our definition of div is for naturals?}  so 
+    \[
+    a \equiv b \Mod{m} \Leftrightarrow b \equiv a \Mod{m} 
+    \]
+\end{remark}
+
+Suppose $k, m \in \mathbb{N} $ and 
+\[
+k = qm  + r, \text{ for some } q \in \mathbb{N} \text{ and } 0 \le r < m
+\]
+that is to say, $m$ goes in $q$ times with a remainder of $r$ into $k$ 
+
+\begin{crly}
+    A number is always congruent to it's remainder upon division by the modulus, amoung other numbers.
+\end{crly}
+
+\newpage
+
+\section{Manipulating Congruences}%
+\label{sec:manipulating_congruences}
+% section manipulating_congruences
+
+We will show that congruences are additive that is if $a \equiv b \Mod{m} \text{ and } c \equiv d \Mod{m} $ then $a + c \equiv b + d \Mod{m} $ 
+\begin{proof}
+    $ $\newline
+    By definition 
+    \begin{gather*}
+        m \mid a - b \Leftrightarrow mk = a - b, \text{ for some } k \in \mathbb{Z} \\
+        m \mid c  - d \Leftrightarrow ml = c  - d, \text{ for some } l \in \mathbb{Z} 
+    \end{gather*}
+    then taking the sum we have 
+    \[
+        m\left( k + l \right) = \left( a - b \right)  + \left( c  - d \right) = \left( a + c \right)  - \left( b + d \right) 
+    \]
+    and so $\left( a + c \right)  \equiv \left( b + d \right)  \Mod{m} $ 
+\end{proof}
+
+We will show that congruences are also multiplicative, that is to say if $a \equiv b \Mod{m} $ and $c \equiv d \Mod{m} $ then 
+\[
+a \cdot c \equiv b \cdot d \Mod{m} 
+\]
+\begin{proof}
+$ $\newline
+    By the same reasoning as the previous proof, we have 
+    \begin{align*}
+        mk = a - b && ml = c  - d
+    \end{align*}
+    need to show $m \mid ac  - bd$ 
+    \begin{align*}
+        ac - bd &= ac  - bc  + bc  - bd  \\ 
+        &= c\left( a - c \right)  + b\left( c - d \right)   \\ 
+        &= c\left( mk \right)  + b\left( ml\right)   \\ 
+        &= m\left( ck  + bl \right)   \\ 
+    \end{align*}
+    and so $m \mid ac  - bd \Leftrightarrow a \cdot c \equiv b \cdot d \Mod{m} $ as required. 
+\end{proof}
+
+\paragraph{Quick Consequences} 
+\begin{itemize}
+    \item if $a \equiv b \Mod{m} $ then taking the sum of the same congruence with itself n times we have 
+\[
+n  \cdot a \equiv n  \cdot b \Mod{m} 
+\]
+and so we can multiply either side by $n \in \mathbb{N} $ 
+    \item if $a \equiv b \Mod{m} $ then taking multiplying the congruence by itself $n$ times gives 
+        \[
+        a^{n}  \equiv b^{n}  \Mod{m} 
+        \]
+        and so we can raise either side of a congruence to any power $n \in \mathbb{N} $. 
+\end{itemize}
+
+
+% section manipulating_congruences (end)
+\section{Applications}%
+\label{sec:applications}
+% section applications
+
+\paragraph{Is $x = 3,974,279$ divisible by $3$? } 
+\begin{itemize}
+    \item Recall that if the sum of it's digits are divisible by 3, then the whole number is divisible by 3. and the sum of the digits is not divisible by 3, and so $3 \nmid x$ 
+        \begin{itemize}
+            \item In addition we know $10 \equiv 1 \Mod{3} \because 99\ldots 99  + 1$ 
+            \item And since we can raise any congruence to any power we have 
+                \[
+                10^{n}  \equiv 1 \Mod{3} 
+                \]
+        \end{itemize}
+    \item also recall that $x = 9  \cdot 10^{0}  + \ldots  + 3\left( 10^{6}  \right) $ and so 
+        \begin{align*}
+            x &\equiv 9\left( 10^{0}  \right)  + \ldots  + 3\left( 10^{6}  \right)  \Mod{3} \\
+            &\equiv  9\left( 1 \right)  + \ldots  + 3\left( 1 \right)    \\ 
+            &\equiv  \sum \text{ digits  } \\
+            &\equiv 41   \\ 
+            &\equiv 5   \\ 
+            &\equiv 2  
+        \end{align*}
+\end{itemize}
+
+\paragraph{$2^{29}  + 3$ divisible by 7?} 
+\begin{itemize}
+    \item observe $29 = 27 + 2 = 3  \cdot 9  + 2$ 
+    \item Also $2^{3}  \equiv 8 \equiv 1 \Mod{7} $ and rasing each side of $2^{3}  \equiv 1 \Mod{7} $ to the 9 yields 
+        \[
+            \left( 2^{3}  \right) 9 \equiv 1^{9}  \Mod{7} \Leftrightarrow 2^{27}  \equiv 1 \Mod{7} 
+        \]
+        then multiplying both sides by $2^{2} $ we get
+        \[
+        2^{29}  \equiv 4 \Mod{7} 
+        \]
+        and adding $3$ to both sides yields 
+        \[
+            2^{29}  + 3 \equiv 7 \equiv 0 \Mod{7} 
+        \]
+        thus by definition $7 \mid 2^{29}  + 3  - 0$ so yes!
+\end{itemize}
+
+% section applications (end)
+
+% chapter lecture_5 (end)
 
 \end{document}

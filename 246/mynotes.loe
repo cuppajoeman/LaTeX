@@ -1,5 +1,5 @@
 \addvspace {10\p@ }
-\contentsline {nt}{\numberline {1}Note}{9}{nt.1}% 
+\contentsline {note}{\numberline {1.1.1}Note}{9}{note.1.1.1}% 
 \contentsline {defn}{\numberline {1}Definition\thmtformatoptarg {The principle of mathmatical induction }}{9}{defn.1}% 
 \contentsline {eg}{\numberline {1.1.1}Example}{9}{eg.1.1.1}% 
 \contentsline {defn}{\numberline {2}Definition\thmtformatoptarg {Extended principle of mathmatical induction }}{11}{defn.2}% 
@@ -15,4 +15,7 @@
 \addvspace {10\p@ }
 \contentsline {thm}{\numberline {2}Theorem\thmtformatoptarg {Fundamental Theorem of Arithmetic}}{21}{thm.2}% 
 \contentsline {defn}{\numberline {7}Definition\thmtformatoptarg {Composite}}{23}{defn.7}% 
-\contentsline {defn}{\numberline {8}Definition\thmtformatoptarg {Congruence}}{23}{defn.8}% 
+\contentsline {defn}{\numberline {8}Definition\thmtformatoptarg {Congruence}}{24}{defn.8}% 
+\addvspace {10\p@ }
+\contentsline {remark}{\numberline {6.0.1}Remark}{25}{remark.6.0.1}% 
+\contentsline {crly}{\numberline {3}Corollary}{25}{crly.3}% 
